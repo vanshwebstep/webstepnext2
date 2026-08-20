@@ -59,9 +59,9 @@ export async function fetchBlogBySlug(slug, fallback = null) {
 /**
  * Fetch packages directly from /api/packages.php
  */
-export async function fetchPackages(fallback = { packages: [] }) {
+export async function fetchPackages(pageType = 'packages', fallback = { packages: [] }) {
   try {
-    const res = await fetch(`${BASE_URL}/api/packages.php`, {
+    const res = await fetch(`${BASE_URL}/api/packages.php?page=${encodeURIComponent(pageType)}`, {
       cache: 'no-store',
     });
     if (!res.ok) throw new Error('API error');

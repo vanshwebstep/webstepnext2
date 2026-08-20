@@ -264,9 +264,9 @@ export default function B2BSalesPage() {
         </div>
       </section>
 
-      <section id="pricing">
-        <Packages />
-      </section>
+   <section id="pricing">
+  <Packages pageType="b2b" />
+</section>
 
       <section id="faq" className="px-5 py-20 sm:px-8 lg:px-12">
         <div className="mx-auto xl:max-w-3xl">

@@ -10,7 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 try {
     $pdo = api_pdo();
 
-    // 1. Check if dedicated `packages` table exists
+    $page = $_GET['page'] ?? ''; // 'b2b' | 'packages'
+    $col  = null;
+    if ($page === 'b2b') $col = 'show_on_b2b';
+    elseif ($page === 'packages') $col = 'show_on_packages';
+
     $tableExists = false;
     try {
         $check = $pdo->query("SHOW TABLES LIKE 'packages'");
@@ -20,37 +24,29 @@ try {
     }
 
     if ($tableExists) {
-        $stmt = $pdo->query("SELECT * FROM packages WHERE is_active = 1 ORDER BY sort_order ASC, id ASC");
+        $sql = "SELECT * FROM packages WHERE is_active = 1";
+        if ($col) $sql .= " AND `$col` = 1";
+        $sql .= " ORDER BY sort_order ASC, id ASC";
+
+        $stmt = $pdo->query($sql);
         $packages = $stmt->fetchAll();
 
         foreach ($packages as &$pkg) {
             if (isset($pkg['events']) && is_string($pkg['events'])) {
                 $decoded = json_decode($pkg['events'], true);
-                if (is_array($decoded)) {
-                    $pkg['events'] = $decoded;
-                }
+                if (is_array($decoded)) $pkg['events'] = $decoded;
             }
-            if (isset($pkg['isPopular'])) {
-                $pkg['isPopular'] = (bool) $pkg['isPopular'];
-            }
+            if (isset($pkg['isPopular'])) $pkg['isPopular'] = (bool) $pkg['isPopular'];
         }
 
-        $catStmt = $pdo->query("SELECT DISTINCT category FROM packages WHERE is_active = 1 AND category IS NOT NULL");
-        $tabs = $catStmt->fetchAll(PDO::FETCH_COLUMN);
-
-        api_response([
-            'tabs' => array_values($tabs),
-            'packages' => $packages
-        ]);
+        api_response(['tabs' => [], 'packages' => $packages]);
     } else {
-        // 2. Query `dynamic_content` table where type = 'packages'
         $stmt = $pdo->prepare("SELECT data FROM dynamic_content WHERE type = 'packages' AND is_active = 1 ORDER BY updated_at DESC LIMIT 1");
         $stmt->execute();
         $row = $stmt->fetch();
 
         if ($row && !empty($row['data'])) {
-            $data = json_decode($row['data'], true);
-            api_response($data);
+            api_response(json_decode($row['data'], true));
         } else {
             api_response(['tabs' => [], 'packages' => []]);
         }
