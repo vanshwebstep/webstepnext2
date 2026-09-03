@@ -5,7 +5,7 @@
 const BASE_URL = (
   process.env.NEXT_PUBLIC_PHP_API_BASE_URL ||
   process.env.NEXT_PUBLIC_API_URL ||
-  'https://webstepdev.com/demo/webstepphp'
+  `${process.env.NEXT_PUBLIC_MAIN_BASE_URL || "https://webstepdev.com"}/demo/webstepphp`
 ).replace(/\/+$/, '');
 
 const CONTENT_ENDPOINTS = {

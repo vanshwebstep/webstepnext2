@@ -21,7 +21,8 @@ const STATS = [
   { num: "98%", label: "Client Satisfaction", sub: "Long-term partnerships" },
 ];
 const CATEGORIES = ["All", "Healthcare", "E-Commerce", "SaaS", "Education", "Fintech", "Non-Profit", "Enterprise"];
-
+  const DEFAULTADTYES =
+  process.env.NEXT_PUBLIC_MAIN_BASE_URL || "https://webstepdev.com";
 const CASE_STUDIES = [
   {
     id: "dr-treat",
@@ -759,7 +760,7 @@ const AllStudies = ({ caseStudies, categories, onOpen }) => {
                   hover:shadow-[0_28px_64px_rgba(168,85,247,0.2),0_4px_16px_rgba(236,72,153,0.1)]
                   hover:border-purple-200/80">
                 <div className="relative h-52 overflow-hidden">
-                  <img src={cs.img} alt={cs.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={`${DEFAULTADTYES}/${cs.img}`} alt={cs.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute top-4 left-4"><span className="text-xl">{cs.logo}</span></div>
                   <div className="absolute top-4 right-4">

@@ -1,5 +1,8 @@
 const DEFAULT_IMAGE_ASSET_BASE_URL =
-  "https://webstepdev.com/demo/webstepnextassets/img";
+  `https://webstepdev.com/demo/webstepnextassets/img`;
+
+const DEFAULTADTYES =
+  process.env.NEXT_PUBLIC_MAIN_BASE_URL || "https://webstepdev.com";
 
 export const IMAGE_ASSET_BASE_URL = (
   process.env.NEXT_PUBLIC_IMAGE_ASSET_BASE_URL || DEFAULT_IMAGE_ASSET_BASE_URL
@@ -22,7 +25,7 @@ export const resolveBlogImage = (image) => {
       return image;
     }
     const cleanName = image.replace(/^\/?img\//, "").replace(/^\/+/, "");
-    return `${IMAGE_ASSET_BASE_URL}/${cleanName}`;
+    return `${DEFAULTADTYES}/${cleanName}`;
   }
   return assetImage("blog1.png").src;
 };
