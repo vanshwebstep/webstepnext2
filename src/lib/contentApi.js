@@ -5,7 +5,7 @@
 const BASE_URL = (
   process.env.NEXT_PUBLIC_PHP_API_BASE_URL ||
   process.env.NEXT_PUBLIC_API_URL ||
-  `${process.env.NEXT_PUBLIC_MAIN_BASE_URL || "https://webstepdev.com"}/demo/webstepphp`
+  `${process.env.NEXT_PUBLIC_MAIN_BASE_URL || "https://webstepdev.com"}/webstepphp`
 ).replace(/\/+$/, '');
 
 const CONTENT_ENDPOINTS = {
@@ -167,4 +167,31 @@ export async function submitNewsletter(payload) {
   const data = await res.json();
   if (!data.success) throw new Error(data.error || 'Subscription failed');
   return data;
+}
+
+/**
+ * Fetch dynamic SEO metadata from the PHP backend.
+ * @param {string} pageUrl - The URL slug/path (e.g., 'about', '/', 'services')
+ * @returns {Promise<{title?: string, description?: string, keywords?: string}>}
+ */
+export async function fetchSeoMetadata(pageUrl) {
+  try {
+    const res = await fetch(`${BASE_URL}/api/seo.php?page_url=${encodeURIComponent(pageUrl)}`, {
+      cache: 'no-store',
+    });
+    if (!res.ok) return {};
+    const json = await res.json();
+    if (json.success && json.data) {
+      const { title, description, keywords } = json.data;
+      return {
+        ...(title ? { title } : {}),
+        ...(description ? { description } : {}),
+        ...(keywords ? { keywords } : {}),
+      };
+    }
+    return {};
+  } catch (err) {
+    console.warn(`[contentApi] fetchSeoMetadata failed for ${pageUrl}:`, err.message);
+    return {};
+  }
 }

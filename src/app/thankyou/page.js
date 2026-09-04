@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { FaArrowRight, FaCheck, FaEnvelopeOpenText, FaHome, FaPhoneAlt } from "react-icons/fa";
+import { fetchSeoMetadata } from '@/lib/contentApi';
 
-export const metadata = {
-  title: "Thank You | Webstep Solutions",
-  description: "Thanks for contacting Webstep Solutions. Our team will get back to you shortly.",
-};
 
+
+
+export async function generateMetadata() {
+  const dynamicSeo = await fetchSeoMetadata('thankyou');
+  return {
+    title: dynamicSeo.title || "Thank You | Webstep Solutions",
+    description: dynamicSeo.description || "Thanks for contacting Webstep Solutions. Our team will get back to you shortly.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+  };
+}
 export default function ThankYouPage() {
   return (
     <main className="min-h-screen bg-white text-slate-950">

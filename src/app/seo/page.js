@@ -1,11 +1,18 @@
 import Seo from '@/components/seo/Seo';
 import React from 'react';
+import { fetchSeoMetadata } from '@/lib/contentApi';
 
-export const metadata = {
-  title: "SEO Services | Webstep Solutions",
-  description: "Search Engine Optimization & SEO Services by Webstep Solutions.",
-};
 
+
+
+export async function generateMetadata() {
+  const dynamicSeo = await fetchSeoMetadata('seo');
+  return {
+    title: dynamicSeo.title || "SEO Services | Webstep Solutions",
+    description: dynamicSeo.description || "Search Engine Optimization & SEO Services by Webstep Solutions.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+  };
+}
 export default function SeoPage() {
   return <Seo/>;
 }

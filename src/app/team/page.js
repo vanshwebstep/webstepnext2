@@ -1,11 +1,17 @@
 import OurTeamPage from "@/components/team/OurTeamPage";
+import { fetchSeoMetadata } from '@/lib/contentApi';
 
-export const metadata = {
-  title: "Our Team | Webstep Solutions",
-  description:
-    "Meet the Webstep Solutions team covering strategy, UI/UX design, web development, mobile apps, QA, and digital growth.",
-};
 
+
+
+export async function generateMetadata() {
+  const dynamicSeo = await fetchSeoMetadata('team');
+  return {
+    title: dynamicSeo.title || "Our Team | Webstep Solutions",
+    description: dynamicSeo.description || "Meet the Webstep Solutions team covering strategy, UI/UX design, web development, mobile apps, QA, and digital growth.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+  };
+}
 export default function TeamPage() {
   return <OurTeamPage />;
 }

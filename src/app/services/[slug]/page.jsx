@@ -1,6 +1,7 @@
 // app/services/[slug]/page.jsx
 
 import ServiceDetailPage from "@/components/Servicedetailpage";
+import { fetchSeoMetadata } from "@/lib/contentApi";
 
 // ─── All valid slugs (deduplicated + typo fixed) ──────────────────────────────
 const services = [
@@ -72,7 +73,6 @@ export async function generateStaticParams() {
   return services.map((slug) => ({ slug }));
 }
 
-// Page metadata (optional but good practice)
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   let formattedTitle = slug
@@ -94,9 +94,14 @@ export async function generateMetadata({ params }) {
     ? `${formattedTitle} | Webstep Solutions`
     : `${formattedTitle} Services | Webstep Solutions`;
 
+  const fallbackDesc = `Learn more about our ${formattedTitle} services at Webstep Solutions.`;
+
+  const dynamicSeo = await fetchSeoMetadata(`services/${slug}`);
+
   return {
-    title: finalTitle,
-    description: `Learn more about our ${formattedTitle} services at Webstep Solutions.`,
+    title: dynamicSeo.title || finalTitle,
+    description: dynamicSeo.description || fallbackDesc,
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
   };
 }
 
