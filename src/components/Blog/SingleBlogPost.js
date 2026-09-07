@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { submitNewsletter } from '@/lib/contentApi';
 
 import {
     FaCalendarAlt,
@@ -97,16 +98,19 @@ const ContentBlock = ({ block }) => {
 };
 
 /* ─── SHARE BUTTON ─── */
-const ShareBtn = ({ icon: Icon, label, color }) => (
-    <button
+/* ─── SHARE BUTTON ─── */
+const ShareBtn = ({ icon: Icon, label, color, href }) => (
+    <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
         className="flex items-center gap-2 px-5 py-2.5 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg text-white"
         style={{ background: color }}
     >
         <Icon />
         {label}
-    </button>
+    </a>
 );
-
 /* ─── RELATED CARD ─── */
 const RelatedCard = ({ post, router }) => {
     const imgSrc = resolveBlogImage(post.image || post.imageSrc);
@@ -177,6 +181,36 @@ const SingleBlogPage = ({ post, relatedPosts = [] }) => {
     const [likeCount, setLikeCount] = useState(post?.likes || 0);
     const [copied, setCopied] = useState(false);
     const router = useRouter();
+
+    const [email, setEmail] = useState("");
+    const [subStatus, setSubStatus] = useState("idle");
+
+    // current blog ka actual URL — sirf client pr available hota hai
+    const [shareUrl, setShareUrl] = useState("");
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setShareUrl(window.location.href);
+        }
+    }, []);
+
+    const shareText = encodeURIComponent(post?.title || "");
+    const encodedUrl = encodeURIComponent(shareUrl || (typeof window !== "undefined" ? window.location.href : ""));
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+        if (!email) return;
+        setSubStatus("loading");
+        try {
+            await submitNewsletter({ email });
+            setSubStatus("success");
+            setEmail("");
+            setTimeout(() => setSubStatus("idle"), 3000);
+        } catch (err) {
+            setSubStatus("error");
+            setTimeout(() => setSubStatus("idle"), 3000);
+        }
+    };
 
     const handleLike = () => {
         setLiked((p) => !p);
@@ -327,21 +361,36 @@ const SingleBlogPage = ({ post, relatedPosts = [] }) => {
                                 )}
 
                                 {/* Share */}
-                                <div className="mt-12 p-8 rounded-[2rem] bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.07)]">
-                                    <p className="text-sm font-bold text-slate-500 tracking-widest uppercase mb-5">Share this article</p>
-                                    <div className="flex flex-wrap gap-3">
-                                        <ShareBtn icon={FaTwitter} label="Twitter" color="#1DA1F2" />
-                                        <ShareBtn icon={FaLinkedinIn} label="LinkedIn" color="#0077B5" />
-                                        <ShareBtn icon={FaFacebookF} label="Facebook" color="#1877F2" />
-                                        <button
-                                            onClick={handleCopy}
-                                            className="flex items-center gap-2 px-5 py-2.5 rounded-2xl font-semibold text-sm border border-slate-200 text-slate-600 bg-white hover:border-pink-400 hover:text-pink-600 transition-all duration-300 hover:scale-105 shadow-sm"
-                                        >
-                                            <FaLink />
-                                            {copied ? "Copied!" : "Copy Link"}
-                                        </button>
-                                    </div>
-                                </div>
+                              <div className="mt-12 p-8 rounded-[2rem] bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.07)]">
+    <p className="text-sm font-bold text-slate-500 tracking-widest uppercase mb-5">Share this article</p>
+    <div className="flex flex-wrap gap-3">
+        <ShareBtn
+            icon={FaTwitter}
+            label="Twitter"
+            color="#1DA1F2"
+            href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${shareText}`}
+        />
+        <ShareBtn
+            icon={FaLinkedinIn}
+            label="LinkedIn"
+            color="#0077B5"
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+        />
+        <ShareBtn
+            icon={FaFacebookF}
+            label="Facebook"
+            color="#1877F2"
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+        />
+        <button
+            onClick={handleCopy}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-2xl font-semibold text-sm border border-slate-200 text-slate-600 bg-white hover:border-pink-400 hover:text-pink-600 transition-all duration-300 hover:scale-105 shadow-sm"
+        >
+            <FaLink />
+            {copied ? "Copied!" : "Copy Link"}
+        </button>
+    </div>
+</div>
 
                                 {/* Author card */}
                                 <div className="mt-10 p-8 rounded-[2rem] overflow-hidden relative bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.07)]">
@@ -409,17 +458,24 @@ const SingleBlogPage = ({ post, relatedPosts = [] }) => {
                                             Stay <GradientText>Updated</GradientText>
                                         </h3>
                                         <p className="text-slate-500 text-sm mb-5">Get the latest insights straight to your inbox.</p>
-                                        <input
-                                            type="email"
-                                            placeholder="Your email address"
-                                            className="w-full bg-white border border-slate-200 rounded-2xl py-3 px-5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-pink-500 transition-all duration-300 shadow-sm text-sm mb-3"
-                                        />
-                                        <button
-                                            className="w-full py-3 rounded-2xl text-white font-bold text-sm tracking-wide shadow-lg transition-all duration-300 hover:shadow-pink-500/40 hover:scale-[1.02]"
-                                            style={{ background: "linear-gradient(135deg, #FF1F8E, #A855F7)" }}
-                                        >
-                                            Subscribe Now →
-                                        </button>
+                                        <form onSubmit={handleSubscribe}>
+                                            <input
+                                                type="email"
+                                                required
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                placeholder="Your email address"
+                                                className="w-full bg-white border border-slate-200 rounded-2xl py-3 px-5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-pink-500 transition-all duration-300 shadow-sm text-sm mb-3"
+                                            />
+                                            <button
+                                                type="submit"
+                                                disabled={subStatus === 'loading'}
+                                                className="w-full py-3 rounded-2xl text-white font-bold text-sm tracking-wide shadow-lg transition-all duration-300 hover:shadow-pink-500/40 hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100"
+                                                style={{ background: "linear-gradient(135deg, #FF1F8E, #A855F7)" }}
+                                            >
+                                                {subStatus === 'loading' ? 'Subscribing...' : subStatus === 'success' ? 'Subscribed! ✓' : subStatus === 'error' ? 'Error!' : 'Subscribe Now →'}
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
 

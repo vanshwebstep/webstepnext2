@@ -3,8 +3,6 @@ import React from 'react';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 
-
-
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata('services');
   return {

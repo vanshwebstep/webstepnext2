@@ -5,10 +5,21 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateStaticParams() {
   const data = await fetchBlogs({ categories: [], blogs: [] });
   const blogs = data?.blogs || [];
-  return blogs.map((b) => ({ slug: b.slug }));
+  let params = blogs.map((b) => ({ slug: b.slug }));
+  
+  if (params.length === 0) {
+    params = [
+      { slug: "ai-chatbots-customer-support-2025" },
+      { slug: "best-ecommerce-platform-seo" },
+      { slug: "react-vs-nextjs-2025" },
+      { slug: "shopify-vs-laravel-ecommerce" }
+    ];
+  }
+  
+  return params;
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 
 export async function generateMetadata({ params }) {

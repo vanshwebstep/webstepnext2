@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import AnimatedSection from '../AnimatedSection';
 import { FaCalendarAlt, FaUser, FaEye, FaArrowRight } from 'react-icons/fa';
@@ -76,21 +77,23 @@ const BlogPosts = () => {
                 />
 
                 {/* Image */}
-                <div className="relative h-48 sm:h-64 overflow-hidden">
-                  <Image
-                    src={resolveBlogImage(post.image || post.imageSrc)}
-                    alt={post.title}
-                    fill
-                    unoptimized={true}
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-90" />
-                  <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5">
-                    <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-bold text-pink-600 tracking-wider shadow">
-                      {post.category}
-                    </span>
+                <Link href={`/blog/${post.slug}`}>
+                  <div className="relative h-48 sm:h-64 overflow-hidden cursor-pointer">
+                    <Image
+                      src={resolveBlogImage(post.image || post.imageSrc)}
+                      alt={post.title}
+                      fill
+                      unoptimized={true}
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-90" />
+                    <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5">
+                      <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-bold text-pink-600 tracking-wider shadow">
+                        {post.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
 
                 {/* Content */}
                 <div className="p-5 sm:p-8 flex flex-col flex-grow">
@@ -108,9 +111,11 @@ const BlogPosts = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-2xl font-extrabold text-slate-900 mb-2 sm:mb-4 leading-snug group-hover:text-pink-600 transition-colors">
-                    {post.title}
-                  </h3>
+                  <Link href={`/blog/${post.slug}`}>
+                    <h3 className="text-lg sm:text-2xl font-extrabold text-slate-900 mb-2 sm:mb-4 leading-snug group-hover:text-pink-600 transition-colors cursor-pointer">
+                      {post.title}
+                    </h3>
+                  </Link>
 
                   {/* Description */}
                   <p className="text-slate-600 text-xs sm:text-base leading-relaxed mb-6 sm:mb-8 flex-grow line-clamp-3">

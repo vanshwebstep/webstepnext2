@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fetchPackages } from "@/lib/contentApi";
@@ -30,6 +30,7 @@ const ICON_MAP = { starter: FaUser, senior: FaChartLine, team: FaUsers, enterpri
 const Packages = ({ pageType = "packages" }) => {
   const [packagesData, setPackagesData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     setLoading(true);
@@ -40,8 +41,19 @@ const Packages = ({ pageType = "packages" }) => {
       .finally(() => setLoading(false));
   }, [pageType]);
 
+  // page load hote hi is section pr auto-scroll, taaki sbhi packages first shot mai dikhein
+  useEffect(() => {
+    if (!loading && packagesData.length > 0 && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [loading, packagesData]);
+
   return (
-    <section className="pt-[140px] md:pt-[190px] pb-12 sm:pb-24 px-3 sm:px-8 bg-gradient-to-b from-slate-50 via-white to-slate-50 min-h-screen">
+    <section
+      id="packages-section"
+      ref={sectionRef}
+      className="pt-[140px] md:pt-[190px] pb-12 sm:pb-24 px-3 sm:px-8 bg-gradient-to-b from-slate-50 via-white to-slate-50 min-h-screen"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-4 sm:mb-6">
           <motion.a
