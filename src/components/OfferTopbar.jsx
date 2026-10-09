@@ -16,10 +16,10 @@ const offers = [
 ];
 
 const socialLinks = [
-  { icon: <FaFacebookF size={11} />, href: "https://facebook.com", hoverColor: "#1877f2", label: "Facebook" },
-  { icon: <FaInstagram size={11} />, href: "https://instagram.com", hoverColor: "#e1306c", label: "Instagram" },
-  { icon: <FaLinkedinIn size={11} />, href: "https://linkedin.com", hoverColor: "#0077b5", label: "LinkedIn" },
-  { icon: <FaTwitter size={11} />,   href: "https://twitter.com", hoverColor: "#1da1f2", label: "Twitter" },
+  // { icon: <FaFacebookF size={11} />, href: "https://facebook.com", hoverColor: "#1877f2", label: "Facebook" },
+  // { icon: <FaInstagram size={11} />, href: "https://instagram.com", hoverColor: "#e1306c", label: "Instagram" },
+  { icon: <FaLinkedinIn size={11} />, href: "https://www.linkedin.com/company/webstep-solutions/", hoverColor: "#0077b5", label: "LinkedIn" },
+  { icon: <FaTwitter size={11} />,   href: "#", hoverColor: "#1da1f2", label: "Twitter" },
 ];
 
 const SEP = <span style={{ color: "#4b5563", fontSize: "9px", padding: "0 4px" }}>✦</span>;

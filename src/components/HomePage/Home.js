@@ -59,9 +59,9 @@ const Home = () => {
         <AnimatedSection delay={0.2} direction="up">
           <OurExpertize />
         </AnimatedSection>
-         <AnimatedSection delay={0.2} direction="up">
+         {/* <AnimatedSection delay={0.2} direction="up">
           <TrustReviewsPage />
-        </AnimatedSection>
+        </AnimatedSection> */}
         {/* <AnimatedSection delay={0.2} direction="up">
           <MarketingTeam />
         </AnimatedSection> */}

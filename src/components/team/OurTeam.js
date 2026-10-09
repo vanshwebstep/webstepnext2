@@ -17,8 +17,8 @@ const OurTeam = () => {
                 instagram: "#"
             }
         },
-        {
-            name: "Jane Smith",
+        {  
+            name: "Jane Smith", 
             imageSrc: dummyuser,
             skills: "JavaScript Development",
             socialMedia: {

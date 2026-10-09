@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebook, FaHeart, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa'
+import { FaFacebook, FaHeart, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image';
 import { assetImage } from "@/lib/assets";
@@ -39,8 +39,8 @@ const Blogv1 = () => {
         <>
             <section className="blogv1">
                 <div className="col-full">
-                <div className="beforeline"><h4 className="lining">our blogs</h4></div>
-                
+                    <div className="beforeline"><h4 className="lining">our blogs</h4></div>
+
                     <div className="grid-container">
                         {blogData.map((curElm) => {
                             return (
@@ -58,10 +58,12 @@ const Blogv1 = () => {
                                                 </div>
                                                 <div className="social-icons">
                                                     <ul>
-                                                        <li><FaFacebook /></li>
-                                                        <li><FaWhatsapp /></li>
-                                                        <li><FaYoutube /></li>
-                                                        <li><FaInstagram /></li>
+                                                        {/* <li><FaFacebook /></li> */}
+                                                        {/* <li><FaWhatsapp /></li> */}
+                                                        {/* <li><FaYoutube /></li> */}
+                                                        {/* <li><FaInstagram /></li> */}
+                                                        <li><FaLinkedin /></li>
+                                                        <li><FaTwitter /></li>
                                                     </ul></div>
                                                 <button className="btn-bgblue"><Link href='/singal'>read more</Link></button>
                                             </div>
@@ -75,7 +77,7 @@ const Blogv1 = () => {
 
                     </div>
                     <div className="read-more">
-                    <button className="btn-bgblue">view more posts</button></div>
+                        <button className="btn-bgblue">view more posts</button></div>
                 </div>
             </section>
         </>

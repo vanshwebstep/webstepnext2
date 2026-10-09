@@ -20,7 +20,7 @@ const BlogReview = () => {
     ];
 
     return (
-        <section className="relative py-12 sm:py-20 md:py-28 bg-white overflow-hidden">
+        <section className="hidden relative py-12 sm:py-20 md:py-28 bg-white overflow-hidden">
 
             {/* 🔥 PREMIUM BACKGROUND */}
             <div className="absolute inset-0">

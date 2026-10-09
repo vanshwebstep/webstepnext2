@@ -821,7 +821,7 @@ const AllStudies = ({ caseStudies, categories, onOpen }) => {
 const Testimonials = () => {
   const testimonials = [
     {
-      author: "Bradley Braun",
+      author: "Joseph White",
       role: "Verified Client",
       quote: "I enjoy working with Karan from Webstep Solutions, he is fluent in English and has excellent developmental skills.",
       project: "WordPress & Dev",

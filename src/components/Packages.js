@@ -147,7 +147,7 @@ const Packages = ({ pageType = "packages" }) => {
                       )}
                     </div>
 
-                    <div
+                    {/* <div
                       className={`flex-1 rounded-2xl p-2.5 sm:p-3 text-center mb-5 sm:mb-6 border ${
                         pkg.hoursType === "pink"
                           ? "bg-[#fff0f5] border-pink-100 text-pink-950"
@@ -171,7 +171,7 @@ const Packages = ({ pageType = "packages" }) => {
                           {pkg.hoursSubtext}
                         </div>
                       )}
-                    </div>
+                    </div> */}
 
                     <ul className="flex-1 space-y-2.5 sm:space-y-3 mb-5 sm:mb-6">
                       {Array.isArray(pkg.events) && pkg.events.map((event, idx) => {

@@ -13,11 +13,11 @@ import { THANK_YOU_ROUTE } from "@/lib/routes";
 const logo = assetImage("logo.png");
 
 const socialLinks = [
-    { icon: <FaFacebookF size={15} />, href: "https://facebook.com/webstepsolutions", label: "Facebook",  hoverColor: "#1877f2" },
-    { icon: <FaInstagram size={15} />, href: "https://instagram.com/webstepsolutions", label: "Instagram", hoverColor: "#e1306c" },
-    { icon: <FaLinkedinIn size={15} />, href: "https://linkedin.com/company/webstep-solutions", label: "LinkedIn", hoverColor: "#0077b5" },
-    { icon: <FaTwitter size={15} />,   href: "https://twitter.com/webstepsolutions", label: "Twitter",   hoverColor: "#1da1f2" },
-    { icon: <FaYoutube size={15} />,   href: "https://youtube.com/@webstepsolutions", label: "YouTube",   hoverColor: "#ff0000" },
+    // { icon: <FaFacebookF size={15} />, href: "https://facebook.com/webstepsolutions", label: "Facebook",  hoverColor: "#1877f2" },
+    // { icon: <FaInstagram size={15} />, href: "https://instagram.com/webstepsolutions", label: "Instagram", hoverColor: "#e1306c" },
+    { icon: <FaLinkedinIn size={15} />, href: "https://www.linkedin.com/company/webstep-solutions/", label: "LinkedIn", hoverColor: "#0077b5" },
+    { icon: <FaTwitter size={15} />,   href: "#", label: "Twitter",   hoverColor: "#1da1f2" },
+    // { icon: <FaYoutube size={15} />,   href: "https://youtube.com/@webstepsolutions", label: "YouTube",   hoverColor: "#ff0000" },
 ];
 
 const quickLinks = [

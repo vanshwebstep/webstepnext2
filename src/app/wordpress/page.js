@@ -1,16 +1,16 @@
-import Wp from '@/components/Wp/Wp';
 import React from 'react';
+import Wp from '@/components/Wp/Wp';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
-
 export async function generateMetadata() {
-  const dynamicSeo = await fetchSeoMetadata('wordpress');
+  const dynamicSeo = await fetchSeoMetadata("wordpress");
   return {
-    title: dynamicSeo.title || "Webstep Solutions",
-    description: dynamicSeo.description || "Enterprise Software Development at Scale",
+    title: dynamicSeo.title || "WordPress Development Services | Custom Themes & Plugins",
+    description: dynamicSeo.description || "Hand-coded WordPress themes, custom plugins and headless builds from your Figma designs. No page-builder bloat. Request a WordPress quote.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
   };
 }
-export default function WordpressPage() {
+
+export default function Page() {
   return <Wp />;
 }

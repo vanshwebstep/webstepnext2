@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube,FaLinkedinIn,FaTwitter } from 'react-icons/fa'
 const BlogSidebar = () => {
     return (
         <>
@@ -9,10 +9,12 @@ const BlogSidebar = () => {
                     <h6>follow us </h6>
                     <div className="follow-us-box ">
                         <ul className='devider'>
-                            <li className='bg-blue'><FaFacebook />facebook</li>
-                            <li className='bg-gradient'><FaInstagram />instagram</li>
-                            <li className='bg-red'><FaYoutube />youtube</li>
-                            <li className='bg-green'><FaWhatsapp />whatsapp</li>
+                            {/* <li className='bg-blue'><FaFacebook />facebook</li> */}
+                            {/* <li className='bg-gradient'><FaInstagram />instagram</li> */}
+                            {/* <li className='bg-red'><FaYoutube />youtube</li> */}
+                            {/* <li className='bg-green'><FaWhatsapp />whatsapp</li> */}
+                            <li className='bg-blue'><FaLinkedinIn />linkedin</li>
+                            <li className='bg-blue'><FaTwitter />twitter</li>
                         </ul>
                     </div>
                 </div>

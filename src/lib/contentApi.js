@@ -177,7 +177,7 @@ export async function submitNewsletter(payload) {
 export async function fetchSeoMetadata(pageUrl) {
   try {
     const res = await fetch(`${BASE_URL}/api/seo.php?page_url=${encodeURIComponent(pageUrl)}`, {
-      cache: 'no-store',
+      next: { revalidate: 60 },
     });
     if (!res.ok) return {};
     const json = await res.json();

@@ -233,7 +233,7 @@ const ProjectCard = ({ project, index }) => (
 );
 
 // ── Main Work component ────────────────────────────────────────────────────────
-const Work = () => {
+const WorkPortfolio = () => {
     const [activeFilter, setActiveFilter] = useState("All");
     const [categories, setCategories] = useState(CATEGORIES);
     const [projects, setProjects] = useState(ALL_PROJECTS);
@@ -389,6 +389,6 @@ const Work = () => {
     );
 };
 
-export default Work;
+export default WorkPortfolio;
 
 
