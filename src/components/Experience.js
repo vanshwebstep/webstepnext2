@@ -15,11 +15,7 @@ const stats = [
 ];
 
 const reviews = [
-  {
-    name: 'Bradley Braun', role: 'Verified Client',
-    text: 'I enjoy working with Karan from Webstep Solutions, he is fluent in English and has excellent developmental skills.',
-    avatarBg: 'rgba(124,58,237,0.1)', avatarColor: '#7C3AED',
-  },
+
   {
     name: 'Bradley Braun', role: 'Verified Client',
     text: 'Webstep Solutions provided the deliverables in a timely and professional manner. They knows WordPress (as qwell as other platforms) and exceeded expectations.',

@@ -821,16 +821,6 @@ const AllStudies = ({ caseStudies, categories, onOpen }) => {
 const Testimonials = () => {
   const testimonials = [
     {
-      author: "Joseph White",
-      role: "Verified Client",
-      quote: "I enjoy working with Karan from Webstep Solutions, he is fluent in English and has excellent developmental skills.",
-      project: "WordPress & Dev",
-      color: "#7C3AED",
-      accent: "#ede9fe",
-      lightText: "#5b21b6",
-      initials: "BB",
-    },
-    {
       author: "Bradley Braun",
       role: "Verified Client",
       quote: "Webstep Solutions provided the deliverables in a timely and professional manner. They knows WordPress (as qwell as other platforms) and exceeded expectations.",
