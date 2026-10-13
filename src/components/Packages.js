@@ -34,9 +34,9 @@ const HOURLY_PACKAGES = [
     id: "hourly-junior",
     title: "Junior Developer",
     price: "8",
-    symbol: "$",
+    symbol: "USD ",
     pricedes: "/hour",
-    badge: "MAX $8 / HR",
+    // badge: "MAX $8 / HR",
     tagline: "Ideal for basic site updates, bug fixes, CSS styling & minor custom tweaks.",
     icon: FaLaptopCode,
     hoursText: "Junior Dev - $8/hr",
@@ -56,7 +56,7 @@ const HOURLY_PACKAGES = [
     id: "hourly-mid",
     title: "Mid-Level Developer",
     price: "14 - 15",
-    symbol: "$",
+    symbol: "USD ",
     pricedes: "/hour",
     badge: "MOST POPULAR HOURLY",
     isPopular: true,
@@ -80,9 +80,9 @@ const HOURLY_PACKAGES = [
     id: "hourly-senior",
     title: "Senior Developer",
     price: "25",
-    symbol: "$",
+    symbol: "USD ",
     pricedes: "/hour",
-    badge: "MAX $25 / HR",
+    // badge: "MAX $25 / HR",
     tagline: "Best for complex app architectures, lead dev, cloud optimization & scale.",
     icon: FaCrown,
     hoursText: "Senior Dev - $25/hr",
@@ -291,7 +291,7 @@ const Packages = ({ pageType = "packages" }) => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-4 sm:mb-6">
           <motion.a
-            href="https://www.upwork.com/agencies/webstep/"
+            // href="https://www.upwork.com/agencies/webstep/"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: -10 }}
@@ -370,13 +370,13 @@ const Packages = ({ pageType = "packages" }) => {
                       {pkg.pricedes ? (
                         <div className="flex items-baseline justify-center gap-1">
                           <span className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                            {pkg.symbol ? `${pkg.symbol}${pkg.price}` : pkg.price}
+                            {pkg.symbol ? `USD ${pkg.price}` : pkg.price}
                           </span>
                           <span className="text-slate-400 font-medium text-xs sm:text-sm">{pkg.pricedes}</span>
                         </div>
                       ) : (
                         <span className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 tracking-tight block py-1">
-                          {pkg.symbol ? `${pkg.symbol}${pkg.price}` : pkg.price}
+                          {pkg.symbol ? `USD ${pkg.price}` : pkg.price}
                         </span>
                       )}
                     </div>
@@ -548,4 +548,4 @@ const Packages = ({ pageType = "packages" }) => {
   );
 };
 
-export default Packages;
+export default Packages;

@@ -30,6 +30,9 @@ const services = [
 
   // AI & framework aliases
   "ai",
+  "ai-powered-websites",
+  "ai-websites",
+  "ai-automation",
   "ai-chatbots",
   "ai-integration",
   "react-js-dev",

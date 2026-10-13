@@ -134,8 +134,8 @@ export default function CustomizePackage() {
     return total;
   };
 
-  const planPrice = selectedPlan?.price != null
-    ? `${selectedPlan.symbol || '$'}${selectedPlan.price}${selectedPlan.pricedes || ''}`
+const planPrice = selectedPlan?.price != null
+    ? `${selectedPlan.symbol === '$' || !selectedPlan.symbol ? 'USD ' : selectedPlan.symbol}${selectedPlan.price}`
     : '';
 
   const handlePlanInquirySubmit = async (e) => {

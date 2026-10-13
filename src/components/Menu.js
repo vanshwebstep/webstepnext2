@@ -8,14 +8,18 @@ import {
     FiCode, FiSmartphone, FiTrendingUp, FiSearch,
     FiMail, FiPenTool, FiShoppingCart, FiMonitor,
     FiBriefcase, FiBookOpen, FiLayers,
-    FiLayout, FiFilm
+    FiLayout, FiFilm, FiCpu, FiZap, FiMessageSquare, FiArrowRight
 } from 'react-icons/fi';
 
 // ─── Submenu Data ─────────────────────────────────────────────────────────────
 
 const submenus = {
     services: {
-        featured: { label: "New", text: "AI-Powered Websites" },
+        featured: {
+            label: "New",
+            text: "AI-Powered Websites",
+            href: "/services/ai-powered-websites",
+        },
         groups: [
             {
                 heading: "Development",
@@ -24,6 +28,14 @@ const submenus = {
                     { name: "App Development",  href: "/services/app-development",  icon: FiSmartphone,   desc: "iOS & Android apps"       },
                     { name: "E-Commerce",       href: "/services/ecommerce",        icon: FiShoppingCart, desc: "Shopify, WooCommerce"     },
                     { name: "UI/UX Design",     href: "/services/ui-ux",            icon: FiLayout,       desc: "User-first interfaces"    },
+                ],
+            },
+            {
+                heading: "AI Solutions",
+                items: [
+                    { name: "AI Websites",      href: "/services/ai-powered-websites", icon: FiCpu,           desc: "Next.js & LLM web apps"  },
+                    { name: "AI Automation",    href: "/services/ai-automation",       icon: FiZap,           desc: "Autonomous workflows"    },
+                    { name: "AI Chatbots",      href: "/services/ai-chatbots",         icon: FiMessageSquare, desc: "24/7 Smart assistants"   },
                 ],
             },
             {
@@ -66,12 +78,34 @@ const MegaPanel = ({ data, mobile, closeMenu, pathname }) => {
     return (
     <div className={mobile ? "mt-2" : ""}>
         {data.featured && (
-            <div className={`flex items-center gap-2 mb-4 ${mobile ? "px-1" : ""}`}>
-                <span className="bg-[#FF1F8E] text-white text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full">
-                    {data.featured.label}
-                </span>
-                <span className="text-[11px] text-slate-500 font-medium">{data.featured.text}</span>
-            </div>
+            data.featured.href ? (
+                <Link
+                    href={data.featured.href}
+                    onClick={closeMenu}
+                    className={`group/featured flex items-center justify-between px-3 py-2.5 mb-4 rounded-xl border border-pink-100 bg-gradient-to-r from-pink-50/90 via-purple-50/50 to-sky-50/40 hover:from-pink-100 hover:via-purple-100/70 hover:to-sky-100/60 hover:border-[#FF1F8E]/40 hover:shadow-[0_4px_16px_rgba(255,31,142,0.12)] transition-all duration-200 cursor-pointer ${mobile ? "mx-1" : ""}`}
+                >
+                    <div className="flex items-center gap-2.5">
+                        <span className="bg-[#FF1F8E] text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full shadow-[0_2px_8px_rgba(255,31,142,0.35)] group-hover/featured:scale-105 transition-transform duration-200">
+                            {data.featured.label}
+                        </span>
+                        <span className="text-[12px] font-bold text-slate-800 group-hover/featured:text-[#FF1F8E] transition-colors flex items-center gap-1.5">
+                            {data.featured.text}
+                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#FF1F8E] animate-ping" />
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-1 text-[11px] font-bold text-[#FF1F8E] group-hover/featured:translate-x-1 transition-transform duration-200">
+                        <span className="hidden sm:inline">Explore</span>
+                        <FiArrowRight size={13} />
+                    </div>
+                </Link>
+            ) : (
+                <div className={`flex items-center gap-2 mb-4 ${mobile ? "px-1" : ""}`}>
+                    <span className="bg-[#FF1F8E] text-white text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full">
+                        {data.featured.label}
+                    </span>
+                    <span className="text-[11px] text-slate-500 font-medium">{data.featured.text}</span>
+                </div>
+            )
         )}
         <div className={`flex ${mobile ? "flex-col gap-4" : "gap-8"}`}>
             {data.groups.map((group, gi) => (
@@ -153,6 +187,7 @@ const Menu = ({ mobile = false, closeMenu, scrolled = false }) => {
                 "/services", "/php", "/fullstack", "/laravel", "/uiux",
                 "/wordpress", "/mobileApp", "/nodejs", "/softwaretesting",
                 "/seo", "/marketing",
+                "/ai-powered-websites", "/ai-automation", "/ai-chatbots",
             ],
         },
         {
@@ -244,7 +279,7 @@ const Menu = ({ mobile = false, closeMenu, scrolled = false }) => {
                                     </Link>
 
                                     <div className="absolute top-full left-0 pt-2 opacity-0 invisible pointer-events-none group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:pointer-events-auto transition-all duration-200 z-[100]">
-                                        <div className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-slate-100 p-5 min-w-[380px]">
+                                        <div className={`bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-slate-100 p-5 ${link.submenuKey === 'services' ? 'min-w-[380px] lg:min-w-[620px]' : 'min-w-[380px]'}`}>
                                             <MegaPanel
                                                 data={submenus[link.submenuKey]}
                                                 mobile={false}

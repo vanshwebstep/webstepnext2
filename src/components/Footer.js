@@ -30,13 +30,15 @@ const quickLinks = [
 ];
 
 const services = [
+    { name: "AI-Powered Websites", href: "/services/ai-powered-websites" },
+    { name: "AI Automation",       href: "/services/ai-automation" },
+    { name: "AI Chatbots",         href: "/services/ai-chatbots" },
     { name: "React & Next.js",     href: "/services/reactjs" },
     { name: "WordPress & Plugins", href: "/services/wordpress" },
     { name: "Shopify Themes & Apps", href: "/services/shopify" },
     { name: "Laravel & PHP",       href: "/services/laravel" },
     { name: "Industrial Training", href: "/industrial-training" },
     { name: "Hire Developers",     href: "/hire-full-time-developers" },
-    { name: "AI Chatbots",         href: "/services/ai" },
 ];
 
 const ColTitle = ({ children }) => (

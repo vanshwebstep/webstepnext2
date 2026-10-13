@@ -599,6 +599,72 @@ const ALL_SERVICES = {
       { id: "06", title: "Social Media", subTitle: "Content & Paid Ads", slug: "social-media" },
     ],
   },
+
+  "ai-powered-websites": {
+    id: "09", slug: "ai-powered-websites", title: "AI-Powered Websites", subTitle: "Next-Gen Intelligent Web Development",
+    tagline: "Smart. Adaptive. Context-aware. Built for the modern web.",
+    description: "We build ultra-fast, intelligent Next.js websites and web applications infused with custom LLMs, vector semantic search, automated lead qualification, and real-time personalized user experiences.",
+    tags: ["Next.js 15", "Vector RAG", "OpenAI & Claude", "Dynamic Personalization"],
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><line x1="9" y1="1" x2="9" y2="4" /><line x1="15" y1="1" x2="15" y2="4" /><line x1="9" y1="20" x2="9" y2="23" /><line x1="15" y1="20" x2="15" y2="23" /><line x1="20" y1="9" x2="23" y2="9" /><line x1="20" y1="14" x2="23" y2="14" /><line x1="1" y1="9" x2="4" y2="9" /><line x1="1" y1="14" x2="4" y2="14" /></svg>),
+    stats: [{ value: "3.8x", label: "Conversion Lift" }, { value: "< 800ms", label: "AI Latency" }, { value: "24/7", label: "Lead Capture" }, { value: "100%", label: "Brand Safe" }],
+    features: [
+      { title: "Semantic RAG Search", desc: "Natural language search understanding visitor intent in plain English without keyword guessing.", icon: "◈" },
+      { title: "Autonomous Chatbots", desc: "Brand-trained AI assistants resolving queries, qualifying leads, and booking meetings 24/7.", icon: "⬡" },
+      { title: "Dynamic Personalization", desc: "Websites that dynamically adapt headlines, layouts, and recommendations based on visitor behavior.", icon: "◎" },
+      { title: "Programmatic SEO", desc: "Autonomous AI-optimized landing page generation and schema markup for high-intent search terms.", icon: "⬢" },
+      { title: "Predictive Lead Scoring", desc: "Automated intent scoring and enriched intelligence dispatched directly to sales via Slack/CRM.", icon: "◉" },
+      { title: "Enterprise Guardrails", desc: "Strict prompt injection firewalls, PII redaction, and verified knowledge boundaries.", icon: "◐" },
+    ],
+    process: [
+      { step: "01", title: "Discovery & Knowledge Audit", desc: "We structure your business documentation and FAQs into high-dimensional vector embeddings." },
+      { step: "02", title: "Next.js UI/UX Architecture", desc: "We design a high-converting, mobile-first interface tailored to your brand identity." },
+      { step: "03", title: "LLM & RAG Integration", desc: "Engineered prompt chains, vector similarity search, and anti-hallucination guardrails." },
+      { step: "04", title: "Testing & Security Checks", desc: "Latency tuning, cross-browser validation, and security prompt injection testing." },
+      { step: "05", title: "Deployment & Analytics", desc: "CDN edge deployment with real-time sentiment, token usage, and conversion analytics." },
+    ],
+    faqs: [
+      { q: "How is an AI website different from a regular website?", a: "Traditional websites are static brochures. An AI website engages visitors in real-time, answers complex questions from your verified data, and captures leads autonomously." },
+      { q: "Can you add AI to my existing website?", a: "Yes — we can build full Next.js AI platforms from scratch or embed intelligent AI modules into WordPress, Shopify, or React websites." },
+      { q: "How do you prevent AI hallucinations?", a: "We utilize Retrieval-Augmented Generation (RAG) with strict boundary prompts ensuring the AI only answers based on verified company data." },
+      { q: "What are the running costs for AI APIs?", a: "Modern LLM APIs are very cost-effective, typically costing between $10 to $40/month for average business traffic, augmented by semantic caching." },
+    ],
+    relatedServices: [
+      { id: "10", title: "AI Automation", subTitle: "Autonomous Workflows", slug: "ai-automation" },
+      { id: "11", title: "AI Chatbots", subTitle: "24/7 Smart Assistants", slug: "ai-chatbots" },
+    ],
+  },
+
+  "ai-automation": {
+    id: "10", slug: "ai-automation", title: "AI Automation & Workflows", subTitle: "Autonomous Operations & Integrations",
+    tagline: "Automate repetitive tasks, connect LLMs to your data, scale operations 10x.",
+    description: "Eliminate manual data entry, streamline lead qualification, and bridge your website with autonomous multi-agent pipelines and CRM sync.",
+    tags: ["LangGraph", "Zapier & n8n", "CRM Integration", "Doc Processing"],
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>),
+    stats: [{ value: "85%", label: "Hours Saved" }, { value: "99.8%", label: "Accuracy" }, { value: "10x", label: "Velocity" }, { value: "0s", label: "Wait Time" }],
+    features: [
+      { title: "Lead Routing & CRM Sync", desc: "Instant intent qualification and enriched dossiers dispatched to sales reps via Slack and HubSpot.", icon: "◈" },
+      { title: "Intelligent Document Parsing", desc: "Extract line items from invoices, receipts, and contracts into database records in seconds.", icon: "⬡" },
+      { title: "Email Autopilot", desc: "Sort incoming business emails, draft hyper-personalized follow-ups, and automate scheduling.", icon: "◎" },
+      { title: "E-Commerce Automation", desc: "Automated supplier restocking, competitor price monitoring, and catalog enrichment.", icon: "⬢" },
+      { title: "Internal Knowledge Base", desc: "Sync Notion, Google Drive, Jira, and Slack into a unified internal vector search engine.", icon: "◉" },
+      { title: "Multi-Agent Systems", desc: "Deploy cooperating AI agents that research, validate compliance, and execute tasks autonomously.", icon: "◐" },
+    ],
+    process: [
+      { step: "01", title: "Operational Audit", desc: "We identify your highest friction repetitive workflows and calculate time/cost ROI." },
+      { step: "02", title: "Architecture & Data Mapping", desc: "Design secure webhook triggers and multi-agent logic chains across your existing tools." },
+      { step: "03", title: "Prompt & Agent Engineering", desc: "Build tailored agents with deterministic fallback guardrails and validation layers." },
+      { step: "04", title: "Testing & Team Walkthrough", desc: "Rigorous stress testing and employee walkthrough for seamless daily adoption." },
+      { step: "05", title: "Continuous Optimization", desc: "Ongoing monitoring of success rates, latency, and automated exception logging." },
+    ],
+    faqs: [
+      { q: "What software can you connect with AI?", a: "We connect CRMs (HubSpot, Salesforce), communication (Slack, WhatsApp), ERPs (QuickBooks, Xero), and databases (Postgres, Supabase) via APIs and webhooks." },
+      { q: "What happens if the AI encounters an edge case?", a: "We build human-in-the-loop safeguards. High-stakes actions queue up a 1-click confirmation alert for human approval before executing." },
+    ],
+    relatedServices: [
+      { id: "09", title: "AI-Powered Websites", subTitle: "Smart Web Apps", slug: "ai-powered-websites" },
+      { id: "11", title: "AI Chatbots", subTitle: "24/7 Smart Assistants", slug: "ai-chatbots" },
+    ],
+  },
 };
 
 // ─── SLUG ALIASES ─────────────────────────────────────────────────────────────
@@ -611,9 +677,9 @@ const SLUG_ALIASES = {
   "nodejs": "nodejs-development",
   "php": "php-development",
   "wordpress": "wordpress-website",
-  "ai": "full-stack-development",
-  "ai-chatbots": "full-stack-development",
-  "ai-integration": "full-stack-development",
+  "ai": "ai-powered-websites",
+  "ai-websites": "ai-powered-websites",
+  "ai-integration": "ai-automation",
   "react-js-dev": "web-development",
   "next-js-dev": "web-development",
   "vue-js-dev": "web-development",
