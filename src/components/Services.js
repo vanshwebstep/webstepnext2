@@ -7,7 +7,7 @@ const SERVICES = [
   {
     id: "01",
     title: "React.js & Next.js",
-    slug: "web-development",
+    slug: "reactjs",
     subTitle: "Frontend Excellence",
     description:
       "Dynamic, blazing-fast web applications built with React.js and Next.js. We deliver server-side rendering, optimized performance, and pixel-perfect UIs that delight users across every device.",
@@ -23,7 +23,7 @@ const SERVICES = [
   {
     id: "02",
     title: "Vue.js Development",
-    slug: "full-stack-development",
+    slug: "web-development",
     subTitle: "Progressive Frameworks",
     description:
       "Elegant, maintainable frontend applications with Vue.js. Perfect for interactive dashboards, SPAs, and feature-rich interfaces that need to scale with your business.",
@@ -41,7 +41,7 @@ const SERVICES = [
   {
     id: "03",
     title: "Node.js & PHP / Laravel",
-    slug: "laravel-development",
+    slug: "laravel",
     subTitle: "Robust Backend Systems",
     description:
       "Secure, high-performance backend solutions using Node.js, PHP, and Laravel. REST APIs, database architecture, authentication, and server logic built to handle real-world scale.",
@@ -57,7 +57,7 @@ const SERVICES = [
   {
     id: "04",
     title: "WordPress & WooCommerce",
-    slug: "wordpress-website",
+    slug: "wordpress",
     subTitle: "CMS Powerhouse",
     description:
       "Custom WordPress websites, hand-crafted themes, and powerful plugins tailored to your brand. From simple blogs to full WooCommerce stores — we build WordPress right.",
@@ -73,7 +73,7 @@ const SERVICES = [
   {
     id: "05",
     title: "Shopify Themes & Apps",
-    slug: "ecommerce",
+    slug: "shopify",
     subTitle: "eCommerce Solutions",
     description:
       "Custom Shopify storefronts and private apps built to convert. We create high-performing themes and Shopify apps that give your online store a unique edge and seamless shopping experience.",
@@ -90,7 +90,7 @@ const SERVICES = [
   {
     id: "06",
     title: "AI Chatbots & Integration",
-    slug: "full-stack-development",
+    slug: "ai-chatbots",
     subTitle: "Intelligent Automation",
     description:
       "Custom AI chatbots and smart API integrations that automate support, qualify leads, and supercharge your workflows. We bring the power of AI into your product — practically and effectively.",

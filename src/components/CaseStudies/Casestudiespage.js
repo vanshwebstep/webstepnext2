@@ -46,7 +46,7 @@ const CASE_STUDIES = [
     ],
     deliverables: ["Custom booking engine", "Patient mobile app", "Admin dashboard", "Automated SMS/Email reminders", "Real-time slot management"],
     testimonial: {
-      quote: "I enjoy working with Karan from Webstep Solutions, he is fluent in English and has excellent developmental skills. Webstep Solutions provided the deliverables in a timely and professional manner. They know WordPress (as well as other platforms) and exceeded expectations.",
+      quote: "I enjoy working with the Webstep Solutions team, they are fluent in English and have excellent developmental skills. Webstep Solutions provided the deliverables in a timely and professional manner. They know WordPress (as well as other platforms) and exceeded expectations.",
       author: "Bradley Braun",
       role: "Verified Client",
       initials: "BB",
@@ -80,7 +80,7 @@ const CASE_STUDIES = [
     ],
     deliverables: ["Headless React storefront", "Laravel commerce API", "Redis caching layer", "Stripe payment integration", "AWS auto-scaling setup"],
     testimonial: {
-      quote: "Karan from Webstep Solutions saved the day for us! What began as some final finishes before launching to include membership account registration pages set up, adding icons and linking our social media accounts with the site, and some testing developed into a significant list of issues that Karan was able to discover and provide a various array of fixes including writing additional code, installing the appropriate plugins and a vast amount of troubleshooting and testing. Karan possesses an immense level of skills, when he says he will work, he does. When he says he will be finished, he meets the deadline. When he knows issues are critical, he stays the course until the issues are resolved. Like other business owners, we obviously have high expectations when hiring staff and engaging contractors. Karan exceeded our expectations. 10 stars!",
+      quote: "Webstep Solutions saved the day for us! What began as some final finishes before launching to include membership account registration pages set up, adding icons and linking our social media accounts with the site, and some testing developed into a significant list of issues that Webstep Solutions was able to discover and provide a various array of fixes including writing additional code, installing the appropriate plugins and a vast amount of troubleshooting and testing. The team possesses an immense level of skills, when they say they will work, they do. When they say they will be finished, they meet the deadline. When they know issues are critical, they stay the course until the issues are resolved. Like other business owners, we obviously have high expectations when hiring staff and engaging contractors. Webstep Solutions exceeded our expectations. 10 stars!",
       author: "Magnus Stihl",
       role: "Business Owner",
       initials: "MS",
@@ -114,7 +114,7 @@ const CASE_STUDIES = [
     ],
     deliverables: ["LMS web platform", "Live WebRTC classrooms", "Mobile student app", "Automated grading engine", "Analytics dashboard"],
     testimonial: {
-      quote: "Karan did an excellent job in a timely manner. He added his own design concepts without being asked, which helped make the project even better. I highly recommend Karan and am already hiring him for a second frontend project.",
+      quote: "The Webstep Solutions team did an excellent job in a timely manner. They added their own design concepts without being asked, which helped make the project even better. I highly recommend Webstep Solutions and am already hiring them for a second frontend project.",
       author: "Nathanael Murphy",
       role: "Frontend Client",
       initials: "NM",
@@ -148,7 +148,7 @@ const CASE_STUDIES = [
     ],
     deliverables: ["IoT SaaS platform", "Mobile scanner app", "Real-time GPS dashboard", "Automated audit trails", "WMS API integration"],
     testimonial: {
-      quote: "Karan was excellent. He went above and beyond and can perform any task when it comes to website design.",
+      quote: "Webstep Solutions was excellent. They went above and beyond and can perform any task when it comes to website design.",
       author: "Syga Thomas",
       role: "Verified Client",
       initials: "ST",
@@ -182,7 +182,7 @@ const CASE_STUDIES = [
     ],
     deliverables: ["AI insights engine", "Investment dashboard", "Automated rebalancing", "Tax report generator", "Plaid bank integration"],
     testimonial: {
-      quote: "The freelancer was very professional, well prepared and had a lot of patience with us.",
+      quote: "The Webstep Solutions team was very professional, well prepared and had a lot of patience with us.",
       author: "Amir Dagan",
       role: "Verified Client",
       initials: "AD",
@@ -827,7 +827,7 @@ const Testimonials = () => {
     {
       author: "Bradley Braun",
       role: "Verified Client",
-      quote: "Webstep Solutions provided the deliverables in a timely and professional manner. They knows WordPress (as qwell as other platforms) and exceeded expectations.",
+      quote: "Webstep Solutions provided the deliverables in a timely and professional manner. They know WordPress (as well as other platforms) and exceeded expectations.",
       project: "WordPress & Delivery",
       color: "#6366F1",
       accent: "#e0e7ff",
@@ -837,7 +837,7 @@ const Testimonials = () => {
     {
       author: "Magnus Stihl",
       role: "Business Owner",
-      quote: "Karan from Webstep Solutions saved the day for us! What began as some final finishes before launching to include membership account registration pages set up, adding icons and linking our social media accounts with the site, and some testing developed into a significant list of issues that Karan was able to discover and provide a various array of fixes including writing additional code, installing the appropriate plugins and a vast amount of troubleshooting and testing. Karan possesses an immense level of skills, when he says he will work, he does. When he says he will be finished, he meets the deadline. When he knows issues are critical, he stays the course until the issues are resolved. Like other business owners, we obviously have high expectations when hiring staff and engaging contractors. Karan exceeded our expectations. 10 stars!",
+      quote: "Webstep Solutions saved the day for us! What began as some final finishes before launching to include membership account registration pages set up, adding icons and linking our social media accounts with the site, and some testing developed into a significant list of issues that Webstep Solutions was able to discover and provide a various array of fixes including writing additional code, installing the appropriate plugins and a vast amount of troubleshooting and testing. The team possesses an immense level of skills, when they say they will work, they do. When they say they will be finished, they meet the deadline. When they know issues are critical, they stay the course until the issues are resolved. Like other business owners, we obviously have high expectations when hiring staff and engaging contractors. Webstep Solutions exceeded our expectations. 10 stars!",
       project: "Membership & Custom Dev",
       color: "#059669",
       accent: "#d1fae5",
@@ -847,7 +847,7 @@ const Testimonials = () => {
     {
       author: "Syga Thomas",
       role: "Verified Client",
-      quote: "Karan was excellent. He went above and beyond and can perform any task when it comes to website design.",
+      quote: "Webstep Solutions was excellent. They went above and beyond and can perform any task when it comes to website design.",
       project: "Website Design",
       color: "#0891B2",
       accent: "#e0f2fe",
@@ -857,7 +857,7 @@ const Testimonials = () => {
     {
       author: "Nathanael Murphy",
       role: "Frontend Client",
-      quote: "Karan did an excellent job in a timely manner. He added his own design concepts without being asked, which helped make the project even better. I highly recommend Karan and am already hiring him for a second frontend project.",
+      quote: "The Webstep Solutions team did an excellent job in a timely manner. They added their own design concepts without being asked, which helped make the project even better. I highly recommend Webstep Solutions and am already hiring them for a second frontend project.",
       project: "UI/UX & Frontend",
       color: "#DB2777",
       accent: "#fce7f3",
@@ -877,7 +877,7 @@ const Testimonials = () => {
     {
       author: "Amir Dagan",
       role: "Verified Client",
-      quote: "The freelancer was very professional, well prepared and had a lot of patience with us",
+      quote: "The Webstep Solutions team was very professional, well prepared and had a lot of patience with us",
       project: "Web Development",
       color: "#EA580C",
       accent: "#ffedd5",

@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("blog");
   return {
-    title: dynamicSeo.title || "Web Development Blog | Webstep Solutions",
-    description: dynamicSeo.description || "Practical guides on choosing platforms, hiring developers and building better websites, from the Webstep development team.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "Web Development Insights, Guides & Trends | Webstep Solutions Blog",
+    description: dynamicSeo.description || "Practical guides, architecture deep-dives, and performance tips on WordPress, Shopify, React, Next.js, and Laravel from the Webstep Solutions team.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/blog/",
+    }
   };
 }
 
 export default function Page() {
-  return <Blog />;
+  return (
+    <>
+      <Blog />
+    </>
+  );
 }

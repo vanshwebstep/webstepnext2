@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("web-development");
   return {
-    title: dynamicSeo.title || "Custom Web Development Services | Next.js, React, Laravel",
-    description: dynamicSeo.description || "Custom websites and web apps built on Next.js, React and Laravel. Fast, SEO-ready code from a dedicated team. Tell us about your project.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "Custom Web Development Services | Next.js, React & Laravel | Webstep Solutions",
+    description: dynamicSeo.description || "High-performance custom web applications built on Next.js, React, and modern full-stack architectures. Fast, accessible, and engineered for conversion.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/web-development/",
+    }
   };
 }
 
 export default function Page() {
-  return <FullStack />;
+  return (
+    <>
+      <FullStack />
+    </>
+  );
 }

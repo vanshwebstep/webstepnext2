@@ -18,6 +18,7 @@ const roboto = Roboto({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://webstepdev.com"),
   title: "Webstep Solutions",
   description: "Enterprise Software Development at Scale",
   icons: {

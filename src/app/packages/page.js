@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("packages");
   return {
-    title: dynamicSeo.title || "Web Development Packages & Pricing | Webstep",
-    description: dynamicSeo.description || "Choose a clear web development package for your project, or customize one to fit your needs. See what is included and request a quote.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "Web Development Packages & Transparent Pricing | Webstep Solutions",
+    description: dynamicSeo.description || "Transparent web development packages for websites, eCommerce stores, and dedicated developer hiring. Compare plans and request a custom quote.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/packages/",
+    }
   };
 }
 
 export default function Page() {
-  return <Packages />;
+  return (
+    <>
+      <Packages />
+    </>
+  );
 }

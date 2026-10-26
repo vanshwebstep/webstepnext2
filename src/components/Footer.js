@@ -13,11 +13,7 @@ import { THANK_YOU_ROUTE } from "@/lib/routes";
 const logo = assetImage("logo.png");
 
 const socialLinks = [
-    // { icon: <FaFacebookF size={15} />, href: "https://facebook.com/webstepsolutions", label: "Facebook",  hoverColor: "#1877f2" },
-    // { icon: <FaInstagram size={15} />, href: "https://instagram.com/webstepsolutions", label: "Instagram", hoverColor: "#e1306c" },
     { icon: <FaLinkedinIn size={15} />, href: "https://www.linkedin.com/company/webstep-solutions/", label: "LinkedIn", hoverColor: "#0077b5" },
-    { icon: <FaTwitter size={15} />,   href: "#", label: "Twitter",   hoverColor: "#1da1f2" },
-    // { icon: <FaYoutube size={15} />,   href: "https://youtube.com/@webstepsolutions", label: "YouTube",   hoverColor: "#ff0000" },
 ];
 
 const quickLinks = [
@@ -30,15 +26,17 @@ const quickLinks = [
 ];
 
 const services = [
+    { name: "Web Development", href: "/services/web-development" },
+    { name: "WordPress Development", href: "/services/wordpress" },
+    { name: "Shopify Development", href: "/services/shopify" },
+    { name: "WooCommerce Development", href: "/services/woocommerce" },
+    { name: "Laravel & PHP", href: "/services/laravel" },
+    { name: "React & Next.js", href: "/services/reactjs" },
     { name: "AI-Powered Websites", href: "/services/ai-powered-websites" },
-    { name: "AI Automation",       href: "/services/ai-automation" },
-    { name: "AI Chatbots",         href: "/services/ai-chatbots" },
-    { name: "React & Next.js",     href: "/services/reactjs" },
-    { name: "WordPress & Plugins", href: "/services/wordpress" },
-    { name: "Shopify Themes & Apps", href: "/services/shopify" },
-    { name: "Laravel & PHP",       href: "/services/laravel" },
-    { name: "Industrial Training", href: "/industrial-training" },
-    { name: "Hire Developers",     href: "/hire-full-time-developers" },
+    { name: "AI Chatbots", href: "/services/ai-chatbots" },
+    { name: "Website Maintenance", href: "/services/website-maintenance" },
+    { name: "UI/UX Design", href: "/services/ui-ux" },
+    { name: "Hire Dedicated Developers", href: "/hire-full-time-developers" },
 ];
 
 const ColTitle = ({ children }) => (
@@ -118,12 +116,17 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="space-y-6">
                         <Link href="/" className="flex w-fit items-center">
-                            <Image src={logo} alt="Webstep Solutions Logo" width={170} />
+                            <Image src={logo} alt="Webstep Solutions logo" width={170} />
                         </Link>
 
                         <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                            Webstep Solutions builds websites, apps, and AI-powered digital products — for startups, small businesses, and enterprises across the globe.
+                            Webstep Solutions builds websites, apps, and AI-powered digital products — for startups, growing businesses, and enterprises across the globe.
                         </p>
+
+                        <div className="text-xs text-slate-500 font-medium space-y-1">
+                            <p className="font-bold text-slate-700">Webstep Solutions HQ</p>
+                            <p>E-45 Industrial Area Phase-8, Mohali, Punjab, India</p>
+                        </div>
 
                         {/* Social icons */}
                         <div className="flex items-center gap-2">
@@ -148,7 +151,7 @@ const Footer = () => {
                             </div>
                             <div>
                                 <p className="text-[9px] uppercase tracking-widest text-slate-500 font-black mb-0.5">Talk to us</p>
-                                <a href="tel:7973938927" className="text-slate-900 font-black text-sm hover:text-[#E879F9] transition-colors">
+                                <a href="tel:+917973938927" className="text-slate-900 font-black text-sm hover:text-[#E879F9] transition-colors">
                                     +91 79739-38927
                                 </a>
                             </div>

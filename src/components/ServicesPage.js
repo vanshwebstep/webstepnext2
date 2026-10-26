@@ -9,7 +9,7 @@ const servicesData = [
   {
     id: '01', icon: <FaReact />,
     title: 'React.js Dev', fullTitle: 'React.js Development',
-    tag: 'Frontend Architecture', span: 'b1',
+    tag: 'Frontend Architecture', span: 'b1', slug: 'reactjs',
     accent: '#0891B2', accentBg: '#ECFEFF', accentBorder: '#A5F3FC',
     headline: 'Build Lightning-Fast, Component-Driven Web Interfaces',
     description: 'We engineer high-performance single-page applications (SPAs), complex enterprise dashboards, and real-time interactive user interfaces using modern React ecosystem features like Hooks, Context API, and Concurrent rendering.',
@@ -19,7 +19,7 @@ const servicesData = [
   {
     id: '02', icon: <SiNextdotjs />,
     title: 'Next.js Dev', fullTitle: 'Next.js Development',
-    tag: 'Full Stack Framework', span: 'b2',
+    tag: 'Full Stack Framework', span: 'b2', slug: 'web-development',
     accent: '#0f172a', accentBg: '#F8FAFC', accentBorder: '#CBD5E1',
     headline: 'Production-Ready Apps with Absolute SEO Dominance',
     description: 'Leverage the power of Server-Side Rendering (SSR), Static Site Generation (SSG), and Edge Computing. We build SEO-optimized corporate web applications that score 100 on Core Web Vitals.',
@@ -29,7 +29,7 @@ const servicesData = [
   {
     id: '03', icon: <FaVuejs />,
     title: 'Vue.js Dev', fullTitle: 'Vue.js Development',
-    tag: 'Progressive Frontend', span: 'b3',
+    tag: 'Progressive Frontend', span: 'b3', slug: 'web-development',
     accent: '#059669', accentBg: '#ECFDF5', accentBorder: '#A7F3D0',
     headline: 'Elegant UI Frameworks for Fluid User Transitions',
     description: 'Crafting maintainable, flexible, and progressive frontend applications. Vue.js allows us to build powerful user interfaces that scale organically alongside your active business models.',
@@ -39,7 +39,7 @@ const servicesData = [
   {
     id: '04', icon: <FaNodeJs />,
     title: 'Node.js Backend', fullTitle: 'Node.js Core Infrastructure',
-    tag: 'Backend Engineering', span: 'b4',
+    tag: 'Backend Engineering', span: 'b4', slug: 'nodejs-development',
     accent: '#16A34A', accentBg: '#F0FDF4', accentBorder: '#BBF7D0',
     headline: 'Event-Driven Microservices Built for High Concurrency',
     description: 'Powering your web ecosystem with asynchronous, scalable backends. Our Node.js structures easily process millions of requests, real-time audio/video streaming, and complex enterprise data layers.',
@@ -49,7 +49,7 @@ const servicesData = [
   {
     id: '05', icon: <FaPhp />,
     title: 'PHP Dev', fullTitle: 'Custom PHP Solutions',
-    tag: 'Backend Automation', span: 'b5',
+    tag: 'Backend Automation', span: 'b5', slug: 'php-development',
     accent: '#7C3AED', accentBg: '#F5F3FF', accentBorder: '#DDD6FE',
     headline: 'Reliable Server-Side Scripts & Relational Frameworks',
     description: 'From customized modular data scripts to full-scale legacy management architectures, we build robust PHP frameworks capable of handling extensive data transformations securely.',
@@ -59,7 +59,7 @@ const servicesData = [
   {
     id: '06', icon: <SiLaravel />,
     title: 'Laravel Dev', fullTitle: 'Laravel Frameworks',
-    tag: 'Enterprise Backend', span: 'b6',
+    tag: 'Enterprise Backend', span: 'b6', slug: 'laravel',
     accent: '#DC2626', accentBg: '#FEF2F2', accentBorder: '#FECACA',
     headline: 'Clean MVC Structures Engineered for Absolute Security',
     description: 'Deploying robust web apps with native authentication, automated migration handling, and expressive backend syntaxes. Ideal for safe SaaS portals and secure financial applications.',
@@ -69,7 +69,7 @@ const servicesData = [
   {
     id: '07', icon: <FaWordpress />,
     title: 'WordPress Core', fullTitle: 'WordPress Core Setup',
-    tag: 'Content Management', span: 'b7',
+    tag: 'Content Management', span: 'b7', slug: 'wordpress',
     accent: '#0369A1', accentBg: '#F0F9FF', accentBorder: '#BAE6FD',
     headline: 'Headless or Standalone CMS Configured for Velocity',
     description: 'Transforming standard content engines into absolute speed hubs. We deliver headless WordPress decoupled architectures using REST APIs or GraphQL alongside secure standard environments.',
@@ -79,7 +79,7 @@ const servicesData = [
   {
     id: '08', icon: <FiLayers />,
     title: 'WP Themes', fullTitle: 'Bespoke Theme Engineering',
-    tag: 'CMS Style Layer', span: 'b8',
+    tag: 'CMS Style Layer', span: 'b8', slug: 'wordpress',
     accent: '#0284c7', accentBg: '#F0FAFF', accentBorder: '#BEE7FD',
     headline: 'Zero Bloat, Pixel-Perfect Theme Infrastructure',
     description: 'We avoid pre-made heavy templates completely. Our customized WordPress themes are hand-coded from scratch using strict semantic guidelines to promise maximum conversions.',
@@ -89,7 +89,7 @@ const servicesData = [
   {
     id: '09', icon: <FiCode />,
     title: 'WP Plugins', fullTitle: 'Custom Plugin Development',
-    tag: 'CMS Custom Engines', span: 'b9',
+    tag: 'CMS Custom Engines', span: 'b9', slug: 'wordpress',
     accent: '#4F46E5', accentBg: '#EEF2FF', accentBorder: '#C7D2FE',
     headline: 'Tailored Functionalities with No Performance Drops',
     description: 'Extend your standard operations securely. We write precise WordPress plugins following WordPress.org official coding standards to integrate unique workflows without bloating systems.',
@@ -99,7 +99,7 @@ const servicesData = [
   {
     id: '10', icon: <FiPackage />,
     title: 'Shopify Themes', fullTitle: 'Shopify Storefront Design',
-    tag: 'eCommerce Retail', span: 'b10',
+    tag: 'eCommerce Retail', span: 'b10', slug: 'shopify',
     accent: '#059669', accentBg: '#ECFDF5', accentBorder: '#A7F3D0',
     headline: 'High-Converting Digital Stores Tuned for Sales',
     description: 'Maximize your average order values (AOV) with lightning-fast Liquid templates. We design custom storefront architectures built specifically to keep retention high and drop-offs minimal.',
@@ -109,7 +109,7 @@ const servicesData = [
   {
     id: '11', icon: <FiShoppingCart />,
     title: 'Shopify Apps', fullTitle: 'Shopify App Frameworks',
-    tag: 'eCommerce Utility', span: 'b11',
+    tag: 'eCommerce Utility', span: 'b11', slug: 'shopify',
     accent: '#0D9488', accentBg: '#F0FDFA', accentBorder: '#99F6E4',
     headline: 'Synchronize Catalog Dependencies via Custom Tools',
     description: 'Build robust internal or public Shopify extensions. Our team creates secure embedded applications that control inventory logic, logistics routing, and real-time custom product builders.',
@@ -119,7 +119,7 @@ const servicesData = [
   {
     id: '12', icon: <FiCpu />,
     title: 'AI Chatbots', fullTitle: 'Autonomous AI Chatbots',
-    tag: 'Artificial Intelligence', span: 'b12',
+    tag: 'Artificial Intelligence', span: 'b12', slug: 'ai-chatbots',
     accent: '#E11D48', accentBg: '#FFF1F2', accentBorder: '#FECDD3',
     headline: 'Intelligent Support Agents Operating 24/7 Contextually',
     description: 'Automate customer queries up to 80% without losing human touch. We build conversational agents that understand customer intents and resolve system tickets dynamically.',
@@ -129,7 +129,7 @@ const servicesData = [
   {
     id: '13', icon: <FiGlobe />,
     title: 'AI Integration', fullTitle: 'Enterprise AI Syncing',
-    tag: 'Artificial Intelligence', span: 'b13',
+    tag: 'Artificial Intelligence', span: 'b13', slug: 'ai-automation',
     accent: '#D946EF', accentBg: '#FDF4FF', accentBorder: '#F5D0FE',
     headline: 'Embed Machine Learning Logic into Standard Workflows',
     description: 'Supercharge your daily enterprise tools. We link OpenAI, Anthropic, or fine-tuned custom open-source models right into your internal CRMs or product engines to handle automated categorization.',
@@ -224,9 +224,19 @@ function BentoBox({ service, spanStyle, onSelect }) {
         <p style={{ fontSize: '12px', color: '#64748b', lineHeight: 1.6, fontWeight: 500, flex: 1, margin: '0 0 0.8rem 0' }}>
           {service.description}
         </p>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: service.accent }}>
-          Explore
-          <FiArrowRight size={11} style={{ transform: hovered ? 'translateX(3px)' : 'translateX(0)', transition: 'transform 0.2s' }} />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: 'auto' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: service.accent }}>
+            Explore
+            <FiArrowRight size={11} style={{ transform: hovered ? 'translateX(3px)' : 'translateX(0)', transition: 'transform 0.2s' }} />
+          </div>
+          <Link
+            href={`/services/${service.slug}`}
+            onClick={(e) => e.stopPropagation()}
+            style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#64748b' }}
+            className="hover:underline"
+          >
+            Direct Page &rarr;
+          </Link>
         </div>
       </div>
     </div>
@@ -293,18 +303,18 @@ const ServicesPage = () => {
               </span>
               <div style={{ width: '36px', height: '2px', background: '#7C3AED' }} />
             </div>
-            <h2 style={{
+            <h1 style={{
               fontSize: isMobile ? '2rem' : 'clamp(2.5rem, 5vw, 3.5rem)',
               fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', lineHeight: 1.1, margin: 0,
             }}>
-              13 Specialized Services,{' '}
+              Web Development Services:{' '}
               <span style={{
                 background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)",
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
               }}>
-                One Infrastructure
+                13 Specialized Technologies
               </span>
-            </h2>
+            </h1>
             <p style={{ fontSize: isMobile ? '14px' : '15px', color: '#64748b', marginTop: '0.75rem', fontWeight: 500, maxWidth: '550px', margin: '0.75rem auto 0', lineHeight: 1.5 }}>
               Click any architecture node below to inspect core framework capabilities, specialized features, and deployment procedures instantly.
             </p>
@@ -435,8 +445,8 @@ const ServicesPage = () => {
               </div>
 
               {/* Drawer Footer CTA */}
-              <div style={{ padding: '1.25rem 1.5rem', borderTop: '1px solid #f1f5f9', background: '#fff' }}>
-                <Link href="/customize-package" onClick={handleCloseDrawer} style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '1.25rem 1.5rem', borderTop: '1px solid #f1f5f9', background: '#fff', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <Link href={`/services/${selectedService.slug}`} onClick={handleCloseDrawer} style={{ textDecoration: 'none' }}>
                   <button
                     className="drawer-cta"
                     style={{
@@ -447,8 +457,15 @@ const ServicesPage = () => {
                       gap: '8px', transition: 'all 0.2s', boxShadow: `0 4px 20px ${selectedService.accent}30`
                     }}
                   >
-                    Initiate {selectedService.title.split(' ')[0]} Setup <FiTrendingUp size={14} />
+                    View Full {selectedService.title.split(' ')[0]} Service Details <FiArrowRight size={14} />
                   </button>
+                </Link>
+                <Link
+                  href="/customize-package"
+                  onClick={handleCloseDrawer}
+                  style={{ textDecoration: 'none', textAlign: 'center', fontSize: '12px', color: '#64748b', fontWeight: 600 }}
+                >
+                  Or customize your project package &rarr;
                 </Link>
               </div>
             </>

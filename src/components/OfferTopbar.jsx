@@ -16,10 +16,7 @@ const offers = [
 ];
 
 const socialLinks = [
-  // { icon: <FaFacebookF size={11} />, href: "https://facebook.com", hoverColor: "#1877f2", label: "Facebook" },
-  // { icon: <FaInstagram size={11} />, href: "https://instagram.com", hoverColor: "#e1306c", label: "Instagram" },
   { icon: <FaLinkedinIn size={11} />, href: "https://www.linkedin.com/company/webstep-solutions/", hoverColor: "#0077b5", label: "LinkedIn" },
-  { icon: <FaTwitter size={11} />,   href: "#", hoverColor: "#1da1f2", label: "Twitter" },
 ];
 
 const SEP = <span style={{ color: "#4b5563", fontSize: "9px", padding: "0 4px" }}>✦</span>;
@@ -42,12 +39,12 @@ export default function OfferTopbar() {
 
           {/* Email */}
           <a
-            href="mailto:support@webstepsolutions.com"
+            href="mailto:info@webstepsolutions.com"
             className="flex items-center gap-1.5 text-[10.5px] sm:text-[11.5px] font-semibold text-[#f472b6] hover:text-[#f9a8d4] transition-colors text-ellipsis overflow-hidden whitespace-nowrap"
           >
             <FaEnvelope className="text-[10px] sm:text-[11px] shrink-0 text-[#f472b6]" />
             <span className="truncate max-w-[160px] xs:max-w-[210px] sm:max-w-none">
-              support@webstepsolutions.com
+              info@webstepsolutions.com
             </span>
           </a>
 

@@ -7,10 +7,17 @@ export async function generateMetadata() {
   return {
     title: dynamicSeo.title || "Our Team | Developers Behind Webstep Solutions",
     description: dynamicSeo.description || "Meet the developers, designers and project managers who build and support your projects at Webstep Solutions.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/about/",
+    }
   };
 }
 
 export default function Page() {
-  return <OurTeamPage />;
+  return (
+    <>
+      <OurTeamPage />
+    </>
+  );
 }

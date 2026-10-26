@@ -7,7 +7,7 @@ const SERVICES = [
   {
     id: "01",
     title: "React & Next.js",
-    slug: "web-development",          // ← slug for dynamic route
+    slug: "reactjs",          // ← slug for dynamic route
     tagline: "Modern Web Applications",
     description:
       "Blazing-fast, SEO-friendly web apps built with React and Next.js. Server-side rendering, dynamic routing, and scalable architecture — tailored for startups to enterprises.",
@@ -25,7 +25,7 @@ const SERVICES = [
   {
     id: "02",
     title: "WordPress Solutions",
-    slug: "wordpress-website",         // ← slug for dynamic route
+    slug: "wordpress",         // ← slug for dynamic route
     tagline: "CMS & Custom Development",
     description:
       "Custom WordPress websites, themes, and plugins built to your exact needs. Whether it's a business site, blog, or complex CMS — we make WordPress work for you.",
@@ -43,7 +43,7 @@ const SERVICES = [
   {
     id: "03",
     title: "AI Chatbots & Integration",
-    slug: "full-stack-development",    // ← slug for dynamic route
+    slug: "ai-chatbots",    // ← slug for dynamic route
     tagline: "Intelligent Automation",
     description:
       "Smart AI chatbots and seamless API integrations that automate workflows, enhance user experiences, and give your business a competitive edge in the AI era.",

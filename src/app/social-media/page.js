@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("social-media");
   return {
-    title: dynamicSeo.title || "Social Media Marketing Services | Webstep",
-    description: dynamicSeo.description || "Social media content and paid ads for businesses. Plan your campaigns with our team.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "Social Media Creative & Digital Assets | Webstep Solutions",
+    description: dynamicSeo.description || "High-impact visual assets and creative collateral for social media campaigns that reinforce your brand identity and drive engagement.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/social-media/",
+    }
   };
 }
 
 export default function Page() {
-  return <DynamicServiceLanding slug="social-media" />;
+  return (
+    <>
+      <DynamicServiceLanding slug="social-media" />
+    </>
+  );
 }

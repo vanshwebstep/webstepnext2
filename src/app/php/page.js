@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("php");
   return {
-    title: dynamicSeo.title || "PHP Development Services | Custom PHP & Laravel Apps",
-    description: dynamicSeo.description || "Custom PHP development, from web applications and APIs to upgrades of older systems. Talk to a PHP developer about your project.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "Custom PHP Development Services | Webstep Solutions",
+    description: dynamicSeo.description || "Custom PHP development, legacy code modernization, database optimization, and third-party API integrations by senior PHP engineers.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/php-development/",
+    }
   };
 }
 
 export default function Page() {
-  return <Php />;
+  return (
+    <>
+      <Php />
+    </>
+  );
 }

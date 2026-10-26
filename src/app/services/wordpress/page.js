@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("services/wordpress");
   return {
-    title: dynamicSeo.title || "WordPress Development Services | Custom Themes & Plugins",
-    description: dynamicSeo.description || "Hand-coded WordPress themes, custom plugins and headless builds from your Figma designs. No page-builder bloat. Request a WordPress quote.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "Custom WordPress Development Company | Themes & Plugins | Webstep Solutions",
+    description: dynamicSeo.description || "Custom WordPress development by Webstep Solutions: hand-coded themes, bespoke plugins, WooCommerce, and headless WordPress with Next.js. No page builders.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/wordpress/",
+    }
   };
 }
 
 export default function Page() {
-  return <Wp />;
+  return (
+    <>
+      <Wp />
+    </>
+  );
 }

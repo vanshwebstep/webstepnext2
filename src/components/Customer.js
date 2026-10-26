@@ -7,7 +7,7 @@ const reviews = [
   {
     id: 0, initials: 'BB',
     name: 'Bradley Braun', role: 'Verified Client',
-    content: "I enjoy working with Karan from Webstep Solutions, he is fluent in English and has excellent developmental skills.",
+    content: "I enjoy working with the Webstep Solutions team, they are fluent in English and have excellent developmental skills.",
     tag: 'WordPress & Dev', accent: '#7C3AED', accentLight: '#ede9fe', accentText: '#5b21b6',
     avatarFrom: '#7C3AED', avatarTo: '#a855f7', barFrom: '#7C3AED', barTo: '#a855f7',
   },
@@ -15,21 +15,21 @@ const reviews = [
   {
     id: 1, initials: 'MS',
     name: 'Magnus Stihl', role: 'Business Owner',
-    content: "Karan from Webstep Solutions saved the day for us! What began as some final finishes before launching to include membership account registration pages set up, adding icons and linking our social media accounts with the site, and some testing developed into a significant list of issues that Karan was able to discover and provide a various array of fixes including writing additional code, installing the appropriate plugins and a vast amount of troubleshooting and testing. Karan possesses an immense level of skills, when he says he will work, he does. When he says he will be finished, he meets the deadline. When he knows issues are critical, he stays the course until the issues are resolved. Like other business owners, we obviously have high expectations when hiring staff and engaging contractors. Karan exceeded our expectations. 10 stars!",
+    content: "Webstep Solutions saved the day for us! What began as some final finishes before launching to include membership account registration pages set up, adding icons and linking our social media accounts with the site, and some testing developed into a significant list of issues that Webstep Solutions was able to discover and provide a various array of fixes including writing additional code, installing the appropriate plugins and a vast amount of troubleshooting and testing. The team possesses an immense level of skills, when they say they will work, they do. When they say they will be finished, they meet the deadline. When they know issues are critical, they stay the course until the issues are resolved. Like other business owners, we obviously have high expectations when hiring staff and engaging contractors. Webstep Solutions exceeded our expectations. 10 stars!",
     tag: 'Membership & Custom Dev', accent: '#059669', accentLight: '#d1fae5', accentText: '#065f46',
     avatarFrom: '#059669', avatarTo: '#34d399', barFrom: '#059669', barTo: '#34d399',
   },
   {
     id: 2, initials: 'ST',
     name: 'Syga Thomas', role: 'Verified Client',
-    content: "Karan was excellent. He went above and beyond and can perform any task when it comes to website design.",
+    content: "Webstep Solutions was excellent. They went above and beyond and can perform any task when it comes to website design.",
     tag: 'Website Design', accent: '#0891B2', accentLight: '#e0f2fe', accentText: '#0369a1',
     avatarFrom: '#0891B2', avatarTo: '#38bdf8', barFrom: '#0891B2', barTo: '#38bdf8',
   },
   {
     id: 3, initials: 'NM',
     name: 'Nathanael Murphy', role: 'Frontend Client',
-    content: "Karan did an excellent job in a timely manner. He added his own design concepts without being asked, which helped make the project even better. I highly recommend Karan and am already hiring him for a second frontend project.",
+    content: "The Webstep Solutions team did an excellent job in a timely manner. They added their own design concepts without being asked, which helped make the project even better. I highly recommend Webstep Solutions and am already hiring them for a second frontend project.",
     tag: 'UI/UX & Frontend', accent: '#DB2777', accentLight: '#fce7f3', accentText: '#9d174d',
     avatarFrom: '#DB2777', avatarTo: '#f472b6', barFrom: '#DB2777', barTo: '#f472b6',
   },
@@ -43,7 +43,7 @@ const reviews = [
   {
     id: 5, initials: 'AD',
     name: 'Amir Dagan', role: 'Verified Client',
-    content: "The freelancer was very professional, well prepared and had a lot of patience with us",
+    content: "The Webstep Solutions team was very professional, well prepared and had a lot of patience with us",
     tag: 'Web Development', accent: '#EA580C', accentLight: '#ffedd5', accentText: '#9a3412',
     avatarFrom: '#EA580C', avatarTo: '#fb923c', barFrom: '#EA580C', barTo: '#fb923c',
   },

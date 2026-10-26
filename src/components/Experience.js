@@ -18,22 +18,22 @@ const reviews = [
 
   {
     name: 'Bradley Braun', role: 'Verified Client',
-    text: 'Webstep Solutions provided the deliverables in a timely and professional manner. They knows WordPress (as qwell as other platforms) and exceeded expectations.',
+    text: 'Webstep Solutions provided the deliverables in a timely and professional manner. They know WordPress (as well as other platforms) and exceeded expectations.',
     avatarBg: 'rgba(99,102,241,0.1)', avatarColor: '#6366F1',
   },
   {
     name: 'Magnus Stihl', role: 'Business Owner',
-    text: "Karan from Webstep Solutions saved the day for us! What began as some final finishes before launching to include membership account registration pages set up, adding icons and linking our social media accounts with the site, and some testing developed into a significant list of issues that Karan was able to discover and provide a various array of fixes including writing additional code, installing the appropriate plugins and a vast amount of troubleshooting and testing. Karan possesses an immense level of skills, when he says he will work, he does. When he says he will be finished, he meets the deadline. When he knows issues are critical, he stays the course until the issues are resolved. Like other business owners, we obviously have high expectations when hiring staff and engaging contractors. Karan exceeded our expectations. 10 stars!",
+    text: "Webstep Solutions saved the day for us! What began as some final finishes before launching to include membership account registration pages set up, adding icons and linking our social media accounts with the site, and some testing developed into a significant list of issues that Webstep Solutions was able to discover and provide a various array of fixes including writing additional code, installing the appropriate plugins and a vast amount of troubleshooting and testing. The team possesses an immense level of skills, when they say they will work, they do. When they say they will be finished, they meet the deadline. When they know issues are critical, they stay the course until the issues are resolved. Like other business owners, we obviously have high expectations when hiring staff and engaging contractors. Webstep Solutions exceeded our expectations. 10 stars!",
     avatarBg: 'rgba(8,145,178,0.1)', avatarColor: '#0891B2',
   },
   {
     name: 'Syga Thomas', role: 'Verified Client',
-    text: 'Karan was excellent. He went above and beyond and can perform any task when it comes to website design.',
+    text: 'Webstep Solutions was excellent. They went above and beyond and can perform any task when it comes to website design.',
     avatarBg: 'rgba(5,150,105,0.1)', avatarColor: '#059669',
   },
   {
     name: 'Nathanael Murphy', role: 'Frontend Client',
-    text: 'Karan did an excellent job in a timely manner. He added his own design concepts without being asked, which helped make the project even better. I highly recommend Karan and am already hiring him for a second frontend project.',
+    text: 'The Webstep Solutions team did an excellent job in a timely manner. They added their own design concepts without being asked, which helped make the project even better. I highly recommend Webstep Solutions and am already hiring them for a second frontend project.',
     avatarBg: 'rgba(219,39,119,0.1)', avatarColor: '#DB2777',
   },
   {
@@ -43,7 +43,7 @@ const reviews = [
   },
   {
     name: 'Amir Dagan', role: 'Verified Client',
-    text: 'The freelancer was very professional, well prepared and had a lot of patience with us',
+    text: 'The Webstep Solutions team was very professional, well prepared and had a lot of patience with us',
     avatarBg: 'rgba(234,88,12,0.1)', avatarColor: '#EA580C',
   },
 ];
@@ -141,13 +141,13 @@ const Experience = () => {
 
             {/* LEFT */}
             <div className="ex-img-card ex-fade" style={{ transitionDelay: '0.1s' }}>
-              <Image src={dev} alt="Webstep Solutions Development" style={{ width: '100%', height: 'auto', borderRadius: 18, marginBottom: 18, display: 'block' }} />
+              <Image src={dev} alt="Webstep Solutions web development team collaborating on client projects" style={{ width: '100%', height: 'auto', borderRadius: 18, marginBottom: 18, display: 'block' }} />
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
                 <div>
                   <div style={{ display: 'flex', gap: 3, marginBottom: 3 }}>
                     {[1, 2, 3, 4, 5].map(s => <FaStar key={s} style={{ color: '#F59E0B', fontSize: 14 }} />)}
                   </div>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a' }}>5.0 · 120+ reviews</div>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a' }}>4.9 · 120+ reviews</div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#cbd5e1' }}>Verified</div>

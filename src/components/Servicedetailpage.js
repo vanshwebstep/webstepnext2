@@ -33,7 +33,7 @@ const ALL_SERVICES = {
     features: [
       { title: "Pixel-Perfect Precision", desc: "Every margin, padding, and font size translated with exacting accuracy — no approximations.", icon: "◈" },
       { title: "Semantic HTML5 Structure", desc: "Clean markup using proper heading hierarchies, ARIA labels, and accessibility-first patterns.", icon: "⬡" },
-      { title: "SEO Optimised Output", desc: "Meta tags, structured data, open graph, and performance optimisations baked in from day one.", icon: "◎" },
+      { title: "SEO Optimized Output", desc: "Meta tags, structured data, open graph, and performance optimizations baked in from day one.", icon: "◎" },
       { title: "Responsive by Default", desc: "Mobile-first breakpoints that look stunning on every screen — from 320px to 4K.", icon: "⬢" },
       { title: "Cross-Browser Tested", desc: "Verified on Chrome, Firefox, Safari, and Edge across Windows, macOS, and iOS.", icon: "◉" },
       { title: "Clean, Commented Code", desc: "Well-structured, developer-friendly code your team can maintain and extend.", icon: "◐" },
@@ -68,7 +68,7 @@ const ALL_SERVICES = {
       { title: "Symbol Fidelity", desc: "Sketch symbols and shared styles translated into reusable CSS components.", icon: "◈" },
       { title: "Auto Layout Support", desc: "Sketch auto-layout constraints perfectly mirrored in CSS flexbox & grid.", icon: "⬡" },
       { title: "Prototype Interactions", desc: "Hotspot flows and hover states from your prototype reproduced in HTML/JS.", icon: "◎" },
-      { title: "Asset Export Ready", desc: "All icons, images, and SVG assets optimised and exported in modern formats.", icon: "⬢" },
+      { title: "Asset Export Ready", desc: "All icons, images, and SVG assets optimized and exported in modern formats.", icon: "⬢" },
       { title: "CSS Variables", desc: "Your Sketch color palette and text styles become clean CSS custom properties.", icon: "◉" },
       { title: "Figma-Compatible", desc: "Component structure compatible with Figma handoff tools.", icon: "◐" },
     ],
@@ -136,7 +136,7 @@ const ALL_SERVICES = {
       { title: "Native Performance", desc: "Platform-specific code for iOS and Android that leverages every device capability.", icon: "◈" },
       { title: "React Native", desc: "Single codebase, two platforms — 90% code reuse with native-like performance.", icon: "⬡" },
       { title: "Flutter Development", desc: "Pixel-perfect, natively compiled apps from one codebase with expressive UI.", icon: "◎" },
-      { title: "App Store Optimisation", desc: "ASO strategies, screenshots, and metadata to maximise visibility and downloads.", icon: "⬢" },
+      { title: "App Store Optimization", desc: "ASO strategies, screenshots, and metadata to maximize visibility and downloads.", icon: "⬢" },
       { title: "Push Notifications & Real-time", desc: "Firebase, APNs, and WebSocket integrations for live updates and engagement.", icon: "◉" },
       { title: "Offline-First Architecture", desc: "Local storage, sync strategies, and graceful degradation for offline scenarios.", icon: "◐" },
     ],
@@ -150,7 +150,7 @@ const ALL_SERVICES = {
     faqs: [
       { q: "Do you build for both iOS and Android?", a: "Yes — native apps for both, plus cross-platform via React Native and Flutter." },
       { q: "How long does it take to build an app?", a: "A typical MVP takes 8–12 weeks. Complex apps with custom backends range 4–6 months." },
-      { q: "Do you handle App Store submission?", a: "Yes — complete submission process including review compliance and metadata optimisation." },
+      { q: "Do you handle App Store submission?", a: "Yes — complete submission process including review compliance and metadata optimization." },
       { q: "Can you integrate with our existing API?", a: "Absolutely — REST APIs, GraphQL, Firebase, Supabase, and most backend technologies." },
     ],
     relatedServices: [
@@ -201,9 +201,9 @@ const ALL_SERVICES = {
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" /></svg>),
     stats: [{ value: "180+", label: "Apps Built" }, { value: "99.9%", label: "Uptime SLA" }, { value: "3x", label: "Avg Perf Gain" }, { value: "5★", label: "Rated" }],
     features: [
-      { title: "React & Next.js Frontends", desc: "SSR, SSG, and app router for lightning-fast, SEO-optimised UIs.", icon: "◈" },
+      { title: "React & Next.js Frontends", desc: "SSR, SSG, and app router for lightning-fast, SEO-optimized UIs.", icon: "◈" },
       { title: "Node.js & Express APIs", desc: "RESTful and GraphQL APIs with Node.js, Express, and NestJS.", icon: "⬡" },
-      { title: "Database Architecture", desc: "PostgreSQL, MySQL, MongoDB, Redis — schema design and query optimisation.", icon: "◎" },
+      { title: "Database Architecture", desc: "PostgreSQL, MySQL, MongoDB, Redis — schema design and query optimization.", icon: "◎" },
       { title: "Authentication & Security", desc: "JWT, OAuth 2.0, 2FA, rate limiting, and OWASP-compliant security.", icon: "⬢" },
       { title: "Cloud & DevOps", desc: "AWS, GCP, or Vercel deployments with CI/CD pipelines and Docker.", icon: "◉" },
       { title: "Third-Party Integrations", desc: "Stripe, Twilio, SendGrid, Cloudinary, and any REST API you need.", icon: "◐" },
@@ -278,7 +278,7 @@ const ALL_SERVICES = {
     ],
     process: [
       { step: "01", title: "Requirements", desc: "Detailed scoping and system architecture planning." },
-      { step: "02", title: "Database Design", desc: "Migrations, relationships, and schema optimisation." },
+      { step: "02", title: "Database Design", desc: "Migrations, relationships, and schema optimization." },
       { step: "03", title: "Backend Dev", desc: "Controllers, services, and API layer built." },
       { step: "04", title: "Frontend", desc: "Blade, Livewire, or API-connected React/Vue." },
       { step: "05", title: "Deploy", desc: "Server setup, caching, and performance tuning." },
@@ -342,7 +342,7 @@ const ALL_SERVICES = {
       { title: "Custom CMS Development", desc: "Bespoke content management systems tailored to your editorial workflow.", icon: "◎" },
       { title: "API Development & Integration", desc: "RESTful API development and third-party integrations with robust error handling.", icon: "⬢" },
       { title: "Payment Gateway Integration", desc: "Stripe, PayPal, Razorpay, and custom gateways with PCI compliance.", icon: "◉" },
-      { title: "Caching & Performance", desc: "Redis, Memcached, OPcache, and query optimisation for sub-200ms response times.", icon: "◐" },
+      { title: "Caching & Performance", desc: "Redis, Memcached, OPcache, and query optimization for sub-200ms response times.", icon: "◐" },
     ],
     process: [
       { step: "01", title: "Discovery", desc: "Understand existing systems, integrations, and goals." },
@@ -369,26 +369,26 @@ const ALL_SERVICES = {
     description: "We build custom WordPress websites — not template sites. Custom themes from Figma designs, bespoke plugins, headless WordPress with Next.js, and full WooCommerce stores.",
     tags: ["Custom Themes", "WooCommerce", "Headless WP"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>),
-    stats: [{ value: "400+", label: "WP Sites Built" }, { value: "100%", label: "Custom Coded" }, { value: "915+", label: "PageSpeed Score" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "400+", label: "WP Sites Built" }, { value: "100%", label: "Custom Coded" }, { value: "95+", label: "PageSpeed Score" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Custom Theme Development", desc: "Pixel-perfect themes from your Figma/PSD — no page builders, no bloat.", icon: "◈" },
       { title: "WooCommerce Stores", desc: "Full WooCommerce with custom product types, checkout flows, and payment gateways.", icon: "⬡" },
       { title: "Custom Plugin Development", desc: "Bespoke plugins to extend functionality far beyond off-the-shelf solutions.", icon: "◎" },
       { title: "Headless WordPress + Next.js", desc: "WordPress as a headless CMS with a blazing-fast Next.js frontend via WPGraphQL.", icon: "⬢" },
-      { title: "Performance Optimisation", desc: "Core Web Vitals optimisation, image compression, caching, and CDN config.", icon: "◉" },
+      { title: "Performance Optimization", desc: "Core Web Vitals optimization, image compression, caching, and CDN config.", icon: "◉" },
       { title: "WordPress Migrations", desc: "Safe, zero-downtime migrations from any platform with full data integrity.", icon: "◐" },
     ],
     process: [
       { step: "01", title: "Design & Plan", desc: "Figma design approved before any code is written." },
       { step: "02", title: "Theme Dev", desc: "Custom theme coded from scratch — no Elementor." },
       { step: "03", title: "Plugin Build", desc: "Custom plugins and WooCommerce configuration." },
-      { step: "04", title: "Speed & SEO", desc: "Core Web Vitals and Yoast SEO optimisation." },
+      { step: "04", title: "Speed & SEO", desc: "Core Web Vitals and Yoast SEO optimization." },
       { step: "05", title: "Launch & Train", desc: "Go-live + editor training session for your team." },
     ],
     faqs: [
       { q: "Do you use page builders like Elementor?", a: "No — we hand-code all themes for performance, security, and full design control." },
       { q: "Can you migrate our existing site to WordPress?", a: "Yes — from Wix, Squarespace, Joomla, or custom — zero data loss, zero downtime." },
-      { q: "Do you build headless WordPress?", a: "Yes — WordPress + WPGraphQL with a Next.js frontend is one of our favourite modern stacks." },
+      { q: "Do you build headless WordPress?", a: "Yes — WordPress + WPGraphQL with a Next.js frontend is one of our favorite modern stacks." },
       { q: "Will I be able to manage the site myself?", a: "Absolutely — every project includes an editor training session so you're confident managing content." },
     ],
     relatedServices: [
@@ -403,13 +403,13 @@ const ALL_SERVICES = {
     description: "We engineer custom websites and web applications that are fast, accessible, and built for growth. From marketing sites to complex SaaS platforms — every project crafted with precision and purpose.",
     tags: ["Next.js", "React", "Performance"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>),
-    stats: [{ value: "500+", label: "Sites Launched" }, { value: "915+", label: "PageSpeed Avg" }, { value: "3x", label: "Avg Traffic Growth" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "500+", label: "Sites Launched" }, { value: "95+", label: "PageSpeed Avg" }, { value: "3x", label: "Avg Traffic Growth" }, { value: "5★", label: "Rated" }],
     features: [
-      { title: "Next.js & React Applications", desc: "SSR, SSG, and ISR for maximum performance and SEO-optimised UIs.", icon: "◈" },
+      { title: "Next.js & React Applications", desc: "SSR, SSG, and ISR for maximum performance and SEO-optimized UIs.", icon: "◈" },
       { title: "CMS Integration", desc: "Headless CMS with Sanity, Contentful, or Strapi for flexible content management.", icon: "⬡" },
       { title: "Performance Engineering", desc: "Core Web Vitals obsession — LCP under 2.5s, CLS near zero, FID below 100ms.", icon: "◎" },
       { title: "SEO Architecture", desc: "Technical SEO foundations — structured data, sitemaps, canonicals, and metadata.", icon: "⬢" },
-      { title: "Conversion Optimisation", desc: "Landing pages and user flows engineered to maximise lead generation and sales.", icon: "◉" },
+      { title: "Conversion Optimization", desc: "Landing pages and user flows engineered to maximize lead generation and sales.", icon: "◉" },
       { title: "Accessibility (WCAG 2.1)", desc: "AA-compliant accessible experiences for every user on every device.", icon: "◐" },
     ],
     process: [
@@ -421,7 +421,7 @@ const ALL_SERVICES = {
     ],
     faqs: [
       { q: "Do you build marketing sites or web apps?", a: "Both — from high-converting landing pages and corporate sites to complex SaaS dashboards." },
-      { q: "How do you ensure fast load times?", a: "Next.js SSG/SSR, image optimisation, lazy loading, edge CDN, and continuous Core Web Vitals monitoring." },
+      { q: "How do you ensure fast load times?", a: "Next.js SSG/SSR, image optimization, lazy loading, edge CDN, and continuous Core Web Vitals monitoring." },
       { q: "Do you include SEO?", a: "Yes — technical SEO is built in from the start: structured data, semantic HTML, sitemap, robots.txt." },
       { q: "Can we update the site ourselves?", a: "Yes — we integrate a headless CMS so your team manages all content without touching code." },
     ],
@@ -444,7 +444,7 @@ const ALL_SERVICES = {
       { title: "Native iOS (Swift)", desc: "Pure Swift development for apps that demand deepest platform integration.", icon: "◎" },
       { title: "Native Android (Kotlin)", desc: "Kotlin-first Android development following Material You design language.", icon: "⬢" },
       { title: "Backend & API Integration", desc: "Firebase, Supabase, or custom Node.js/Laravel API integration.", icon: "◉" },
-      { title: "App Store Optimisation", desc: "ASO, screenshots, preview videos, and review strategy for maximum visibility.", icon: "◐" },
+      { title: "App Store Optimization", desc: "ASO, screenshots, preview videos, and review strategy for maximum visibility.", icon: "◐" },
     ],
     process: [
       { step: "01", title: "Discovery", desc: "User flows and wireframes aligned to business goals." },
@@ -456,7 +456,7 @@ const ALL_SERVICES = {
     faqs: [
       { q: "React Native or Flutter — which is better?", a: "Both are excellent. React Native is ideal for JavaScript teams; Flutter excels in UI customisation. We advise based on your goals." },
       { q: "How long does app development take?", a: "MVP: 8–12 weeks. Full-featured app: 4–6 months depending on complexity." },
-      { q: "Do you handle store submission?", a: "Yes — we manage the full submission process including compliance and metadata optimisation." },
+      { q: "Do you handle store submission?", a: "Yes — we manage the full submission process including compliance and metadata optimization." },
       { q: "Can you add features to an existing app?", a: "Absolutely — we conduct a code audit and extend any React Native, Flutter, or native iOS/Android app." },
     ],
     relatedServices: [
@@ -468,34 +468,102 @@ const ALL_SERVICES = {
   "ecommerce": {
     id: "03", slug: "ecommerce", title: "E-Commerce", subTitle: "Shopify & WooCommerce",
     tagline: "Online stores engineered to sell more, every day.",
-    description: "We build high-converting e-commerce experiences on Shopify, WooCommerce, and custom platforms. From product catalogue to checkout — every touchpoint optimised for conversion and customer retention.",
+    description: "We build high-converting e-commerce experiences on Shopify, WooCommerce, and custom platforms. From product catalog to checkout — every touchpoint optimized for conversion and customer retention.",
     tags: ["Shopify", "WooCommerce", "CRO"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg>),
     stats: [{ value: "200+", label: "Stores Built" }, { value: "35%", label: "Avg Conv. Lift" }, { value: "$50M+", label: "Revenue Gen." }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Shopify & Shopify Plus", desc: "Custom Shopify themes, app integrations, and Plus-tier B2B and multi-storefront setups.", icon: "◈" },
       { title: "WooCommerce Development", desc: "Custom stores with tailored product types, checkout flows, and payment gateways.", icon: "⬡" },
-      { title: "Conversion Rate Optimisation", desc: "Checkout flow optimisation, upsells, cross-sells, and cart abandonment recovery.", icon: "◎" },
+      { title: "Conversion Rate Optimization", desc: "Checkout flow optimization, upsells, cross-sells, and cart abandonment recovery.", icon: "◎" },
       { title: "Headless Commerce", desc: "Next.js frontend with Shopify Storefront API or WooCommerce REST API.", icon: "⬢" },
       { title: "ERP & POS Integration", desc: "Sync your store with inventory management, accounting, and point-of-sale systems.", icon: "◉" },
-      { title: "Performance & SEO", desc: "E-commerce SEO, schema markup, product page optimisation, sub-2s load times.", icon: "◐" },
+      { title: "Performance & SEO", desc: "E-commerce SEO, schema markup, product page optimization, sub-2s load times.", icon: "◐" },
     ],
     process: [
-      { step: "01", title: "Strategy", desc: "Platform selection, catalogue audit, and UX strategy." },
-      { step: "02", title: "Design", desc: "Custom store design optimised for conversion." },
+      { step: "01", title: "Strategy", desc: "Platform selection, catalog audit, and UX strategy." },
+      { step: "02", title: "Design", desc: "Custom store design optimized for conversion." },
       { step: "03", title: "Development", desc: "Theme/plugin build, payment and shipping setup." },
-      { step: "04", title: "Migration", desc: "Catalogue, customer data, and order history migrated." },
+      { step: "04", title: "Migration", desc: "Catalog, customer data, and order history migrated." },
       { step: "05", title: "Launch & CRO", desc: "Go-live with conversion monitoring and A/B testing." },
     ],
     faqs: [
       { q: "Shopify or WooCommerce — which should I choose?", a: "Shopify for simplicity and hosted reliability. WooCommerce for full control and lower transaction fees. We advise based on your scale." },
       { q: "Can you migrate our existing store?", a: "Yes — from any platform (WooCommerce, Magento, BigCommerce, custom) with full data integrity." },
-      { q: "Do you offer post-launch CRO services?", a: "Yes — post-launch CRO retainers covering A/B testing, heatmap analysis, and checkout optimisation." },
+      { q: "Do you offer post-launch CRO services?", a: "Yes — post-launch CRO retainers covering A/B testing, heatmap analysis, and checkout optimization." },
       { q: "Can you build a B2B wholesale store?", a: "Yes — Shopify Plus B2B, WooCommerce wholesale plugins, or fully custom quote-based ordering." },
     ],
     relatedServices: [
       { id: "01", title: "Web Development", subTitle: "Custom Websites", slug: "web-development" },
       { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress-website" },
+    ],
+  },
+
+  "shopify": {
+    id: "09", slug: "shopify", title: "Shopify Development", subTitle: "High-Converting Shopify Stores",
+    tagline: "Custom Shopify stores built to scale and convert.",
+    description: "We build custom Shopify and Shopify Plus storefronts, custom Liquid themes, private apps, and headless commerce solutions that maximize conversion and average order value.",
+    tags: ["Shopify Plus", "Liquid Themes", "Private Apps"],
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg>),
+    stats: [{ value: "150+", label: "Shopify Stores" }, { value: "35%", label: "Avg Conv. Lift" }, { value: "95+", label: "Core Web Vitals" }, { value: "5★", label: "Rated" }],
+    features: [
+      { title: "Custom Liquid Theme Development", desc: "Bespoke Shopify themes built from Figma designs with clean, modular Liquid code and zero bloat.", icon: "◈" },
+      { title: "Shopify Plus & Enterprise", desc: "Shopify Plus setups, B2B wholesale portals, multi-currency, and Checkout Extensibility customizations.", icon: "⬡" },
+      { title: "Private App & API Integration", desc: "Custom Shopify apps to integrate ERPs, CRMs, warehouse 3PLs, and proprietary backend workflows.", icon: "◎" },
+      { title: "Headless Shopify with Next.js", desc: "Blazing-fast headless commerce powered by Shopify Storefront API and Next.js frontend.", icon: "⬢" },
+      { title: "Platform Migration to Shopify", desc: "Seamless, zero-downtime migrations from Magento, WooCommerce, BigCommerce, or custom platforms.", icon: "◉" },
+      { title: "Speed & Conversion Optimization", desc: "Shopify Core Web Vitals optimization, asset minification, and checkout flow improvements.", icon: "◐" },
+    ],
+    process: [
+      { step: "01", title: "Discovery & Architecture", desc: "Catalog audit, app tech stack review, and conversion roadmap." },
+      { step: "02", title: "Custom UI/UX Design", desc: "Mobile-first storefront wireframes and Figma designs." },
+      { step: "03", title: "Liquid & App Development", desc: "Theme coding, app integrations, and checkout configurations." },
+      { step: "04", title: "Data Migration & QA", desc: "Products, customers, and order history migrated with 100% integrity." },
+      { step: "05", title: "Launch & Growth", desc: "DNS cutover, analytics verification, and post-launch CRO support." },
+    ],
+    faqs: [
+      { q: "Can you build custom Shopify themes from scratch?", a: "Yes — we build 100% custom Shopify themes from your designs without using off-the-shelf bloated themes." },
+      { q: "Do you handle migration from Magento or WooCommerce to Shopify?", a: "Yes — we migrate catalogs, customer databases, past orders, and SEO redirects with zero downtime." },
+      { q: "Can you build private Shopify apps?", a: "Yes — our developers build secure Node.js and Laravel private apps connecting Shopify with your internal tools." },
+      { q: "What is Shopify Checkout Extensibility?", a: "We customize checkout experiences using Shopify's modern Extensibility framework, replacing legacy checkout.liquid." },
+    ],
+    relatedServices: [
+      { id: "10", title: "WooCommerce Development", subTitle: "Flexible E-Commerce", slug: "woocommerce" },
+      { id: "01", title: "Web Development", subTitle: "Custom Websites", slug: "web-development" },
+    ],
+  },
+
+  "woocommerce": {
+    id: "10", slug: "woocommerce", title: "WooCommerce Development", subTitle: "Custom E-Commerce on WordPress",
+    tagline: "Total control, unlimited flexibility, and high-performance WooCommerce.",
+    description: "We engineer robust WooCommerce stores tailored to your business model. From custom themes and complex checkout flows to high-volume inventory systems, subscriptions, and custom payment integrations.",
+    tags: ["Custom Themes", "Subscriptions", "High Volume"],
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>),
+    stats: [{ value: "250+", label: "Woo Stores Built" }, { value: "100%", label: "Custom Code" }, { value: "95+", label: "Speed Score" }, { value: "5★", label: "Rated" }],
+    features: [
+      { title: "Custom WooCommerce Themes", desc: "Tailor-made themes built without heavy page builders, optimizing speed and mobile user experience.", icon: "◈" },
+      { title: "Custom Payment & Shipping Gateways", desc: "Integrate Stripe, PayPal, localized gateways, and bespoke shipping rule engines.", icon: "⬡" },
+      { title: "Subscriptions & Memberships", desc: "Recurring billing, tiered memberships, digital downloads, and customer portal architecture.", icon: "◎" },
+      { title: "High-Volume Performance & Caching", desc: "Redis object caching, database index optimization, and server tuning for massive product catalogs.", icon: "⬢" },
+      { title: "Headless WooCommerce", desc: "Decoupled WordPress with Next.js or React frontend via WooCommerce REST API and GraphQL.", icon: "◉" },
+      { title: "Platform Migration", desc: "Safe migrations to and from WooCommerce with customer accounts, passwords, and order histories intact.", icon: "◐" },
+    ],
+    process: [
+      { step: "01", title: "Architecture & Planning", desc: "Product schema, tax/shipping logic, and plugin audit." },
+      { step: "02", title: "Custom Theme Build", desc: "Lightweight, conversion-focused theme development." },
+      { step: "03", title: "Extension & Gateway Setup", desc: "Payment gateways, custom checkout hooks, and ERP sync." },
+      { step: "04", title: "Speed & Security Audit", desc: "Database indexing, server caching, and PCI compliance review." },
+      { step: "05", title: "Launch & Handover", desc: "Smooth go-live with full client team training." },
+    ],
+    faqs: [
+      { q: "Can WooCommerce handle large catalogs and high traffic?", a: "Yes — with proper server architecture, Redis caching, and clean code, WooCommerce easily scales to tens of thousands of products." },
+      { q: "Do you build custom WooCommerce plugins?", a: "Yes — we code bespoke plugins for custom pricing, shipping calculations, B2B wholesale rules, and CRM syncing." },
+      { q: "Can you fix a slow WooCommerce store?", a: "Yes — our speed optimization cleans database bloat, eliminates plugin bottlenecks, and implements advanced caching." },
+      { q: "Can WooCommerce integrate with external ERP/POS systems?", a: "Yes — we integrate WooCommerce with QuickBooks, NetSuite, SAP, Square, and custom inventory APIs." },
+    ],
+    relatedServices: [
+      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress-website" },
+      { id: "09", title: "Shopify Development", subTitle: "High-Converting Shopify", slug: "shopify" },
     ],
   },
 
@@ -523,7 +591,7 @@ const ALL_SERVICES = {
     ],
     faqs: [
       { q: "Do you conduct user research or just design?", a: "End-to-end — from research and persona creation through to UI design and usability testing." },
-      { q: "What does a design system include?", a: "Typography scale, colour tokens, spacing system, component library, and usage documentation." },
+      { q: "What does a design system include?", a: "Typography scale, color tokens, spacing system, component library, and usage documentation." },
       { q: "Can you redesign an existing product?", a: "Yes — UX audits identifying friction points, then redesigns that improve usability and conversion." },
       { q: "How long does a UI/UX project take?", a: "Single product UI: 3–6 weeks. Full design systems or product redesigns: 8–16 weeks." },
     ],
@@ -543,7 +611,7 @@ const ALL_SERVICES = {
     features: [
       { title: "Technical SEO Audit", desc: "Comprehensive crawl analysis, Core Web Vitals, indexation issues, and structured data audit.", icon: "◈" },
       { title: "Keyword Research & Strategy", desc: "Intent-mapped keyword research identifying highest-value opportunities in your niche.", icon: "⬡" },
-      { title: "On-Page Optimisation", desc: "Title tags, meta descriptions, header hierarchy, internal linking, and content optimisation.", icon: "◎" },
+      { title: "On-Page Optimization", desc: "Title tags, meta descriptions, header hierarchy, internal linking, and content optimization.", icon: "◎" },
       { title: "Content Strategy & Creation", desc: "Topical authority strategy with expert-written content that ranks and converts.", icon: "⬢" },
       { title: "Link Building & Digital PR", desc: "White-hat link acquisition through digital PR, guest posting, and broken link building.", icon: "◉" },
       { title: "Monthly Reporting", desc: "Transparent dashboards showing rankings, traffic, conversions, and ROI.", icon: "◐" },
@@ -558,7 +626,7 @@ const ALL_SERVICES = {
     faqs: [
       { q: "How long before I see SEO results?", a: "Measurable ranking improvements within 3–4 months. Significant traffic growth at the 6–9 month mark." },
       { q: "Do you do black-hat SEO?", a: "Never. Exclusively white-hat techniques aligned with Google's guidelines — sustainable rankings." },
-      { q: "Do you write the content?", a: "Yes — SEO-specialist content writers create expert-level articles optimised for search intent." },
+      { q: "Do you write the content?", a: "Yes — SEO-specialist content writers create expert-level articles optimized for search intent." },
       { q: "Can you do SEO for a new website?", a: "Yes — starting from day one is ideal. We architect your site for maximum search performance from the beginning." },
     ],
     relatedServices: [
@@ -569,13 +637,13 @@ const ALL_SERVICES = {
   "branding": {
     id: "08", slug: "branding", title: "Brand Design", subTitle: "Logos & Brand Identity",
     tagline: "Identities that are instantly recognisable and impossible to forget.",
-    description: "We craft brand identities that make lasting impressions — from logo design and colour systems to typography, brand guidelines, and every touchpoint in between.",
+    description: "We craft brand identities that make lasting impressions — from logo design and color systems to typography, brand guidelines, and every touchpoint in between.",
     tags: ["Logo Design", "Brand Guidelines", "Visual Identity"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" /></svg>),
     stats: [{ value: "400+", label: "Brands Created" }, { value: "100%", label: "Original Designs" }, { value: "2 Wks", label: "Avg Turnaround" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Logo Design", desc: "Timeless, versatile logo marks that work across every medium — digital, print, and signage.", icon: "◈" },
-      { title: "Brand Identity System", desc: "Complete visual system: logos, colour palette, typography hierarchy, and iconography.", icon: "⬡" },
+      { title: "Brand Identity System", desc: "Complete visual system: logos, color palette, typography hierarchy, and iconography.", icon: "⬡" },
       { title: "Brand Guidelines", desc: "Comprehensive guidelines ensuring consistent brand application across all teams.", icon: "◎" },
       { title: "Stationery & Collateral", desc: "Business cards, letterheads, email signatures, and presentation templates.", icon: "⬢" },
       { title: "Social Media Branding", desc: "Profile graphics, cover images, post templates, and Stories assets.", icon: "◉" },
@@ -590,8 +658,8 @@ const ALL_SERVICES = {
     ],
     faqs: [
       { q: "How many logo concepts do we receive?", a: "3 distinct logo directions in round one, then 2 revision rounds on the chosen direction." },
-      { q: "What file formats are included?", a: "SVG, PDF, PNG (transparent), EPS, and JPG — for light and dark backgrounds in all colour variations." },
-      { q: "Do you design brand guidelines?", a: "Yes — brand guidelines are a core deliverable covering logo usage, colour, typography, and tone of voice." },
+      { q: "What file formats are included?", a: "SVG, PDF, PNG (transparent), EPS, and JPG — for light and dark backgrounds in all color variations." },
+      { q: "Do you design brand guidelines?", a: "Yes — brand guidelines are a core deliverable covering logo usage, color, typography, and tone of voice." },
       { q: "Can you rebrand an existing company?", a: "Yes — from brand strategy and naming through to complete visual identity system." },
     ],
     relatedServices: [
@@ -665,10 +733,46 @@ const ALL_SERVICES = {
       { id: "11", title: "AI Chatbots", subTitle: "24/7 Smart Assistants", slug: "ai-chatbots" },
     ],
   },
+
+  "website-maintenance": {
+    id: "14", slug: "website-maintenance", title: "Website Maintenance", subTitle: "Proactive Support & Care",
+    tagline: "Keep your website fast, secure, and always updated.",
+    description: "We provide comprehensive, proactive website maintenance and support plans for WordPress, Shopify, and custom web applications. From security patches and daily backups to Core Web Vitals optimization and dedicated development hours.",
+    tags: ["Security", "Speed Monitoring", "Monthly Support"],
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>),
+    stats: [{ value: "99.9%", label: "Uptime Monitored" }, { value: "<1hr", label: "Critical Response" }, { value: "100+", label: "Sites Maintained" }, { value: "5★", label: "Rated" }],
+    features: [
+      { title: "24/7 Uptime & Security Monitoring", desc: "Real-time monitoring with automated malware scans, SSL verification, and firewall hardening.", icon: "◈" },
+      { title: "Plugin, Theme & Core Updates", desc: "Safe staging-environment updates preventing breaking changes before deploying to production.", icon: "⬡" },
+      { title: "Daily Cloud Backups", desc: "Automated off-site cloud backups with 1-click restore protocols for total peace of mind.", icon: "◎" },
+      { title: "Performance & Core Web Vitals", desc: "Continuous speed monitoring, database defragmentation, and caching optimization.", icon: "⬢" },
+      { title: "Dedicated Development Hours", desc: "Monthly engineering hours for feature updates, landing page tweaks, and bug fixes.", icon: "◉" },
+      { title: "Monthly Health & SEO Reports", desc: "Transparent monthly reporting on uptime, security health, speed scores, and completed tasks.", icon: "◐" },
+    ],
+    process: [
+      { step: "01", title: "Site Health Audit", desc: "Security, speed, and plugin audit across your entire stack." },
+      { step: "02", title: "Staging Setup", desc: "Safe testing sandbox established for zero-risk updates." },
+      { step: "03", title: "Monitoring Config", desc: "24/7 uptime ping and automated backup schedule activated." },
+      { step: "04", title: "Monthly Maintenance", desc: "Weekly patches, performance tune-ups, and support tickets." },
+      { step: "05", title: "Monthly Reporting", desc: "Detailed summary report delivered to your team." },
+    ],
+    faqs: [
+      { q: "What platforms do you support for maintenance?", a: "We support WordPress, WooCommerce, Shopify, Laravel, Next.js, and custom PHP web applications." },
+      { q: "How quickly do you respond if our site goes down?", a: "Critical emergency response time is under 1 hour for all active maintenance retainer clients." },
+      { q: "Do unused maintenance hours roll over?", a: "Yes, depending on your selected monthly support plan, unused development hours roll over to the next month." },
+      { q: "How do updates get tested before going live?", a: "We test all core, theme, and plugin updates in an isolated staging environment before deploying to production." },
+    ],
+    relatedServices: [
+      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress-website" },
+      { id: "01", title: "Web Development", subTitle: "Custom Websites", slug: "web-development" },
+    ],
+  },
 };
 
 // ─── SLUG ALIASES ─────────────────────────────────────────────────────────────
 const SLUG_ALIASES = {
+  "website-maintenance": "website-maintenance",
+  "maintenance": "website-maintenance",
   "mobileapp": "mobile-app-development",
   "uiux": "ui-ux-designing",
   "fullstack": "full-stack-development",
@@ -683,10 +787,13 @@ const SLUG_ALIASES = {
   "react-js-dev": "web-development",
   "next-js-dev": "web-development",
   "vue-js-dev": "web-development",
-  "shopify": "ecommerce",
-  "shopify-development": "ecommerce",
-  "shopify-themes": "ecommerce",
-  "shopify-apps": "ecommerce",
+  "shopify": "shopify",
+  "shopify-development": "shopify",
+  "shopify-themes": "shopify",
+  "shopify-apps": "shopify",
+  "woocommerce": "woocommerce",
+  "woocommerce-development": "woocommerce",
+  "woo": "woocommerce",
   "wp-themes": "wordpress-website",
   "wp-plugins": "wordpress-website",
   "react": "web-development",
@@ -706,6 +813,10 @@ const SLUG_ALIASES = {
   "mobile": "app-development",
   "web": "web-development",
   "app": "app-development",
+  "brand-design": "branding",
+  "branding": "branding",
+  "email-marketing": "email-templates",
+  "email-templates": "email-templates",
 };
 
 // ─── FAQ ITEM ─────────────────────────────────────────────────────────────────
@@ -1285,7 +1396,7 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
                 </span>
               </h2>
               <p className="text-slate-500 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-md mx-auto mb-6 sm:mb-8">
-                Send us your requirements today and receive a detailed quote within 2 hours — no commitment required.
+                Send us your requirements today and receive a detailed quote within one business day — no commitment required.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">

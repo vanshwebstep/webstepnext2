@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import SingleBlogPage from '@/components/Blog/SingleBlogPost';
 import { fetchBlogBySlug } from '@/lib/contentApi';
@@ -50,9 +51,9 @@ export default function BlogSlugClient({ post: initialPost, related: initialRela
         <div className="text-center px-4">
           <h2 className="text-3xl font-extrabold text-slate-900 mb-2">Blog Post Not Found</h2>
           <p className="text-slate-500 mb-6">Could not fetch article for "{slug}" from /api/blogs.php</p>
-          <a href="/blog" className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-2xl font-bold hover:shadow-lg transition">
+          <Link href="/blog" className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-2xl font-bold hover:shadow-lg transition">
             Back to All Blogs
-          </a>
+          </Link>
         </div>
       </div>
     );

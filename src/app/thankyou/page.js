@@ -10,6 +10,7 @@ export async function generateMetadata() {
   return {
     title: dynamicSeo.title || "Thank You | Webstep Solutions",
     description: dynamicSeo.description || "Thanks for contacting Webstep Solutions. Our team will get back to you shortly.",
+    robots: { index: false, follow: false },
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
   };
 }
@@ -79,7 +80,7 @@ export default function ThankYouPage() {
               </div>
 
               <a
-                href="tel:7973938927"
+                href="tel:+917973938927"
                 className="mt-5 flex items-center gap-4 rounded-3xl border border-slate-200 bg-slate-950 p-5 text-white transition hover:-translate-y-0.5"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-pink-200">

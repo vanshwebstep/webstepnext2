@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("seo");
   return {
-    title: dynamicSeo.title || "SEO Services | Technical SEO & Core Web Vitals | Webstep",
+    title: dynamicSeo.title || "SEO Services | Technical SEO & Core Web Vitals | Webstep Solutions",
     description: dynamicSeo.description || "Technical SEO audits, Core Web Vitals fixes and conversion improvements for business websites. Request an SEO audit.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/seo/",
+    }
   };
 }
 
 export default function Page() {
-  return <Seo />;
+  return (
+    <>
+      <Seo />
+    </>
+  );
 }

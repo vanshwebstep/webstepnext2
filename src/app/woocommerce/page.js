@@ -1,16 +1,23 @@
 import React from 'react';
-import DynamicServiceLanding from '@/components/DynamicServiceLanding';
+import ServiceDetailPage from '@/components/Servicedetailpage';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("woocommerce");
   return {
-    title: dynamicSeo.title || "WooCommerce Development Services | Custom Online Stores",
-    description: dynamicSeo.description || "Custom WooCommerce stores with tailored product types, checkout flows and payment gateways. Migrations and plugin development included.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "WooCommerce Development Services | Custom Online Stores | Webstep Solutions",
+    description: dynamicSeo.description || "Tailored WooCommerce development for high-volume stores: custom themes, payment gateway integration, subscription architecture, and speed optimization.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/woocommerce/",
+    }
   };
 }
 
 export default function Page() {
-  return <DynamicServiceLanding slug="woocommerce" />;
+  return (
+    <>
+      <ServiceDetailPage serviceSlug="woocommerce" />
+    </>
+  );
 }

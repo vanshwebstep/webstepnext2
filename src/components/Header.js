@@ -60,7 +60,7 @@ const Header = () => {
           <Link href="/" className="flex items-center group shrink-0">
             <Image
               src={logo}
-              alt="WebStep Solutions"
+              alt="Webstep Solutions logo"
               width={150}
               className="w-[100px] sm:w-[120px] md:w-[130px] lg:w-[150px] h-auto transition-transform duration-500 group-hover:scale-105"
             />
@@ -76,7 +76,7 @@ const Header = () => {
 
             {/* Phone — icon+label only on xl+ (hides on lg to save nav space) */}
             <a
-              href="tel:7973938927"
+              href="tel:+917973938927"
               className="hidden xl:flex items-center gap-2 group"
               aria-label="Call us"
             >
@@ -132,7 +132,7 @@ const Header = () => {
               <div className="space-y-4 pt-2">
                 {/* Phone row */}
                 <a
-                  href="tel:7973938927"
+                  href="tel:+917973938927"
                   className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-[#FF1F8E]/40 transition-colors"
                 >
                   <div>

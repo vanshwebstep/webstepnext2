@@ -1,16 +1,23 @@
 import React from 'react';
-import DynamicServiceLanding from '@/components/DynamicServiceLanding';
+import ServiceDetailPage from '@/components/Servicedetailpage';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("shopify");
   return {
-    title: dynamicSeo.title || "Shopify Development Services | Custom Themes & Apps",
-    description: dynamicSeo.description || "Custom Shopify themes, Liquid development and private apps for brands and agencies. Shopify Plus and store migrations supported. Get a quote.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "Shopify Development Services | Themes, Apps & Shopify Plus | Webstep Solutions",
+    description: dynamicSeo.description || "Custom Shopify themes, Liquid development, private apps, and Shopify Plus setups engineered to increase conversions and average order value.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/shopify/",
+    }
   };
 }
 
 export default function Page() {
-  return <DynamicServiceLanding slug="shopify" />;
+  return (
+    <>
+      <ServiceDetailPage serviceSlug="shopify" />
+    </>
+  );
 }

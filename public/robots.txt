@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /thankyou/
+Disallow: /singal/
+Disallow: /category/
+Disallow: /blogv1/
+Disallow: /industrial-training/
+
+Sitemap: https://webstepdev.com/sitemap.xml

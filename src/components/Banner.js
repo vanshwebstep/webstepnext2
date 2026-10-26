@@ -40,9 +40,9 @@ const SERVICES = [
   },
   {
     id: "04",
-    num: 12,
+    num: 15,
     suffix: '+',
-    label: 'Technologies Mastered',
+    label: 'Countries Served',
     accent: "#F59E0B",
     accentRgb: "245,158,11",
     gradientFrom: "#F59E0B",
@@ -140,7 +140,7 @@ const Banner = () => {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden font-roboto pt-28 sm:pt-32 pb-16 sm:pb-20">
 
       <div className="absolute inset-0 -z-20">
-        <Image src={herobanner} alt="Hero Background" fill priority className="object-cover" />
+        <Image src={herobanner} alt="" aria-hidden="true" fill priority className="object-cover" />
       </div>
       <div className="absolute inset-0 bg-black/50 -z-10" />
 
@@ -172,7 +172,7 @@ const Banner = () => {
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-16 md:py-20 relative z-10 flex flex-col items-center text-center">
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 sm:gap-3 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-2xl bg-white backdrop-blur-md border border-white/60 text-[#FF1F8E] font-bold text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.3em] uppercase mb-6 sm:mb-10 shadow-sm max-w-[95%] sm:max-w-none">
+        <div className="inline-flex items-center gap-2 sm:gap-3 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-2xl bg-white backdrop-blur-md border border-white/60 text-[#FF1F8E] font-bold text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6 shadow-sm max-w-[95%] sm:max-w-none">
           <span className="relative flex h-2 sm:h-2.5 w-2 sm:w-2.5 shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF1F8E] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 sm:h-2.5 w-2 sm:w-2.5 bg-[#FF1F8E]"></span>
@@ -180,16 +180,29 @@ const Banner = () => {
           <span className="truncate">Turning Ideas Into Digital Reality</span>
         </div>
 
-        {/* Headline */}
-        <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tight leading-[1.05] sm:leading-[0.95] mb-5 sm:mb-8">
-          Build Better. <br />
+        {/* Tagline */}
+        <p
+          className="text-xs sm:text-sm font-extrabold tracking-[0.25em] sm:tracking-[0.35em] uppercase mb-3"
+          style={{
+            background: "linear-gradient(135deg, #E879F9 0%, #38BDF8 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          Build Better. Grow Faster.
+        </p>
+
+        {/* Headline H1 with keywords */}
+        <motion.h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[76px] font-black text-white tracking-tight leading-[1.08] sm:leading-[0.98] mb-5 sm:mb-8 max-w-5xl">
+          Web Development Company for{" "}
           <span style={{
             background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
           }}>
-            Grow Faster.
+            Agencies and Growing Businesses
           </span>
         </motion.h1>
 

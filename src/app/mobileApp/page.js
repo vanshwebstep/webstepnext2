@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("mobileApp");
   return {
-    title: dynamicSeo.title || "Mobile App Development Company | iOS & Android | Webstep",
+    title: dynamicSeo.title || "Mobile App Development Company | iOS & Android | Webstep Solutions",
     description: dynamicSeo.description || "Native iOS apps in Swift and Android apps in Kotlin, from idea to App Store and Play Store launch. Share your app idea and get a quote.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/app-development/",
+    }
   };
 }
 
 export default function Page() {
-  return <MobileApp />;
+  return (
+    <>
+      <MobileApp />
+    </>
+  );
 }

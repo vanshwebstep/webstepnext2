@@ -1,16 +1,23 @@
 import React from 'react';
-import DynamicServiceLanding from '@/components/DynamicServiceLanding';
+import ServiceDetailPage from '@/components/Servicedetailpage';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("brand-design");
   return {
-    title: dynamicSeo.title || "Brand Design & Logo Design Services | Webstep",
-    description: dynamicSeo.description || "Logos and brand identity design for new and growing businesses. Share your brand idea and get a quote.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {})
+    title: dynamicSeo.title || "Brand Design & Identity Services | Webstep Solutions",
+    description: dynamicSeo.description || "Complete brand identity design: logos, design systems, typography guidelines, and brand collateral that make your business instantly recognizable.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/brand-design/",
+    }
   };
 }
 
 export default function Page() {
-  return <DynamicServiceLanding slug="brand-design" />;
+  return (
+    <>
+      <ServiceDetailPage serviceSlug="brand-design" />
+    </>
+  );
 }

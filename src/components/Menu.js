@@ -22,27 +22,32 @@ const submenus = {
         },
         groups: [
             {
-                heading: "Development",
+                heading: "Web & E-Commerce",
                 items: [
-                    { name: "Web Development",  href: "/services/web-development",  icon: FiCode,         desc: "Custom websites & apps"  },
-                    { name: "App Development",  href: "/services/app-development",  icon: FiSmartphone,   desc: "iOS & Android apps"       },
-                    { name: "E-Commerce",       href: "/services/ecommerce",        icon: FiShoppingCart, desc: "Shopify, WooCommerce"     },
-                    { name: "UI/UX Design",     href: "/services/ui-ux",            icon: FiLayout,       desc: "User-first interfaces"    },
+                    { name: "Web Development",        href: "/services/web-development",  icon: FiCode,         desc: "Custom Next.js & React sites"  },
+                    { name: "WordPress Development",  href: "/services/wordpress",        icon: FiLayers,       desc: "Custom themes & plugins"  },
+                    { name: "Shopify Development",    href: "/services/shopify",          icon: FiShoppingCart, desc: "Liquid themes & private apps"  },
+                    { name: "WooCommerce Development",href: "/services/woocommerce",      icon: FiShoppingCart, desc: "Custom online stores"  },
+                    { name: "Laravel Development",    href: "/services/laravel",          icon: FiCode,         desc: "Custom PHP web apps"  },
+                    { name: "Full Stack Development", href: "/fullstack",                 icon: FiCode,         desc: "Node.js, Vue & APIs"  },
                 ],
             },
             {
-                heading: "AI Solutions",
+                heading: "AI & Modern Solutions",
                 items: [
-                    { name: "AI Websites",      href: "/services/ai-powered-websites", icon: FiCpu,           desc: "Next.js & LLM web apps"  },
-                    { name: "AI Automation",    href: "/services/ai-automation",       icon: FiZap,           desc: "Autonomous workflows"    },
-                    { name: "AI Chatbots",      href: "/services/ai-chatbots",         icon: FiMessageSquare, desc: "24/7 Smart assistants"   },
+                    { name: "AI Websites",            href: "/services/ai-powered-websites", icon: FiCpu,           desc: "Next.js & LLM web apps"  },
+                    { name: "AI Automation",          href: "/services/ai-automation",       icon: FiZap,           desc: "Autonomous workflows"    },
+                    { name: "AI Chatbots",            href: "/services/ai-chatbots",         icon: FiMessageSquare, desc: "24/7 Smart assistants"   },
+                    { name: "Website Maintenance",    href: "/services/website-maintenance", icon: FiLayers,        desc: "Updates, speed & security" },
                 ],
             },
             {
-                heading: "Marketing",
+                heading: "Design & Apps",
                 items: [
-                    { name: "SEO Services",    href: "/services/seo",             icon: FiSearch,     desc: "Rank higher, grow faster" },
-                    { name: "Brand Design",    href: "/services/branding",        icon: FiPenTool,    desc: "Logos & brand identity"    },
+                    { name: "UI/UX Design",           href: "/services/ui-ux",            icon: FiLayout,       desc: "User-first interfaces"    },
+                    { name: "App Development",        href: "/services/app-development",  icon: FiSmartphone,   desc: "iOS & Android apps"       },
+                    { name: "SEO Services",           href: "/services/seo",              icon: FiSearch,       desc: "Rank higher, grow faster" },
+                    { name: "Brand Design",           href: "/services/brand-design",     icon: FiPenTool,      desc: "Logos & brand identity"   },
                 ],
             },
         ],
@@ -54,16 +59,9 @@ const submenus = {
             {
                 heading: "Our Work",
                 items: [
-                    { name: "Our Work",   href: "/works",            icon: FiLayers,   desc: "Full portfolio"      },
-                    { name: "Industrial Training", href: "/industrial-training",    icon: FiBookOpen,     desc: "Career-ready programs" },
-                    { name: "Hire Developers", href: "/hire-full-time-developers", icon: FiBriefcase, desc: "Dedicated talent" },
-                    { name: "B2B Sales", href: "/b2b-sales", icon: FiTrendingUp, desc: "Agency growth offer" },
-                ],
-            },
-            {
-                heading: "Case Studies",
-                items: [
-                    { name: "Case Studies",  href: "/case-study",   icon: FiShoppingCart, desc: "Case Studies"},
+                    { name: "Our Work",     href: "/works",      icon: FiLayers,       desc: "Full portfolio" },
+                    { name: "Case Studies", href: "/case-study", icon: FiShoppingCart, desc: "Client success stories" },
+                    { name: "For Agencies", href: "/b2b-sales",  icon: FiTrendingUp,   desc: "Development partner" },
                 ],
             },
         ],
@@ -181,15 +179,17 @@ const Menu = ({ mobile = false, closeMenu, scrolled = false }) => {
         { name: "Home",      href: "/"          },
         {
             name: "Services",
-            href: "#",
+            href: "/services",
             submenuKey: "services",
             activePaths: [
                 "/services", "/php", "/fullstack", "/laravel", "/uiux",
                 "/wordpress", "/mobileApp", "/nodejs", "/softwaretesting",
-                "/seo", "/marketing",
+                "/seo", "/marketing", "/shopify", "/woocommerce",
                 "/ai-powered-websites", "/ai-automation", "/ai-chatbots",
+                "/website-maintenance", "/ecommerce",
             ],
         },
+        { name: "Hire Developers", href: "/hire-full-time-developers" },
         {
             name: "Portfolio",
             href: "/works",
@@ -197,7 +197,6 @@ const Menu = ({ mobile = false, closeMenu, scrolled = false }) => {
             activePaths: ["/works", "/case-study", "/projects", "/b2b-sales"],
         },
         { name: "About",     href: "/about"     },
-        // { name: "Our Team",  href: "/our-team"  },
         { name: "Blog",      href: "/blog"      },
         { name: "Packages",  href: "/packages"  },
         { name: "Contact",   href: "/contactus" },

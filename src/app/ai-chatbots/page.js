@@ -5,12 +5,19 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("ai-chatbots");
   return {
-    title: dynamicSeo.title || "AI Chatbot & Virtual Assistant Development Services | Webstep",
-    description: dynamicSeo.description || "Custom AI chatbots and conversational assistants that handle support questions, qualify leads and book meetings 24/7 across web & WhatsApp.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : { keywords: "AI chatbots, virtual assistants, WhatsApp AI bot, customer support AI, webstep solutions" })
+    title: dynamicSeo.title || "Custom AI Chatbot Development & Virtual Assistants | Webstep Solutions",
+    description: dynamicSeo.description || "Custom AI chatbots and virtual assistants that handle customer support, qualify leads, and automate workflows 24/7 across web and WhatsApp.",
+    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    alternates: {
+      canonical: "https://webstepdev.com/services/ai-chatbots/",
+    }
   };
 }
 
 export default function Page() {
-  return <AIChatbotsServicePage />;
+  return (
+    <>
+      <AIChatbotsServicePage />
+    </>
+  );
 }

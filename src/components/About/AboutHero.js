@@ -83,13 +83,13 @@ const AboutHero = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px] font-extrabold tracking-tight leading-[1.05] sm:leading-[0.9] text-slate-900 mb-4 sm:mb-6"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-extrabold tracking-tight leading-[1.08] sm:leading-[0.95] text-slate-900 mb-4 sm:mb-6"
               >
-                We Build the Web
+                About Webstep Solutions
                 <br />
-                <span className="relative inline-block"
+                <span className="relative inline-block text-2xl sm:text-4xl md:text-5xl lg:text-6xl mt-2"
                   style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                  You Imagine
+                  We Build the Web You Imagine
                   <span className="absolute left-0 -bottom-2 w-full h-[5px] rounded-full animate-pulse"
                     style={{ background: "linear-gradient(90deg, #E879F9, #A855F7, #38BDF8)", filter: "blur(4px)", opacity: 0.6 }} />
                 </span>
@@ -111,10 +111,10 @@ const AboutHero = () => {
                   How We Work
                   <HiOutlineArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
-                <a href="/customize-package"
+                <Link href="/customize-package"
                   className="flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-bold text-slate-600 text-xs sm:text-[15px] border border-slate-200 hover:border-purple-300 hover:text-purple-600 bg-white/60 backdrop-blur-md transition-all duration-300">
                   Start a Project
-                </a>
+                </Link>
               </motion.div>
 
             </div>

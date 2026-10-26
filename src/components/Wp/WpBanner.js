@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import AnimatedSection from '../AnimatedSection';
 import { assetImage } from "@/lib/assets";
 const wordpress = assetImage("wordpress.png");
@@ -24,12 +25,12 @@ const WpBanner = () => {
                   Custom <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">WordPress Development</span> Services
                 </h1>
                 <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-                  eBizneeds has years of experience with a team of professional WordPress developers offering custom development services to help businesses leave a mark in the digital world.
+                  Webstep Solutions has years of experience with a team of professional WordPress developers offering custom development services to help businesses leave a mark in the digital world.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <button className="px-8 py-4 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.2em] shadow-lg shadow-slate-900/20 hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300">
+                  <Link href="/contact" className="inline-block px-8 py-4 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.2em] shadow-lg shadow-slate-900/20 hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300">
                     Discuss Your Website
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
