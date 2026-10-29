@@ -9,18 +9,24 @@ const logoIconUrl = `${IMAGE_ASSET_BASE_URL}/logo.png`;
 const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-oswald",
+  display: "swap",
 });
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-roboto",
+  display: "swap",
 });
 
 export const metadata = {
   metadataBase: new URL("https://webstepdev.com"),
-  title: "Webstep Solutions",
-  description: "Enterprise Software Development at Scale",
+  title: "Web Development Company & Hire Developers | Webstep Solutions",
+  description: "Custom WordPress, Shopify, React and Laravel development for agencies and growing businesses. Hire dedicated developers monthly. Request a quote.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   icons: {
     icon: [{ url: logoIconUrl, type: "image/png" }],
     shortcut: [logoIconUrl],

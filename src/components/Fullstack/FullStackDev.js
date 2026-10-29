@@ -43,7 +43,7 @@ const FullStackDev = () => {
 
                 {/* Heading */}
                 <h2 className="text-4xl md:text-5xl font-extrabold leading-[0.95] text-slate-900 mb-4 tracking-tight">
-                  End-to-End{" "}
+                  What is Included in{" "}
                   <span
                     className="relative inline-block"
                     style={{
@@ -53,13 +53,12 @@ const FullStackDev = () => {
                       backgroundClip: "text",
                     }}
                   >
-                    Full Stack
+                    Custom Web Development
                     {/* Animated underline glow — matches Blogs */}
                     <span className="absolute left-0 -bottom-2 w-full h-[5px] rounded-full
                       bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400
                       blur-sm opacity-70 animate-pulse" />
-                  </span>{" "}
-                  Solutions
+                  </span>
                 </h2>
 
                 {/* Divider — matches Blogs */}

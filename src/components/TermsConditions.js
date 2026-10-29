@@ -397,7 +397,7 @@ const TermsConditions = () => {
                     <Link href="/privacy" className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-purple-600 transition-colors">
                       🔒 Privacy Policy
                     </Link>
-                    <Link href="/contact" className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-purple-600 transition-colors">
+                    <Link href="/contactus" className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-purple-600 transition-colors">
                       📬 Contact Us
                     </Link>
                     <Link href="/works" className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-purple-600 transition-colors">
@@ -461,7 +461,7 @@ const TermsConditions = () => {
                   </p>
                   <div className="flex flex-wrap justify-center gap-3">
                     <Link
-                      href="/contact"
+                      href="/contactus"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-white text-sm shadow-lg hover:scale-105 transition-all duration-300"
                       style={{
                         background: "linear-gradient(135deg, #A855F7, #6366f1, #38BDF8)",

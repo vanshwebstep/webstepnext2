@@ -304,21 +304,23 @@ const ServicesPage = () => {
               <div style={{ width: '36px', height: '2px', background: '#7C3AED' }} />
             </div>
             <h1 style={{
-              fontSize: isMobile ? '2rem' : 'clamp(2.5rem, 5vw, 3.5rem)',
+              fontSize: isMobile ? '2.2rem' : 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', lineHeight: 1.1, margin: 0,
             }}>
-              Web Development Services:{' '}
+              Web Development{" "}
               <span style={{
                 background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)",
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
               }}>
-                13 Specialized Technologies
+                Services
               </span>
             </h1>
-            <p style={{ fontSize: isMobile ? '14px' : '15px', color: '#64748b', marginTop: '0.75rem', fontWeight: 500, maxWidth: '550px', margin: '0.75rem auto 0', lineHeight: 1.5 }}>
-              Click any architecture node below to inspect core framework capabilities, specialized features, and deployment procedures instantly.
+            <p style={{ fontSize: isMobile ? '14px' : '16px', color: '#64748b', marginTop: '0.75rem', fontWeight: 500, maxWidth: '650px', margin: '0.75rem auto 0', lineHeight: 1.6 }}>
+              Production-ready web development covering Websites & Web Apps, WordPress, Shopify, APIs & Integrations, AI Solutions, and Dedicated Developers.
             </p>
           </div>
+
+          <h2 className="sr-only">Website & Web Apps, WordPress & WooCommerce, Shopify & eCommerce, APIs, AI Solutions & Dedicated Developers</h2>
 
           {/* Bento Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: gridCols, gap: isMobile ? '10px' : '12px', marginBottom: '2.5rem' }}>

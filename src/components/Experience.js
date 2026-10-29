@@ -126,9 +126,9 @@ const Experience = () => {
               Why Webstep
             </div>
             <h2 style={{ fontSize: isMobile ? '1.8rem' : 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, color: '#0a0a0a', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: 10 }}>
-              Built on{' '}
+              Why Choose{' '}
               <span style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                Trust & Results
+                Webstep Solutions
               </span>
             </h2>
             <p style={{ fontSize: isMobile ? 13 : 18, color: '#94a3b8', fontWeight: 500, lineHeight: 1.65, maxWidth: 440, margin: '0 auto', padding: '0 8px' }}>
@@ -161,7 +161,7 @@ const Experience = () => {
                       {r.name[0]}
                     </div>
                     <div>
-                      <p style={{ fontSize: 11.5, color: '#64748b', lineHeight: 1.5, fontWeight: 500, marginBottom: 3 }}>"{r.text}"</p>
+                      <p style={{ fontSize: 11.5, color: '#64748b', lineHeight: 1.5, fontWeight: 500, marginBottom: 3 }}>&ldquo;{r.text}&rdquo;</p>
                       <p style={{ fontSize: 9.5, fontWeight: 700, color: '#94a3b8', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{r.name} · {r.role}</p>
                     </div>
                   </div>

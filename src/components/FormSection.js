@@ -32,21 +32,9 @@ const socials = [
   {
     icon: <FaLinkedinIn />,
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/company/webstep-solutions/",
     hoverColor: "#0077b5",
-  },
-  {
-    icon: <FaInstagram />,
-    label: "Instagram",
-    href: "https://instagram.com",
-    hoverColor: "#e1306c",
-  },
-  {
-    icon: <FaTwitter />,
-    label: "Twitter",
-    href: "https://twitter.com",
-    hoverColor: "#1da1f2",
-  },
+  }
 ];
 
 /* Per-accent Tailwind token sets */

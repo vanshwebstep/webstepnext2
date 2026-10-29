@@ -32,7 +32,7 @@ export default function BlogSlugClient({ post: initialPost, related: initialRela
       .finally(() => {
         setLoading(false);
       });
-  }, [slug]);
+  }, [slug, initialPost]);
 
   if (loading) {
     return (
@@ -50,7 +50,7 @@ export default function BlogSlugClient({ post: initialPost, related: initialRela
       <div className="min-h-screen flex items-center justify-center bg-slate-50 py-32 font-roboto">
         <div className="text-center px-4">
           <h2 className="text-3xl font-extrabold text-slate-900 mb-2">Blog Post Not Found</h2>
-          <p className="text-slate-500 mb-6">Could not fetch article for "{slug}" from /api/blogs.php</p>
+          <p className="text-slate-500 mb-6">Could not fetch article for &ldquo;{slug}&rdquo; from /api/blogs.php</p>
           <Link href="/blog" className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-2xl font-bold hover:shadow-lg transition">
             Back to All Blogs
           </Link>

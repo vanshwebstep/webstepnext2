@@ -134,15 +134,18 @@ export default function B2BSalesPage() {
             For IT Agencies and SaaS Companies
           </div>
 
-          <h1 className="max-w-5xl text-[42px] font-black leading-[1.03] tracking-normal text-slate-950 sm:text-6xl lg:text-[78px]">
-            Your next developer.
-            <span className="block text-[#FF1F8E]">Onboarded in 72 hours.</span>
-            Not 3 months.
+          <h1 className="max-w-5xl text-[38px] font-black leading-[1.05] tracking-tight text-slate-950 sm:text-6xl lg:text-[72px]">
+            A Development Partner for{" "}
+            <span className="block text-[#FF1F8E]">Digital and Marketing Agencies</span>
           </h1>
 
-          <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="mt-4 text-lg sm:text-2xl font-bold text-slate-800">
+            Your next dedicated developer — onboarded in 72 hours, not 3 months.
+          </p>
+
+          <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
             Stop losing clients to delayed projects. Get a dedicated, pre-vetted developer who joins your tools,
-            attends your standups, and ships from day one at a lower cost than local hiring.
+            attends your standups, and ships from day one under strict NDA with 100% IP ownership.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -178,9 +181,9 @@ export default function B2BSalesPage() {
 
       <section className="bg-[#FFF7FA] px-5 py-20 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl">
-          <SectionLabel>The problem</SectionLabel>
+          <SectionLabel>What We Build</SectionLabel>
           <h2 className="max-w-3xl text-3xl font-black leading-tight text-slate-950 sm:text-5xl">
-            Hiring is killing your growth velocity.
+            What We Build & Bottlenecks We Solve for Digital Agencies
           </h2>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -202,10 +205,10 @@ export default function B2BSalesPage() {
 
       <section id="how" className="px-5 py-20 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl">
-          <SectionLabel>How it works</SectionLabel>
+          <SectionLabel>Handoff & Communication</SectionLabel>
           <div className="max-w-3xl">
             <h2 className="text-3xl font-black leading-tight text-slate-950 sm:text-5xl">
-              From first call to first commit in 72 hours.
+              Handoff & Communication: From First Call to First Commit in 72 Hours
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
               No lengthy RFPs, no endless interviews, and no waiting. Just a developer inside your team, shipping.
@@ -233,10 +236,10 @@ export default function B2BSalesPage() {
 
       <section className="bg-[#170711] px-5 py-20 text-white sm:px-8 lg:px-12">
         <div className="mx-auto max-w-5xl">
-          <SectionLabel light>Why Webstep</SectionLabel>
+          <SectionLabel light>Engagement Models & Security</SectionLabel>
           <h2 className="max-w-3xl text-3xl font-black leading-tight sm:text-5xl">
-            Not a freelancer. Not an agency.
-            <span className="block text-[#FF1F8E]">Your team, extended.</span>
+            Engagement Models & NDA Terms:
+            <span className="block text-[#FF1F8E]">Your Team, Extended with 100% IP Ownership.</span>
           </h2>
 
           <div className="mt-10 overflow-x-auto">
@@ -270,9 +273,9 @@ export default function B2BSalesPage() {
 
       <section id="faq" className="px-5 py-20 sm:px-8 lg:px-12">
         <div className="mx-auto xl:max-w-3xl">
-          <SectionLabel>Common questions</SectionLabel>
+          <SectionLabel>FAQ</SectionLabel>
           <h2 className="text-3xl font-black leading-tight text-slate-950 sm:text-5xl">
-            Questions we hear before every first call.
+            Frequently Asked Questions (FAQs)
           </h2>
           <div className="mt-8">
             {faqs.map((item, index) => (

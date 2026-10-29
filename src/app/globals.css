@@ -57,3 +57,6 @@
 [class*="floating-whatsapp"] {
   z-index: 99999 !important;
 }
+section.py-16.md\:py-24.pt-40.bg-white.relative.z-10.px-6.overflow-hidden.font-roboto {
+    padding-top: 15rem !important;
+}

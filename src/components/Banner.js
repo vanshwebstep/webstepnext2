@@ -10,7 +10,7 @@ const herobanner = assetImage("banner.png");
 const SERVICES = [
   {
     id: "01",
-    num: 120,
+    num: 500,
     suffix: '+',
     label: 'Projects Delivered',
     accent: "#E879F9",
@@ -99,10 +99,10 @@ function TiltCard({ service, index }) {
       className="group"
     >
       <div className="bg-white rounded-2xl sm:rounded-[28px] p-4 sm:p-6 md:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100 transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-[0_30px_100px_rgba(255,31,142,0.2)]">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-1.5 sm:mb-3">
+        <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-1.5 sm:mb-3">
           {count}
           <span className="text-pink-500">{service.suffix}</span>
-        </h2>
+        </div>
         <p className="text-[9px] sm:text-xs tracking-[0.15em] sm:tracking-[0.3em] uppercase text-gray-500 font-semibold leading-tight">
           {service.label}
         </p>

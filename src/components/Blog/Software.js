@@ -110,7 +110,7 @@ const Software = () => {
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-pink-500/10 blur-3xl rounded-full"></div>
 
         <p className="text-slate-600 text-xs sm:text-base leading-relaxed relative z-10">
-          Whether you're in finance, retail, healthcare, or building the next SaaS giant — 
+          Whether you&apos;re in finance, retail, healthcare, or building the next SaaS giant — 
           we help you move faster, scale smarter, and stand out. 
           Our custom solutions are designed to give you a true competitive edge.
         </p>

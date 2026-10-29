@@ -186,7 +186,7 @@ const Footer = () => {
                             <div className="flex items-center gap-3 px-5 py-4 rounded-2xl"
                                 style={{ background: "rgba(52,211,153,0.1)", border: "1px solid rgba(52,211,153,0.25)" }}>
                                 <span className="text-emerald-400 text-lg">✓</span>
-                                <p className="text-emerald-400 text-sm font-semibold">You're subscribed!</p>
+                                <p className="text-emerald-400 text-sm font-semibold">You&apos;re subscribed!</p>
                             </div>
                         ) : (
                             <div className="space-y-2">

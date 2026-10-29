@@ -9,7 +9,7 @@ import { HiOutlineArrowUpRight, HiOutlineChevronDown } from "react-icons/hi2";
 
 const AboutHero = () => {
   const STATS = [
-    { num: "120+", label: "Projects Delivered", sub: "Across 15+ industries" },
+    { num: "500+", label: "Projects Delivered", sub: "Across 15+ industries" },
     { num: "50+", label: "Happy Clients",      sub: "Startups to enterprises" },
     { num: "12+",  label: "Years Experience",   sub: "Since 2012" },
     { num: "98%",  label: "On-Time Delivery",   sub: "Consistent track record" },

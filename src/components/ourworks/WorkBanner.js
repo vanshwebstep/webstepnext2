@@ -6,7 +6,7 @@ import AnimatedSection from '../AnimatedSection';
 
 const STATS = [
   { value: "12+", label: "Years Experience" },
-  { value: "120+", label: "Projects Delivered" },
+  { value: "500+", label: "Projects Delivered" },
   { value: "12+", label: "Technologies" },
   { value: "98%", label: "Client Satisfaction" },
 ];

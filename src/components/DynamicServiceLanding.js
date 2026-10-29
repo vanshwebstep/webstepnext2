@@ -19,6 +19,12 @@ import {
 } from "react-icons/fi";
 import { fetchServicePage, submitLead } from "@/lib/contentApi";
 import { THANK_YOU_ROUTE } from "@/lib/routes";
+import { hireDevelopersPage, industrialTrainingPage } from "@/lib/servicePageFallbacks";
+
+const SLUG_FALLBACKS = {
+  "hire-full-time-developers": hireDevelopersPage,
+  "industrial-training": industrialTrainingPage,
+};
 
 const iconMap = {
   users: FiUsers,
@@ -260,23 +266,29 @@ function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionIntro eyebrow="Pricing & Plans" title={page?.pricingTitle || "Flexible Investment Options"} text={page?.pricingIntro} light={dark} />
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} className="mt-10 grid gap-6 md:grid-cols-3">
-              {pricing.map((plan) => (
-                <motion.article key={plan.name} variants={fadeUp} className={cx("rounded-[28px] border p-7 shadow-sm", dark ? "border-white/10 bg-white/[0.04]" : "border-slate-200 bg-white")}>
-                  <p className="text-xs font-black uppercase tracking-widest text-pink-600">{plan.name}</p>
-                  <div className="mt-3 text-3xl font-black">{plan.price}</div>
-                  <p className={cx("mt-2 text-sm", dark ? "text-slate-300" : "text-slate-600")}>{plan.description}</p>
-                  <ul className="mt-6 space-y-3">
-                    {(plan.features || []).map((feature) => (
-                      <li key={feature} className={cx("flex items-center gap-3 text-sm font-semibold", dark ? "text-slate-200" : "text-slate-700")}>
-                        <FiCheckCircle className="text-pink-500" /> {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/customize-package" className="mt-8 block w-full rounded-full bg-slate-950 py-3 text-center text-xs font-black uppercase tracking-widest text-white transition hover:bg-pink-600">
-                    Get Started
-                  </Link>
-                </motion.article>
-              ))}
+              {pricing.map((plan, index) => {
+                const planTitle = plan.title || plan.name;
+                const features = plan.features || plan.items || [];
+                return (
+                  <motion.article key={planTitle || index} variants={fadeUp} className={cx("rounded-[28px] border p-7 shadow-sm", dark ? "border-white/10 bg-white/[0.04]" : "border-slate-200 bg-white")}>
+                    {planTitle && <p className="text-xs font-black uppercase tracking-widest text-pink-600">{planTitle}</p>}
+                    <div className="mt-3 text-3xl font-black">{plan.price}</div>
+                    {plan.description && <p className={cx("mt-2 text-sm", dark ? "text-slate-300" : "text-slate-600")}>{plan.description}</p>}
+                    {features.length > 0 && (
+                      <ul className="mt-6 space-y-3">
+                        {features.map((feature, fIdx) => (
+                          <li key={feature || fIdx} className={cx("flex items-center gap-3 text-sm font-semibold", dark ? "text-slate-200" : "text-slate-700")}>
+                            <FiCheckCircle className="text-pink-500 shrink-0" /> <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    <Link href="/customize-package" className="mt-8 block w-full rounded-full bg-slate-950 py-3 text-center text-xs font-black uppercase tracking-widest text-white transition hover:bg-pink-600">
+                      Get Started
+                    </Link>
+                  </motion.article>
+                );
+              })}
             </motion.div>
           </div>
         </section>
@@ -285,15 +297,29 @@ function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, 
       {proof.length > 0 && (
         <section className={cx("py-20", dark ? "bg-slate-950 text-white" : "bg-white text-slate-950")}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionIntro eyebrow="Client Impact" title="Real outcomes delivered for client teams" light={dark} />
+            <SectionIntro eyebrow="Client Impact" title={page?.proofTitle || "Real outcomes delivered for client teams"} light={dark} />
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="mt-10 grid gap-6 md:grid-cols-3">
-              {proof.map((item) => (
-                <motion.article key={item.title} variants={fadeUp} className={cx("rounded-[26px] border p-6", dark ? "border-white/10 bg-white/[0.04]" : "border-slate-200 bg-slate-50")}>
-                  <div className="text-xs font-black uppercase tracking-widest text-pink-600">{item.metric}</div>
-                  <h3 className="mt-3 text-xl font-black">{item.title}</h3>
-                  <p className={cx("mt-2 text-sm leading-7", dark ? "text-slate-300" : "text-slate-600")}>{item.description}</p>
-                </motion.article>
-              ))}
+              {proof.map((item, index) => {
+                const isString = typeof item === "string";
+                const title = isString ? item : item.title;
+                const metric = isString ? `0${index + 1}` : item.metric;
+                const desc = isString ? "" : item.description;
+
+                return (
+                  <motion.article
+                    key={title || index}
+                    variants={fadeUp}
+                    className={cx(
+                      "rounded-[26px] border p-6 flex flex-col justify-between",
+                      dark ? "border-white/10 bg-white/[0.04]" : "border-slate-200 bg-slate-50"
+                    )}
+                  >
+                    {metric && <div className="text-xs font-black uppercase tracking-widest text-pink-600">{metric}</div>}
+                    <h3 className="mt-3 text-lg font-black">{title}</h3>
+                    {desc && <p className={cx("mt-2 text-sm leading-7", dark ? "text-slate-300" : "text-slate-600")}>{desc}</p>}
+                  </motion.article>
+                );
+              })}
             </motion.div>
           </div>
         </section>
@@ -302,7 +328,7 @@ function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, 
       <section className={cx("py-20", dark ? "bg-slate-950 text-white" : "bg-white text-slate-950")}>
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
           <div>
-            <SectionIntro eyebrow="FAQ" title="Questions before you start?" text="The important details are covered here, and the rest can be mapped on a short consultation call." light={dark} />
+            <SectionIntro eyebrow="FAQ" title={page?.faqTitle || "Frequently Asked Questions (FAQs)"} text="The important details are covered here, and the rest can be mapped on a short consultation call." light={dark} />
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="mt-8 grid gap-4">
               {(faqs.length > 0 ? faqs : [
                 { q: "How quickly can we start?", a: "We can typically kick off within 2 to 5 business days after requirements are aligned." },
@@ -390,7 +416,7 @@ function HireBody({ page = {}, sections = [], process = [], pricing = [], proof 
       {sections.length > 0 && (
         <section className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionIntro eyebrow="Dedicated Team Models" title="Build a focused delivery pod around your roadmap" text="Pick a developer, add QA and delivery support, then scale the team as product velocity grows." />
+            <SectionIntro eyebrow="Dedicated Team Models" title={page?.sectionsTitle || "Developers You Can Hire & Engagement Models"} text="Pick a developer, add QA and delivery support, then scale the team as product velocity grows." />
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} className="mt-10 grid gap-5 lg:grid-cols-3">
               {featured.map((section) => {
                 const Icon = pickIcon(section.icon);
@@ -430,13 +456,15 @@ function HireBody({ page = {}, sections = [], process = [], pricing = [], proof 
         <section className="bg-slate-950 py-20 text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-              <SectionIntro eyebrow="Hiring Workflow" title={page?.processTitle || "Hiring Process"} text={page?.processIntro || "How we onboard dedicated developers."} light />
+              <SectionIntro eyebrow="Hiring Workflow" title={page?.processTitle || "How Hiring Dedicated Developers Works"} text={page?.processIntro || "How we onboard dedicated developers."} light />
               <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:grid-cols-2">
                 {process.map((step, index) => (
                   <motion.div key={step.title || index} variants={fadeUp} className="rounded-[24px] border border-white/10 bg-white/[0.05] p-6">
                     <div className="flex items-center justify-between gap-4">
                       <span className="text-sm font-black text-sky-200">STEP 0{index + 1}</span>
-                      <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-slate-300">{step.timeframe}</span>
+                      {step.timeframe && (
+                        <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-slate-300">{step.timeframe}</span>
+                      )}
                     </div>
                     <h3 className="mt-4 text-xl font-black">{step.title}</h3>
                     <p className="mt-2 text-sm leading-7 text-slate-300">{step.description}</p>
@@ -453,14 +481,17 @@ function HireBody({ page = {}, sections = [], process = [], pricing = [], proof 
   );
 }
 
-export default function DynamicServiceLanding({ slug, fallback = {} }) {
-  const [page, setPage] = useState(fallback || {});
+export default function DynamicServiceLanding({ slug, fallback }) {
+  const initialData = useMemo(() => {
+    return fallback && Object.keys(fallback).length > 0 ? fallback : (SLUG_FALLBACKS[slug] || {});
+  }, [fallback, slug]);
+  const [page, setPage] = useState(initialData);
 
   useEffect(() => {
-    fetchServicePage(slug, fallback).then((res) => {
+    fetchServicePage(slug, initialData).then((res) => {
       if (res) setPage(res);
     });
-  }, [slug, fallback]);
+  }, [slug, initialData]);
 
   const data = useMemo(() => ({
     hero: page?.hero || {},

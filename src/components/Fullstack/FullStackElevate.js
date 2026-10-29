@@ -8,7 +8,7 @@ const mobileapp = assetImage("mobile_app_development2.png");
 
 const FullStackElevate = () => {
   return (
-    <section className="py-16 md:py-24 bg-white relative z-10 px-6 overflow-hidden font-roboto">
+    <section className="py-16 md:py-24 pt-40 bg-white relative z-10 px-6 overflow-hidden font-roboto">
 
       {/* Dot grid — brand pink */}
       <div
@@ -99,7 +99,7 @@ const FullStackElevate = () => {
 
                     {/* Heading */}
                     <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight leading-[0.95]">
-                      Hire Versatile{" "}
+                      Next.js, React &{" "}
                       <span
                         className="relative inline-block"
                         style={{
@@ -109,12 +109,12 @@ const FullStackElevate = () => {
                           backgroundClip: "text",
                         }}
                       >
-                        Full Stack
+                        Modern Full Stack
                         <span className="absolute left-0 -bottom-2 w-full h-[5px] rounded-full
                           bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400
                           blur-sm opacity-70 animate-pulse" />
                       </span>{" "}
-                      Teams
+                      Engineering
                     </h2>
 
                     {/* Divider */}

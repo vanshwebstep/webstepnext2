@@ -767,7 +767,7 @@ const Testimonials = () => {
   const timerRef = useRef(null);
   const total = REVIEWS.length;
   const goTo = (i) => setCur((i + total) % total);
-  useEffect(() => { timerRef.current = setInterval(() => setCur(c => (c+1)%total), 4000); return () => clearInterval(timerRef.current); }, []);
+  useEffect(() => { timerRef.current = setInterval(() => setCur(c => (c+1)%total), 4000); return () => clearInterval(timerRef.current); }, [total]);
   const r = REVIEWS[cur];
 
   return (
@@ -782,7 +782,7 @@ const Testimonials = () => {
             Global Client{" "}
             <span style={{ background:"linear-gradient(135deg,#E879F9 0%,#A855F7 40%,#38BDF8 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>Success</span>
           </h2>
-          <p style={{ fontSize:18, color:"#8b87a8", marginTop:"0.6rem", fontWeight:500 }}>Hear directly from teams we've partnered with.</p>
+          <p style={{ fontSize:18, color:"#8b87a8", marginTop:"0.6rem", fontWeight:500 }}>Hear directly from teams we&apos;ve partnered with.</p>
         </div>
 
         <div style={{ borderRadius:20, border:"1.5px solid #eceaf5", background:"#f4f3fa", overflow:"hidden" }}
@@ -793,7 +793,7 @@ const Testimonials = () => {
             <div style={{ position:"absolute", left:0, top:0, bottom:0, width:4, background:`linear-gradient(180deg,${r.avatarFrom},${r.avatarTo})`, borderRadius:"4px 0 0 4px" }}/>
             <div style={{ width:50, height:50, borderRadius:14, display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, fontWeight:900, color:"#fff", background:`linear-gradient(135deg,${r.avatarFrom},${r.avatarTo})` }}>{r.initials}</div>
             <div>
-              <p style={{ fontSize:14, color:"#3d3660", lineHeight:1.65, fontWeight:500, fontStyle:"italic", marginBottom:8 }}>"{r.content}"</p>
+              <p style={{ fontSize:14, color:"#3d3660", lineHeight:1.65, fontWeight:500, fontStyle:"italic", marginBottom:8 }}>&ldquo;{r.content}&rdquo;</p>
               <div style={{ display:"flex", alignItems:"center", gap:8 }}>
                 <span style={{ fontSize:13, fontWeight:700, color:"#18142e" }}>{r.name}</span>
                 <span style={{ fontSize:11, color:"#c4c0d8" }}>·</span>
@@ -849,7 +849,7 @@ const INFO_ITEMS = [
   { icon:<FaEnvelope/>, title:"Contact Us", detail:"info@webstepsolutions.com", subDetail:"+91 79739-38927", accent:"#0891B2", accentRgb:"8,145,178" },
   { icon:<FaClock/>, title:"Working Hours", detail:"Mon – Sat: 9:00 AM – 6:00 PM", subDetail:"Sun: Closed", accent:"#F59E0B", accentRgb:"245,158,11" },
 ];
-const CSOCIALS = [{ icon:<FaLinkedinIn/>, label:"LinkedIn", href:"https://linkedin.com", hoverColor:"#0077b5" },{ icon:<FaInstagram/>, label:"Instagram", href:"https://instagram.com", hoverColor:"#e1306c" },{ icon:<FaTwitter/>, label:"Twitter", href:"https://twitter.com", hoverColor:"#1da1f2" }];
+const CSOCIALS = [{ icon:<FaLinkedinIn/>, label:"LinkedIn", href:"https://www.linkedin.com/company/webstep-solutions/", hoverColor:"#0077b5" }];
 
 const ContactSection = () => (
   <section className="py-20 md:py-24 relative z-10 px-6 overflow-hidden bg-white">
@@ -866,7 +866,7 @@ const ContactSection = () => (
           Ready to Bring Your{" "}
           <GradHeading>Ideas to Life?</GradHeading>
         </h2>
-        <p className="text-slate-500 text-lg md:text-xl leading-relaxed max-w-2xl font-medium">We're here to help you navigate the digital landscape. Reach out to discuss your project!</p>
+        <p className="text-slate-500 text-lg md:text-xl leading-relaxed max-w-2xl font-medium">We&apos;re here to help you navigate the digital landscape. Reach out to discuss your project!</p>
       </div>
 
       <div className="flex flex-col lg:flex-row rounded-[3rem] overflow-hidden border border-slate-100 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)]">

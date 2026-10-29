@@ -147,7 +147,7 @@ const SECTIONS = [
       },
       {
         type: "p",
-        text: "To exercise any of these rights, please contact us at support@webstepsolutions.com. We will respond within 30 days.",
+        text: "To exercise any of these rights, please contact us at info@webstepsolutions.com We will respond within 30 days.",
       },
     ],
   },
@@ -183,8 +183,8 @@ const SECTIONS = [
       {
         type: "list",
         items: [
-          "Email: support@webstepsolutions.com",
-          "Website: webstepsolutions.com/contact",
+          "Email: info@webstepsolutions.com",
+          "Website: webstepsolutions.com/contactus",
           "Response time: Within 2 business days",
         ],
       },
@@ -398,7 +398,7 @@ const PrivacyPolicy = () => {
                     constitutes acceptance of any changes.
                   </p>
                   <Link
-                    href="/contact"
+                    href="/contactus"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-white text-sm shadow-lg hover:scale-105 transition-all duration-300"
                     style={{
                       background: "linear-gradient(135deg, #E879F9, #A855F7, #38BDF8)",

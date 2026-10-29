@@ -48,7 +48,7 @@ const FullStackBanner = () => {
 
                 {/* Heading */}
                 <h1 className="text-4xl md:text-6xl font-extrabold leading-[0.95] text-slate-900 mb-4 tracking-tight">
-                  Premium{" "}
+                  Custom{" "}
                   <span
                     className="relative inline-block"
                     style={{
@@ -58,13 +58,13 @@ const FullStackBanner = () => {
                       backgroundClip: "text",
                     }}
                   >
-                    Full Stack
+                    Web Development
                     {/* Animated underline glow — matches Blogs */}
                     <span className="absolute left-0 -bottom-2 w-full h-[6px] rounded-full
                       bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400
                       blur-sm opacity-70 animate-pulse" />
                   </span>{" "}
-                  Development
+                  Services
                 </h1>
 
                 {/* Divider — matches Blogs */}

@@ -79,13 +79,13 @@ const AboutStory = () => {
             <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase">How We Work</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900">
-            From Idea to{" "}
+            How We Work: From Idea to{" "}
             <span style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Live Product
             </span>
           </h2>
           <p className="text-slate-500 text-sm sm:text-lg mt-3 sm:mt-4 max-w-xl mx-auto leading-relaxed">
-            Every Webstep project follows a clear, transparent process — so you always know what's happening, why, and what comes next.
+            Every Webstep project follows a clear, transparent process — so you always know what&apos;s happening, why, and what comes next.
           </p>
         </Reveal>
 

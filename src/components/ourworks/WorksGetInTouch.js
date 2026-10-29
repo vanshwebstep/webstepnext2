@@ -32,9 +32,7 @@ const contactItems = [
 ];
 
 const socials = [
-  { icon: <FaLinkedinIn />, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: <FaInstagram />, href: "https://instagram.com", label: "Instagram" },
-  { icon: <FaTwitter />, href: "https://twitter.com", label: "Twitter" },
+  { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/webstep-solutions/", label: "LinkedIn" },
 ];
 
 const FormSection = () => {
@@ -240,7 +238,7 @@ const FormSection = () => {
                     </span>
                   </h2>
                   <p className="text-slate-400 text-xs sm:text-sm mt-1 sm:mt-2">
-                    We’ll get back to you within 24 hours.
+                    We’ll get back to you within one business day.
                   </p>
                 </div>
 

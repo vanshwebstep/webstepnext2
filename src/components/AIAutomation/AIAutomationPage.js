@@ -700,7 +700,7 @@ export default function AIAutomationPage() {
                 <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
                   Tell us what repetitive processes cost your team the most time. Our senior
                   automation engineers will map a step-by-step diagram and scope an implementation
-                  plan within 24 hours.
+                  plan within one business day.
                 </p>
 
                 <div className="mt-8 space-y-3">

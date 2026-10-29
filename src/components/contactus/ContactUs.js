@@ -37,21 +37,22 @@ const ContactUs = () => {
                             </div>
 
                             <h1
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-slate-900 tracking-tight leading-[0.95] mb-4"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[0.98] mb-4"
                             >
-                                CONTACT {/* Let's Start Your{" "}<br /> */}
+                                Contact{" "}
                                 <span style={{
                                     background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)",
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent",
                                     backgroundClip: "text",
-                                }}>              US
+                                }}>
+                                    Webstep Solutions
                                 </span>
                             </h1>
 
 
                             <p className="text-slate-600 text-sm sm:text-lg md:text-xl leading-relaxed mb-6">
-                                Have a groundbreaking idea? We're here to turn it into reality. Reach out and let's start building the future together.
+                                Have a groundbreaking idea? We&apos;re here to turn it into reality. Reach out and let&apos;s start building the future together.
                             </p>
 
                         </div>
@@ -220,11 +221,11 @@ const ContactUs = () => {
                                     <div className="mb-6 sm:mb-10">
                                         <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight leading-[1.1]">
                                             <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-                                                Send us a Message
+                                                Request a Project Quote
                                             </span>
                                         </h2>
                                         <p className="text-slate-400 text-xs sm:text-sm mt-1 sm:mt-2">
-                                            We’ll get back to you within 24 hours.
+                                            We’ll get back to you within one business day.
                                         </p>
                                     </div>
 

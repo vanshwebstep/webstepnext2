@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { FiArrowLeft, FiArrowRight, FiBriefcase, FiStar, FiCheckCircle, FiGlobe } from 'react-icons/fi';
 
@@ -50,7 +50,7 @@ const reviews = [
 ];
 
 const stats = [
-  { icon: <FiBriefcase />, num: '120+', label: 'Projects Delivered', bg: '#ede9fe', color: '#7C3AED' },
+  { icon: <FiBriefcase />, num: '500+', label: 'Projects Delivered', bg: '#ede9fe', color: '#7C3AED' },
   { icon: <FiStar />, num: '4.9/5', label: 'Avg Client Rating', bg: '#e0f2fe', color: '#0891B2' },
   { icon: <FiCheckCircle />, num: '98%', label: 'Client Satisfaction', bg: '#d1fae5', color: '#059669' },
   { icon: <FiGlobe />, num: '15+', label: 'Countries Served', bg: '#ffedd5', color: '#EA580C' },
@@ -76,9 +76,20 @@ const Customer = () => {
   const goTo = (i) => setCur((i + total) % total);
   const next = () => goTo(cur + 1);
   const prev = () => goTo(cur - 1);
-  const startAuto = () => { timerRef.current = setInterval(() => setCur(c => (c + 1) % total), 4000); };
-  const stopAuto = () => clearInterval(timerRef.current);
-  useEffect(() => { startAuto(); return stopAuto; }, []);
+
+  const startAuto = useCallback(() => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => setCur(c => (c + 1) % total), 4000);
+  }, [total]);
+
+  const stopAuto = useCallback(() => {
+    clearInterval(timerRef.current);
+  }, []);
+
+  useEffect(() => {
+    startAuto();
+    return () => stopAuto();
+  }, [startAuto, stopAuto]);
 
   const r = reviews[cur];
 
@@ -113,14 +124,14 @@ const Customer = () => {
               Client Stories
             </div>
             <h2 style={{ fontSize: isMobile ? '1.8rem' : 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, color: '#18142e', letterSpacing: '-0.03em', lineHeight: 1.05, margin: 0 }}>
-              What Our Clients{' '}
+              Client Reviews &{' '}
               <span style={{
                 background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)",
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-              }}>Say</span>
+              }}>Feedback</span>
             </h2>
             <p style={{ fontSize: isMobile ? '13px' : '18px', color: '#8b87a8', marginTop: '0.5rem', fontWeight: 500 }}>
-              Real feedback from startups, businesses, and enterprises we've built for.
+              Real feedback from startups, businesses, and enterprises we&apos;ve built for.
             </p>
           </div>
 
@@ -153,7 +164,7 @@ const Customer = () => {
                     {[...Array(5)].map((_, i) => <FaStar key={i} size={11} color={r.accent} />)}
                   </div>
 
-                  <p style={{ fontSize: '12.5px', color: '#3d3660', lineHeight: 1.6, fontWeight: 500, fontStyle: 'italic', margin: '2px 0 0 0' }}>"{r.content}"</p>
+                  <p style={{ fontSize: '12.5px', color: '#3d3660', lineHeight: 1.6, fontWeight: 500, fontStyle: 'italic', margin: '2px 0 0 0' }}>&ldquo;{r.content}&rdquo;</p>
                 </div>
               ) : (
                 <div style={{ display: 'grid', gridTemplateColumns: '70px 1fr auto', alignItems: 'center', gap: '1.4rem' }}>
@@ -161,7 +172,7 @@ const Customer = () => {
                     {r.initials}
                   </div>
                   <div>
-                    <p style={{ fontSize: '14px', color: '#3d3660', lineHeight: 1.65, fontWeight: 500, fontStyle: 'italic', marginBottom: '8px' }}>"{r.content}"</p>
+                    <p style={{ fontSize: '14px', color: '#3d3660', lineHeight: 1.65, fontWeight: 500, fontStyle: 'italic', marginBottom: '8px' }}>&ldquo;{r.content}&rdquo;</p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <span style={{ fontSize: '13px', fontWeight: 700, color: '#18142e' }}>{r.name}</span>
                       <span style={{ fontSize: '11px', color: '#c4c0d8' }}>·</span>

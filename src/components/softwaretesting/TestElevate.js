@@ -7,7 +7,7 @@ const testing = assetImage("software.png");
 
 const TestElevate = () => {
   return (
-    <section className="py-16 md:py-24 bg-white relative z-10 px-6 overflow-hidden font-roboto">
+    <section className="py-16 md:py-24 pt-40 bg-white relative z-10 px-6 overflow-hidden font-roboto">
 
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#475569 0.5px, transparent 0.5px)', backgroundSize: '32px 32px' }}></div>

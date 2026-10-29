@@ -85,7 +85,7 @@ const ContentBlock = ({ block }) => {
                     className="relative my-10 px-10 py-8 rounded-3xl overflow-hidden"
                     style={{ background: "linear-gradient(135deg, #fdf4ff 0%, #eff6ff 100%)" }}
                 >
-                    <div className="absolute top-4 left-6 text-7xl font-serif text-pink-200 leading-none select-none">"</div>
+                    <div className="absolute top-4 left-6 text-7xl font-serif text-pink-200 leading-none select-none">&ldquo;</div>
                     <p className="relative z-10 text-xl md:text-2xl font-semibold text-slate-700 italic leading-snug mb-3">
                         {block.text}
                     </p>

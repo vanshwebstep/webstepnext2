@@ -8,7 +8,7 @@ const marketing = assetImage("software.png");
 
 const MarketingElevate = () => {
   return (
-    <section className="py-16 md:py-24 bg-white relative z-10 px-6 overflow-hidden font-roboto">
+    <section className="py-16 md:py-24 pt-40 bg-white relative z-10 px-6 overflow-hidden font-roboto">
 
       {/* Dot grid — brand pink */}
       <div

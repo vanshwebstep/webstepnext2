@@ -364,7 +364,7 @@ const ALL_SERVICES = {
   },
 
   "wordpress-website": {
-    id: "08", slug: "wordpress-website", title: "WordPress Website", subTitle: "Flexible CMS",
+    id: "08", slug: "wordpress-website", title: "WordPress Development Services", subTitle: "Flexible CMS",
     tagline: "Flexible, beautiful, and easy to manage WordPress sites.",
     description: "We build custom WordPress websites — not template sites. Custom themes from Figma designs, bespoke plugins, headless WordPress with Next.js, and full WooCommerce stores.",
     tags: ["Custom Themes", "WooCommerce", "Headless WP"],
@@ -398,7 +398,7 @@ const ALL_SERVICES = {
   },
 
   "web-development": {
-    id: "01", slug: "web-development", title: "Web Development", subTitle: "Custom Websites & Apps",
+    id: "01", slug: "web-development", title: "Custom Web Development Services", subTitle: "Custom Websites & Apps",
     tagline: "Fast, scalable, and built to convert.",
     description: "We engineer custom websites and web applications that are fast, accessible, and built for growth. From marketing sites to complex SaaS platforms — every project crafted with precision and purpose.",
     tags: ["Next.js", "React", "Performance"],
@@ -466,7 +466,7 @@ const ALL_SERVICES = {
   },
 
   "ecommerce": {
-    id: "03", slug: "ecommerce", title: "E-Commerce", subTitle: "Shopify & WooCommerce",
+    id: "03", slug: "ecommerce", title: "E-Commerce", subTitle: "E-Commerce",
     tagline: "Online stores engineered to sell more, every day.",
     description: "We build high-converting e-commerce experiences on Shopify, WooCommerce, and custom platforms. From product catalog to checkout — every touchpoint optimized for conversion and customer retention.",
     tags: ["Shopify", "WooCommerce", "CRO"],
@@ -500,7 +500,7 @@ const ALL_SERVICES = {
   },
 
   "shopify": {
-    id: "09", slug: "shopify", title: "Shopify Development", subTitle: "High-Converting Shopify Stores",
+    id: "09", slug: "shopify", title: "Shopify Development Services", subTitle: "High-Converting Shopify Stores",
     tagline: "Custom Shopify stores built to scale and convert.",
     description: "We build custom Shopify and Shopify Plus storefronts, custom Liquid themes, private apps, and headless commerce solutions that maximize conversion and average order value.",
     tags: ["Shopify Plus", "Liquid Themes", "Private Apps"],
@@ -534,7 +534,7 @@ const ALL_SERVICES = {
   },
 
   "woocommerce": {
-    id: "10", slug: "woocommerce", title: "WooCommerce Development", subTitle: "Custom E-Commerce on WordPress",
+    id: "10", slug: "woocommerce", title: "WooCommerce Development Services", subTitle: "Custom E-Commerce on WordPress",
     tagline: "Total control, unlimited flexibility, and high-performance WooCommerce.",
     description: "We engineer robust WooCommerce stores tailored to your business model. From custom themes and complex checkout flows to high-volume inventory systems, subscriptions, and custom payment integrations.",
     tags: ["Custom Themes", "Subscriptions", "High Volume"],
@@ -1012,7 +1012,7 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-500 font-medium italic mb-4"
               >
-                "{service.tagline}"
+                &ldquo;{service.tagline}&rdquo;
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -1147,7 +1147,7 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-200 bg-slate-50 mb-4"
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", backgroundImage: BRAND.gradient }} />
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-slate-400">What's Included</span>
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-slate-400">What&apos;s Included</span>
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -1156,8 +1156,8 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
                 transition={{ delay: 0.1 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.05] sm:leading-[1]"
               >
-                Everything You <br className="hidden lg:block" />
-                <span style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Need</span>
+                What&apos;s Included in <br className="hidden lg:block" />
+                <span style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{service.title}</span>
               </motion.h2>
             </div>
             <motion.p
@@ -1197,9 +1197,9 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900"
             >
-              Our{" "}
+              Our Step-by-Step{" "}
               <span style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Process
+                Process & Delivery
               </span>
             </motion.h2>
           </div>
@@ -1269,7 +1269,10 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900"
             >
-              <span style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>FAQ</span>
+              Frequently Asked{" "}
+              <span style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                Questions (FAQs)
+              </span>
             </motion.h2>
           </div>
           <div className="flex flex-col gap-3">
@@ -1390,7 +1393,7 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 leading-tight">
-                Let's Build Something<br />
+                Let&apos;s Build Something<br />
                 <span style={{ background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   Extraordinary
                 </span>

@@ -7,7 +7,7 @@ const wordpress = assetImage("wordpress.png");
 
 const WpBanner = () => {
   return (
-    <section className="py-16 md:py-24 bg-white relative z-10 px-6 overflow-hidden font-roboto">
+    <section className="py-16 md:py-24 pt-40 bg-white relative z-10 px-6 overflow-hidden font-roboto">
       {/* Decorative background glows */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
 
@@ -28,7 +28,7 @@ const WpBanner = () => {
                   Webstep Solutions has years of experience with a team of professional WordPress developers offering custom development services to help businesses leave a mark in the digital world.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <Link href="/contact" className="inline-block px-8 py-4 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.2em] shadow-lg shadow-slate-900/20 hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300">
+                  <Link href="/contactus" className="inline-block px-8 py-4 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.2em] shadow-lg shadow-slate-900/20 hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300">
                     Discuss Your Website
                   </Link>
                 </div>

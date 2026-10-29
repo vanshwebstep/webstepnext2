@@ -231,7 +231,7 @@ const Process = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.02] sm:leading-[0.92] tracking-[-0.03em] mb-4 sm:mb-6"
           >
-            <span style={{ color: "#0f172a" }}>From Idea to</span>
+            <span style={{ color: "#0f172a" }}>Our Process: From Idea to</span>
             <br />
             <span style={{
               background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)",

@@ -83,7 +83,8 @@ export const hireDevelopersPage = {
     { icon: "layers", title: "Flexible Engagement Models", description: "Scale effortlessly between dedicated monthly developers, part-time engineers, or fully managed pods with QA.", points: ["Dedicated Full-Time (160h)", "Part-Time Dedicated (80h)", "Custom Agile Pods"] },
     { icon: "trend", title: "Zero-Risk Replacement Guarantee", description: "If a developer is not the right fit in the first two weeks, we replace them immediately or refund your trial period.", points: ["Pre-hiring live interview", "2-week trial protection", "Seamless bench backup"] },
   ],
-  processTitle: "A hiring model with delivery discipline",
+  sectionsTitle: "Developers You Can Hire & Engagement Models",
+  processTitle: "How Hiring Dedicated Developers Works",
   processIntro: "You get the agility of staff augmentation backed by the operational rigor of a professional software development company.",
   process: [
     { title: "Requirement & Stack Mapping", description: "We outline required technologies, seniority level, working hours, and sprint expectations." },
@@ -91,15 +92,16 @@ export const hireDevelopersPage = {
     { title: "NDA & Tool Onboarding", description: "We sign agreements, configure repo access, Slack channels, and issue boards within 2-5 business days." },
     { title: "Daily Sprint Rhythm & Delivery", description: "Your dedicated developer pushes daily code, attends standups, and ships production features." },
   ],
-  pricingTitle: "Flexible engagement models",
+  pricingTitle: "Flexible Engagement Models & Pricing",
   pricingIntro: "Select the structure that aligns best with your team size, product scope, and roadmap velocity.",
   pricing: [
     { title: "Dedicated Full-Time", price: "Monthly", description: "Best for ongoing product roadmaps, SaaS development, and continuous feature delivery.", items: ["160 hours / month", "Direct communication & task boards", "Daily standups & code reviews", "100% IP ownership & NDA protection"] },
     { title: "Dedicated Part-Time", price: "Monthly", description: "Best for maintenance, regular updates, bug fixes, and smaller scoped backlogs.", items: ["80 hours / month", "Flexible weekly scheduling", "Direct developer contact", "Repository & code ownership"] },
     { title: "Managed Engineering Pod", price: "Custom", description: "Best for comprehensive agency offloading, MVP launches, and end-to-end delivery.", items: ["Dedicated developers + QA tester", "Technical project manager", "Sprint planning & deployment care", "SLA-backed delivery timelines"] },
   ],
-  proofTitle: "Built for agencies and growing businesses that need real output",
+  proofTitle: "Time Zones (US, Canada, Australia), Security and NDA",
   proof: ["Strict bilateral NDA signed before kickoff", "100% intellectual property & source code ownership", "Daily Slack updates and weekly sprint reviews", "Instant bench backup coverage for zero downtime"],
+  faqTitle: "Frequently Asked Questions (FAQs)",
   faqs: [
     { q: "How quickly can a developer start?", a: "Typically within 2 to 5 business days after requirements alignment and candidate selection." },
     { q: "What engagement models do you offer?", a: "We offer Dedicated Full-Time (40 hrs/week), Part-Time (20 hrs/week), and custom Project-Based Pods with dedicated QA and PM." },

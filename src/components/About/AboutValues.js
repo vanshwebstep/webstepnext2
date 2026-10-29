@@ -150,7 +150,7 @@ const AboutValues = () => {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[0.95] sm:leading-[0.88] text-slate-900 mb-4 sm:mb-6"
           >
-            The{" "}
+            Who We Are: The{" "}
             <span
               className="relative inline-block"
               style={{ background: "linear-gradient(135deg, #FF1F8E 0%, #A855F7 50%, #38BDF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}

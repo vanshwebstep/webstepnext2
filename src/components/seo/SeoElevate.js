@@ -8,7 +8,7 @@ const seoImage = assetImage("FM-FE-104-ImageBody-65.png");
 
 const SeoElevate = () => {
   return (
-    <section className="py-16 md:py-24 bg-white relative z-10 px-6 overflow-hidden font-roboto">
+    <section className="py-16 md:py-24 pt-40 bg-white relative z-10 px-6 overflow-hidden font-roboto">
 
       {/* Dot grid */}
       <div

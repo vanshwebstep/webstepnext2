@@ -21,7 +21,7 @@ const replacements = [
     replaces: [
       { from: "Let's Start Your <span", to: "Let&apos;s Start Your <span" },
       { from: "Have a groundbreaking idea? We're here to turn it into reality. Reach out and let's start building the future together.", to: "Have a groundbreaking idea? We&apos;re here to turn it into reality. Reach out and let&apos;s start building the future together." },
-      { from: "Fill out the form below and we'll get back to you within 24 hours.", to: "Fill out the form below and we&apos;ll get back to you within 24 hours." }
+      { from: "Fill out the form below and we'll get back to you within one business day.", to: "Fill out the form below and we&apos;ll get back to you within one business day." }
     ]
   },
   {

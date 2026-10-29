@@ -301,7 +301,7 @@ const Services = () => {
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}>
-                Deliver
+                Build
               </span>
             </motion.h2>
           </div>
