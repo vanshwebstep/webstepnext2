@@ -26,7 +26,7 @@ export default function Page() {
       <AboutHero />
       <AboutStory />
       <AboutValues />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
       <FormSection />
     </main>

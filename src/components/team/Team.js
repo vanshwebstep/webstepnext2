@@ -7,7 +7,7 @@ const Team = () => {
     <>
     <TeamBanner/>
     <OurTeam/>
-    <BlogReview/>
+    {/* <BlogReview/> */}
     </>
   )
 }

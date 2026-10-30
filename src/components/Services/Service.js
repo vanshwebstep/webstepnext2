@@ -12,7 +12,7 @@ const Service = () => {
     <Blogs/>
     <ServicesPage/>
     <Digital/>
-    <BlogReview/>
+    {/* <BlogReview/> */}
     <Footer/>
     </>
   )

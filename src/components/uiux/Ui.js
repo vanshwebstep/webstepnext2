@@ -11,7 +11,7 @@ const Ui = () => {
       <UiBanner />
       <UiDev />
       <UiElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

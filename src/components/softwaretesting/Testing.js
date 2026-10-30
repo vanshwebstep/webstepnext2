@@ -11,7 +11,7 @@ const Testing = () => {
       <TestBanner />
       <TestDev />
       <TestElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

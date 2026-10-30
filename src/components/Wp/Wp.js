@@ -11,7 +11,7 @@ const Wp = () => {
       <WpBanner />
       <WpDev />
       <Elevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

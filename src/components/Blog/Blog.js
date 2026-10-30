@@ -10,7 +10,7 @@ const Blog = () => {
             <Blogs />
             <BlogPosts/>
             <Software/>
-            <BlogReview/>
+            {/* <BlogReview/> */}
         </>
     )
 }
