@@ -145,6 +145,7 @@ export default function TrustReviewsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 items-stretch max-w-6xl mx-auto mb-8 sm:mb-10">
           {/* Google Card */}
           <Reveal className="w-full" delay={200}>
+            <a href="https://www.google.com/search?q=Webstep+Solutions+Mohali+reviews" target="_blank" rel="noopener noreferrer" className="block h-full">
             <article className="group h-full flex flex-col justify-center items-center relative rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 gap-4 sm:gap-6">
               <div className="flex flex-col items-center w-full">
                 <div className="h-10 flex items-center justify-center mb-2">
@@ -163,15 +164,17 @@ export default function TrustReviewsPage() {
               </div>
               <div className="text-xs md:text-sm font-medium text-slate-500 mt-1 sm:mt-3">
                 <div className="text-2xl sm:text-3xl font-medium text-slate-900 mb-1">
-                  4.8/5
+                  4.9/5
                 </div>
-                From 120+ Reviews
+                From 50+ Reviews
               </div>
             </article>
+            </a>
           </Reveal>
 
           {/* Clutch Card */}
           <Reveal className="w-full" delay={280}>
+            <a href="https://clutch.co/profile/webstep-solutions" target="_blank" rel="noopener noreferrer" className="block h-full">
             <article className="group h-full flex flex-col justify-center items-center relative rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 gap-4 sm:gap-6">
               <div className="flex flex-col items-center w-full">
                 <div className="h-10 text-center mb-1">
@@ -197,10 +200,12 @@ export default function TrustReviewsPage() {
                 50+ Client Reviews
               </div>
             </article>
+            </a>
           </Reveal>
 
           {/* UpCity Card */}
           <Reveal className="w-full" delay={360}>
+            <a href="https://upcity.com/profiles/webstep-solutions" target="_blank" rel="noopener noreferrer" className="block h-full">
             <article className="group h-full flex flex-col justify-center items-center relative rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 gap-4 sm:gap-6">
               <div className="flex flex-col items-center w-full">
                 <div className="h-10 flex items-center justify-center mb-2">
@@ -223,10 +228,12 @@ export default function TrustReviewsPage() {
                 Top Rated Agency
               </div>
             </article>
+            </a>
           </Reveal>
 
           {/* Yelp Card */}
           <Reveal className="w-full" delay={440}>
+            <a href="https://www.yelp.com/biz/webstep-solutions" target="_blank" rel="noopener noreferrer" className="block h-full">
             <article className="group h-full flex flex-col justify-center items-center relative rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 gap-4 sm:gap-6">
               <div className="flex flex-col items-center w-full">
                 <div className="h-10 flex items-center justify-center mb-2">
@@ -249,6 +256,7 @@ export default function TrustReviewsPage() {
                 5-Star Business
               </div>
             </article>
+            </a>
           </Reveal>
 
           {/* Upwork - Featured Card */}

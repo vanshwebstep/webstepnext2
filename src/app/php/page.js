@@ -1,23 +1,23 @@
 import React from 'react';
-import Php from '@/components/php/Php';
+import RedirectClient from '@/components/RedirectClient';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("php");
   return {
-    title: dynamicSeo.title || "Custom PHP Development Services | Webstep Solutions",
-    description: dynamicSeo.description || "Custom PHP development, legacy code modernization, database optimization, and third-party API integrations by senior PHP engineers.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    title: dynamicSeo.title || "Redirecting to PHP Development Services | Webstep Solutions",
+    description: dynamicSeo.description || "Redirecting to Webstep Solutions PHP Development Services.",
     alternates: {
       canonical: "https://webstepdev.com/services/php-development/",
-    }
+    },
+    robots: { index: false, follow: false }
   };
 }
 
 export default function Page() {
   return (
     <>
-      <Php />
+      <RedirectClient target="/services/php-development/" />
     </>
   );
 }

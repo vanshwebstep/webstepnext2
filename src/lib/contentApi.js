@@ -1,5 +1,4 @@
 // lib/contentApi.js
-// Replace your existing contentApi.js with this file
 // Connects your Next.js frontend to the PHP backend
 
 const BASE_URL = (
@@ -15,6 +14,14 @@ const CONTENT_ENDPOINTS = {
   blogs: '/api/blogs.php',
 };
 
+// Safe fetch timeout helper: aborts quickly if backend is slow/offline so pages render instantly
+const safeTimeout = (ms = 3500) => {
+  if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
+    return AbortSignal.timeout(ms);
+  }
+  return undefined;
+};
+
 /**
  * Fetch blogs list and categories from /api/blogs.php
  */
@@ -22,6 +29,7 @@ export async function fetchBlogs(fallback = { categories: [], blogs: [] }) {
   try {
     const res = await fetch(`${BASE_URL}/api/blogs.php`, {
       cache: 'no-store',
+      signal: safeTimeout(3500),
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
@@ -42,6 +50,7 @@ export async function fetchBlogBySlug(slug, fallback = null) {
   try {
     const res = await fetch(`${BASE_URL}/api/blogs.php?slug=${encodeURIComponent(slug)}`, {
       cache: 'no-store',
+      signal: safeTimeout(3500),
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
@@ -63,6 +72,7 @@ export async function fetchPackages(pageType = 'packages', fallback = { packages
   try {
     const res = await fetch(`${BASE_URL}/api/packages.php?page=${encodeURIComponent(pageType)}`, {
       cache: 'no-store',
+      signal: safeTimeout(3500),
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
@@ -87,6 +97,7 @@ export async function fetchContent(type, fallback) {
   try {
     const res = await fetch(`${BASE_URL}${endpoint}`, {
       cache: 'no-store', // always fresh
+      signal: safeTimeout(3500),
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
@@ -105,6 +116,7 @@ export async function fetchCustomOptions() {
   try {
     const res = await fetch(`${BASE_URL}/api/custom-options.php`, {
       cache: 'no-store',
+      signal: safeTimeout(3500),
     });
     if (!res.ok) throw new Error('API error');
     return res.json();
@@ -118,6 +130,7 @@ export async function fetchServicePage(slug, fallback) {
   try {
     const res = await fetch(`${BASE_URL}/api/service-page.php?slug=${encodeURIComponent(slug)}`, {
       cache: 'no-store',
+      signal: safeTimeout(3500),
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
@@ -137,6 +150,7 @@ export async function submitLead(payload) {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify(payload),
+    signal:  safeTimeout(8000),
   });
 
   const data = await res.json();
@@ -152,6 +166,7 @@ export async function submitPlanInquiry(payload) {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify(payload),
+    signal:  safeTimeout(8000),
   });
   const data = await res.json();
   if (!data.success) throw new Error(data.error || 'Submission failed');
@@ -163,6 +178,7 @@ export async function submitNewsletter(payload) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
+    signal: safeTimeout(8000),
   });
   const data = await res.json();
   if (!data.success) throw new Error(data.error || 'Subscription failed');
@@ -178,6 +194,7 @@ export async function fetchSeoMetadata(pageUrl) {
   try {
     const res = await fetch(`${BASE_URL}/api/seo.php?page_url=${encodeURIComponent(pageUrl)}`, {
       next: { revalidate: 60 },
+      signal: safeTimeout(3000),
     });
     if (!res.ok) return {};
     const json = await res.json();

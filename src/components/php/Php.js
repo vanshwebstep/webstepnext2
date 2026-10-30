@@ -11,7 +11,7 @@ const Php = () => {
       <PhpBanner />
       <PhpDev />
       <PhpElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

@@ -109,9 +109,9 @@ const ContactUs = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-black text-slate-900 text-xs sm:text-sm mb-1 sm:mb-2">Call Us</h4>
-                                        <p className="text-slate-500 font-bold text-xs sm:text-sm">
-                                            +91 79739-38927
-                                        </p>
+                                        <a href="tel:+917973938927" className="text-slate-500 font-bold text-xs sm:text-sm hover:text-pink-600 transition-colors">
+                                            +91 79739 38927
+                                        </a>
                                     </div>
                                 </div>
 
@@ -163,7 +163,7 @@ const ContactUs = () => {
                                         {[
                                             { num: "120+", label: "Businesses" },
                                             { num: "15+", label: "Countries" },
-                                            { num: "98%", label: "Uptime" },
+                                            { num: "98%", label: "Satisfaction" },
                                         ].map((stat, i) => (
                                             <div key={stat.label} className="flex gap-3 sm:gap-6">
                                                 <div>

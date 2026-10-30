@@ -10,7 +10,7 @@ const herobanner = assetImage("banner.png");
 const SERVICES = [
   {
     id: "01",
-    num: 500,
+    num: 120,
     suffix: '+',
     label: 'Projects Delivered',
     accent: "#E879F9",

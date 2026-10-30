@@ -7,7 +7,7 @@ import { assetImage } from "@/lib/assets";
 const riyaArchitect = assetImage("riya_architect.png");
 const amanArchitect = assetImage("aman_architect.png");
 const nehaArchitect = assetImage("riya_architect.png");
-const karanArchitect = assetImage("aman_architect.png");
+const vikramArchitect = assetImage("aman_architect.png");
 const priyaArchitect = assetImage("riya_architect.png");
 const rohanArchitect = assetImage("aman_architect.png");
 
@@ -28,7 +28,7 @@ const team = [
     expertise: ["Brand Systems", "Motion Design"], accent: "#D96C6C", index: "03",
   },
   {
-    id: 4, name: "Karan Mehta", role: "DevOps & Infrastructure Lead", image: karanArchitect,
+    id: 4, name: "Vikram Singh", role: "DevOps & Infrastructure Lead", image: vikramArchitect,
     bio: "Keeps every deployment fast and every server calm — CI/CD pipelines, uptime, and infra security are his daily grind.",
     expertise: ["CI/CD", "AWS & Render"], accent: "#6C7BD9", index: "04",
   },
@@ -45,9 +45,7 @@ const team = [
 ];
 
 const socials = [
-  { icon: <FiLinkedin />, label: "LinkedIn", href: "#" },
-  { icon: <FiInstagram />, label: "Instagram", href: "#" },
-  { icon: <FiTwitter />, label: "Twitter", href: "#" },
+  { icon: <FiLinkedin />, label: "LinkedIn", href: "https://www.linkedin.com/company/webstep-solutions/" },
 ];
 
 const TeamCard = ({ member }) => {

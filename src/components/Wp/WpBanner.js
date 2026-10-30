@@ -22,11 +22,10 @@ const WpBanner = () => {
                   CMS Mastery
                 </span>
                 <h1 className="text-4xl md:text-6xl font-black leading-tight text-slate-900 mb-8 tracking-tight capitalize">
-                  Custom <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">WordPress Development</span> Services
+                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">WordPress Development</span> Services
                 </h1>
                 <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-                  Webstep Solutions has years of experience with a team of professional WordPress developers offering custom development services to help businesses leave a mark in the digital world.
-                </p>
+Custom themes, Plugins, Headless WordPress, Migrations, Process, FAQs.                </p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <Link href="/contactus" className="inline-block px-8 py-4 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.2em] shadow-lg shadow-slate-900/20 hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300">
                     Discuss Your Website

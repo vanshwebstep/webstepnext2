@@ -11,7 +11,7 @@ const FullStack = () => {
       <FullStackBanner />
       <FullStackDev />
       <FullStackElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

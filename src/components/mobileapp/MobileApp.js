@@ -11,7 +11,7 @@ const MobileApp = () => {
       <MobileBanner />
       <MobileDev />
       <MobileElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

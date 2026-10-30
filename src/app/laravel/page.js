@@ -1,23 +1,23 @@
 import React from 'react';
-import Laravel from '@/components/laravel/Laravel';
+import RedirectClient from '@/components/RedirectClient';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("laravel");
   return {
-    title: dynamicSeo.title || "Laravel Development Company | Custom PHP Web Applications | Webstep Solutions",
-    description: dynamicSeo.description || "Secure, scalable Laravel web applications and REST APIs built with clean MVC architecture, database optimization, and enterprise-grade security.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    title: dynamicSeo.title || "Redirecting to Laravel Development Services | Webstep Solutions",
+    description: dynamicSeo.description || "Redirecting to Webstep Solutions Laravel Development Services.",
     alternates: {
       canonical: "https://webstepdev.com/services/laravel/",
-    }
+    },
+    robots: { index: false, follow: false }
   };
 }
 
 export default function Page() {
   return (
     <>
-      <Laravel />
+      <RedirectClient target="/services/laravel/" />
     </>
   );
 }

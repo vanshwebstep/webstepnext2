@@ -1,23 +1,23 @@
 import React from 'react';
-import MobileApp from '@/components/mobileapp/MobileApp';
+import RedirectClient from '@/components/RedirectClient';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("mobileApp");
   return {
-    title: dynamicSeo.title || "Mobile App Development Company | iOS & Android | Webstep Solutions",
-    description: dynamicSeo.description || "Native iOS apps in Swift and Android apps in Kotlin, from idea to App Store and Play Store launch. Share your app idea and get a quote.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    title: dynamicSeo.title || "Redirecting to Mobile App Development | Webstep Solutions",
+    description: dynamicSeo.description || "Redirecting to Webstep Solutions mobile app development services.",
     alternates: {
       canonical: "https://webstepdev.com/services/app-development/",
-    }
+    },
+    robots: { index: false, follow: false }
   };
 }
 
 export default function Page() {
   return (
     <>
-      <MobileApp />
+      <RedirectClient target="/services/app-development/" />
     </>
   );
 }

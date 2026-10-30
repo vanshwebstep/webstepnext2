@@ -189,7 +189,7 @@ const Menu = ({ mobile = false, closeMenu, scrolled = false }) => {
                 "/website-maintenance", "/ecommerce",
             ],
         },
-        { name: "Hire Developers", href: "/hire-full-time-developers" },
+        { name: "Hire Developers", href: "/hire-dedicated-developers" },
         {
             name: "Portfolio",
             href: "/works",

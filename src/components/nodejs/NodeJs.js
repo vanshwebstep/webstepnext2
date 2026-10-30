@@ -11,7 +11,7 @@ const NodeJs = () => {
       <NodeBanner />
       <NodeDev />
       <NodeElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

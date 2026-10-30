@@ -120,7 +120,7 @@ const AboutStory = () => {
         <Reveal delay={0.5} className="mt-10 sm:mt-16 text-center">
           <p className="text-slate-400 text-xs sm:text-sm mb-4 sm:mb-5">Ready to get started?</p>
           <Link
-            href="/customize-package"
+            href="/contactus"
             className="inline-flex items-center justify-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-bold text-white text-xs sm:text-[15px] transition-all duration-300 hover:scale-105 w-full sm:w-auto"
             style={{ background: "linear-gradient(135deg, #E879F9, #A855F7, #38BDF8)", boxShadow: "0 16px 40px rgba(168,85,247,0.3)" }}
           >

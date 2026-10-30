@@ -12,7 +12,7 @@ const Seo = () => {
       <SeoBanner />
       <SeoDev />
       <SeoElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

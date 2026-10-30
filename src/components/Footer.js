@@ -36,7 +36,7 @@ const services = [
     { name: "AI Chatbots", href: "/services/ai-chatbots" },
     { name: "Website Maintenance", href: "/services/website-maintenance" },
     { name: "UI/UX Design", href: "/services/ui-ux" },
-    { name: "Hire Dedicated Developers", href: "/hire-full-time-developers" },
+    { name: "Hire Dedicated Developers", href: "/hire-dedicated-developers" },
 ];
 
 const ColTitle = ({ children }) => (
@@ -257,8 +257,8 @@ const Footer = () => {
                     </p>
 
                     <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-500">
-                        <Link href="/privacy" className="hover:text-slate-700 transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-slate-700 transition-colors">Terms of Service</Link>
+                        <Link href="/privacy-policy" className="hover:text-slate-700 transition-colors">Privacy Policy</Link>
+                        <Link href="/terms-and-conditions" className="hover:text-slate-700 transition-colors">Terms of Service</Link>
                         <button
                             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                             className="flex items-center gap-1.5 group hover:text-[#E879F9] transition-colors"

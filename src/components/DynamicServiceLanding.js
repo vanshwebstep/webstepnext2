@@ -16,6 +16,7 @@ import {
   FiStar,
   FiTrendingUp,
   FiUsers,
+  FiChevronDown,
 } from "react-icons/fi";
 import { fetchServicePage, submitLead } from "@/lib/contentApi";
 import { THANK_YOU_ROUTE } from "@/lib/routes";
@@ -23,6 +24,7 @@ import { hireDevelopersPage, industrialTrainingPage } from "@/lib/servicePageFal
 
 const SLUG_FALLBACKS = {
   "hire-full-time-developers": hireDevelopersPage,
+  "hire-dedicated-developers": hireDevelopersPage,
   "industrial-training": industrialTrainingPage,
 };
 
@@ -67,7 +69,7 @@ function splitHeroTitle(title = "") {
 function SectionIntro({ eyebrow, title, text, light = false }) {
   return (
     <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
-      {eyebrow && <p className={cx("text-xs font-black uppercase tracking-[0.26em]", light ? "text-pink-300" : "text-pink-600")}>{eyebrow}</p>}
+      {eyebrow && <p className={cx("text-xs font-black uppercase tracking-[0.26em]", light ? "text-pink-400" : "text-pink-600")}>{eyebrow}</p>}
       {title && <h2 className={cx("mt-4 text-3xl sm:text-5xl font-black tracking-tight", light ? "text-white" : "text-slate-950")}>{title}</h2>}
       {text && <p className={cx("mt-5 max-w-2xl text-base leading-8", light ? "text-slate-300" : "text-slate-600")}>{text}</p>}
     </motion.div>
@@ -76,7 +78,18 @@ function SectionIntro({ eyebrow, title, text, light = false }) {
 
 function LeadForm({ slug, page = {}, variant }) {
   const router = useRouter();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const isHireForm = slug.includes("hire");
+  const isDark = variant === "dark";
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    role: "Full-Stack Developer",
+    stack: "",
+    startDate: "Immediate (within 48 hrs)",
+    message: ""
+  });
   const [status, setStatus] = useState({ type: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
 
@@ -85,14 +98,18 @@ function LeadForm({ slug, page = {}, variant }) {
     setSubmitting(true);
     setStatus({ type: "", message: "" });
     try {
+      const details = isHireForm
+        ? `Hire Request:\nRole: ${form.role}\nStack: ${form.stack || "General"}\nStart Date: ${form.startDate}\nNotes: ${form.message}`
+        : `${page?.title || "Service"} inquiry\n${form.message}`;
+
       await submitLead({
         source: `${slug}-page`,
         name: form.name,
         email: form.email,
         phone: form.phone,
-        message: `${page?.title || "Service"} inquiry\n${form.message}`,
+        message: details,
       });
-      setForm({ name: "", email: "", phone: "", message: "" });
+      setForm({ name: "", email: "", phone: "", role: "Full-Stack Developer", stack: "", startDate: "Immediate (within 48 hrs)", message: "" });
       router.push(THANK_YOU_ROUTE);
     } catch (error) {
       setStatus({ type: "error", message: error.message || "Submission failed. Please try again." });
@@ -101,7 +118,14 @@ function LeadForm({ slug, page = {}, variant }) {
     }
   };
 
-  const inputClass = "w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm text-slate-900 outline-none transition focus:border-pink-400 focus:ring-4 focus:ring-pink-100";
+  const inputClass = isDark
+    ? "w-full rounded-2xl border border-slate-700/80 bg-[#16152b] px-4 sm:px-5 py-3.5 text-sm text-white placeholder-slate-400 outline-none transition focus:border-[#FF1F8E] focus:ring-4 focus:ring-[#FF1F8E]/20"
+    : "w-full rounded-2xl border border-slate-200 bg-white px-4 sm:px-5 py-3.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition focus:border-pink-500 focus:ring-4 focus:ring-pink-100";
+
+  const selectClass = cx(inputClass, "cursor-pointer appearance-none pr-10");
+  const labelClass = isDark
+    ? "block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1.5"
+    : "block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5";
 
   return (
     <motion.form
@@ -111,25 +135,154 @@ function LeadForm({ slug, page = {}, variant }) {
       viewport={{ once: true }}
       onSubmit={handleSubmit}
       className={cx(
-        "grid gap-4 rounded-[28px] border p-6 sm:p-8 shadow-[0_24px_70px_rgba(15,23,42,0.12)]",
-        variant === "dark" ? "border-white/10 bg-white text-slate-950" : "border-slate-200 bg-slate-50"
+        "relative overflow-hidden grid gap-4 rounded-[32px] border p-6 sm:p-9 shadow-2xl transition-all",
+        isDark
+          ? "border-slate-800 bg-[#0f0e1c]/95 text-white shadow-[0_24px_80px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+          : "border-slate-200 bg-white text-slate-950 shadow-[0_24px_70px_rgba(15,23,42,0.08)]"
       )}
     >
+      {/* Top Accent Gradient Bar */}
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#FF1F8E] via-[#A855F7] to-[#38BDF8]" />
+
       <div>
-        <p className="text-xs font-black uppercase tracking-[0.24em] text-pink-600">Start here</p>
-        <h3 className="mt-2 text-2xl font-black text-slate-950">Request a consultation</h3>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-[10px] font-black uppercase tracking-[0.2em] mb-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#FF1F8E] animate-pulse" />
+          {isHireForm ? "Fast Staff Augmentation" : "Direct Inquiry"}
+        </div>
+        <h3 className={cx("text-2xl sm:text-3xl font-black tracking-tight", isDark ? "text-white" : "text-slate-950")}>
+          {isHireForm ? "Hire Dedicated Developers" : "Request a Consultation"}
+        </h3>
+        <p className={cx("mt-1.5 text-xs sm:text-sm leading-relaxed", isDark ? "text-slate-300" : "text-slate-600")}>
+          {isHireForm
+            ? "Share your required tech stack and start date. We match vetted engineers within one business day."
+            : "Tell us about your project requirements and receive a comprehensive proposal."}
+        </p>
       </div>
-      <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Full name" className={inputClass} />
-      <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Email address" className={inputClass} />
-      <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="Phone number" className={inputClass} />
-      <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us what you need" rows={4} className={`${inputClass} resize-none`} />
-      {status.message && (
-        <p className={cx("text-xs font-bold", status.type === "error" ? "text-red-500" : "text-emerald-500")}>{status.message}</p>
+
+      {isHireForm && (
+        <div className="grid gap-3.5 sm:grid-cols-2">
+          <div className="relative">
+            <label className={labelClass}>Developer Role</label>
+            <div className="relative">
+              <select
+                value={form.role}
+                onChange={(e) => setForm({ ...form, role: e.target.value })}
+                className={selectClass}
+              >
+                <option value="WordPress Developer" className="bg-[#16152b] text-white">WordPress Developer</option>
+                <option value="Shopify Developer" className="bg-[#16152b] text-white">Shopify Developer</option>
+                <option value="React / Next.js Developer" className="bg-[#16152b] text-white">React / Next.js Developer</option>
+                <option value="Laravel / PHP Developer" className="bg-[#16152b] text-white">Laravel / PHP Developer</option>
+                <option value="Full-Stack Developer" className="bg-[#16152b] text-white">Full-Stack Developer</option>
+                <option value="UI/UX Designer" className="bg-[#16152b] text-white">UI/UX Designer</option>
+              </select>
+              <FiChevronDown className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-base" />
+            </div>
+          </div>
+          <div className="relative">
+            <label className={labelClass}>Preferred Start Date</label>
+            <div className="relative">
+              <select
+                value={form.startDate}
+                onChange={(e) => setForm({ ...form, startDate: e.target.value })}
+                className={selectClass}
+              >
+                <option value="Immediate (within 48 hrs)" className="bg-[#16152b] text-white">Immediate (within 48 hrs)</option>
+                <option value="Within 1-2 weeks" className="bg-[#16152b] text-white">Within 1-2 weeks</option>
+                <option value="Next month" className="bg-[#16152b] text-white">Next month</option>
+                <option value="Exploring options" className="bg-[#16152b] text-white">Exploring options</option>
+              </select>
+              <FiChevronDown className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-base" />
+            </div>
+          </div>
+          <div className="sm:col-span-2">
+            <label className={labelClass}>Target Tech Stack</label>
+            <input
+              value={form.stack}
+              onChange={(e) => setForm({ ...form, stack: e.target.value })}
+              placeholder="e.g. Next.js, Node.js, Tailwind, PostgreSQL"
+              className={inputClass}
+            />
+          </div>
+        </div>
       )}
-      <button disabled={submitting} className="w-full inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-[#FF1F8E] via-[#A855F7] to-[#38BDF8] px-4 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold sm:font-black uppercase tracking-wider sm:tracking-widest text-white shadow-[0_16px_36px_rgba(168,85,247,0.25)] transition hover:-translate-y-0.5 disabled:opacity-70">
-        <span>{submitting ? "Submitting..." : "Request Consultation"}</span>
-        <FiArrowRight className="shrink-0 text-base" />
-      </button>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div>
+          <label className={labelClass}>Your Name *</label>
+          <input
+            required
+            value={form.name}
+            onChange={(e) => setForm({ ...form, name: e.target.value })}
+            placeholder="John Doe"
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label className={labelClass}>Work Email *</label>
+          <input
+            required
+            type="email"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            placeholder="john@company.com"
+            className={inputClass}
+          />
+        </div>
+      </div>
+
+      <div>
+        <label className={labelClass}>Phone / WhatsApp</label>
+        <input
+          value={form.phone}
+          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+          placeholder="+1 (555) 000-0000"
+          className={inputClass}
+        />
+      </div>
+
+      <div>
+        <label className={labelClass}>Sprint or Project Notes</label>
+        <textarea
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          placeholder={isHireForm ? "Tell us about your sprint goals, duration, or key features..." : "Tell us what you need"}
+          rows={3}
+          className={`${inputClass} resize-none`}
+        />
+      </div>
+
+      {/* Trust Badges */}
+      <div className={cx("grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 pb-1 border-t", isDark ? "border-slate-800 text-slate-300" : "border-slate-200 text-slate-600")}>
+        <div className="flex items-center gap-1.5 text-[11px] font-semibold">
+          <FiShield className="text-[#FF1F8E] shrink-0 text-xs" />
+          <span>Strict NDA & 100% IP</span>
+        </div>
+        <div className="flex items-center gap-1.5 text-[11px] font-semibold">
+          <FiClock className="text-[#A855F7] shrink-0 text-xs" />
+          <span>Within 1 Business Day</span>
+        </div>
+        <div className="col-span-2 sm:col-span-1 flex items-center gap-1.5 text-[11px] font-semibold">
+          <FiCheckCircle className="text-emerald-400 shrink-0 text-xs" />
+          <span>Zero-Risk 2-Wk Trial</span>
+        </div>
+      </div>
+
+      {status.message && (
+        <p className={cx("text-xs font-bold", status.type === "error" ? "text-red-400" : "text-emerald-400")}>
+          {status.message}
+        </p>
+      )}
+
+      <div>
+        <button
+          disabled={submitting}
+          className="w-full inline-flex items-center justify-center gap-2 sm:gap-3 rounded-2xl bg-gradient-to-r from-[#FF1F8E] via-[#A855F7] to-[#38BDF8] px-5 sm:px-8 py-4 text-xs sm:text-sm font-extrabold uppercase tracking-widest text-white shadow-[0_16px_36px_rgba(255,31,142,0.35)] transition-all hover:shadow-[0_20px_45px_rgba(255,31,142,0.5)] hover:-translate-y-0.5 active:scale-[0.99] disabled:opacity-70 cursor-pointer"
+        >
+          <span>{submitting ? "Submitting Request..." : (isHireForm ? "Get Developer Profiles & Rates" : "Request Consultation")}</span>
+          <FiArrowRight className="shrink-0 text-base" />
+        </button>
+      </div>
     </motion.form>
   );
 }
@@ -140,6 +293,7 @@ function ServiceHero({ hero = {}, metrics = [], variant }) {
   const heroTitle = hero?.title || "Custom Software & Web Development Services";
   const { lead, accent } = splitHeroTitle(heroTitle);
   const portfolioHref = isHire ? "/works" : "/case-study";
+  const primaryHref = isHire ? "#hire-form" : "/contactus";
 
   return (
     <section className="relative z-10 pt-[120px] md:pt-[160px] xl:pt-[220px] pb-12 sm:pb-20 overflow-hidden bg-white px-4 sm:px-6 font-roboto lg:py-[8.5rem]">
@@ -195,7 +349,7 @@ function ServiceHero({ hero = {}, metrics = [], variant }) {
               ))}
             </motion.div>
             <motion.div variants={fadeUp} className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Link href="/contactus" className="inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-[#FF1F8E] via-[#A855F7] to-[#38BDF8] px-5 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold sm:font-black uppercase tracking-wider sm:tracking-widest text-white shadow-[0_16px_36px_rgba(168,85,247,0.25)] transition hover:-translate-y-0.5">
+              <Link href={primaryHref} className="inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-[#FF1F8E] via-[#A855F7] to-[#38BDF8] px-5 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold sm:font-black uppercase tracking-wider sm:tracking-widest text-white shadow-[0_16px_36px_rgba(168,85,247,0.25)] transition hover:-translate-y-0.5">
                 <span>{hero?.primaryCta || (isHire ? "Hire Developers" : "Get a Quote")}</span> <FiArrowRight className="shrink-0 text-base" />
               </Link>
               <Link href={portfolioHref} className="inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full border border-slate-200 bg-white px-5 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold sm:font-black uppercase tracking-wider sm:tracking-widest text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-200">
@@ -258,6 +412,7 @@ function ServiceHero({ hero = {}, metrics = [], variant }) {
 
 function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, variant }) {
   const dark = variant === "dark";
+  const isHire = slug.includes("hire");
 
   return (
     <>
@@ -271,7 +426,7 @@ function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, 
                 const features = plan.features || plan.items || [];
                 return (
                   <motion.article key={planTitle || index} variants={fadeUp} className={cx("rounded-[28px] border p-7 shadow-sm", dark ? "border-white/10 bg-white/[0.04]" : "border-slate-200 bg-white")}>
-                    {planTitle && <p className="text-xs font-black uppercase tracking-widest text-pink-600">{planTitle}</p>}
+                    {planTitle && <p className="text-xs font-black uppercase tracking-widest text-pink-500">{planTitle}</p>}
                     <div className="mt-3 text-3xl font-black">{plan.price}</div>
                     {plan.description && <p className={cx("mt-2 text-sm", dark ? "text-slate-300" : "text-slate-600")}>{plan.description}</p>}
                     {features.length > 0 && (
@@ -283,7 +438,7 @@ function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, 
                         ))}
                       </ul>
                     )}
-                    <Link href="/customize-package" className="mt-8 block w-full rounded-full bg-slate-950 py-3 text-center text-xs font-black uppercase tracking-widest text-white transition hover:bg-pink-600">
+                    <Link href="/contactus" className="mt-8 block w-full rounded-full bg-slate-950 py-3 text-center text-xs font-black uppercase tracking-widest text-white transition hover:bg-pink-600">
                       Get Started
                     </Link>
                   </motion.article>
@@ -314,7 +469,7 @@ function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, 
                       dark ? "border-white/10 bg-white/[0.04]" : "border-slate-200 bg-slate-50"
                     )}
                   >
-                    {metric && <div className="text-xs font-black uppercase tracking-widest text-pink-600">{metric}</div>}
+                    {metric && <div className="text-xs font-black uppercase tracking-widest text-pink-500">{metric}</div>}
                     <h3 className="mt-3 text-lg font-black">{title}</h3>
                     {desc && <p className={cx("mt-2 text-sm leading-7", dark ? "text-slate-300" : "text-slate-600")}>{desc}</p>}
                   </motion.article>
@@ -325,24 +480,36 @@ function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, 
         </section>
       )}
 
-      <section className={cx("py-20", dark ? "bg-slate-950 text-white" : "bg-white text-slate-950")}>
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-          <div>
-            <SectionIntro eyebrow="FAQ" title={page?.faqTitle || "Frequently Asked Questions (FAQs)"} text="The important details are covered here, and the rest can be mapped on a short consultation call." light={dark} />
-            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="mt-8 grid gap-4">
-              {(faqs.length > 0 ? faqs : [
-                { q: "How quickly can we start?", a: "We can typically kick off within 2 to 5 business days after requirements are aligned." },
-                { q: "Do you sign NDAs?", a: "Yes, we sign NDAs prior to discussing sensitive code bases or proprietary specs." },
-                { q: "What is your working schedule?", a: "Our team operates with overlapping working hours to support US, UK, and APAC timezones." }
-              ]).map((faq) => (
-                <motion.div key={faq.q} variants={fadeUp} className={cx("rounded-2xl border p-5", dark ? "border-white/10 bg-white/[0.04]" : "border-slate-200 bg-slate-50")}>
-                  <h3 className="font-black">{faq.q}</h3>
-                  <p className={cx("mt-2 text-sm leading-7", dark ? "text-slate-300" : "text-slate-600")}>{faq.a}</p>
-                </motion.div>
-              ))}
-            </motion.div>
+      {/* ── Lead Form & FAQ Section ── */}
+      <section id="hire-form" className={cx("py-20 scroll-mt-24", dark ? "bg-slate-950 text-white" : "bg-slate-50 text-slate-950")}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] items-start">
+            <div className="lg:sticky lg:top-28">
+              <SectionIntro
+                eyebrow={isHire ? "Questions & Answers" : "FAQ"}
+                title={page?.faqTitle || "Frequently Asked Questions (FAQs)"}
+                text="The important details are covered here, and custom technical requirements can be discussed during candidate selection."
+                light={dark}
+              />
+              <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="mt-8 grid gap-4">
+                {(faqs.length > 0 ? faqs : [
+                  { q: "How quickly can we start?", a: "We can typically kick off within 2 to 5 business days after requirements are aligned." },
+                  { q: "Do you sign NDAs?", a: "Yes, we sign NDAs prior to discussing sensitive code bases or proprietary specs." },
+                  { q: "What is your working schedule?", a: "Our team operates with overlapping working hours to support US, UK, and APAC timezones." }
+                ]).map((faq) => (
+                  <motion.div key={faq.q} variants={fadeUp} className={cx("rounded-2xl border p-5 transition-colors", dark ? "border-slate-800 bg-[#0f0e1c]/80 hover:border-slate-700" : "border-slate-200 bg-white")}>
+                    <h3 className="font-black text-sm sm:text-base">{faq.q}</h3>
+                    <p className={cx("mt-2 text-xs sm:text-sm leading-6 sm:leading-7", dark ? "text-slate-300" : "text-slate-600")}>{faq.a}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Form Column with Extra Bottom Padding for Chat Widget Clearance */}
+            <div className="relative pb-16 lg:pb-28">
+              <LeadForm slug={slug} page={page} variant={dark ? "dark" : "light"} />
+            </div>
           </div>
-          <LeadForm slug={slug} page={page} variant={dark ? "dark" : "light"} />
         </div>
       </section>
     </>
@@ -503,7 +670,7 @@ export default function DynamicServiceLanding({ slug, fallback }) {
     proof: page?.proof || [],
   }), [page]);
 
-  const isHire = slug === "hire-full-time-developers";
+  const isHire = slug.includes("hire");
 
   return (
     <main className="overflow-hidden bg-white text-slate-950">

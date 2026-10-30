@@ -477,7 +477,7 @@ const SmartServices = () => {
           <motion.div initial={{ opacity: 0, x: 24 }} animate={headingInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.25 }} className="lg:max-w-xs">
             <p className="text-slate-500 text-base leading-relaxed mb-8">A high-performance workflow engineered to transform ambitious concepts into digital leaders.</p>
             <div className="flex gap-8">
-              {[["500+", "Projects"], ["98%", "Accuracy"], ["5★", "Rated"]].map(([num, label]) => (
+              {[["120+", "Projects"], ["98%", "Accuracy"], ["5★", "Rated"]].map(([num, label]) => (
                 <div key={label}>
                   <p className="text-2xl font-black text-slate-900 leading-none" >{num}</p>
                   <p className="text-[11px] text-slate-400 font-medium mt-1 tracking-wide">{label}</p>

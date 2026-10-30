@@ -12,7 +12,7 @@ const Marketing = () => {
       <MarketingBanner />
       <MarketingDev />
       <MarketingElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

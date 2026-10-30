@@ -7,7 +7,7 @@ const reviews = [
   {
     id: 0, initials: 'BB',
     name: 'Bradley Braun', role: 'Verified Client',
-    content: "I enjoy working with the Webstep Solutions team, they are fluent in English and have excellent developmental skills.",
+    content: "I enjoy working with [the Webstep Solutions team], they are fluent in English and have excellent developmental skills.",
     tag: 'WordPress & Dev', accent: '#7C3AED', accentLight: '#ede9fe', accentText: '#5b21b6',
     avatarFrom: '#7C3AED', avatarTo: '#a855f7', barFrom: '#7C3AED', barTo: '#a855f7',
   },
@@ -29,7 +29,7 @@ const reviews = [
   {
     id: 3, initials: 'NM',
     name: 'Nathanael Murphy', role: 'Frontend Client',
-    content: "The Webstep Solutions team did an excellent job in a timely manner. They added their own design concepts without being asked, which helped make the project even better. I highly recommend Webstep Solutions and am already hiring them for a second frontend project.",
+    content: "[The Webstep Solutions team] did an excellent job in a timely manner. They added their own design concepts without being asked, which helped make the project even better. I highly recommend [the team] and am already hiring them for a second frontend project.",
     tag: 'UI/UX & Frontend', accent: '#DB2777', accentLight: '#fce7f3', accentText: '#9d174d',
     avatarFrom: '#DB2777', avatarTo: '#f472b6', barFrom: '#DB2777', barTo: '#f472b6',
   },
@@ -43,14 +43,14 @@ const reviews = [
   {
     id: 5, initials: 'AD',
     name: 'Amir Dagan', role: 'Verified Client',
-    content: "The Webstep Solutions team was very professional, well prepared and had a lot of patience with us",
+    content: "[The Webstep Solutions team] was very professional, well prepared and had a lot of patience with us.",
     tag: 'Web Development', accent: '#EA580C', accentLight: '#ffedd5', accentText: '#9a3412',
     avatarFrom: '#EA580C', avatarTo: '#fb923c', barFrom: '#EA580C', barTo: '#fb923c',
   },
 ];
 
 const stats = [
-  { icon: <FiBriefcase />, num: '500+', label: 'Projects Delivered', bg: '#ede9fe', color: '#7C3AED' },
+  { icon: <FiBriefcase />, num: '120+', label: 'Projects Delivered', bg: '#ede9fe', color: '#7C3AED' },
   { icon: <FiStar />, num: '4.9/5', label: 'Avg Client Rating', bg: '#e0f2fe', color: '#0891B2' },
   { icon: <FiCheckCircle />, num: '98%', label: 'Client Satisfaction', bg: '#d1fae5', color: '#059669' },
   { icon: <FiGlobe />, num: '15+', label: 'Countries Served', bg: '#ffedd5', color: '#EA580C' },

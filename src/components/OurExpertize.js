@@ -299,7 +299,7 @@ const OurExpertize = () => {
               We design and deliver custom software frameworks configured specifically to grow your audience and protect core operations.
             </p>
             <div className="flex gap-4 sm:gap-8">
-              {[["120+", "Solutions"], ["12Y+", "Combined"], ["98%", "Uptime"]].map(
+              {[["120+", "Solutions"], ["12Y+", "Combined"], ["98%", "Satisfaction"]].map(
                 ([val, label]) => (
                   <div key={label}>
                     <div
@@ -359,7 +359,7 @@ const OurExpertize = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
             <Link
-              href="/customize-package"
+              href="/contactus"
               className="w-full sm:w-auto relative overflow-hidden flex items-center justify-center gap-3 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-white text-center whitespace-nowrap"
               style={{
                 background: "linear-gradient(135deg, #22D3EE, #60A5FA)",

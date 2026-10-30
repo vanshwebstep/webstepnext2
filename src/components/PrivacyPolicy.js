@@ -184,8 +184,8 @@ const SECTIONS = [
         type: "list",
         items: [
           "Email: info@webstepsolutions.com",
-          "Website: webstepsolutions.com/contactus",
-          "Response time: Within 2 business days",
+          "Website: webstepdev.com/contactus/",
+          "Response time: Within one business day",
         ],
       },
       {

@@ -4,7 +4,7 @@ import AnimatedSection from '../AnimatedSection';
 
 const AboutStats = () => {
   const stats = [
-    { num: "500+", label: "Projects Completed" },
+    { num: "120+", label: "Projects Completed" },
     { num: "98%", label: "Client Satisfaction" },
     { num: "50+", label: "Expert Engineers" },
     { num: "12+", label: "Years Experience" }

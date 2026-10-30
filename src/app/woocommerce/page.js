@@ -1,23 +1,23 @@
 import React from 'react';
-import ServiceDetailPage from '@/components/Servicedetailpage';
+import RedirectClient from '@/components/RedirectClient';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("woocommerce");
   return {
-    title: dynamicSeo.title || "WooCommerce Development Services | Custom Online Stores | Webstep Solutions",
-    description: dynamicSeo.description || "Tailored WooCommerce development for high-volume stores: custom themes, payment gateway integration, subscription architecture, and speed optimization.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    title: dynamicSeo.title || "Redirecting to WooCommerce Development Services | Webstep Solutions",
+    description: dynamicSeo.description || "Redirecting to Webstep Solutions WooCommerce Development Services.",
     alternates: {
       canonical: "https://webstepdev.com/services/woocommerce/",
-    }
+    },
+    robots: { index: false, follow: false }
   };
 }
 
 export default function Page() {
   return (
     <>
-      <ServiceDetailPage serviceSlug="woocommerce" />
+      <RedirectClient target="/services/woocommerce/" />
     </>
   );
 }

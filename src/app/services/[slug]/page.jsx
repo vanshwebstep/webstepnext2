@@ -1,6 +1,7 @@
 // app/services/[slug]/page.jsx
 
 import ServiceDetailPage from "@/components/Servicedetailpage";
+import RedirectClient from "@/components/RedirectClient";
 import { fetchSeoMetadata } from "@/lib/contentApi";
 
 // Static route folders exist for these 15 primary services:
@@ -22,7 +23,59 @@ const staticServiceFolders = new Set([
   "wordpress"
 ]);
 
-// ─── All secondary/alias slugs (excluding static route folders to prevent conflict) ────────
+// Aliases and redirect mappings for old URLs
+const REDIRECT_MAP = {
+  "wordpress-website": "/services/wordpress/",
+  "wp-themes": "/services/wordpress/",
+  "wp-plugins": "/services/wordpress/",
+  "shopify-development": "/services/shopify/",
+  "shopify-themes": "/services/shopify/",
+  "shopify-apps": "/services/shopify/",
+  "woocommerce-development": "/services/woocommerce/",
+  "woo": "/services/woocommerce/",
+  "full-stack-development": "/fullstack/",
+  "fullstack": "/fullstack/",
+  "branding": "/services/brand-design/",
+  "ai": "/services/ai-powered-websites/",
+  "ai-websites": "/services/ai-powered-websites/",
+  "ai-integration": "/services/ai-automation/",
+  "laravel-development": "/services/laravel/",
+  "php": "/services/php-development/",
+  "react-js-dev": "/services/reactjs/",
+  "next-js-dev": "/services/reactjs/",
+  "react": "/services/reactjs/",
+  "nextjs": "/services/reactjs/",
+  "nodejs-development": "/services/web-development/",
+  "nodejs": "/services/web-development/",
+  "vue-js-dev": "/services/web-development/",
+  "vue": "/services/web-development/",
+  "vuejs": "/services/web-development/",
+  "psd-to-html": "/services/web-development/",
+  "sketch-to-html": "/services/web-development/",
+  "software-testing": "/services/web-development/",
+  "softwaretesting": "/services/web-development/",
+  "testing": "/services/web-development/",
+  "qa": "/services/web-development/",
+  "qa-testing": "/services/web-development/",
+};
+
+// Unique metadata for dynamic primary service pages (P1.3)
+const SERVICE_SEO = {
+  "ui-ux": {
+    title: "UI/UX Design Services | Figma, Wireframing & Prototyping | Webstep Solutions",
+    description: "Human-centered UI/UX design services. We craft intuitive user journeys, wireframes, interactive Figma prototypes, and complete design systems for web and mobile apps.",
+  },
+  "app-development": {
+    title: "Mobile App Development Services | iOS & Android Apps | Webstep Solutions",
+    description: "Custom mobile application development for iOS and Android using Flutter and React Native. Scalable backends, smooth UI, and end-to-end store deployment.",
+  },
+  "seo": {
+    title: "Technical SEO & Search Engine Optimization Services | Webstep Solutions",
+    description: "Data-backed SEO services for sustainable organic growth: comprehensive technical SEO audits, Core Web Vitals optimization, and on-page search strategy.",
+  },
+};
+
+// All secondary/alias slugs (excluding static route folders to prevent conflict)
 const services = [
   // App & Mobile
   "app-development",
@@ -83,58 +136,6 @@ const services = [
   "ai-integration"
 ].filter((slug) => !staticServiceFolders.has(slug));
 
-// Canonical resolution for dynamic slugs
-const CANONICAL_MAP = {
-  "shopify-development": "https://webstepdev.com/services/shopify/",
-  "shopify-themes": "https://webstepdev.com/services/shopify/",
-  "shopify-apps": "https://webstepdev.com/services/shopify/",
-  "woocommerce-development": "https://webstepdev.com/services/woocommerce/",
-  "woo": "https://webstepdev.com/services/woocommerce/",
-  "wordpress-website": "https://webstepdev.com/services/wordpress/",
-  "wp-themes": "https://webstepdev.com/services/wordpress/",
-  "wp-plugins": "https://webstepdev.com/services/wordpress/",
-  "laravel-development": "https://webstepdev.com/services/laravel/",
-  "php": "https://webstepdev.com/services/php-development/",
-  "react-js-dev": "https://webstepdev.com/services/reactjs/",
-  "next-js-dev": "https://webstepdev.com/services/reactjs/",
-  "react": "https://webstepdev.com/services/reactjs/",
-  "nextjs": "https://webstepdev.com/services/reactjs/",
-  "full-stack-development": "https://webstepdev.com/services/web-development/",
-  "fullstack": "https://webstepdev.com/services/web-development/",
-  "nodejs-development": "https://webstepdev.com/services/web-development/",
-  "nodejs": "https://webstepdev.com/services/web-development/",
-  "vue-js-dev": "https://webstepdev.com/services/web-development/",
-  "vue": "https://webstepdev.com/services/web-development/",
-  "vuejs": "https://webstepdev.com/services/web-development/",
-  "psd-to-html": "https://webstepdev.com/services/web-development/",
-  "sketch-to-html": "https://webstepdev.com/services/web-development/",
-  "software-testing": "https://webstepdev.com/services/web-development/",
-  "softwaretesting": "https://webstepdev.com/services/web-development/",
-  "testing": "https://webstepdev.com/services/web-development/",
-  "qa": "https://webstepdev.com/services/web-development/",
-  "qa-testing": "https://webstepdev.com/services/web-development/",
-  "app-development": "https://webstepdev.com/services/app-development/",
-  "mobile-app-development": "https://webstepdev.com/services/app-development/",
-  "mobileapp": "https://webstepdev.com/services/app-development/",
-  "mobile": "https://webstepdev.com/services/app-development/",
-  "app": "https://webstepdev.com/services/app-development/",
-  "flutter": "https://webstepdev.com/services/app-development/",
-  "react-native": "https://webstepdev.com/services/app-development/",
-  "ui-ux": "https://webstepdev.com/services/ui-ux/",
-  "uiux": "https://webstepdev.com/services/ui-ux/",
-  "ui-ux-designing": "https://webstepdev.com/services/ui-ux/",
-  "figma": "https://webstepdev.com/services/ui-ux/",
-  "ui-design": "https://webstepdev.com/services/ui-ux/",
-  "ux-design": "https://webstepdev.com/services/ui-ux/",
-  "design": "https://webstepdev.com/services/ui-ux/",
-  "seo": "https://webstepdev.com/services/seo/",
-  "branding": "https://webstepdev.com/services/brand-design/",
-  "email-templates": "https://webstepdev.com/services/email-marketing/",
-  "ai": "https://webstepdev.com/services/ai-powered-websites/",
-  "ai-websites": "https://webstepdev.com/services/ai-powered-websites/",
-  "ai-integration": "https://webstepdev.com/services/ai-automation/"
-};
-
 // Pre-generates static HTML for every dynamic slug at build time
 export async function generateStaticParams() {
   return services.map((slug) => ({ slug }));
@@ -142,6 +143,33 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+
+  // If this is an alias/old URL that redirects, give it noindex and point canonical to target
+  if (REDIRECT_MAP[slug]) {
+    const targetUrl = `https://webstepdev.com${REDIRECT_MAP[slug]}`;
+    return {
+      title: "Redirecting... | Webstep Solutions",
+      description: "Redirecting to current service page...",
+      robots: { index: false, follow: false },
+      alternates: {
+        canonical: targetUrl
+      }
+    };
+  }
+
+  // If we have custom rich SEO (P1.3)
+  if (SERVICE_SEO[slug]) {
+    const dynamicSeo = await fetchSeoMetadata(`services/${slug}`);
+    return {
+      title: dynamicSeo.title || SERVICE_SEO[slug].title,
+      description: dynamicSeo.description || SERVICE_SEO[slug].description,
+      ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+      alternates: {
+        canonical: `https://webstepdev.com/services/${slug}/`
+      }
+    };
+  }
+
   let formattedTitle = slug
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
@@ -162,9 +190,8 @@ export async function generateMetadata({ params }) {
     : `${formattedTitle} Services | Webstep Solutions`;
 
   const fallbackDesc = `Learn more about our ${formattedTitle} services at Webstep Solutions.`;
-
   const dynamicSeo = await fetchSeoMetadata(`services/${slug}`);
-  const canonicalUrl = CANONICAL_MAP[slug] || `https://webstepdev.com/services/${slug}/`;
+  const canonicalUrl = `https://webstepdev.com/services/${slug}/`;
 
   return {
     title: dynamicSeo.title || finalTitle,
@@ -176,8 +203,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// The page itself — passes slug down to the detail component
+// The page itself — redirects aliases or renders detail component
 export default async function Page({ params }) {
   const { slug } = await params;
+  if (REDIRECT_MAP[slug]) {
+    return <RedirectClient target={REDIRECT_MAP[slug]} />;
+  }
   return <ServiceDetailPage serviceSlug={slug} />;
 }

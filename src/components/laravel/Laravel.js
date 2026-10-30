@@ -11,7 +11,7 @@ const Laravel = () => {
       <LaravelBanner />
       <LaravelDev />
       <LaravelElevate />
-      <BlogReview />
+      {/* <BlogReview /> */}
       <Customer />
     </main>
   );

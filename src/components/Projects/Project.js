@@ -8,7 +8,7 @@ const Project = () => {
     <>
     <ProjectBanner/>
     <OurProjects/>
-    <BlogReview/>
+    {/* <BlogReview/> */}
     </>
   )
 }

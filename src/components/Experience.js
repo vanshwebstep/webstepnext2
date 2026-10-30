@@ -33,7 +33,7 @@ const reviews = [
   },
   {
     name: 'Nathanael Murphy', role: 'Frontend Client',
-    text: 'The Webstep Solutions team did an excellent job in a timely manner. They added their own design concepts without being asked, which helped make the project even better. I highly recommend Webstep Solutions and am already hiring them for a second frontend project.',
+    text: '[The Webstep Solutions team] did an excellent job in a timely manner. They added their own design concepts without being asked, which helped make the project even better. I highly recommend [the team] and am already hiring them for a second frontend project.',
     avatarBg: 'rgba(219,39,119,0.1)', avatarColor: '#DB2777',
   },
   {
@@ -43,7 +43,7 @@ const reviews = [
   },
   {
     name: 'Amir Dagan', role: 'Verified Client',
-    text: 'The Webstep Solutions team was very professional, well prepared and had a lot of patience with us',
+    text: '[The Webstep Solutions team] was very professional, well prepared and had a lot of patience with us.',
     avatarBg: 'rgba(234,88,12,0.1)', avatarColor: '#EA580C',
   },
 ];

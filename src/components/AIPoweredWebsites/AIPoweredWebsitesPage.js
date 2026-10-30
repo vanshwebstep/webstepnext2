@@ -982,19 +982,14 @@ export default function AIPoweredWebsitesPage() {
                     />
                   </button>
 
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="px-5 sm:px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
-                      >
-                        {faq.a}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out px-5 sm:px-6 text-sm sm:text-base text-slate-600 leading-relaxed ${
+                      isOpen ? "max-h-[600px] opacity-100 pb-6 pt-4 border-t border-slate-100" : "max-h-0 opacity-0 pb-0 pt-0"
+                    }`}
+                    aria-hidden={!isOpen}
+                  >
+                    {faq.a}
+                  </div>
                 </div>
               );
             })}

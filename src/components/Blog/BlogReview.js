@@ -13,14 +13,12 @@ const yelpReview = assetImage("review-icon4.png");
 
 const BlogReview = () => {
     const reviews = [
-        { src: googleReview, alt: "Google", label: "Google" },
-        { src: clutchReview, alt: "Clutch", label: "Clutch" },
-        { src: upcityReview, alt: "UpCity", label: "UpCity" },
-        { src: yelpReview, alt: "Yelp", label: "Yelp" },
+        { src: googleReview, alt: "Google Reviews", label: "Google 4.9★", href: "https://www.google.com/search?q=Webstep+Solutions+Mohali" },
+        { src: clutchReview, alt: "Clutch Verified", label: "Clutch Verified", href: "https://clutch.co/profile/webstep-solutions" },
     ];
 
     return (
-        <section className="hidden relative py-12 sm:py-20 md:py-28 bg-white overflow-hidden">
+        <section className="relative py-12 sm:py-20 md:py-28 bg-white overflow-hidden">
 
             {/* 🔥 PREMIUM BACKGROUND */}
             <div className="absolute inset-0">
@@ -104,13 +102,13 @@ const BlogReview = () => {
 
                         {/* SUBTEXT */}
                         <p className="mt-3 sm:mt-6 text-slate-500 text-xs sm:text-lg">
-                            4.9 average rating from 50+ verified client reviews
+                            4.9 average rating from 120+ verified client reviews
                         </p>
 
                     </AnimatedSection>
 
                     {/* 🔥 LOGOS GRID */}
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
+                    <div className="grid grid-cols-2 max-w-xl mx-auto gap-4 sm:gap-8">
                         {reviews.map((item, index) => (
                             <AnimatedSection key={index} delay={index * 0.1} direction="up">
 
@@ -122,22 +120,27 @@ const BlogReview = () => {
                                     {/* glow */}
                                     <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-pink-500 to-violet-500 blur-2xl opacity-0 group-hover:opacity-20 transition duration-500"></div>
 
-                                    <div className="relative p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/70 backdrop-blur-xl border border-white shadow-md flex flex-col items-center justify-center">
+                                    <a
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="relative p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/70 backdrop-blur-xl border border-white shadow-md flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:border-pink-200"
+                                    >
 
                                         <div className="h-8 sm:h-12 w-full relative mb-2 sm:mb-4">
                                             <Image
                                                 src={item.src}
                                                 alt={item.alt}
                                                 fill
-                                                className="object-contain grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition duration-500"
+                                                className="object-contain grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition duration-500"
                                             />
                                         </div>
 
-                                        <span className="text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.25em] text-slate-400 group-hover:text-pink-500 font-bold">
-                                            {item.label}
+                                        <span className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] text-slate-500 group-hover:text-pink-600 font-bold flex items-center gap-1">
+                                            {item.label} <span className="text-xs">↗</span>
                                         </span>
 
-                                    </div>
+                                    </a>
                                 </motion.div>
 
                             </AnimatedSection>

@@ -1,9 +1,65 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+const BASE_PATH = "/demo/webstepnext";
+
+const SMART_REDIRECTS = [
+  { match: ["laravel"], target: "/demo/webstepnext/services/laravel/" },
+  { match: ["wordpress", "wp-", "wp"], target: "/demo/webstepnext/services/wordpress/" },
+  { match: ["shopify"], target: "/demo/webstepnext/services/shopify/" },
+  { match: ["woocommerce", "woo"], target: "/demo/webstepnext/services/woocommerce/" },
+  { match: ["react", "nextjs", "next"], target: "/demo/webstepnext/services/reactjs/" },
+  { match: ["php"], target: "/demo/webstepnext/services/php-development/" },
+  { match: ["hire", "developer"], target: "/demo/webstepnext/hire-dedicated-developers/" },
+  { match: ["contact"], target: "/demo/webstepnext/contactus/" },
+  { match: ["about"], target: "/demo/webstepnext/about/" },
+  { match: ["privacy"], target: "/demo/webstepnext/privacy-policy/" },
+  { match: ["terms"], target: "/demo/webstepnext/terms-and-conditions/" },
+  { match: ["fullstack", "full-stack"], target: "/demo/webstepnext/fullstack/" },
+  { match: ["brand", "design"], target: "/demo/webstepnext/services/brand-design/" },
+  { match: ["maintenance"], target: "/demo/webstepnext/services/website-maintenance/" },
+  { match: ["ai-chatbot", "chatbot"], target: "/demo/webstepnext/services/ai-chatbots/" },
+  { match: ["ai-automation", "automation"], target: "/demo/webstepnext/services/ai-automation/" },
+  { match: ["ai-website", "ai-powered"], target: "/demo/webstepnext/services/ai-powered-websites/" },
+];
+
 export default function NotFound() {
+  const [redirecting, setRedirecting] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const pathname = window.location.pathname.toLowerCase();
+    const search = window.location.search || "";
+
+    // 1. If user landed on root domain without /demo/webstepnext (e.g. http://localhost:3000/services/laravel/)
+    if (!window.location.pathname.startsWith(BASE_PATH)) {
+      setRedirecting(true);
+      window.location.replace(`${BASE_PATH}${window.location.pathname}${search}`);
+      return;
+    }
+
+    // 2. If user is in /demo/webstepnext/ but reached an unknown route, match smart keyword redirects
+    for (const rule of SMART_REDIRECTS) {
+      if (rule.match.some((keyword) => pathname.includes(keyword))) {
+        setRedirecting(true);
+        window.location.replace(rule.target);
+        return;
+      }
+    }
+  }, []);
+
+  if (redirecting) {
+    return (
+      <section className="relative w-full min-h-[60vh] flex flex-col items-center justify-center bg-white text-slate-900 font-roboto px-6 py-20 text-center">
+        <div className="w-10 h-10 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mb-4" />
+        <p className="text-slate-700 font-medium text-lg">Redirecting you to the correct page...</p>
+      </section>
+    );
+  }
+
   return (
     <section className="relative w-full min-h-[80vh] flex flex-col items-center justify-center overflow-hidden bg-white text-slate-900 font-roboto px-6 py-20">
 

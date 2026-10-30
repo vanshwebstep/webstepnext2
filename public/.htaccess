@@ -1,0 +1,48 @@
+# Webstep Solutions - Apache Server Configuration & 301 Redirects
+RewriteEngine On
+RewriteBase /demo/webstepnext/
+
+# Ensure HTTPS in production if supported
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 301 Permanent Redirects for Old/Alias URLs (Ensuring /demo/webstepnext/ prefix)
+RewriteRule ^services/wordpress-website/?$ /demo/webstepnext/services/wordpress/ [R=301,L]
+RewriteRule ^demo/webstepnext/services/wordpress-website/?$ /demo/webstepnext/services/wordpress/ [R=301,L]
+
+RewriteRule ^services/laravel-development/?$ /demo/webstepnext/services/laravel/ [R=301,L]
+RewriteRule ^demo/webstepnext/services/laravel-development/?$ /demo/webstepnext/services/laravel/ [R=301,L]
+
+RewriteRule ^services/shopify-development/?$ /demo/webstepnext/services/shopify/ [R=301,L]
+RewriteRule ^demo/webstepnext/services/shopify-development/?$ /demo/webstepnext/services/shopify/ [R=301,L]
+
+RewriteRule ^services/woocommerce-development/?$ /demo/webstepnext/services/woocommerce/ [R=301,L]
+RewriteRule ^demo/webstepnext/services/woocommerce-development/?$ /demo/webstepnext/services/woocommerce/ [R=301,L]
+
+RewriteRule ^services/full-stack-development/?$ /demo/webstepnext/fullstack/ [R=301,L]
+RewriteRule ^demo/webstepnext/services/full-stack-development/?$ /demo/webstepnext/fullstack/ [R=301,L]
+
+RewriteRule ^services/branding/?$ /demo/webstepnext/services/brand-design/ [R=301,L]
+RewriteRule ^demo/webstepnext/services/branding/?$ /demo/webstepnext/services/brand-design/ [R=301,L]
+
+RewriteRule ^hire-full-time-developers/?$ /demo/webstepnext/hire-dedicated-developers/ [R=301,L]
+RewriteRule ^demo/webstepnext/hire-full-time-developers/?$ /demo/webstepnext/hire-dedicated-developers/ [R=301,L]
+
+RewriteRule ^services/ai/?$ /demo/webstepnext/services/ai-powered-websites/ [R=301,L]
+RewriteRule ^demo/webstepnext/services/ai/?$ /demo/webstepnext/services/ai-powered-websites/ [R=301,L]
+
+RewriteRule ^contact/?$ /demo/webstepnext/contactus/ [R=301,L]
+RewriteRule ^demo/webstepnext/contact/?$ /demo/webstepnext/contactus/ [R=301,L]
+
+RewriteRule ^privacy/?$ /demo/webstepnext/privacy-policy/ [R=301,L]
+RewriteRule ^demo/webstepnext/privacy/?$ /demo/webstepnext/privacy-policy/ [R=301,L]
+
+RewriteRule ^terms/?$ /demo/webstepnext/terms-and-conditions/ [R=301,L]
+RewriteRule ^demo/webstepnext/terms/?$ /demo/webstepnext/terms-and-conditions/ [R=301,L]
+
+# SPA / static export fallback (must stay AFTER the redirects)
+RewriteRule ^index\.html$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /demo/webstepnext/index.html [L]

@@ -9,7 +9,7 @@ import { HiOutlineArrowUpRight, HiOutlineChevronDown } from "react-icons/hi2";
 
 const AboutHero = () => {
   const STATS = [
-    { num: "500+", label: "Projects Delivered", sub: "Across 15+ industries" },
+    { num: "120+", label: "Projects Delivered", sub: "Across 15+ countries" },
     { num: "50+", label: "Happy Clients",      sub: "Startups to enterprises" },
     { num: "12+",  label: "Years Experience",   sub: "Since 2012" },
     { num: "98%",  label: "On-Time Delivery",   sub: "Consistent track record" },
@@ -111,7 +111,7 @@ const AboutHero = () => {
                   How We Work
                   <HiOutlineArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
-                <Link href="/customize-package"
+                <Link href="/contactus"
                   className="flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-bold text-slate-600 text-xs sm:text-[15px] border border-slate-200 hover:border-purple-300 hover:text-purple-600 bg-white/60 backdrop-blur-md transition-all duration-300">
                   Start a Project
                 </Link>

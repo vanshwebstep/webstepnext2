@@ -97,7 +97,7 @@ const ALL_SERVICES = {
     description: "We craft responsive HTML email templates that render perfectly across Gmail, Outlook, Apple Mail, and 50+ email clients. Dark mode support, mobile-first design, and CRM-ready code — all included.",
     tags: ["Mobile-First", "Dark Mode", "Multi-client"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>),
-    stats: [{ value: "500+", label: "Templates Built" }, { value: "50+", label: "Email Clients" }, { value: "98%", label: "Render Rate" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "120+", label: "Templates Built" }, { value: "50+", label: "Email Clients" }, { value: "98%", label: "Render Rate" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Cross-Client Compatibility", desc: "Tested on Gmail, Outlook 2016–2021, Apple Mail, Yahoo, and 50+ clients.", icon: "◈" },
       { title: "Dark Mode Support", desc: "Tailored dark-mode styles ensure brand integrity in dark environments.", icon: "⬡" },
@@ -335,7 +335,7 @@ const ALL_SERVICES = {
     description: "From custom PHP scripts to complex CMS platforms and enterprise portals, we deliver clean, secure, and maintainable PHP solutions that stand the test of time and traffic.",
     tags: ["PHP 8.3", "OOP", "MVC Patterns"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>),
-    stats: [{ value: "250+", label: "PHP Projects" }, { value: "PHP 8.3", label: "Latest" }, { value: "10+", label: "Yrs Experience" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "120+", label: "PHP Projects" }, { value: "PHP 8.3", label: "Latest" }, { value: "10+", label: "Yrs Experience" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Custom PHP Applications", desc: "Bespoke PHP apps built with modern OOP principles, design patterns, and clean architecture.", icon: "◈" },
       { title: "Legacy PHP Modernisation", desc: "Upgrade and refactor legacy PHP 5.x/7.x codebases to modern PHP 8.x standards.", icon: "⬡" },
@@ -369,7 +369,7 @@ const ALL_SERVICES = {
     description: "We build custom WordPress websites — not template sites. Custom themes from Figma designs, bespoke plugins, headless WordPress with Next.js, and full WooCommerce stores.",
     tags: ["Custom Themes", "WooCommerce", "Headless WP"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>),
-    stats: [{ value: "400+", label: "WP Sites Built" }, { value: "100%", label: "Custom Coded" }, { value: "95+", label: "PageSpeed Score" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "120+", label: "WP Sites Built" }, { value: "100%", label: "Custom Coded" }, { value: "95+", label: "PageSpeed Score" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Custom Theme Development", desc: "Pixel-perfect themes from your Figma/PSD — no page builders, no bloat.", icon: "◈" },
       { title: "WooCommerce Stores", desc: "Full WooCommerce with custom product types, checkout flows, and payment gateways.", icon: "⬡" },
@@ -403,7 +403,7 @@ const ALL_SERVICES = {
     description: "We engineer custom websites and web applications that are fast, accessible, and built for growth. From marketing sites to complex SaaS platforms — every project crafted with precision and purpose.",
     tags: ["Next.js", "React", "Performance"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>),
-    stats: [{ value: "500+", label: "Sites Launched" }, { value: "95+", label: "PageSpeed Avg" }, { value: "3x", label: "Avg Traffic Growth" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "120+", label: "Sites Launched" }, { value: "95+", label: "PageSpeed Avg" }, { value: "3x", label: "Avg Traffic Growth" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Next.js & React Applications", desc: "SSR, SSG, and ISR for maximum performance and SEO-optimized UIs.", icon: "◈" },
       { title: "CMS Integration", desc: "Headless CMS with Sanity, Contentful, or Strapi for flexible content management.", icon: "⬡" },
@@ -471,7 +471,7 @@ const ALL_SERVICES = {
     description: "We build high-converting e-commerce experiences on Shopify, WooCommerce, and custom platforms. From product catalog to checkout — every touchpoint optimized for conversion and customer retention.",
     tags: ["Shopify", "WooCommerce", "CRO"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg>),
-    stats: [{ value: "200+", label: "Stores Built" }, { value: "35%", label: "Avg Conv. Lift" }, { value: "$50M+", label: "Revenue Gen." }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "120+", label: "Stores Built" }, { value: "98%", label: "Satisfaction" }, { value: "4.9★", label: "Client Rating" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Shopify & Shopify Plus", desc: "Custom Shopify themes, app integrations, and Plus-tier B2B and multi-storefront setups.", icon: "◈" },
       { title: "WooCommerce Development", desc: "Custom stores with tailored product types, checkout flows, and payment gateways.", icon: "⬡" },
@@ -505,7 +505,7 @@ const ALL_SERVICES = {
     description: "We build custom Shopify and Shopify Plus storefronts, custom Liquid themes, private apps, and headless commerce solutions that maximize conversion and average order value.",
     tags: ["Shopify Plus", "Liquid Themes", "Private Apps"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg>),
-    stats: [{ value: "150+", label: "Shopify Stores" }, { value: "35%", label: "Avg Conv. Lift" }, { value: "95+", label: "Core Web Vitals" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "120+", label: "Shopify Stores" }, { value: "95+", label: "PageSpeed Score" }, { value: "4.9★", label: "Client Rating" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Custom Liquid Theme Development", desc: "Bespoke Shopify themes built from Figma designs with clean, modular Liquid code and zero bloat.", icon: "◈" },
       { title: "Shopify Plus & Enterprise", desc: "Shopify Plus setups, B2B wholesale portals, multi-currency, and Checkout Extensibility customizations.", icon: "⬡" },
@@ -539,7 +539,7 @@ const ALL_SERVICES = {
     description: "We engineer robust WooCommerce stores tailored to your business model. From custom themes and complex checkout flows to high-volume inventory systems, subscriptions, and custom payment integrations.",
     tags: ["Custom Themes", "Subscriptions", "High Volume"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>),
-    stats: [{ value: "250+", label: "Woo Stores Built" }, { value: "100%", label: "Custom Code" }, { value: "95+", label: "Speed Score" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "120+", label: "Stores Built" }, { value: "100%", label: "Custom Code" }, { value: "95+", label: "Speed Score" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Custom WooCommerce Themes", desc: "Tailor-made themes built without heavy page builders, optimizing speed and mobile user experience.", icon: "◈" },
       { title: "Custom Payment & Shipping Gateways", desc: "Integrate Stripe, PayPal, localized gateways, and bespoke shipping rule engines.", icon: "⬡" },
@@ -607,7 +607,7 @@ const ALL_SERVICES = {
     description: "We grow your organic search presence with technical SEO, content strategy, and authority building. Transparent reporting, proven methodologies, and rankings that compound over time.",
     tags: ["Technical SEO", "Content Strategy", "Link Building"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>),
-    stats: [{ value: "300%", label: "Avg Traffic Growth" }, { value: "#1", label: "Rankings Achieved" }, { value: "500+", label: "Keywords Ranked" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "300%", label: "Avg Traffic Growth" }, { value: "#1", label: "Rankings Achieved" }, { value: "120+", label: "Keywords Ranked" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Technical SEO Audit", desc: "Comprehensive crawl analysis, Core Web Vitals, indexation issues, and structured data audit.", icon: "◈" },
       { title: "Keyword Research & Strategy", desc: "Intent-mapped keyword research identifying highest-value opportunities in your niche.", icon: "⬡" },
@@ -850,19 +850,14 @@ function FaqItem({ faq, index }) {
           </svg>
         </motion.div>
       </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="px-4 sm:px-6 pb-4 sm:pb-5 text-slate-600 text-[13px] sm:text-sm leading-relaxed">{faq.a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+        
+      >
+        <p className="px-4 sm:px-6 pb-4 sm:pb-5 text-slate-600 text-[13px] sm:text-sm leading-relaxed">{faq.a}</p>
+      </div>
     </motion.div>
   );
 }
@@ -1053,7 +1048,7 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
                 className="flex flex-col xs:flex-row sm:flex-row items-stretch xs:items-center sm:items-center gap-3 sm:gap-4"
               >
                 <Link
-                  href="/customize-package"
+                  href="/contactus"
                   className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm font-bold text-white tracking-wide w-full xs:w-auto sm:w-auto"
                   style={{
                     background: "linear-gradient(135deg, #FF79C6 0%, #A855F7 50%)",
@@ -1116,7 +1111,7 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
                     ))}
                   </div>
                   <div className="mt-6 sm:mt-7 pt-5 sm:pt-6 border-t border-pink-100">
-                    <p className="text-[11px] sm:text-[12px] text-center text-slate-500 font-medium">Trusted by 500+ clients worldwide</p>
+                    <p className="text-[11px] sm:text-[12px] text-center text-slate-500 font-medium">Trusted by 120+ clients worldwide</p>
                     <div className="flex justify-center gap-1 mt-3">
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill={BRAND.primary} stroke="none">
@@ -1276,7 +1271,26 @@ const ServiceDetailPage = ({ serviceSlug = "web-development" }) => {
             </motion.h2>
           </div>
           <div className="flex flex-col gap-3">
-            {service.faqs.map((faq, i) => (
+            {service.faqs && service.faqs.length > 0 && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  "mainEntity": service.faqs.map((f) => ({
+                    "@type": "Question",
+                    "name": f.q,
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": f.a,
+                    },
+                  })),
+                }),
+              }}
+            />
+          )}
+          {service.faqs.map((faq, i) => (
               <FaqItem key={i} faq={faq} index={i} />
             ))}
           </div>

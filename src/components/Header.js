@@ -77,13 +77,13 @@ const Header = () => {
             {/* Phone — icon+label only on xl+ (hides on lg to save nav space) */}
             <a
               href="tel:+917973938927"
-              className="hidden xl:flex items-center gap-2 group"
+              className="hidden  items-center gap-2 group"
               aria-label="Call us"
             >
               <div className="w-8 h-8 xl:w-10 xl:h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 group-hover:text-white group-hover:bg-[#FF1F8E] group-hover:border-[#FF1F8E] transition-all duration-300 shrink-0">
                 <FiPhone size={15} />
               </div>
-              <div className="flex flex-col leading-tight">
+              <div className=" flex-col leading-tight">
                 <span className="text-[9px] font-semibold tracking-[0.15em] uppercase text-slate-400">
                   Expert Support
                 </span>
@@ -95,7 +95,7 @@ const Header = () => {
 
             {/* CTA Button — visible from lg: */}
             <Link
-              href="/customize-package"
+              href="/contactus"
               className="relative inline-flex items-center gap-1.5 px-3.5 lg:px-4 xl:px-6 py-2 lg:py-2.5 xl:py-3 rounded-xl bg-slate-900 text-white text-[10px] xl:text-[11px] font-bold tracking-[0.12em] xl:tracking-[0.18em] uppercase overflow-hidden group transition-all duration-300 hover:shadow-[0_8px_24px_rgba(255,31,142,0.3)] whitespace-nowrap"
             >
               <span className="absolute inset-0 bg-[#FF1F8E] opacity-0 group-hover:opacity-100 transition duration-300" />
@@ -133,7 +133,7 @@ const Header = () => {
                 {/* Phone row */}
                 <a
                   href="tel:+917973938927"
-                  className="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-[#FF1F8E]/40 transition-colors"
+                  className="hidden items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-[#FF1F8E]/40 transition-colors"
                 >
                   <div>
                     <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-slate-400 block mb-0.5">
@@ -150,7 +150,7 @@ const Header = () => {
 
                 {/* CTA */}
                 <Link
-                  href="/customize-package"
+                  href="/contactus"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-[#FF1F8E] text-white font-bold text-[11px] tracking-[0.25em] uppercase shadow-[0_8px_24px_rgba(255,31,142,0.35)] hover:bg-[#e01880] active:scale-[0.98] transition-all"
                 >
