@@ -140,7 +140,7 @@ const Banner = () => {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden font-roboto pt-28 sm:pt-32 pb-16 sm:pb-20">
 
       <div className="absolute inset-0 -z-20">
-        <Image src={herobanner} alt="" aria-hidden="true" fill priority className="object-cover" />
+        <Image src={herobanner} alt="Webstep Solutions - Custom Web & App Development" fill priority className="object-cover" />
       </div>
       <div className="absolute inset-0 bg-black/50 -z-10" />
 
@@ -214,7 +214,7 @@ const Banner = () => {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-12 sm:mb-20 w-full sm:w-auto px-4">
           <Link
-            href="/customize-package"
+            href="/contactus"
             onClick={() => setActiveBtn('start')}
             className={`w-full sm:w-auto relative px-7 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-500 overflow-hidden group text-center
               ${activeBtn === 'start' ? 'bg-[#FF1F8E] text-white scale-105 shadow-[0_10px_30px_rgba(255,31,142,0.4)]' : 'bg-white/60 text-slate-900 hover:text-white'}`}

@@ -2,7 +2,7 @@ import React from 'react';
 import WpBanner from './WpBanner';
 import WpDev from './WpDev';
 import Elevate from './Elevate';
-import BlogReview from '../Blog/BlogReview';
+import WpDetailsSection from './WpDetailsSection';
 import Customer from '../Customer';
 
 const Wp = () => {
@@ -11,7 +11,7 @@ const Wp = () => {
       <WpBanner />
       <WpDev />
       <Elevate />
-      {/* <BlogReview /> */}
+      <WpDetailsSection />
       <Customer />
     </main>
   );

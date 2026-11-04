@@ -53,7 +53,7 @@ const steps = [
 
 
 const comparisonRows = [
-  ["Time to first commit", "Days-weeks", "72 hours", "60-90 days"],
+  ["Time to first commit", "Days-weeks", "2-3 days", "60-90 days"],
   ["Monthly cost", "Unpredictable", "From $1,500", "$8,000-15,000"],
   ["Works in your tools", "Rarely", "Always", "Yes"],
   ["Dedicated to your project", "No", "Yes", "Yes"],
@@ -140,7 +140,7 @@ export default function B2BSalesPage() {
           </h1>
 
           <p className="mt-4 text-lg sm:text-2xl font-bold text-slate-800">
-            Your next dedicated developer — onboarded in 72 hours, not 3 months.
+            Your next dedicated developer — onboarded in 2 to 5 business days, not 3 months.
           </p>
 
           <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
@@ -208,7 +208,7 @@ export default function B2BSalesPage() {
           <SectionLabel>Handoff & Communication</SectionLabel>
           <div className="max-w-3xl">
             <h2 className="text-3xl font-black leading-tight text-slate-950 sm:text-5xl">
-              Handoff & Communication: From First Call to First Commit in 72 Hours
+              Handoff & Communication: From First Call to First Commit in 2 to 5 Days
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
               No lengthy RFPs, no endless interviews, and no waiting. Just a developer inside your team, shipping.
@@ -298,7 +298,7 @@ export default function B2BSalesPage() {
             Your competitor already has a dedicated dev team. Do you?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/80">
-            Book a free 30-minute call. We will match you with the right developer and prepare onboarding within 72 hours.
+            Book a free 30-minute call. We will match you with the right developer and prepare onboarding within 2 to 5 business days.
           </p>
           <Link
             href="/contactus"

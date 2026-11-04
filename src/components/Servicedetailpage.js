@@ -126,7 +126,7 @@ const ALL_SERVICES = {
   },
 
   "mobile-app-development": {
-    id: "01", slug: "mobile-app-development", title: "Mobile App Development", subTitle: "Native & Cross-Platform",
+    id: "01", slug: "app-development", title: "Mobile App Development", subTitle: "Native & Cross-Platform",
     tagline: "Apps that engage, delight, and retain users.",
     description: "We build native iOS & Android apps and cross-platform solutions using React Native and Flutter. From MVP to enterprise-grade — every app is engineered for performance, scalability, and a delightful UX.",
     tags: ["iOS & Android", "React Native", "Flutter"],
@@ -154,13 +154,13 @@ const ALL_SERVICES = {
       { q: "Can you integrate with our existing API?", a: "Absolutely — REST APIs, GraphQL, Firebase, Supabase, and most backend technologies." },
     ],
     relatedServices: [
-      { id: "02", title: "UI/UX Designing", subTitle: "User-First Interfaces", slug: "ui-ux-designing" },
-      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "full-stack-development" },
+      { id: "02", title: "UI/UX Designing", subTitle: "User-First Interfaces", slug: "ui-ux" },
+      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "web-development" },
     ],
   },
 
   "ui-ux-designing": {
-    id: "02", slug: "ui-ux-designing", title: "UI/UX Designing", subTitle: "User-First Interfaces",
+    id: "02", slug: "ui-ux", title: "UI/UX Designing", subTitle: "User-First Interfaces",
     tagline: "Interfaces that blend beauty with functional clarity.",
     description: "We design digital experiences that users love — from research and wireframes to polished, pixel-perfect UI. Every design decision is grounded in user psychology, business goals, and modern design principles.",
     tags: ["Figma", "User Research", "Prototyping"],
@@ -188,13 +188,13 @@ const ALL_SERVICES = {
       { q: "Can you redesign an existing product?", a: "Absolutely — we conduct UX audits and deliver redesigns that improve usability and conversion." },
     ],
     relatedServices: [
-      { id: "01", title: "Mobile App Dev", subTitle: "Native & Cross-Platform", slug: "mobile-app-development" },
-      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "full-stack-development" },
+      { id: "01", title: "Mobile App Dev", subTitle: "Native & Cross-Platform", slug: "app-development" },
+      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "web-development" },
     ],
   },
 
   "full-stack-development": {
-    id: "03", slug: "full-stack-development", title: "Full Stack Development", subTitle: "Scalable Web Apps",
+    id: "03", slug: "web-development", title: "Full Stack Development", subTitle: "Scalable Web Apps",
     tagline: "Scalable backends & dynamic frontends for modern web.",
     description: "We engineer full-stack web applications from the ground up — robust RESTful or GraphQL APIs, modern React/Next.js frontends, and cloud-native deployments. Built to scale from day one.",
     tags: ["React / Next.js", "Node.js", "PostgreSQL"],
@@ -222,8 +222,8 @@ const ALL_SERVICES = {
       { q: "How do you handle scalability?", a: "Horizontal scaling, caching layers, database read replicas, and CDN strategies from day one." },
     ],
     relatedServices: [
-      { id: "01", title: "Mobile App Dev", subTitle: "Native & Cross-Platform", slug: "mobile-app-development" },
-      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress-website" },
+      { id: "01", title: "Mobile App Dev", subTitle: "Native & Cross-Platform", slug: "app-development" },
+      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress" },
     ],
   },
 
@@ -256,13 +256,13 @@ const ALL_SERVICES = {
       { q: "Can you test mobile apps?", a: "Absolutely — iOS and Android apps tested on real devices across multiple OS versions." },
     ],
     relatedServices: [
-      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "full-stack-development" },
-      { id: "05", title: "Laravel Dev", subTitle: "PHP Framework", slug: "laravel-development" },
+      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "web-development" },
+      { id: "05", title: "Laravel Dev", subTitle: "PHP Framework", slug: "laravel" },
     ],
   },
 
   "laravel-development": {
-    id: "05", slug: "laravel-development", title: "Laravel Development", subTitle: "PHP Framework Excellence",
+    id: "05", slug: "laravel", title: "Laravel Development", subTitle: "PHP Framework Excellence",
     tagline: "Secure, feature-rich web apps on the world's best PHP framework.",
     description: "We build powerful, secure web applications using Laravel — from SaaS platforms to enterprise portals. Elegant code, robust architecture, and a framework that scales with your ambitions.",
     tags: ["Laravel 11", "PHP 8.3", "REST APIs"],
@@ -324,8 +324,8 @@ const ALL_SERVICES = {
       { q: "Do you write tests?", a: "Absolutely — Jest unit tests and Supertest integration tests are standard in all our deliverables." },
     ],
     relatedServices: [
-      { id: "05", title: "Laravel Dev", subTitle: "PHP Framework", slug: "laravel-development" },
-      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "full-stack-development" },
+      { id: "05", title: "Laravel Dev", subTitle: "PHP Framework", slug: "laravel" },
+      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "web-development" },
     ],
   },
 
@@ -358,13 +358,13 @@ const ALL_SERVICES = {
       { q: "Can you integrate third-party APIs?", a: "Yes — extensive experience with payment gateways, CRMs, ERPs, and REST/SOAP APIs." },
     ],
     relatedServices: [
-      { id: "05", title: "Laravel Dev", subTitle: "PHP Framework", slug: "laravel-development" },
-      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress-website" },
+      { id: "05", title: "Laravel Dev", subTitle: "PHP Framework", slug: "laravel" },
+      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress" },
     ],
   },
 
-  "wordpress-website": {
-    id: "08", slug: "wordpress-website", title: "WordPress Development Services", subTitle: "Flexible CMS",
+  "wordpress": {
+    id: "08", slug: "wordpress", title: "WordPress Development Services", subTitle: "Flexible CMS",
     tagline: "Flexible, beautiful, and easy to manage WordPress sites.",
     description: "We build custom WordPress websites — not template sites. Custom themes from Figma designs, bespoke plugins, headless WordPress with Next.js, and full WooCommerce stores.",
     tags: ["Custom Themes", "WooCommerce", "Headless WP"],
@@ -393,7 +393,7 @@ const ALL_SERVICES = {
     ],
     relatedServices: [
       { id: "07", title: "PHP Development", subTitle: "Custom PHP Solutions", slug: "php-development" },
-      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "full-stack-development" },
+      { id: "03", title: "Full Stack Dev", subTitle: "Scalable Web Apps", slug: "web-development" },
     ],
   },
 
@@ -495,7 +495,7 @@ const ALL_SERVICES = {
     ],
     relatedServices: [
       { id: "01", title: "Web Development", subTitle: "Custom Websites", slug: "web-development" },
-      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress-website" },
+      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress" },
     ],
   },
 
@@ -562,7 +562,7 @@ const ALL_SERVICES = {
       { q: "Can WooCommerce integrate with external ERP/POS systems?", a: "Yes — we integrate WooCommerce with QuickBooks, NetSuite, SAP, Square, and custom inventory APIs." },
     ],
     relatedServices: [
-      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress-website" },
+      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress" },
       { id: "09", title: "Shopify Development", subTitle: "High-Converting Shopify", slug: "shopify" },
     ],
   },
@@ -607,7 +607,7 @@ const ALL_SERVICES = {
     description: "We grow your organic search presence with technical SEO, content strategy, and authority building. Transparent reporting, proven methodologies, and rankings that compound over time.",
     tags: ["Technical SEO", "Content Strategy", "Link Building"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>),
-    stats: [{ value: "300%", label: "Avg Traffic Growth" }, { value: "#1", label: "Rankings Achieved" }, { value: "120+", label: "Keywords Ranked" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "95+", label: "Core Web Vitals" }, { value: "100%", label: "Technical Cleanliness" }, { value: "120+", label: "Delivered Audits" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Technical SEO Audit", desc: "Comprehensive crawl analysis, Core Web Vitals, indexation issues, and structured data audit.", icon: "◈" },
       { title: "Keyword Research & Strategy", desc: "Intent-mapped keyword research identifying highest-value opportunities in your niche.", icon: "⬡" },
@@ -630,17 +630,17 @@ const ALL_SERVICES = {
       { q: "Can you do SEO for a new website?", a: "Yes — starting from day one is ideal. We architect your site for maximum search performance from the beginning." },
     ],
     relatedServices: [
-      { id: "08", title: "Brand Design", subTitle: "Logos & Brand Identity", slug: "branding" },
+      { id: "08", title: "Brand Design", subTitle: "Logos & Brand Identity", slug: "brand-design" },
     ],
   },
 
-  "branding": {
-    id: "08", slug: "branding", title: "Brand Design", subTitle: "Logos & Brand Identity",
-    tagline: "Identities that are instantly recognisable and impossible to forget.",
+  "brand-design": {
+    id: "08", slug: "brand-design", title: "Brand Design", subTitle: "Logos & Brand Identity",
+    tagline: "Identities that are instantly recognizable and impossible to forget.",
     description: "We craft brand identities that make lasting impressions — from logo design and color systems to typography, brand guidelines, and every touchpoint in between.",
     tags: ["Logo Design", "Brand Guidelines", "Visual Identity"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" /></svg>),
-    stats: [{ value: "400+", label: "Brands Created" }, { value: "100%", label: "Original Designs" }, { value: "2 Wks", label: "Avg Turnaround" }, { value: "5★", label: "Rated" }],
+    stats: [{ value: "50+", label: "Brands Designed" }, { value: "100%", label: "Original Designs" }, { value: "2 Wks", label: "Avg Turnaround" }, { value: "5★", label: "Rated" }],
     features: [
       { title: "Logo Design", desc: "Timeless, versatile logo marks that work across every medium — digital, print, and signage.", icon: "◈" },
       { title: "Brand Identity System", desc: "Complete visual system: logos, color palette, typography hierarchy, and iconography.", icon: "⬡" },
@@ -674,7 +674,7 @@ const ALL_SERVICES = {
     description: "We build ultra-fast, intelligent Next.js websites and web applications infused with custom LLMs, vector semantic search, automated lead qualification, and real-time personalized user experiences.",
     tags: ["Next.js 15", "Vector RAG", "OpenAI & Claude", "Dynamic Personalization"],
     icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><line x1="9" y1="1" x2="9" y2="4" /><line x1="15" y1="1" x2="15" y2="4" /><line x1="9" y1="20" x2="9" y2="23" /><line x1="15" y1="20" x2="15" y2="23" /><line x1="20" y1="9" x2="23" y2="9" /><line x1="20" y1="14" x2="23" y2="14" /><line x1="1" y1="9" x2="4" y2="9" /><line x1="1" y1="14" x2="4" y2="14" /></svg>),
-    stats: [{ value: "3.8x", label: "Conversion Lift" }, { value: "< 800ms", label: "AI Latency" }, { value: "24/7", label: "Lead Capture" }, { value: "100%", label: "Brand Safe" }],
+    stats: [{ value: "High", label: "Intent Accuracy" }, { value: "< 800ms", label: "AI Latency" }, { value: "24/7", label: "Lead Capture" }, { value: "Verified", label: "RAG Guardrails" }],
     features: [
       { title: "Semantic RAG Search", desc: "Natural language search understanding visitor intent in plain English without keyword guessing.", icon: "◈" },
       { title: "Autonomous Chatbots", desc: "Brand-trained AI assistants resolving queries, qualifying leads, and booking meetings 24/7.", icon: "⬡" },
@@ -763,7 +763,7 @@ const ALL_SERVICES = {
       { q: "How do updates get tested before going live?", a: "We test all core, theme, and plugin updates in an isolated staging environment before deploying to production." },
     ],
     relatedServices: [
-      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress-website" },
+      { id: "08", title: "WordPress Website", subTitle: "Flexible CMS", slug: "wordpress" },
       { id: "01", title: "Web Development", subTitle: "Custom Websites", slug: "web-development" },
     ],
   },
@@ -773,14 +773,18 @@ const ALL_SERVICES = {
 const SLUG_ALIASES = {
   "website-maintenance": "website-maintenance",
   "maintenance": "website-maintenance",
-  "mobileapp": "mobile-app-development",
-  "uiux": "ui-ux-designing",
+  "mobileapp": "app-development",
+  "mobile-app-development": "app-development",
+  "uiux": "ui-ux",
+  "ui-ux-designing": "ui-ux",
   "fullstack": "full-stack-development",
   "softwaretesting": "software-testing",
-  "laravel": "laravel-development",
+  "laravel": "laravel",
+  "laravel-development": "laravel",
   "nodejs": "nodejs-development",
   "php": "php-development",
-  "wordpress": "wordpress-website",
+  "wordpress": "wordpress",
+  "wordpress-website": "wordpress",
   "ai": "ai-powered-websites",
   "ai-websites": "ai-powered-websites",
   "ai-integration": "ai-automation",
@@ -794,8 +798,8 @@ const SLUG_ALIASES = {
   "woocommerce": "woocommerce",
   "woocommerce-development": "woocommerce",
   "woo": "woocommerce",
-  "wp-themes": "wordpress-website",
-  "wp-plugins": "wordpress-website",
+  "wp-themes": "wordpress",
+  "wp-plugins": "wordpress",
   "react": "web-development",
   "reactjs": "web-development",
   "nextjs": "web-development",
@@ -813,8 +817,8 @@ const SLUG_ALIASES = {
   "mobile": "app-development",
   "web": "web-development",
   "app": "app-development",
-  "brand-design": "branding",
-  "branding": "branding",
+  "brand-design": "brand-design",
+  "branding": "brand-design",
   "email-marketing": "email-templates",
   "email-templates": "email-templates",
 };

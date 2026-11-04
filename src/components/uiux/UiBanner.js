@@ -77,7 +77,7 @@ const UiBanner = () => {
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <Link
-                    href="/customize-package"
+                    href="/contactus"
                     className="px-8 py-4 rounded-2xl text-[11px] font-black capitalize tracking-[0.2em]
                       text-white hover:-translate-y-1 transition-all duration-300"
                     style={{

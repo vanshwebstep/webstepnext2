@@ -1,10 +1,7 @@
 # Webstep Solutions - Apache Server Configuration & 301 Redirects
 RewriteEngine On
 RewriteBase /demo/webstepnext/
-
-# Ensure HTTPS in production if supported
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+DirectorySlash On
 
 # 301 Permanent Redirects for Old/Alias URLs (Ensuring /demo/webstepnext/ prefix)
 RewriteRule ^services/wordpress-website/?$ /demo/webstepnext/services/wordpress/ [R=301,L]

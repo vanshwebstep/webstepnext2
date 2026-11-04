@@ -2,7 +2,7 @@ import React from 'react';
 import LaravelBanner from './LaravelBanner';
 import LaravelDev from './LaravelDev';
 import LaravelElevate from './LaravelElevate';
-import BlogReview from '../Blog/BlogReview';
+import LaravelDetailsSection from './LaravelDetailsSection';
 import Customer from '../Customer';
 
 const Laravel = () => {
@@ -11,7 +11,7 @@ const Laravel = () => {
       <LaravelBanner />
       <LaravelDev />
       <LaravelElevate />
-      {/* <BlogReview /> */}
+      <LaravelDetailsSection />
       <Customer />
     </main>
   );

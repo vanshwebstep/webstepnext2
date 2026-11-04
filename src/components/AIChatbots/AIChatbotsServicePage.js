@@ -46,8 +46,8 @@ const CHAT_BENEFITS = [
   {
     icon: FiShield,
     title: "RAG & Knowledge Guardrails",
-    desc: "Trained exclusively on your approved product manuals, help centers, and pricing sheets. Zero false promises or hallucinations.",
-    tag: "100% Brand Safe",
+    desc: "Trained exclusively on your approved product manuals, help centers, and pricing sheets, backed by strict RAG verification guardrails.",
+    tag: "Brand-Aligned Responses",
   },
   {
     icon: FiHeadphones,

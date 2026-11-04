@@ -6,13 +6,11 @@ import {
 } from "react-icons/fa";
 
 const offers = [
-  { badge: "Sale",  badgeBg: "#f43f8e",  text: <>Get <strong style={{color:"#f9a8d4"}}>20% OFF</strong> on all Web Development packages — this week only</> },
-  { badge: "Free",  badgeBg: "#10b981",  text: <><strong style={{color:"#6ee7b7"}}>Free UI/UX Consultation</strong> with every Full Stack project</> },
-  { badge: "Hot",   badgeBg: "#f97316",  text: <>WordPress website starting at <strong style={{color:"#fdba74"}}>₹9,999</strong> only — limited slots!</> },
-  { badge: "New",   badgeBg: "#0ea5e9",  text: <>Launch with our <strong style={{color:"#7dd3fc"}}>Startup Bundle</strong> — website + logo + SEO</> },
-  { badge: "Sale",  badgeBg: "#a855f7",  text: <><strong style={{color:"#d8b4fe"}}>30% OFF</strong> Shopify store setup — offer ending soon</> },
-  { badge: "Free",  badgeBg: "#10b981",  text: <><strong style={{color:"#6ee7b7"}}>3 months free support</strong> with every custom web app</> },
-  { badge: "New",   badgeBg: "#0ea5e9",  text: <>AI Chatbot integration starting at <strong style={{color:"#7dd3fc"}}>₹14,999</strong> — book now</> },
+  { badge: "Global",  badgeBg: "#0ea5e9",  text: <>Dedicated Web &amp; App Engineers for <strong style={{color:"#7dd3fc"}}>US, CA &amp; AU</strong> Timezones</> },
+  { badge: "Trusted", badgeBg: "#10b981",  text: <><strong style={{color:"#6ee7b7"}}>120+ Projects Delivered</strong> with 98% Client Satisfaction</> },
+  { badge: "Agile",   badgeBg: "#a855f7",  text: <>Flexible Monthly Engagements — <strong style={{color:"#d8b4fe"}}>Scale Developers on Demand</strong></> },
+  { badge: "Full-Stack", badgeBg: "#f43f8e", text: <>Enterprise <strong style={{color:"#f9a8d4"}}>Next.js, WordPress, Shopify &amp; Laravel</strong> Teams</> },
+  { badge: "Support", badgeBg: "#10b981",  text: <>Guaranteed Response within <strong style={{color:"#6ee7b7"}}>One Business Day</strong></> },
 ];
 
 const socialLinks = [
@@ -67,7 +65,7 @@ export default function OfferTopbar() {
         </div>
 
         {/* ── CENTER: Scrolling Offers Ticker (Single clean announcements) ── */}
-        <div className="hidden items-center overflow-hidden flex-1 mx-4 max-w-[700px] select-none pointer-events-auto">
+        <div className="hidden md:flex items-center overflow-hidden flex-1 mx-4 max-w-[700px] select-none pointer-events-auto">
           <div className="ws-ticker-wrap flex items-center gap-6">
             {doubled.map((item, i) => (
               <span key={i} className="inline-flex items-center gap-2 text-[11px] text-slate-300 shrink-0">
@@ -99,7 +97,7 @@ export default function OfferTopbar() {
             href="/packages"
             className="inline-flex items-center bg-gradient-to-r from-[#f43f8e] to-[#a855f7] text-white text-[9px] sm:text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-md sm:rounded-lg shadow-[0_2px_14px_rgba(244,63,142,0.4)] hover:shadow-[0_4px_20px_rgba(244,63,142,0.6)] hover:scale-105 transition-all whitespace-nowrap"
           >
-            Explore Deals <span className="ml-1">→</span>
+            View Packages <span className="ml-1">→</span>
           </Link>
         </div>
       </div>

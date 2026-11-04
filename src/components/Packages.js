@@ -100,11 +100,92 @@ const HOURLY_PACKAGES = [
   }
 ];
 
+
+const DEFAULT_MONTHLY_PACKAGES = [
+  {
+    id: "starter",
+    title: "Junior Developer",
+    price: "1,299",
+    symbol: "USD ",
+    pricedes: "/month",
+    tagline: "Dedicated junior developer for CSS fixes, content updates & basic CMS edits.",
+    icon: FaLaptopCode,
+    isPopular: false,
+    events: [
+      "160 Hours Dedicated Development per Month",
+      "HTML5, CSS3, JavaScript & WordPress",
+      "UI/UX Bug Fixes & Mobile Responsive Tweaks",
+      "Content & Graphic Asset Updates",
+      "Direct Communication & Daily Git Commits",
+      "No Long-Term Lock-in, Monthly Renewal"
+    ],
+    btnText: "Choose Junior Dev"
+  },
+  {
+    id: "growth",
+    title: "Mid-Level Developer",
+    price: "2,299",
+    symbol: "USD ",
+    pricedes: "/month",
+    isPopular: true,
+    popularBadge: "MOST POPULAR",
+    tagline: "Full-stack engineer for custom web apps, theme development & API integrations.",
+    icon: FaCode,
+    events: [
+      "160 Hours Dedicated Senior/Mid Development",
+      "WordPress, Shopify, React, Next.js & Laravel",
+      "Custom Theme & Plugin / App Engineering",
+      "Direct Integration into GitHub, Jira & Slack",
+      "US / CA / AU Working Timezone Overlap",
+      "Dedicated QA & Project Manager Oversight"
+    ],
+    btnText: "Choose Mid-Level Dev"
+  },
+  {
+    id: "senior",
+    title: "Senior Full Stack Lead",
+    price: "3,499",
+    symbol: "USD ",
+    pricedes: "/month",
+    isPopular: false,
+    tagline: "Lead developer for complex app architectures, cloud scale & system security.",
+    icon: FaCrown,
+    events: [
+      "160 Hours Full-Stack Systems Design & Engineering",
+      "Advanced Next.js, React, Node.js, Laravel & AWS",
+      "High-Traffic Database Optimization & Security",
+      "Real-Time Overlap with US/CA/AU Engineering Teams",
+      "Technical Leadership, Code Reviews & Mentorship",
+      "100% Code & Intellectual Property Ownership"
+    ],
+    btnText: "Choose Senior Lead"
+  },
+  {
+    id: "team",
+    title: "Dedicated Pod (Dev + QA + PM)",
+    price: "5,499",
+    symbol: "USD ",
+    pricedes: "/month",
+    isPopular: false,
+    tagline: "Complete turnkey development pod ready to ship your product roadmap.",
+    icon: FaUsers,
+    events: [
+      "2 Dedicated Developers + 1 QA Engineer + 1 PM",
+      "Complete Agile Sprint Cycles & Bi-Weekly Releases",
+      "End-to-End Development, Testing & Deployments",
+      "Seamless Integration into Your Engineering Org",
+      "Weekly Progress Reports & Milestone Demos",
+      "Cancel or Modify Anytime on Monthly Renewal"
+    ],
+    btnText: "Choose Team Pod"
+  }
+];
+
 // pageType: "b2b" | "packages"
 const Packages = ({ pageType = "packages" }) => {
   const router = useRouter();
-  const [packagesData, setPackagesData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [packagesData, setPackagesData] = useState(DEFAULT_MONTHLY_PACKAGES);
+  const [loading, setLoading] = useState(false);
   const sectionRef = useRef(null);
 
   // Hourly modal state
@@ -119,12 +200,11 @@ const Packages = ({ pageType = "packages" }) => {
   }, []);
 
   useEffect(() => {
-    setLoading(true);
-    fetchPackages(pageType, { packages: [], tabs: [] })
+    fetchPackages(pageType, { packages: DEFAULT_MONTHLY_PACKAGES, tabs: [] })
       .then((data) => {
-        if (data?.packages) setPackagesData(data.packages);
+        if (data?.packages && data.packages.length > 0) setPackagesData(data.packages);
       })
-      .finally(() => setLoading(false));
+      .catch(() => {});
   }, [pageType]);
 
   // page load hote hi is section pr auto-scroll, taaki sbhi packages first shot mai dikhein

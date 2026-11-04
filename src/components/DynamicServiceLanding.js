@@ -419,7 +419,7 @@ function PricingAndLead({ page = {}, pricing = [], proof = [], faqs = [], slug, 
       {pricing.length > 0 && (
         <section className={cx("py-20", dark ? "bg-slate-900 text-white" : "bg-slate-50 text-slate-950")}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionIntro eyebrow="Pricing & Plans" title={page?.pricingTitle || "Flexible Investment Options"} text={page?.pricingIntro} light={dark} />
+            <SectionIntro eyebrow={isHire ? "Engagement Models" : "Pricing & Plans"} title={page?.pricingTitle || (isHire ? "Flexible Engagement Models" : "Flexible Investment Options")} text={page?.pricingIntro} light={dark} />
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} className="mt-10 grid gap-6 md:grid-cols-3">
               {pricing.map((plan, index) => {
                 const planTitle = plan.title || plan.name;

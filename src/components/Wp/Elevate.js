@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import AnimatedSection from '../AnimatedSection';
 import { FaWordpress, FaCogs, FaCheckCircle } from 'react-icons/fa';
 import { assetImage } from "@/lib/assets";
@@ -51,9 +52,12 @@ const Elevate = () => {
                   ))}
                 </div>
 
-                <button className="mt-12 px-10 py-5 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.25em] shadow-2xl hover:bg-cyan-600 transition-all duration-300">
+                <Link 
+                  href="/contactus"
+                  className="inline-block mt-12 px-10 py-5 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.25em] shadow-2xl hover:bg-cyan-600 transition-all duration-300"
+                >
                   Start Your Website
-                </button>
+                </Link>
               </AnimatedSection>
             </div>
           </div>
@@ -64,6 +68,3 @@ const Elevate = () => {
 };
 
 export default Elevate;
-
-
-

@@ -20,7 +20,10 @@ const staticServiceFolders = new Set([
   "web-development",
   "website-maintenance",
   "woocommerce",
-  "wordpress"
+  "wordpress",
+  "ui-ux",
+  "app-development",
+  "seo"
 ]);
 
 // Aliases and redirect mappings for old URLs
@@ -62,16 +65,16 @@ const REDIRECT_MAP = {
 // Unique metadata for dynamic primary service pages (P1.3)
 const SERVICE_SEO = {
   "ui-ux": {
-    title: "UI/UX Design Services | Figma, Wireframing & Prototyping | Webstep Solutions",
-    description: "Human-centered UI/UX design services. We craft intuitive user journeys, wireframes, interactive Figma prototypes, and complete design systems for web and mobile apps.",
+    title: "UI/UX Design Services | Webstep Solutions",
+    description: "User-first interface design for websites and apps, from wireframes to approved Figma designs, ready for development. Request a design quote.",
   },
   "app-development": {
-    title: "Mobile App Development Services | iOS & Android Apps | Webstep Solutions",
-    description: "Custom mobile application development for iOS and Android using Flutter and React Native. Scalable backends, smooth UI, and end-to-end store deployment.",
+    title: "Mobile App Development | iOS & Android | Webstep Solutions",
+    description: "Native iOS apps in Swift and Android apps in Kotlin, from idea to App Store and Play Store launch. Share your app idea and get a quote.",
   },
   "seo": {
-    title: "Technical SEO & Search Engine Optimization Services | Webstep Solutions",
-    description: "Data-backed SEO services for sustainable organic growth: comprehensive technical SEO audits, Core Web Vitals optimization, and on-page search strategy.",
+    title: "Technical SEO Services | Webstep Solutions",
+    description: "Technical SEO audits, Core Web Vitals fixes and conversion improvements for business websites. Request an SEO audit.",
   },
 };
 
@@ -166,7 +169,8 @@ export async function generateMetadata({ params }) {
       ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
       alternates: {
         canonical: `https://webstepdev.com/services/${slug}/`
-      }
+      },
+      robots: { index: false, follow: false }
     };
   }
 
@@ -199,7 +203,8 @@ export async function generateMetadata({ params }) {
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
       canonical: canonicalUrl
-    }
+    },
+    robots: { index: false, follow: false }
   };
 }
 

@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import Image from 'next/image';
@@ -7,7 +6,7 @@ import Link from 'next/link';
 import { assetImage } from "@/lib/assets";
 const mobileapp = assetImage("mobile_app_development2.png");
 
-const FullStackBanner = () => {
+const FullStackBanner = ({ isFullstack = false }) => {
   return (
     <section className="py-16 md:py-24  bg-white relative z-10 px-6 overflow-hidden font-roboto">
 
@@ -48,7 +47,7 @@ const FullStackBanner = () => {
 
                 {/* Heading */}
                 <h1 className="text-4xl md:text-6xl font-extrabold leading-[0.95] text-slate-900 mb-4 tracking-tight">
-                  Custom{" "}
+                  {isFullstack ? "Full Stack" : "Custom"}{" "}
                   <span
                     className="relative inline-block"
                     style={{
@@ -58,7 +57,7 @@ const FullStackBanner = () => {
                       backgroundClip: "text",
                     }}
                   >
-                    Web Development
+                    {isFullstack ? "Development" : "Web Development"}
                     {/* Animated underline glow — matches Blogs */}
                     <span className="absolute left-0 -bottom-2 w-full h-[6px] rounded-full
                       bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400
@@ -82,7 +81,7 @@ const FullStackBanner = () => {
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <Link
-                    href="/customize-package"
+                    href="/contactus"
                     className="px-8 py-4 rounded-2xl text-[11px] font-black capitalize tracking-[0.2em] text-white
                       shadow-lg hover:shadow-purple-500/40 hover:-translate-y-1 transition-all duration-300"
                     style={{
@@ -93,14 +92,14 @@ const FullStackBanner = () => {
                     Start Your Project
                   </Link>
                   <Link 
-                                    href="/works"
+                    href="/works"
                     className="px-8 py-4 bg-white rounded-2xl text-[11px] font-black capitalize tracking-[0.2em]
                       text-slate-900 shadow-sm transition-all duration-300"
                     style={{ border: "1px solid #e2e8f0" }}
                     onMouseEnter={e => e.currentTarget.style.borderColor = "#A855F7"}
                     onMouseLeave={e => e.currentTarget.style.borderColor = "#e2e8f0"}
                   >
-                    Our Process
+                    Our Portfolio
                   </Link>
                 </div>
 

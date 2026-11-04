@@ -147,7 +147,7 @@ const Experience = () => {
                   <div style={{ display: 'flex', gap: 3, marginBottom: 3 }}>
                     {[1, 2, 3, 4, 5].map(s => <FaStar key={s} style={{ color: '#F59E0B', fontSize: 14 }} />)}
                   </div>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a' }}>4.9 · 120+ reviews</div>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: '#0a0a0a' }}>5.0 Rating · Client Feedback</div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#cbd5e1' }}>Verified</div>
@@ -198,7 +198,7 @@ const Experience = () => {
 
               <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: 10 }}>
                 <Link href="/case-study" className="ex-btn-primary" style={{ width: isMobile ? '100%' : 'auto' }}>See Our Work</Link>
-                <Link href="/customize-package" className="ex-btn-secondary" style={{ width: isMobile ? '100%' : 'auto' }}>Start a Project →</Link>
+                <Link href="/contactus" className="ex-btn-secondary" style={{ width: isMobile ? '100%' : 'auto' }}>Start a Project →</Link>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 18, padding: isMobile ? '10px 12px' : '14px 18px', background: '#fafafa', border: '1px solid #f0f0f4', borderRadius: 14 }}>

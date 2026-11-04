@@ -5,10 +5,10 @@ import FullStackElevate from './FullStackElevate';
 import BlogReview from '../Blog/BlogReview';
 import Customer from '../Customer';
 
-const FullStack = () => {
+const FullStack = ({ isFullstack = false }) => {
   return (
     <main className="bg-white">
-      <FullStackBanner />
+      <FullStackBanner isFullstack={isFullstack} />
       <FullStackDev />
       <FullStackElevate />
       {/* <BlogReview /> */}

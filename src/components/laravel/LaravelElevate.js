@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import AnimatedSection from '../AnimatedSection';
-import { FaLayerGroup, FaShieldAlt, FaLightbulb } from 'react-icons/fa';
+import { FaLaravel, FaShieldAlt, FaLightbulb } from 'react-icons/fa';
 import { assetImage } from "@/lib/assets";
 const laravel = assetImage("laravel.png");
 
@@ -22,7 +23,7 @@ const LaravelElevate = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-white rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                 <div className="relative bg-white p-6 rounded-3xl shadow-xl transform group-hover:scale-105 transition-transform duration-500">
-                  <Image src={laravel} alt="Professional Laravel Developers" className="w-full h-auto max-w-[200px]" />
+                  <Image src={laravel} alt="Certified Laravel Developers" className="w-full h-auto max-w-[200px]" />
                 </div>
               </div>
             </div>
@@ -31,17 +32,17 @@ const LaravelElevate = () => {
               <AnimatedSection delay={0.1} direction="right">
                 <div className="mb-10">
                   <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 capitalize tracking-tight leading-tight">
-                    Hire Skilled <span className="text-red-600">Laravel Developers</span>
+                    Hire Certified <span className="text-red-600">Laravel Developers</span>
                   </h2>
                   <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                    Our Laravel developers are experts in building clean, elegant, and maintainable applications. We follow PSR standards and leverage Laravel&apos;s full power to deliver exceptional results.
+                    Our Laravel engineers build secure, modular backends that scale reliably. From custom web portals to high-performance REST APIs, we turn complex requirements into clean solutions.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {[
-                    { icon: <FaLayerGroup className="text-red-500" />, label: "Eloquent ORM" },
-                    { icon: <FaShieldAlt className="text-orange-500" />, label: "Secure Auth" },
+                    { icon: <FaLaravel className="text-red-500" />, label: "Laravel 11" },
+                    { icon: <FaShieldAlt className="text-orange-500" />, label: "Secure APIs" },
                     { icon: <FaLightbulb className="text-red-500" />, label: "Clean Code" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-4 bg-white/60 p-4 rounded-2xl border border-white/80 shadow-sm">
@@ -51,9 +52,12 @@ const LaravelElevate = () => {
                   ))}
                 </div>
 
-                <button className="mt-12 px-10 py-5 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.25em] shadow-2xl hover:bg-red-600 transition-all duration-300">
+                <Link 
+                  href="/contactus"
+                  className="inline-block mt-12 px-10 py-5 bg-slate-900 text-white rounded-2xl text-[11px] font-black capitalize tracking-[0.25em] shadow-2xl hover:bg-red-600 transition-all duration-300"
+                >
                   Get Started Today
-                </button>
+                </Link>
               </AnimatedSection>
             </div>
           </div>
@@ -64,6 +68,3 @@ const LaravelElevate = () => {
 };
 
 export default LaravelElevate;
-
-
-

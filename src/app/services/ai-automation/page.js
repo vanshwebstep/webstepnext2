@@ -5,12 +5,16 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("services/ai-automation");
   return {
-    title: dynamicSeo.title || "AI Automation & Workflow Integration Services | Webstep Solutions",
+    title: dynamicSeo.title || "AI Automation & Workflow Services | Webstep Solutions",
     description: dynamicSeo.description || "Intelligent workflow automation and AI integrations connecting your CRMs, ERPs, and databases with modern LLMs and machine learning models.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
       canonical: "https://webstepdev.com/services/ai-automation/",
-    }
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
 

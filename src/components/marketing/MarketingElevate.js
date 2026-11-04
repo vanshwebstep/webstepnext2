@@ -159,7 +159,7 @@ const MarketingElevate = () => {
 
                   {/* CTA */}
                   <Link
-                    href="/customize-package"
+                    href="/contactus"
                     className="mt-12 px-10 py-5 rounded-2xl text-[11px] font-black capitalize
                       tracking-[0.25em] text-white shadow-lg hover:-translate-y-1
                       hover:shadow-purple-500/40 transition-all duration-300"

@@ -5,19 +5,23 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("fullstack");
   return {
-    title: dynamicSeo.title || "Full Stack Development Services | Node.js, Vue & APIs | Webstep Solutions",
-    description: dynamicSeo.description || "Full stack developers for Vue, Node.js and PHP projects, API integrations and AI chatbot builds. Get a clear scope and quote for your project.",
+    title: dynamicSeo.title || "Full Stack Development Services | Node.js, React & APIs | Webstep Solutions",
+    description: dynamicSeo.description || "Full stack developers for Next.js, React, Node.js and Laravel projects, custom API integrations and scalable architectures. Request a project quote.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/web-development/",
-    }
+      canonical: "https://webstepdev.com/fullstack/",
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
 
 export default function Page() {
   return (
     <>
-      <FullStack />
+      <FullStack isFullstack={true} />
     </>
   );
 }

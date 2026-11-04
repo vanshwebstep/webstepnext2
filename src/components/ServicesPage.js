@@ -1,481 +1,655 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { FiArrowRight, FiShoppingCart, FiCpu, FiCode, FiLayers, FiGlobe, FiPackage, FiX, FiCheckCircle, FiActivity, FiShield, FiTrendingUp } from 'react-icons/fi';
-import { FaReact, FaNodeJs, FaPhp, FaWordpress, FaVuejs } from 'react-icons/fa';
-import { SiNextdotjs, SiLaravel, SiShopify } from 'react-icons/si';
+import { 
+  FiArrowRight, FiCheckCircle, FiLayers, FiCode, FiCpu, 
+  FiSmartphone, FiLayout, FiSearch, FiShield, FiTrendingUp, FiShoppingBag,
+  FiClock, FiCheck, FiChevronRight, FiUsers, FiHelpCircle
+} from 'react-icons/fi';
+import { FaReact, FaWordpress, FaShopify, FaLaravel, FaPhp, FaUsers } from 'react-icons/fa';
+import { SiNextdotjs, SiWoocommerce } from 'react-icons/si';
 
 const servicesData = [
   {
-    id: '01', icon: <FaReact />,
-    title: 'React.js Dev', fullTitle: 'React.js Development',
-    tag: 'Frontend Architecture', span: 'b1', slug: 'reactjs',
-    accent: '#0891B2', accentBg: '#ECFEFF', accentBorder: '#A5F3FC',
-    headline: 'Build Lightning-Fast, Component-Driven Web Interfaces',
-    description: 'We engineer high-performance single-page applications (SPAs), complex enterprise dashboards, and real-time interactive user interfaces using modern React ecosystem features like Hooks, Context API, and Concurrent rendering.',
-    features: ['Custom SPA & Dashboard Engineering', 'State Management (Redux/Zustand) Mastery', 'Reusable Component Library Architecture', 'Legacy Codebase Migration to Modern React'],
-    process: ['Requirement Mapping', 'Component Structuring', 'API Integration', 'Performance Tuning'],
+    id: '01',
+    icon: <FaWordpress className="text-2xl text-[#0369a1]" />,
+    title: 'WordPress Development',
+    tag: 'CMS & Custom Themes',
+    slug: 'wordpress',
+    href: '/services/wordpress/',
+    category: 'Web & CMS',
+    accent: '#0369A1',
+    accentBg: '#F0F9FF',
+    accentBorder: '#BAE6FD',
+    description: 'Custom block themes, bespoke plugin engineering, WooCommerce stores, and high-security enterprise WordPress solutions without page builder bloat.',
+    features: [
+      'Custom theme development from Figma',
+      'ACF Pro & Gutenberg blocks',
+      'Zero bloat, sub-second load times',
+      'WooCommerce & payment gateways'
+    ]
   },
   {
-    id: '02', icon: <SiNextdotjs />,
-    title: 'Next.js Dev', fullTitle: 'Next.js Development',
-    tag: 'Full Stack Framework', span: 'b2', slug: 'web-development',
-    accent: '#0f172a', accentBg: '#F8FAFC', accentBorder: '#CBD5E1',
-    headline: 'Production-Ready Apps with Absolute SEO Dominance',
-    description: 'Leverage the power of Server-Side Rendering (SSR), Static Site Generation (SSG), and Edge Computing. We build SEO-optimized corporate web applications that score 100 on Core Web Vitals.',
-    features: ['Hybrid Rendering (SSR & SSG) Setup', 'App Router & Layout Optimization', 'Automated Image & Asset Optimization', 'Serverless Functions & API Routes Architecture'],
-    process: ['Architecture Blueprinting', 'Server-Side Layout Design', 'API & Edge Configuration', 'Core Web Vitals Auditing'],
+    id: '02',
+    icon: <FaShopify className="text-2xl text-[#059669]" />,
+    title: 'Shopify & Shopify Plus',
+    tag: 'eCommerce Architecture',
+    slug: 'shopify',
+    href: '/services/shopify/',
+    category: 'eCommerce',
+    accent: '#059669',
+    accentBg: '#ECFDF5',
+    accentBorder: '#A7F3D0',
+    description: 'High-converting custom Liquid themes, private apps, Shopify Plus B2B wholesale setups, and checkout extensibility tuned to maximize conversion rates.',
+    features: [
+      'Custom Liquid & Online Store 2.0',
+      'Private Shopify apps & ERP sync',
+      'Checkout extensibility customizations',
+      'Store migration with zero downtime'
+    ]
   },
   {
-    id: '03', icon: <FaVuejs />,
-    title: 'Vue.js Dev', fullTitle: 'Vue.js Development',
-    tag: 'Progressive Frontend', span: 'b3', slug: 'web-development',
-    accent: '#059669', accentBg: '#ECFDF5', accentBorder: '#A7F3D0',
-    headline: 'Elegant UI Frameworks for Fluid User Transitions',
-    description: 'Crafting maintainable, flexible, and progressive frontend applications. Vue.js allows us to build powerful user interfaces that scale organically alongside your active business models.',
-    features: ['Vue 3 Composition API Architectures', 'Pinia State Management Setup', 'High-Fidelity Transitions & Animation Controls', 'Seamless Multi-platform Viewports Integration'],
-    process: ['Data Flow Mapping', 'Interface Prototyping', 'Composition Layering', 'Fluid Animation Syncing'],
+    id: '03',
+    icon: <SiWoocommerce className="text-2xl text-[#7c3aed]" />,
+    title: 'WooCommerce Development',
+    tag: 'Scalable Stores',
+    slug: 'woocommerce',
+    href: '/services/woocommerce/',
+    category: 'eCommerce',
+    accent: '#7C3AED',
+    accentBg: '#F5F3FF',
+    accentBorder: '#DDD6FE',
+    description: 'Custom e-commerce platforms on WordPress with multi-currency, high-SKU catalog optimization, and seamless subscription & payment integrations.',
+    features: [
+      'High-traffic WooCommerce tuning',
+      'Custom checkout & upsell funnels',
+      'Subscription & membership portals',
+      '3PL warehouse & inventory APIs'
+    ]
   },
   {
-    id: '04', icon: <FaNodeJs />,
-    title: 'Node.js Backend', fullTitle: 'Node.js Core Infrastructure',
-    tag: 'Backend Engineering', span: 'b4', slug: 'nodejs-development',
-    accent: '#16A34A', accentBg: '#F0FDF4', accentBorder: '#BBF7D0',
-    headline: 'Event-Driven Microservices Built for High Concurrency',
-    description: 'Powering your web ecosystem with asynchronous, scalable backends. Our Node.js structures easily process millions of requests, real-time audio/video streaming, and complex enterprise data layers.',
-    features: ['RESTful & GraphQL API Infrastructure', 'Real-time WebSocket Sync Processing', 'Microservices & Gateway Configurations', 'Express/NestJS Framework Standardization'],
-    process: ['Database & Schema Architecture', 'Asynchronous Endpoint Mapping', 'Load Testing & Concurrency Tuning', 'Deployment Readying'],
+    id: '04',
+    icon: <SiNextdotjs className="text-2xl text-slate-900" />,
+    title: 'Custom Web Development',
+    tag: 'Next.js & Full Stack',
+    slug: 'web-development',
+    href: '/services/web-development/',
+    category: 'Web & CMS',
+    accent: '#0f172a',
+    accentBg: '#F8FAFC',
+    accentBorder: '#CBD5E1',
+    description: 'Modern web applications built with Next.js, React, Node.js, and REST/GraphQL APIs. Engineered for lightning performance and perfect Core Web Vitals.',
+    features: [
+      'Server-Side Rendering (SSR) & SSG',
+      'Custom web portals & SaaS apps',
+      'Fast APIs & database architectures',
+      'Core Web Vitals 95+ score targets'
+    ]
   },
   {
-    id: '05', icon: <FaPhp />,
-    title: 'PHP Dev', fullTitle: 'Custom PHP Solutions',
-    tag: 'Backend Automation', span: 'b5', slug: 'php-development',
-    accent: '#7C3AED', accentBg: '#F5F3FF', accentBorder: '#DDD6FE',
-    headline: 'Reliable Server-Side Scripts & Relational Frameworks',
-    description: 'From customized modular data scripts to full-scale legacy management architectures, we build robust PHP frameworks capable of handling extensive data transformations securely.',
-    features: ['Custom PHP Procedural/OOP Codebases', 'Legacy Database Optimization Schemes', 'Secure Third-Party Gateway Bindings', 'Automated Enterprise Data Scripting'],
-    process: ['Legacy Audit & Architecture Map', 'Data Pipeline Security Setup', 'Modular Script Coding', 'Stress-testing Verification'],
+    id: '05',
+    icon: <FaLaravel className="text-2xl text-[#dc2626]" />,
+    title: 'Laravel & PHP Applications',
+    tag: 'Backend Architecture',
+    slug: 'laravel',
+    href: '/services/laravel/',
+    category: 'Web & CMS',
+    accent: '#DC2626',
+    accentBg: '#FEF2F2',
+    accentBorder: '#FECACA',
+    description: 'Robust MVC backend web applications, complex relational databases, queue schedulers, and secure RESTful APIs engineered for enterprise stability.',
+    features: [
+      'Clean Laravel MVC architectures',
+      'REST & GraphQL microservices',
+      'Role-based access control (RBAC)',
+      'High-throughput database tuning'
+    ]
   },
   {
-    id: '06', icon: <SiLaravel />,
-    title: 'Laravel Dev', fullTitle: 'Laravel Frameworks',
-    tag: 'Enterprise Backend', span: 'b6', slug: 'laravel',
-    accent: '#DC2626', accentBg: '#FEF2F2', accentBorder: '#FECACA',
-    headline: 'Clean MVC Structures Engineered for Absolute Security',
-    description: 'Deploying robust web apps with native authentication, automated migration handling, and expressive backend syntaxes. Ideal for safe SaaS portals and secure financial applications.',
-    features: ['Elegant MVC Structure Implementation', 'Native Eloquent ORM Tuning', 'Queue Management & Job Background Schedulers', 'Advanced Role-Based Access Controls (RBAC)'],
-    process: ['Database Relationship Mapping', 'Security Protocol Layering', 'Job Queue Optimizations', 'Penetration Testing Review'],
+    id: '06',
+    icon: <FaReact className="text-2xl text-[#0891b2]" />,
+    title: 'React.js & Frontend SPAs',
+    tag: 'Interactive Frontends',
+    slug: 'reactjs',
+    href: '/services/reactjs/',
+    category: 'Web & CMS',
+    accent: '#0891B2',
+    accentBg: '#ECFEFF',
+    accentBorder: '#A5F3FC',
+    description: 'Interactive single-page apps (SPAs), dynamic customer dashboards, and reusable design systems crafted using modern React and TypeScript.',
+    features: [
+      'State management (Redux/Zustand)',
+      'Enterprise admin dashboards',
+      'Interactive data visualizations',
+      'Component library standardization'
+    ]
   },
   {
-    id: '07', icon: <FaWordpress />,
-    title: 'WordPress Core', fullTitle: 'WordPress Core Setup',
-    tag: 'Content Management', span: 'b7', slug: 'wordpress',
-    accent: '#0369A1', accentBg: '#F0F9FF', accentBorder: '#BAE6FD',
-    headline: 'Headless or Standalone CMS Configured for Velocity',
-    description: 'Transforming standard content engines into absolute speed hubs. We deliver headless WordPress decoupled architectures using REST APIs or GraphQL alongside secure standard environments.',
-    features: ['Headless Decoupled API Setups', 'Advanced Custom Fields (ACF) Blueprints', 'Hardened Core Security Implementations', 'Multi-Site Multi-Tenant Architectures'],
-    process: ['CMS Strategy & Asset Scoping', 'Database Structure Modeling', 'Hardened Security Firewalls Config', 'API Route Optimization'],
+    id: '07',
+    icon: <FiCpu className="text-2xl text-[#d946ef]" />,
+    title: 'AI-Powered Websites',
+    tag: 'Next-Gen Intelligence',
+    slug: 'ai-powered-websites',
+    href: '/services/ai-powered-websites/',
+    category: 'AI & Automation',
+    accent: '#D946EF',
+    accentBg: '#FDF4FF',
+    accentBorder: '#F5D0FE',
+    description: 'Transform traditional websites into intelligent platforms with RAG vector search, dynamic user personalization, and context-aware conversion engines.',
+    features: [
+      'RAG & semantic vector search',
+      'Dynamic real-time personalization',
+      'Automated lead qualification',
+      'Strict RAG verification guardrails'
+    ]
   },
   {
-    id: '08', icon: <FiLayers />,
-    title: 'WP Themes', fullTitle: 'Bespoke Theme Engineering',
-    tag: 'CMS Style Layer', span: 'b8', slug: 'wordpress',
-    accent: '#0284c7', accentBg: '#F0FAFF', accentBorder: '#BEE7FD',
-    headline: 'Zero Bloat, Pixel-Perfect Theme Infrastructure',
-    description: 'We avoid pre-made heavy templates completely. Our customized WordPress themes are hand-coded from scratch using strict semantic guidelines to promise maximum conversions.',
-    features: ['Custom Scratch Block-Theme Builds', 'Figma/AdobeXD to WordPress Conversion', 'Modular Layout Composition Blocks', 'Strict Layout-Shift (CLS) Asset Tuning'],
-    process: ['Design System Ingestion', 'Semantic Theme Formatting', 'Responsive Breakpoint Profiling', 'Page-Speed Standardization'],
+    id: '08',
+    icon: <FiCpu className="text-2xl text-[#e11d48]" />,
+    title: 'Custom AI Chatbots',
+    tag: 'Autonomous Support',
+    slug: 'ai-chatbots',
+    href: '/services/ai-chatbots/',
+    category: 'AI & Automation',
+    accent: '#E11D48',
+    accentBg: '#FFF1F2',
+    accentBorder: '#FECDD3',
+    description: 'Train contextual AI support chatbots on your documentation and product knowledge. Resolve routine customer inquiries 24/7 with zero false promises.',
+    features: [
+      'Trained on approved company docs',
+      'Multi-channel web & CRM widget',
+      'Live agent fallback routing',
+      'Strict brand-aligned response guardrails'
+    ]
   },
   {
-    id: '09', icon: <FiCode />,
-    title: 'WP Plugins', fullTitle: 'Custom Plugin Development',
-    tag: 'CMS Custom Engines', span: 'b9', slug: 'wordpress',
-    accent: '#4F46E5', accentBg: '#EEF2FF', accentBorder: '#C7D2FE',
-    headline: 'Tailored Functionalities with No Performance Drops',
-    description: 'Extend your standard operations securely. We write precise WordPress plugins following WordPress.org official coding standards to integrate unique workflows without bloating systems.',
-    features: ['Custom Admin Widgets & Control Triggers', 'Third-Party CRM Connection Engines', 'Automated Lifecycle Extension Webhooks', 'Secure Widget Core Packaging'],
-    process: ['Hook & Filter Structural Scoping', 'Security Variable Sanitization', 'Plugin Code Execution', 'Compatibility Regression Testing'],
+    id: '09',
+    icon: <FiTrendingUp className="text-2xl text-[#0ea5e9]" />,
+    title: 'AI Automation & Workflows',
+    tag: 'Workflow Automation',
+    slug: 'ai-automation',
+    href: '/services/ai-automation/',
+    category: 'AI & Automation',
+    accent: '#0EA5E9',
+    accentBg: '#F0F9FF',
+    accentBorder: '#BAE6FD',
+    description: 'Automate repetitive workflows across CRMs, ERPs, support desks, and databases using customized AI pipelines and API integrations.',
+    features: [
+      'Automated document data extraction',
+      'CRM & lead routing pipelines',
+      'Custom webhook schedulers',
+      'Enterprise compliance & audit logging'
+    ]
   },
   {
-    id: '10', icon: <FiPackage />,
-    title: 'Shopify Themes', fullTitle: 'Shopify Storefront Design',
-    tag: 'eCommerce Retail', span: 'b10', slug: 'shopify',
-    accent: '#059669', accentBg: '#ECFDF5', accentBorder: '#A7F3D0',
-    headline: 'High-Converting Digital Stores Tuned for Sales',
-    description: 'Maximize your average order values (AOV) with lightning-fast Liquid templates. We design custom storefront architectures built specifically to keep retention high and drop-offs minimal.',
-    features: ['Custom Liquid & Online Store 2.0 Templates', 'Mobile-First Quick Checkout Structures', 'Dynamic In-Cart Up-Sell Layout Integrations', 'Cross-Browser Asset Rendering Fixes'],
-    process: ['Conversion Funnel Analysis', 'Liquid Template Frameworking', 'Interactive Event Testing', 'Launch-Ready Performance Sync'],
+    id: '10',
+    icon: <FiLayout className="text-2xl text-[#8b5cf6]" />,
+    title: 'UI/UX Product Design',
+    tag: 'Design Systems',
+    slug: 'ui-ux',
+    href: '/services/ui-ux/',
+    category: 'Design & Mobile',
+    accent: '#8B5CF6',
+    accentBg: '#F5F3FF',
+    accentBorder: '#DDD6FE',
+    description: 'Human-centered UI/UX design: user research, wireframes, interactive Figma prototypes, and design systems built ready for developer handoff.',
+    features: [
+      'Comprehensive user journey mapping',
+      'Clickable interactive Figma prototypes',
+      'Scalable design token systems',
+      'Mobile-first responsive layouts'
+    ]
   },
   {
-    id: '11', icon: <FiShoppingCart />,
-    title: 'Shopify Apps', fullTitle: 'Shopify App Frameworks',
-    tag: 'eCommerce Utility', span: 'b11', slug: 'shopify',
-    accent: '#0D9488', accentBg: '#F0FDFA', accentBorder: '#99F6E4',
-    headline: 'Synchronize Catalog Dependencies via Custom Tools',
-    description: 'Build robust internal or public Shopify extensions. Our team creates secure embedded applications that control inventory logic, logistics routing, and real-time custom product builders.',
-    features: ['Embedded Shopify App Bridge Systems', 'Real-time Webhook Payload Schedulers', 'Inventory Automation Extensions', 'Custom ERP Synchronization Modules'],
-    process: ['GraphQL Admin API Mapping', 'App Bridge Context Setup', 'Secure Middleware Ingestion', 'Shopify Store Regression Audit'],
+    id: '11',
+    icon: <FiSmartphone className="text-2xl text-[#06b6d4]" />,
+    title: 'Mobile App Development',
+    tag: 'iOS & Android',
+    slug: 'app-development',
+    href: '/services/app-development/',
+    category: 'Design & Mobile',
+    accent: '#06B6D4',
+    accentBg: '#ECFEFF',
+    accentBorder: '#A5F3FC',
+    description: 'Cross-platform and native mobile apps built with React Native and Flutter. Smooth user experiences, cloud backends, and full store publishing.',
+    features: [
+      'Cross-platform iOS & Android code',
+      'Offline caching & push notifications',
+      'Secure biometrics & payment gateways',
+      'App Store & Play Store deployment'
+    ]
   },
   {
-    id: '12', icon: <FiCpu />,
-    title: 'AI Chatbots', fullTitle: 'Autonomous AI Chatbots',
-    tag: 'Artificial Intelligence', span: 'b12', slug: 'ai-chatbots',
-    accent: '#E11D48', accentBg: '#FFF1F2', accentBorder: '#FECDD3',
-    headline: 'Intelligent Support Agents Operating 24/7 Contextually',
-    description: 'Automate customer queries up to 80% without losing human touch. We build conversational agents that understand customer intents and resolve system tickets dynamically.',
-    features: ['Context-Aware LLM Response Logic', 'Live Multi-Platform Sync (WhatsApp, Web)', 'Custom Internal Ticketing System Routing', 'Automated Intent Training Triggers'],
-    process: ['Intent & Knowledge Training Setups', 'Prompt Injection Defense Layout', 'Live Context Flow Mapping', 'Response Quality Scoring'],
+    id: '12',
+    icon: <FiSearch className="text-2xl text-[#10b981]" />,
+    title: 'Technical SEO Services',
+    tag: 'Organic Growth',
+    slug: 'seo',
+    href: '/services/seo/',
+    category: 'Web & CMS',
+    accent: '#10B981',
+    accentBg: '#ECFDF5',
+    accentBorder: '#A7F3D0',
+    description: 'Data-driven technical SEO audits, Core Web Vitals optimization, structured schema markup, and on-page architectures that compound organic traffic.',
+    features: [
+      'Full technical crawl audits',
+      'Core Web Vitals performance tuning',
+      'JSON-LD schema markup integration',
+      'Site architecture & indexation fixes'
+    ]
   },
   {
-    id: '13', icon: <FiGlobe />,
-    title: 'AI Integration', fullTitle: 'Enterprise AI Syncing',
-    tag: 'Artificial Intelligence', span: 'b13', slug: 'ai-automation',
-    accent: '#D946EF', accentBg: '#FDF4FF', accentBorder: '#F5D0FE',
-    headline: 'Embed Machine Learning Logic into Standard Workflows',
-    description: 'Supercharge your daily enterprise tools. We link OpenAI, Anthropic, or fine-tuned custom open-source models right into your internal CRMs or product engines to handle automated categorization.',
-    features: ['Vector Database Engineering (Pinecone/Chroma)', 'Retrieval-Augmented Generation (RAG) Architecture', 'Semantic Search & Categorization Pipelines', 'Automated Data Extraction Models'],
-    process: ['Enterprise Data Asset Sifting', 'Vector Index Pipeline Design', 'LLM Guardrail Ingestion', 'Production Pipeline Live Validation'],
+    id: '13',
+    icon: <FiShield className="text-2xl text-[#f59e0b]" />,
+    title: 'Website Maintenance & Care',
+    tag: 'Proactive Support',
+    slug: 'website-maintenance',
+    href: '/services/website-maintenance/',
+    category: 'Web & CMS',
+    accent: '#F59E0B',
+    accentBg: '#FFFBEB',
+    accentBorder: '#FDE68A',
+    description: '24/7 uptime monitoring, regular security patches, plugin updates, off-site backups, and monthly developer hours for ongoing improvements.',
+    features: [
+      'Weekly core & plugin updates',
+      'Daily offsite automated backups',
+      'Malware scans & security patching',
+      'Dedicated monthly dev retainers'
+    ]
   },
+  {
+    id: '14',
+    icon: <FiLayers className="text-2xl text-[#ec4899]" />,
+    title: 'Brand Design & Identity',
+    tag: 'Visual Strategy',
+    slug: 'brand-design',
+    href: '/services/brand-design/',
+    category: 'Design & Mobile',
+    accent: '#EC4899',
+    accentBg: '#FDF2F8',
+    accentBorder: '#FBCFE8',
+    description: 'Stand out in your market with distinctive logo design, brand guidelines, typography scales, color palettes, and marketing collateral.',
+    features: [
+      'Logo design & visual identity kits',
+      'Comprehensive brand guidelines',
+      'Vector typography & color rules',
+      'Social & digital marketing assets'
+    ]
+  },
+  {
+    id: '15',
+    icon: <FaUsers className="text-2xl text-[#6366f1]" />,
+    title: 'Hire Dedicated Developers',
+    tag: 'Staff Augmentation',
+    slug: 'hire-dedicated-developers',
+    href: '/hire-dedicated-developers/',
+    category: 'Design & Mobile',
+    accent: '#6366F1',
+    accentBg: '#EEF2FF',
+    accentBorder: '#C7D2FE',
+    description: 'Hire dedicated, pre-vetted web and mobile developers on a flexible monthly basis. Seamless communication, US/CA/AU overlap, and 100% IP ownership.',
+    features: [
+      '160 hours/month dedicated engineers',
+      '3 to 5 hours timezone overlap',
+      'Direct integration in your Slack & Git',
+      'Flexible monthly engagement models'
+    ]
+  }
 ];
 
-const spanStyles = {
-  b1: { gridColumn: 'span 2' }, b2: { gridColumn: 'span 2' }, b3: { gridColumn: 'span 2' },
-  b4: { gridColumn: 'span 2' }, b5: { gridColumn: 'span 2' }, b6: { gridColumn: 'span 2' },
-  b7: { gridColumn: 'span 2' }, b8: { gridColumn: 'span 2' }, b9: { gridColumn: 'span 2' },
-  b10: { gridColumn: 'span 2' }, b11: { gridColumn: 'span 2' }, b12: { gridColumn: 'span 2' },
-  b13: { gridColumn: 'span 4' },
-};
+const FAQS = [
+  {
+    q: "How quickly can we kick off a new project?",
+    a: "After an initial discovery call, we provide a transparent scope of work and quotation within one business day. Dedicated developers can be onboarded in as little as 2 to 5 business days."
+  },
+  {
+    q: "Do you collaborate with clients in the US, Canada, and Australia?",
+    a: "Yes! The majority of our clients are based in North America and Australia. Our teams schedule daily working overlap of 3 to 5 hours for smooth standups, demos, and live communication."
+  },
+  {
+    q: "Do we get full intellectual property and code ownership?",
+    a: "100% yes. All source code, design assets, database configurations, and deliverables belong entirely to you from day one under strict confidentiality and non-disclosure agreements."
+  },
+  {
+    q: "Can I hire a dedicated developer rather than a fixed-scope project?",
+    a: "Absolutely. We offer dedicated full-time developers (160 hours/month) for WordPress, Shopify, React, Next.js, and Laravel who integrate directly into your team workflows and task boards."
+  }
+];
 
-const spanStylesDesktop = {
-  b1: { gridColumn: 'span 2' }, b2: { gridColumn: 'span 2' }, b3: { gridColumn: 'span 2' },
-  b4: { gridColumn: 'span 3' }, b5: { gridColumn: 'span 3' },
-  b6: { gridColumn: 'span 2' }, b7: { gridColumn: 'span 2' }, b8: { gridColumn: 'span 2' },
-  b9: { gridColumn: 'span 2' }, b10: { gridColumn: 'span 2' }, b11: { gridColumn: 'span 2' },
-  b12: { gridColumn: 'span 3' }, b13: { gridColumn: 'span 3' },
-};
+export default function ServicesPage() {
+  const [filter, setFilter] = useState('All');
+  const [openFaq, setOpenFaq] = useState(null);
 
-function useWindowWidth() {
-  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
-  useEffect(() => {
-    const handler = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handler);
-    return () => window.removeEventListener('resize', handler);
-  }, []);
-  return width;
-}
+  const categories = [
+    { label: 'All Services', count: 15 },
+    { label: 'Web & CMS', count: 6 },
+    { label: 'eCommerce', count: 2 },
+    { label: 'AI & Automation', count: 3 },
+    { label: 'Design & Mobile', count: 4 }
+  ];
 
-function BentoBox({ service, spanStyle, onSelect }) {
-  const [hovered, setHovered] = useState(false);
-  const isWide = ['b4', 'b5', 'b12', 'b13'].includes(service.span);
-
-  return (
-    <div
-      onClick={() => onSelect(service)}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        ...spanStyle,
-        borderRadius: '20px', padding: '1.5rem',
-        border: `1.5px solid ${hovered ? service.accentBorder : '#f1f5f9'}`,
-        background: hovered ? service.accentBg : '#fff',
-        position: 'relative', overflow: 'hidden',
-        transition: 'all 0.25s ease', cursor: 'pointer',
-        boxShadow: hovered ? `0 8px 30px ${service.accent}20` : 'none',
-        height: '100%', minHeight: isWide ? '140px' : '180px',
-        display: 'flex', flexDirection: isWide ? 'row' : 'column',
-        alignItems: isWide ? 'center' : 'flex-start', gap: isWide ? '1.5rem' : 0,
-      }}
-    >
-      <div style={{
-        position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
-        background: service.accent, opacity: hovered ? 1 : 0, transition: 'opacity 0.2s',
-      }} />
-      <span style={{
-        position: 'absolute', bottom: '-8px', right: '10px',
-        fontSize: '4.5rem', fontWeight: 900, color: service.accent,
-        opacity: 0.06, lineHeight: 1, pointerEvents: 'none', userSelect: 'none',
-      }}>
-        {service.id}
-      </span>
-
-      <div style={{ flexShrink: 0 }}>
-        <div style={{
-          width: '42px', height: '42px', borderRadius: '12px',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '18px', marginBottom: isWide ? 0 : '1rem',
-          background: hovered ? '#fff' : service.accentBg,
-          color: service.accent, border: `1.5px solid ${service.accentBorder}`,
-          transition: 'background 0.2s', flexShrink: 0,
-        }}>
-          {service.icon}
-        </div>
-      </div>
-
-      <div style={{ flex: 1 }}>
-        <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: service.accent, margin: '0 0 4px 0' }}>
-          {service.tag}
-        </p>
-        <h3 style={{
-          fontSize: isWide ? '1.15rem' : '1rem', fontWeight: 700, color: '#0f172a',
-          letterSpacing: '-0.01em', lineHeight: 1.2, margin: '0 0 6px 0',
-        }}>
-          {service.fullTitle}
-        </h3>
-        <p style={{ fontSize: '12px', color: '#64748b', lineHeight: 1.6, fontWeight: 500, flex: 1, margin: '0 0 0.8rem 0' }}>
-          {service.description}
-        </p>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: 'auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: service.accent }}>
-            Explore
-            <FiArrowRight size={11} style={{ transform: hovered ? 'translateX(3px)' : 'translateX(0)', transition: 'transform 0.2s' }} />
-          </div>
-          <Link
-            href={`/services/${service.slug}`}
-            onClick={(e) => e.stopPropagation()}
-            style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#64748b' }}
-            className="hover:underline"
-          >
-            Direct Page &rarr;
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const ServicesPage = () => {
-  const width = useWindowWidth();
-  const [selectedService, setSelectedService] = useState(null);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const isMobile = width < 640;
-  const isTablet = width >= 640 && width < 1024;
-
-  const gridCols = isMobile ? 'repeat(1, 1fr)' : isTablet ? 'repeat(4, 1fr)' : 'repeat(6, 1fr)';
-  const getSpanStyle = (span) => {
-    if (isMobile) return { gridColumn: 'span 1' };
-    if (isTablet) return spanStyles[span];
-    return spanStylesDesktop[span];
-  };
-
-  const handleSelectService = (service) => {
-    setSelectedService(service);
-    setIsDrawerOpen(true);
-    document.body.style.overflow = 'hidden'; // Stop background scrolling
-  };
-
-  const handleCloseDrawer = () => {
-    setIsDrawerOpen(false);
-    document.body.style.overflow = 'unset'; // Restore scrolling
-    setTimeout(() => setSelectedService(null), 300); // Clear data after animation completes
-  };
+  const filteredServices = servicesData.filter(s => {
+    if (filter === 'All' || filter === 'All Services') return true;
+    return s.category === filter;
+  });
 
   return (
-    <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-        .services-section * { font-family: 'Roboto', sans-serif; box-sizing: border-box; }
-        .cta-services-btn:hover { background: #7C3AED !important; }
-        .drawer-close-btn:hover { background: #f1f5f9; transform: rotate(90deg); }
-        .drawer-cta:hover { filter: brightness(1.1); }
-      `}</style>
+    <div className="bg-white min-h-screen font-sans selection:bg-pink-500 selection:text-white">
+      {/* ── HERO SECTION ── */}
+      <section className="relative pt-[140px] sm:pt-[170px] md:pt-[190px] pb-16 sm:pb-24 bg-gradient-to-b from-slate-50 via-white to-white overflow-hidden border-b border-slate-100">
+        {/* Ambient background glows */}
+        <div className="absolute top-0 right-1/4 w-[450px] sm:w-[600px] h-[450px] sm:h-[600px] bg-pink-100/50 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
+        <div className="absolute top-20 left-10 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-blue-100/40 rounded-full blur-[130px] pointer-events-none" />
+        <div 
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(#94a3b8 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+        />
 
-      <section className="services-section" style={{
-        background: '#fff',
-        padding: isMobile ? '6rem 1rem' : isTablet ? '8rem 1.5rem' : '12rem 1.5rem',
-        position: 'relative', overflow: 'hidden',
-      }}>
-        {/* Background Radial Glow */}
-        <div style={{
-          position: 'absolute', top: '5%', left: '50%', transform: 'translateX(-50%)',
-          width: '700px', height: '350px',
-          background: 'radial-gradient(ellipse, rgba(124,58,237,0.05) 0%, transparent 70%)',
-          pointerEvents: 'none',
-        }} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          {/* Breadcrumb */}
+          <nav className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 mb-6 bg-white/70 px-4 py-1.5 rounded-full border border-slate-200/60 shadow-xs">
+            <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
+            <FiChevronRight size={12} />
+            <span className="text-slate-700">Services</span>
+          </nav>
 
-        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          {/* Header */}
-          <div style={{ textAlign: 'center', marginBottom: isMobile ? '2.5rem' : '4rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '1rem' }}>
-              <div style={{ width: '36px', height: '2px', background: '#7C3AED' }} />
-              <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#7C3AED' }}>
-                Our Technology Stack
+          {/* Eyebrow Badge */}
+          <div className="flex justify-center mb-5">
+            <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-pink-200/80 bg-white/90 backdrop-blur-md shadow-xs">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF1F8E] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FF1F8E]" />
               </span>
-              <div style={{ width: '36px', height: '2px', background: '#7C3AED' }} />
+              <span className="text-[10px] sm:text-[11px] font-black tracking-[0.25em] uppercase text-[#FF1F8E]">
+                Full-Cycle Web &amp; App Engineering
+              </span>
             </div>
-            <h1 style={{
-              fontSize: isMobile ? '2.2rem' : 'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', lineHeight: 1.1, margin: 0,
-            }}>
-              Web Development{" "}
-              <span style={{
-                background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)",
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-              }}>
-                Services
-              </span>
-            </h1>
-            <p style={{ fontSize: isMobile ? '14px' : '16px', color: '#64748b', marginTop: '0.75rem', fontWeight: 500, maxWidth: '650px', margin: '0.75rem auto 0', lineHeight: 1.6 }}>
-              Production-ready web development covering Websites & Web Apps, WordPress, Shopify, APIs & Integrations, AI Solutions, and Dedicated Developers.
-            </p>
           </div>
 
-          <h2 className="sr-only">Website & Web Apps, WordPress & WooCommerce, Shopify & eCommerce, APIs, AI Solutions & Dedicated Developers</h2>
+          {/* Main Title */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.08] sm:leading-[1.02] max-w-5xl mx-auto mb-6">
+            Web Development Services Built for{" "}
+            <span 
+              className="inline-block"
+              style={{
+                background: "linear-gradient(135deg, #E879F9 0%, #A855F7 40%, #38BDF8 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Scale &amp; Conversion
+            </span>
+          </h1>
 
-          {/* Bento Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: gridCols, gap: isMobile ? '10px' : '12px', marginBottom: '2.5rem' }}>
-            {servicesData.map((s) => (
-              <BentoBox key={s.id} service={s} spanStyle={getSpanStyle(s.span)} onSelect={handleSelectService} />
+          {/* Subtitle */}
+          <p className="text-slate-600 text-sm sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-10 font-normal">
+            From modern WordPress &amp; Shopify development to high-scale Next.js applications, AI automation, and dedicated engineering teams — delivered on time with clean, scalable code.
+          </p>
+
+          {/* Key Value Strip */}
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-4 pb-2 border-t border-slate-200/60 max-w-4xl mx-auto text-xs sm:text-sm font-semibold text-slate-600">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>15 Core Disciplines</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-blue-500" />
+              <span>120+ Completed Projects</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-purple-500" />
+              <span>100% In-House Developers</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-pink-500" />
+              <span>3–5h US/CA/AU Overlap</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES SECTION ── */}
+      <section className="py-16 sm:py-24 bg-slate-50/60 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Filter Pills */}
+          <div className="flex items-center justify-center mb-12 sm:mb-16">
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-1.5 sm:p-2 bg-white rounded-2xl border border-slate-200/90 shadow-sm max-w-full">
+              {categories.map((cat) => {
+                const isActive = filter === cat.label || (filter === 'All' && cat.label === 'All Services');
+                return (
+                  <button
+                    key={cat.label}
+                    onClick={() => setFilter(cat.label === 'All Services' ? 'All' : cat.label)}
+                    className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
+                      isActive
+                        ? 'bg-slate-900 text-white shadow-md shadow-slate-900/20 scale-[1.02]'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                    }`}
+                  >
+                    <span>{cat.label}</span>
+                    <span className={`text-[10px] font-extrabold px-1.5 py-0.5 rounded-full ${
+                      isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
+                    }`}>
+                      {cat.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+            {filteredServices.map((service) => (
+              <article
+                key={service.id}
+                className="group relative bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)] hover:border-slate-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  {/* Top Bar with Icon and ID */}
+                  <div className="flex items-center justify-between gap-4 mb-6">
+                    <div
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center border shadow-xs transition-transform duration-300 group-hover:scale-105"
+                      style={{
+                        background: service.accentBg,
+                        borderColor: service.accentBorder,
+                      }}
+                    >
+                      {service.icon}
+                    </div>
+                    <span className="text-xs font-black text-slate-300 tracking-widest font-mono">
+                      {service.id}
+                    </span>
+                  </div>
+
+                  {/* Tag Pill */}
+                  <div className="mb-3">
+                    <span
+                      className="inline-block text-[10px] font-extrabold uppercase tracking-[0.2em] px-3 py-1 rounded-md"
+                      style={{ 
+                        color: service.accent,
+                        backgroundColor: service.accentBg,
+                        border: `1px solid ${service.accentBorder}`
+                      }}
+                    >
+                      {service.tag}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3 group-hover:text-[#FF1F8E] transition-colors leading-snug">
+                    <Link href={service.href}>
+                      {service.title}
+                    </Link>
+                  </h2>
+
+                  {/* Description */}
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+                    {service.description}
+                  </p>
+
+                  {/* Key Features Bullet List */}
+                  <div className="space-y-2.5 mb-8 pt-4 border-t border-slate-100">
+                    {service.features.map((feat, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-slate-700 font-medium leading-tight">
+                        <FiCheckCircle
+                          className="mt-0.5 shrink-0"
+                          style={{ color: service.accent }}
+                          size={15}
+                        />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Footer Action Bar */}
+                <div className="pt-5 border-t border-slate-100 flex items-center justify-between gap-3">
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center gap-2 text-xs font-black tracking-wider uppercase transition-all duration-300"
+                    style={{ color: service.accent }}
+                  >
+                    <span>Explore Service</span>
+                    <FiArrowRight className="group-hover:translate-x-1.5 transition-transform" />
+                  </Link>
+
+                  <Link
+                    href="/contactus"
+                    className="text-xs font-bold text-slate-400 hover:text-slate-800 transition-colors px-3 py-1.5 rounded-lg hover:bg-slate-50"
+                  >
+                    Get Quote &rarr;
+                  </Link>
+                </div>
+              </article>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* ================= MODERN SIDEBAR DRAWER PANEL ================= */}
-        {/* Backdrop Overlay */}
-        <div
-          onClick={handleCloseDrawer}
-          style={{
-            position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
-            backgroundColor: 'rgba(15, 23, 42, 0.4)', backdropFilter: 'blur(4px)',
-            zIndex: 999, opacity: isDrawerOpen ? 1 : 0, pointerEvents: isDrawerOpen ? 'all' : 'none',
-            transition: 'opacity 0.3s ease',
-          }}
-        />
+      {/* ── ENGINEERING QUALITY SECTION ── */}
+      <section className="py-20 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-[#FF1F8E] mb-3 block">
+              The Webstep Difference
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+              Why High-Growth Teams Choose Us
+            </h2>
+          </div>
 
-        {/* Drawer Structure */}
-        <div
-          style={{
-            position: 'fixed', backgroundColor: '#fff', zIndex: 1000,
-            boxShadow: isMobile ? '0 -10px 35px rgba(0,0,0,0.12)' : '-10px 0 35px rgba(0,0,0,0.08)',
-            transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            display: 'flex', flexDirection: 'column',
-            ...(isMobile ? {
-              bottom: 0, left: 0, width: '100%', height: '85vh',
-              borderTopLeftRadius: '28px', borderTopRightRadius: '28px',
-              transform: isDrawerOpen ? 'translateY(0)' : 'translateY(100%)',
-            } : {
-              top: '8rem', right: 0, width: '520px', height: 'calc(100vh - 8rem)',
-              transform: isDrawerOpen ? 'translateX(0)' : 'translateX(100%)',
-            })
-          }}
-        >
-          {selectedService && (
-            <>
-              {/* Drawer Header */}
-              <div style={{
-                padding: '1.5rem', borderBottom: '1px solid #f1f5f9',
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                position: 'relative'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{
-                    width: '40px', height: '40px', borderRadius: '10px',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: selectedService.accentBg, color: selectedService.accent,
-                    border: `1.5px solid ${selectedService.accentBorder}`, fontSize: '18px'
-                  }}>
-                    {selectedService.icon}
-                  </div>
-                  <div>
-                    <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: selectedService.accent }}>
-                      {selectedService.tag}
-                    </span>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#0f172a', margin: 0, lineHeight: 1.2 }}>
-                      {selectedService.fullTitle}
-                    </h3>
-                  </div>
-                </div>
-
-                <button
-                  onClick={handleCloseDrawer}
-                  className="drawer-close-btn"
-                  style={{
-                    width: '36px', height: '36px', borderRadius: '50%', border: 'none',
-                    background: '#f8fafc', color: '#64748b', cursor: 'pointer',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  <FiX size={18} />
-                </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50">
+              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center font-bold mb-4">
+                01
               </div>
+              <h3 className="text-base font-bold text-slate-900 mb-2">Senior In-House Engineers</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                No junior handoffs or unvetted freelancers. Dedicated developers with 4+ years of core technology experience.
+              </p>
+            </div>
 
-              {/* Drawer Content Body (Scrollable) */}
-              <div style={{ padding: '2rem 1.5rem', overflowY: 'auto', flex: 1, display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-
-                {/* Headline Section */}
-                <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
-                  <h4 style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', margin: '0 0 6px 0', lineHeight: 1.3 }}>
-                    {selectedService.headline}
-                  </h4>
-                  <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.6, margin: 0, fontWeight: 400 }}>
-                    {selectedService.description}
-                  </p>
-                </div>
-
-                {/* Core Capabilities */}
-                <div>
-                  <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <FiShield style={{ color: selectedService.accent }} /> Core Capabilities
-                  </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                    {selectedService.features.map((feat, idx) => (
-                      <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                        <FiCheckCircle size={15} style={{ color: selectedService.accent, marginTop: '2px', flexShrink: 0 }} />
-                        <p style={{ fontSize: '13px', color: '#334155', fontWeight: 500, margin: 0, lineHeight: 1.4 }}>{feat}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Strategic Roadmap */}
-                <div>
-                  <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <FiActivity style={{ color: selectedService.accent }} /> Deployment Roadmap
-                  </h4>
-                  <div style={{ borderLeft: `2px dashed ${selectedService.accentBorder}`, paddingLeft: '1.25rem', marginLeft: '6px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                    {selectedService.process.map((proc, idx) => (
-                      <div key={idx} style={{ position: 'relative' }}>
-                        <div style={{ position: 'absolute', left: '-27px', top: '3px', width: '12px', height: '12px', borderRadius: '50%', background: '#FFF', border: `3.5px solid ${selectedService.accent}` }} />
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase' }}>Phase 0{idx + 1}</span>
-                        <p style={{ fontSize: '13px', fontWeight: 700, color: '#334155', margin: '1px 0 0 0' }}>{proc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
+            <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50">
+              <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold mb-4">
+                02
               </div>
+              <h3 className="text-base font-bold text-slate-900 mb-2">Agile 2-Week Sprints</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Direct integration into your Slack, Jira, or Git. Continuous demo deployments so you always see working software.
+              </p>
+            </div>
 
-              {/* Drawer Footer CTA */}
-              <div style={{ padding: '1.25rem 1.5rem', borderTop: '1px solid #f1f5f9', background: '#fff', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                <Link href={`/services/${selectedService.slug}`} onClick={handleCloseDrawer} style={{ textDecoration: 'none' }}>
-                  <button
-                    className="drawer-cta"
-                    style={{
-                      width: '100%', padding: '14px', borderRadius: '12px', border: 'none',
-                      background: selectedService.accent, color: '#fff', fontWeight: 700,
-                      fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase',
-                      cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      gap: '8px', transition: 'all 0.2s', boxShadow: `0 4px 20px ${selectedService.accent}30`
-                    }}
-                  >
-                    View Full {selectedService.title.split(' ')[0]} Service Details <FiArrowRight size={14} />
-                  </button>
-                </Link>
-                <Link
-                  href="/customize-package"
-                  onClick={handleCloseDrawer}
-                  style={{ textDecoration: 'none', textAlign: 'center', fontSize: '12px', color: '#64748b', fontWeight: 600 }}
-                >
-                  Or customize your project package &rarr;
-                </Link>
+            <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-4">
+                03
               </div>
-            </>
-          )}
+              <h3 className="text-base font-bold text-slate-900 mb-2">Clean, Modular Code</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Zero bloated page builders or fragile hacks. Clean semantic HTML, scalable databases, and Core Web Vitals 95+.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold mb-4">
+                04
+              </div>
+              <h3 className="text-base font-bold text-slate-900 mb-2">100% IP &amp; Code Ownership</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                You own 100% of the repository, source code, and design assets from day one under binding enterprise NDAs.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
-    </>
-  );
-};
 
-export default ServicesPage;
+      {/* ── FAQS SECTION ── */}
+      <section className="py-20 bg-slate-50/70 border-t border-slate-200/80">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-[#FF1F8E] mb-2 block">
+              Got Questions?
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {FAQS.map((faq, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:text-[#FF1F8E] transition-colors"
+                >
+                  <span>{faq.q}</span>
+                  <span className={`transform transition-transform text-slate-400 ${openFaq === idx ? 'rotate-180 text-[#FF1F8E]' : ''}`}>
+                    ▼
+                  </span>
+                </button>
+                {openFaq === idx && (
+                  <div className="px-6 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── BOTTOM CTA BANNER ── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-slate-900 via-purple-950 to-slate-900 rounded-3xl p-8 sm:p-14 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="relative z-10 max-w-xl text-center md:text-left">
+              <span className="text-[11px] font-black uppercase tracking-[0.25em] text-pink-400 mb-2 block">
+                Let&apos;s Build Together
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black mb-3 tracking-tight">
+                Have a project or need dedicated developers?
+              </h2>
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Share your requirements with us today. We review your scope and provide a transparent, fixed-price or monthly dedicated quote within one business day.
+              </p>
+            </div>
+
+            <div className="relative z-10 shrink-0 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <Link
+                href="/contactus"
+                className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg hover:scale-105 transition-all text-center"
+              >
+                Request a Free Quote &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

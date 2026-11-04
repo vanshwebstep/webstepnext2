@@ -11,21 +11,56 @@ const blog1 = assetImage("blog1.png");
 const blog2 = assetImage("blog2.png");
 const blog3 = assetImage("blog3.png");
 
+
+const DEFAULT_BLOG_POSTS = [
+  {
+    id: 1,
+    slug: "nextjs-vs-wordpress-for-business-websites",
+    title: "Next.js vs WordPress: Choosing the Right Web Architecture for 2026",
+    excerpt: "A comprehensive breakdown of when to build headless with Next.js versus standard WordPress CMS for scale, speed, and Core Web Vitals performance.",
+    category: "Architecture",
+    author: "Webstep Engineering",
+    published_date: "Oct 24, 2026",
+    views: 342,
+    imageSrc: blog1
+  },
+  {
+    id: 2,
+    slug: "how-to-hire-dedicated-developers-in-india",
+    title: "How to Hire Dedicated Developers: Agency Guide & Best Practices",
+    excerpt: "Learn how US, Canadian, and Australian companies hire remote dedicated engineers with timezone overlap, clean IP ownership, and zero agency overhead.",
+    category: "Hiring",
+    author: "Webstep Solutions",
+    published_date: "Oct 18, 2026",
+    views: 489,
+    imageSrc: blog2
+  },
+  {
+    id: 3,
+    slug: "shopify-vs-woocommerce-scalability-guide",
+    title: "Shopify vs WooCommerce in 2026: Cost, Scalability & Speed Compared",
+    excerpt: "Real-world comparison of total cost of ownership, checkout extensibility, custom development limits, and hosting infrastructure for eCommerce brands.",
+    category: "eCommerce",
+    author: "Webstep Tech Team",
+    published_date: "Oct 12, 2026",
+    views: 521,
+    imageSrc: blog3
+  }
+];
+
 const BlogPosts = () => {
   const router = useRouter();
-  const [blogPostsData, setBlogPostsData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [blogPostsData, setBlogPostsData] = useState(DEFAULT_BLOG_POSTS);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchBlogs({ categories: [], blogs: [] })
+    fetchBlogs({ categories: [], blogs: DEFAULT_BLOG_POSTS })
       .then((data) => {
-        if (data.blogs) {
+        if (data?.blogs && data.blogs.length > 0) {
           setBlogPostsData(data.blogs);
         }
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      .catch(() => {});
   }, []);
 
   return (

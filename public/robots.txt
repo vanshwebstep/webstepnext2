@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /demo/
 Disallow: /thankyou/
 Disallow: /singal/
 Disallow: /category/

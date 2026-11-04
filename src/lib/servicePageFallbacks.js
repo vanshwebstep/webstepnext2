@@ -70,7 +70,7 @@ export const hireDevelopersPage = {
     ],
   },
   metrics: [
-    { value: "4-5h", label: "US/UK Overlap" },
+    { value: "3-5h", label: "US/CA/AU Overlap" },
     { value: "100%", label: "IP & Code Ownership" },
     { value: "2-5d", label: "Fast Onboarding" },
     { value: "NDA", label: "Signed First" },
@@ -92,7 +92,7 @@ export const hireDevelopersPage = {
     { title: "NDA & Tool Onboarding", description: "We sign agreements, configure repo access, Slack channels, and issue boards within 2-5 business days." },
     { title: "Daily Sprint Rhythm & Delivery", description: "Your dedicated developer pushes daily code, attends standups, and ships production features." },
   ],
-  pricingTitle: "Flexible Engagement Models & Pricing",
+  pricingTitle: "Flexible Engagement Models",
   pricingIntro: "Select the structure that aligns best with your team size, product scope, and roadmap velocity.",
   pricing: [
     { title: "Dedicated Full-Time", price: "Monthly", description: "Best for ongoing product roadmaps, SaaS development, and continuous feature delivery.", items: ["160 hours / month", "Direct communication & task boards", "Daily standups & code reviews", "100% IP ownership & NDA protection"] },

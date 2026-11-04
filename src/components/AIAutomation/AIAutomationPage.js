@@ -167,7 +167,7 @@ const AUTOMATION_PACKAGES = [
       "Unlimited custom AI agent workflows & LangGraph pipelines",
       "Bi-directional ERP/CRM custom API connectors",
       "Private on-prem or VPC LLM deployment options",
-      "SOC-2 / HIPAA compliance audit trails",
+      "Enterprise compliance guardrails & audit trails",
       "Dedicated Solutions Engineer & 24/7 SLA",
       "Quarterly architecture reviews and model upgrades",
     ],

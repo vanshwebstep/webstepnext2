@@ -1,23 +1,23 @@
 import React from 'react';
-import AIAutomationPage from '@/components/AIAutomation/AIAutomationPage';
+import RedirectClient from '@/components/RedirectClient';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("ai-automation");
   return {
-    title: dynamicSeo.title || "AI Automation & Workflow Integration Services | Webstep Solutions",
-    description: dynamicSeo.description || "Intelligent workflow automation and AI integrations connecting your CRMs, ERPs, and databases with modern LLMs and machine learning models.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    title: dynamicSeo.title || "AI Automation & Workflow Services | Webstep Solutions",
+    description: dynamicSeo.description || "Redirecting to Webstep Solutions AI Automation Services.",
     alternates: {
       canonical: "https://webstepdev.com/services/ai-automation/",
-    }
+    },
+    robots: { index: false, follow: false }
   };
 }
 
 export default function Page() {
   return (
     <>
-      <AIAutomationPage />
+      <RedirectClient target="/services/ai-automation/" />
     </>
   );
 }

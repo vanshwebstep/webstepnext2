@@ -47,9 +47,9 @@ const DEMO_PRESETS = [
     id: "saas",
     name: "SaaS & Tech",
     icon: FiLayers,
-    userQuery: "Does your Pro tier support custom webhook payloads and SOC-2 compliance?",
+    userQuery: "Does your Pro tier support custom webhook payloads and enterprise security standards?",
     aiResponse:
-      "Yes! The Pro Tier includes custom signed webhooks, automated payload retries, and SOC-2 Type II audit logs. I've highlighted the API specification page for you and can arrange a developer sandbox access right now.",
+      "Yes! The Pro Tier includes custom signed webhooks, automated payload retries, and enterprise audit logging. I've highlighted the API specification page for you and can arrange a developer sandbox access right now.",
     badge: "Vector RAG Knowledge Base",
     metric: "88% Faster Lead Handoff",
   },
@@ -111,7 +111,7 @@ const CAPABILITIES = [
     icon: FiShield,
     title: "Enterprise Guardrails & Privacy",
     desc: "Built-in prompt-injection firewalls, automatic PII redaction, hallucination verification layers, and GDPR/CCPA compliant data boundaries.",
-    tag: "SOC-2 Ready Architecture",
+    tag: "Enterprise-Ready Architecture",
   },
 ];
 
@@ -228,7 +228,7 @@ const PACKAGES = [
       "Multi-agent autonomous workflows & ERP connectors",
       "Multi-lingual RAG system across complex document sets",
       "Custom fine-tuned or open-source LLM hosting (on-prem/VPC)",
-      "SOC-2 / HIPAA compliance guardrails & audit logging",
+      "Enterprise compliance guardrails & audit logging",
       "Dedicated senior solutions architect & 24/7 SLA",
       "Continuous model retraining & vector database maintenance",
     ],
@@ -431,10 +431,10 @@ export default function AIPoweredWebsitesPage() {
                       WebkitTextFillColor: "transparent",
                     }}
                   >
-                    3.8x
+                    24/7
                   </div>
                   <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1">
-                    Conversion Lift
+                    Lead Engagement
                   </div>
                 </div>
 
@@ -580,7 +580,7 @@ export default function AIPoweredWebsitesPage() {
                       <span className="flex items-center gap-1.5 font-bold text-emerald-400">
                         <FiTrendingUp /> {activePreset.metric}
                       </span>
-                      <span className="text-[11px] text-slate-400">Zero Hallucinations Guarantee</span>
+                      <span className="text-[11px] text-slate-400">RAG Verification Guardrails</span>
                     </div>
                   </div>
                 </div>

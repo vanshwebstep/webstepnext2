@@ -353,7 +353,7 @@ const Services = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
             <Link
-              href="/customize-package"
+              href="/contactus"
               className="flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white tracking-wide transition-all duration-300 text-center"
               style={{ background: "linear-gradient(135deg, #E879F9, #A855F7)", boxShadow: "0 4px 20px rgba(232,121,249,0.2)" }}
             >

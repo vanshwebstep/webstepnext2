@@ -5,12 +5,16 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("b2b-sales");
   return {
-    title: dynamicSeo.title || "Hire Dedicated Developers for Your Web Projects | Webstep Solutions",
-    description: dynamicSeo.description || "Hire dedicated full-time WordPress, Shopify, React, and Laravel developers monthly. Flexible engagement models, US/CA/AU time-zone overlap, NDA protected.",
+    title: dynamicSeo.title || "Development Partner for Agencies | Webstep Solutions",
+    description: dynamicSeo.description || "White-label web development and dedicated engineering teams for digital agencies. Fast onboarding, US/CA/AU overlap, and strict NDA protection.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/hire-full-time-developers/",
-    }
+      canonical: "https://webstepdev.com/b2b-sales/",
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
 

@@ -61,7 +61,7 @@ const WorkBanner = () => {
                 {/* Description — Webstep ke liye updated */}
                 <p className="text-slate-500 text-sm sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl">
                   With <span className="font-semibold text-slate-700">12+ years of excellence</span>,
-                  Webstep Solutions has delivered 500+ world-class digital products — from blazing-fast
+                  Webstep Solutions has delivered 120+ world-class digital products — from blazing-fast
                   React & Next.js web apps to powerful Shopify stores, WordPress solutions, and
                   cutting-edge AI integrations. We build for performance, scale, and results.
                 </p>

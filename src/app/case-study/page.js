@@ -5,12 +5,16 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("case-study");
   return {
-    title: dynamicSeo.title || "Case Studies & Portfolio | Web Development Work | Webstep Solutions",
-    description: dynamicSeo.description || "Explore Webstep Solutions' portfolio: 120+ delivered projects across healthcare, fintech, SaaS, eCommerce, and education with verified metrics.",
+    title: dynamicSeo.title || "Web Development Case Studies | Webstep Solutions",
+    description: dynamicSeo.description || "See how we planned, built and delivered web projects for real clients, with the problem, the tech used and the results.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
       canonical: "https://webstepdev.com/case-study/",
-    }
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
 

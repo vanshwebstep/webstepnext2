@@ -74,7 +74,7 @@ const SeoDev = () => {
                     every gap between you and the top position.
                   </p>
                   <p>
-                    From on-page optimisation and structured data to content clusters and high-authority
+                    From on-page optimization and structured data to content clusters and high-authority
                     link acquisition — we build a strategy that compounds, not just ranks.
                   </p>
                   <p>
