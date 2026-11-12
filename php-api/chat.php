@@ -48,7 +48,8 @@ foreach ($messages as $msg) {
         ];
     }
 }
-$apiKey = $_ENV['NEXT_PUBLIC_GROQ_API_KEY'];
+
+$apiKey = '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';
 $reply = '';
 $models = ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.8-27b'];
 
