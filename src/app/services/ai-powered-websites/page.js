@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Next-generation websites with built-in AI search, personalized recommendations, automated content pipelines, and intelligent user experiences.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/ai-powered-websites/",
+      canonical: "https://webstepsolutions.com/services/ai-powered-websites/",
     }
   };
 }

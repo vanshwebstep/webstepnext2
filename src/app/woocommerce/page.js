@@ -8,7 +8,7 @@ export async function generateMetadata() {
     title: dynamicSeo.title || "Redirecting to WooCommerce Development Services | Webstep Solutions",
     description: dynamicSeo.description || "Redirecting to Webstep Solutions WooCommerce Development Services.",
     alternates: {
-      canonical: "https://webstepdev.com/services/woocommerce/",
+      canonical: "https://webstepsolutions.com/services/woocommerce/",
     },
     robots: { index: false, follow: false }
   };

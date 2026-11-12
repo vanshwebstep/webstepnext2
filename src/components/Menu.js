@@ -61,7 +61,7 @@ const submenus = {
                 items: [
                     { name: "Our Work",     href: "/works",      icon: FiLayers,       desc: "Full portfolio" },
                     { name: "Case Studies", href: "/case-study", icon: FiShoppingCart, desc: "Client success stories" },
-                    { name: "For Agencies", href: "/b2b-sales",  icon: FiTrendingUp,   desc: "Development partner" },
+                    // { name: "For Agencies", href: "/hire-dedicated-developers",  icon: FiTrendingUp,   desc: "Development partner" },
                 ],
             },
         ],
@@ -194,7 +194,7 @@ const Menu = ({ mobile = false, closeMenu, scrolled = false }) => {
             name: "Portfolio",
             href: "/works",
             submenuKey: "portfolio",
-            activePaths: ["/works", "/case-study", "/projects", "/b2b-sales"],
+            activePaths: ["/works", "/case-study", "/projects"],
         },
         { name: "About",     href: "/about"     },
         { name: "Blog",      href: "/blog"      },

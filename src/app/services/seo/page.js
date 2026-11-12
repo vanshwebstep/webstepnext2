@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Technical SEO audits, Core Web Vitals fixes and conversion improvements for business websites. Request an SEO audit.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/seo/",
+      canonical: "https://webstepsolutions.com/services/seo/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

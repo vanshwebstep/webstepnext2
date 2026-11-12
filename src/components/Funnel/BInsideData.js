@@ -22,7 +22,7 @@ const Inside=[
       id:0,
       title:"Cloud Hosted Funnel Templates",
       para1:"Select your lead capture funnel type (standard, video, webinar, review, quiz, or social) and then choose which of those templates you’d like to use.",
-      para2:"FunnelMates will automatically install landing, thank you, confirmation, and download pages for you ready to customise.",
+      para2:"FunnelMates will automatically install landing, thank you, confirmation, and download pages for you ready to customize.",
       img:img,
     },
     {

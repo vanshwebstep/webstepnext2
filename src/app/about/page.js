@@ -14,11 +14,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Mohali-based team with 12+ years building WordPress, Shopify and custom web apps for clients in 15+ countries. Meet the people behind Webstep Solutions.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/about/",
+      canonical: "https://webstepsolutions.com/about/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

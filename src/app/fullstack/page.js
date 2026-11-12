@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Full stack developers for Next.js, React, Node.js and Laravel projects, custom API integrations and scalable architectures. Request a project quote.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/fullstack/",
+      canonical: "https://webstepsolutions.com/fullstack/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

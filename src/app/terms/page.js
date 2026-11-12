@@ -8,7 +8,7 @@ export async function generateMetadata() {
     title: dynamicSeo.title || "Redirecting to Terms and Conditions | Webstep Solutions",
     description: dynamicSeo.description || "Redirecting to Webstep Solutions Terms and Conditions.",
     alternates: {
-      canonical: "https://webstepdev.com/terms-and-conditions/",
+      canonical: "https://webstepsolutions.com/terms-and-conditions/",
     },
     robots: { index: false, follow: false }
   };

@@ -1,27 +1,23 @@
 import React from 'react';
-import B2BSalesPage from '@/components/B2BSalesPage';
+import RedirectClient from '@/components/RedirectClient';
 import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = await fetchSeoMetadata("b2b-sales");
   return {
-    title: dynamicSeo.title || "Development Partner for Agencies | Webstep Solutions",
-    description: dynamicSeo.description || "White-label web development and dedicated engineering teams for digital agencies. Fast onboarding, US/CA/AU overlap, and strict NDA protection.",
-    ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
+    title: dynamicSeo?.title || "Redirecting to Hire Dedicated Developers | Webstep Solutions",
+    description: dynamicSeo?.description || "Redirecting to Webstep Solutions dedicated developers page.",
     alternates: {
-      canonical: "https://webstepdev.com/b2b-sales/",
+      canonical: "https://webstepsolutions.com/hire-dedicated-developers/",
     },
-    robots: {
-      index: false,
-      follow: false,
-    },
+    robots: { index: false, follow: false }
   };
 }
 
 export default function Page() {
   return (
     <>
-      <B2BSalesPage />
+      <RedirectClient target="/hire-dedicated-developers/" />
     </>
   );
 }

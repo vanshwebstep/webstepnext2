@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Practical guides on choosing platforms, hiring developers and building better websites, from the Webstep Solutions team.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/blog/",
+      canonical: "https://webstepsolutions.com/blog/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

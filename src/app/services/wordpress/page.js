@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Custom WordPress development by Webstep Solutions: hand-coded themes, bespoke plugins, WooCommerce, and headless WordPress with Next.js. Fast, secure, and SEO-ready.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/wordpress/",
+      canonical: "https://webstepsolutions.com/services/wordpress/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

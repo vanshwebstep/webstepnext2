@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Strategic brand identity, visual guidelines, logo design, and UI kits crafted to make your brand recognizable and memorable. Request a brand quote.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/brand-design/",
+      canonical: "https://webstepsolutions.com/services/brand-design/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

@@ -8,7 +8,7 @@ export async function generateMetadata() {
     title: dynamicSeo.title || "Redirecting to UI/UX Design Services | Webstep Solutions",
     description: dynamicSeo.description || "Redirecting to Webstep Solutions UI/UX design services.",
     alternates: {
-      canonical: "https://webstepdev.com/services/ui-ux/",
+      canonical: "https://webstepsolutions.com/services/ui-ux/",
     },
     robots: { index: false, follow: false }
   };

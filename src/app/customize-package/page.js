@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Build a custom web development package tailored to your exact project scope, technology requirements, and timeline. Instant quote estimate.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/customize-package/",
+      canonical: "https://webstepsolutions.com/customize-package/",
     }
   };
 }

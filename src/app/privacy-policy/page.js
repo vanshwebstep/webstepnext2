@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Read Webstep Solutions' Privacy Policy to learn how we collect, use, and protect your personal information when visiting our website.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/privacy-policy/",
+      canonical: "https://webstepsolutions.com/privacy-policy/",
     }
   };
 }

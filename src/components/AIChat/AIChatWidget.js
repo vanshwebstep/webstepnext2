@@ -37,7 +37,8 @@ const AIChatWidget = () => {
     setIsLoading(true);
 
     try {
-      const res = await fetch("https://webstepnextnode.vercel.app/api/chat", {
+      const apiEndpoint = (process.env.NEXT_PUBLIC_PHP_API_URL || "https://webstepsolutions.com/admin").replace(/\/+$/, "") + "/api/chat.php";
+      const res = await fetch(apiEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: updatedMessages }),
@@ -47,7 +48,7 @@ const AIChatWidget = () => {
 
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: data.reply },
+        { role: "assistant", content: data.reply || "Sorry, I could not process that. Please try again!" },
       ]);
 
     } catch (err) {

@@ -116,7 +116,7 @@ const ContactForm = ({ light = false }) => {
                             </svg>
                         </div>
                         <span className={`text-xs sm:text-sm ${labelClasses} text-slate-700 group-hover:opacity-100 transition-opacity`}>
-                            I agree to the <Link href="/privacy" className="text-[#FF1F8E] hover:underline font-bold">Privacy Policy</Link>
+                            I agree to the <Link href="/privacy-policy" className="text-[#FF1F8E] hover:underline font-bold">Privacy Policy</Link>
                         </span>
                     </label>
 

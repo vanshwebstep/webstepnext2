@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Meet the developers, designers and project managers who build and support your projects at Webstep Solutions.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/about/",
+      canonical: "https://webstepsolutions.com/about/",
     }
   };
 }

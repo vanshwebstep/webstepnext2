@@ -149,7 +149,7 @@ export async function generateMetadata({ params }) {
 
   // If this is an alias/old URL that redirects, give it noindex and point canonical to target
   if (REDIRECT_MAP[slug]) {
-    const targetUrl = `https://webstepdev.com${REDIRECT_MAP[slug]}`;
+    const targetUrl = `https://webstepsolutions.com${REDIRECT_MAP[slug]}`;
     return {
       title: "Redirecting... | Webstep Solutions",
       description: "Redirecting to current service page...",
@@ -168,7 +168,7 @@ export async function generateMetadata({ params }) {
       description: dynamicSeo.description || SERVICE_SEO[slug].description,
       ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
       alternates: {
-        canonical: `https://webstepdev.com/services/${slug}/`
+        canonical: `https://webstepsolutions.com/services/${slug}/`
       },
       robots: { index: false, follow: false }
     };
@@ -195,7 +195,7 @@ export async function generateMetadata({ params }) {
 
   const fallbackDesc = `Learn more about our ${formattedTitle} services at Webstep Solutions.`;
   const dynamicSeo = await fetchSeoMetadata(`services/${slug}`);
-  const canonicalUrl = `https://webstepdev.com/services/${slug}/`;
+  const canonicalUrl = `https://webstepsolutions.com/services/${slug}/`;
 
   return {
     title: dynamicSeo.title || finalTitle,

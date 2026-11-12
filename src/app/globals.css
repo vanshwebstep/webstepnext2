@@ -67,3 +67,6 @@
 section.py-16.md\:py-24.pt-40.bg-white.relative.z-10.px-6.overflow-hidden.font-roboto {
     padding-top: 15rem !important;
 }
+.w-wistia-logo.w-css-reset {
+    display: none !important;
+}

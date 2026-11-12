@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Choose a clear web development package for your project, or customize one to fit your needs. See what is included and request a quote.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/packages/",
+      canonical: "https://webstepsolutions.com/packages/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

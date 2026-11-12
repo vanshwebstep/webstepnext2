@@ -1,10 +1,13 @@
 // lib/contentApi.js
 // Connects your Next.js frontend to the PHP backend
 
+const DEFAULT_API_BASE = 'https://webstepsolutions.com/admin';
+
 const BASE_URL = (
   process.env.NEXT_PUBLIC_PHP_API_BASE_URL ||
   process.env.NEXT_PUBLIC_API_URL ||
-  `${process.env.NEXT_PUBLIC_MAIN_BASE_URL || "https://webstepdev.com"}/demo/webstepphp`
+  process.env.NEXT_PUBLIC_PHP_API_URL ||
+  DEFAULT_API_BASE
 ).replace(/\/+$/, '');
 
 const CONTENT_ENDPOINTS = {

@@ -1026,8 +1026,7 @@ export default function AIPoweredWebsitesPage() {
                 </h2>
                 <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
                   Tell us about your current website or new vision. Our AI solutions architects will
-                  deliver a tailored tech roadmap, model recommendation, and proposal within 24
-                  hours.
+                  deliver a tailored tech roadmap, model recommendation, and proposal within one business day.
                 </p>
 
                 <div className="mt-8 space-y-3">

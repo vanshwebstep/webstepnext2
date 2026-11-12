@@ -6,7 +6,7 @@ import AnimatedSection from '../AnimatedSection';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import Link from "next/link";
 import { fetchContent } from '@/lib/contentApi';
-import { assetImage } from "@/lib/assets";
+import { assetImage, resolveDynamicImage } from "@/lib/assets";
 const drTreatCase = assetImage("dr-treat-case.png");
 const stillwellHansenWork = assetImage("Stillwell-Hansen-work.png");
 const retrievrWork1 = assetImage("Retrievr-work1.png");
@@ -97,7 +97,7 @@ const normalizeList = (value, fallback = []) => {
 };
 
 const normalizeProject = (project, index) => ({
-    img: project.img || project.image || ALL_PROJECTS[index % ALL_PROJECTS.length].img,
+    img: resolveDynamicImage(project.img || project.image, ALL_PROJECTS[index % ALL_PROJECTS.length].img),
     title: project.title || `Project ${index + 1}`,
     category: project.category || "Development",
     tags: normalizeList(project.tags, ["Development"]),

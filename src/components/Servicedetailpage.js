@@ -454,7 +454,7 @@ const ALL_SERVICES = {
       { step: "05", title: "Store Launch", desc: "App Store & Play Store submission managed for you." },
     ],
     faqs: [
-      { q: "React Native or Flutter — which is better?", a: "Both are excellent. React Native is ideal for JavaScript teams; Flutter excels in UI customisation. We advise based on your goals." },
+      { q: "React Native or Flutter — which is better?", a: "Both are excellent. React Native is ideal for JavaScript teams; Flutter excels in UI customization. We advise based on your goals." },
       { q: "How long does app development take?", a: "MVP: 8–12 weeks. Full-featured app: 4–6 months depending on complexity." },
       { q: "Do you handle store submission?", a: "Yes — we manage the full submission process including compliance and metadata optimization." },
       { q: "Can you add features to an existing app?", a: "Absolutely — we conduct a code audit and extend any React Native, Flutter, or native iOS/Android app." },

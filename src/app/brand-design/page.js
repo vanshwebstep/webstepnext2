@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Complete brand identity design: logos, design systems, typography guidelines, and brand collateral that make your business instantly recognizable.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/brand-design/",
+      canonical: "https://webstepsolutions.com/services/brand-design/",
     }
   };
 }

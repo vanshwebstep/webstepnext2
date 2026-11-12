@@ -2,13 +2,13 @@
 return [
     'db' => [
         'host' => 'localhost',
-        'name' => 'u510451310_webstepphp',
-        'user' => 'u510451310_webstepphp',
-        'pass' => 'Webstepphp@135',
+        'name' => 'dbwws7hzgqriww',
+        'user' => 'uxgetsrse0k2g',
+        'pass' => 'yon3ven61vp3',
         'charset' => 'utf8mb4',
     ],
     'mail' => [
-        'to' => 'vanshwebstep@gmail.com',
+        'to' => 'hello@webstepsolutions.com',
         'from' => 'viteshwebstep@gmail.com',
         'subject_prefix' => 'Webstep Lead',
     ],

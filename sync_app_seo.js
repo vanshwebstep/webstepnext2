@@ -40,9 +40,9 @@ const homeSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Webstep Solutions",
-  "url": "https://webstepdev.com/",
-  "logo": "https://webstepdev.com/demo/webstepnext/logo.png",
-  "image": "https://webstepdev.com/demo/webstepnext/development-company.png",
+  "url": "https://webstepsolutions.com/",
+  "logo": "https://webstepsolutions.com/webstepassets/img/logo.png",
+  "image": "https://webstepsolutions.com/webstepassets/img/development-company.png",
   "description": "Custom WordPress, Shopify, React and Laravel development for agencies and growing businesses. Dedicated developers available.",
   "telephone": "+917973938927",
   "email": "info@webstepsolutions.com",
@@ -161,7 +161,7 @@ const pages = [
     slug: '/',
     title: 'Web Development Company for Agencies & Growing Businesses | Webstep Solutions',
     description: 'Webstep Solutions delivers custom WordPress, Shopify, React and Laravel development for agencies and growing businesses. Dedicated developers available.',
-    canonical: 'https://webstepdev.com/',
+    canonical: 'https://webstepsolutions.com/',
     jsonLd: homeSchema
   },
 
@@ -185,7 +185,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'about',
     title: 'About Webstep Solutions | Web Development Team & Culture',
     description: 'Meet Webstep Solutions — a dedicated web development company founded in 2014. We help agencies and growing brands build better digital products.',
-    canonical: 'https://webstepdev.com/about/'
+    canonical: 'https://webstepsolutions.com/about/'
   },
 
   // 3. Services Hub
@@ -196,7 +196,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services',
     title: 'Web Development Services | WordPress, Shopify, Next.js, Laravel | Webstep Solutions',
     description: 'Explore Webstep Solutions\' full suite of web development services: WordPress, Shopify, WooCommerce, React.js, Next.js, Laravel, and AI integrations.',
-    canonical: 'https://webstepdev.com/services/'
+    canonical: 'https://webstepsolutions.com/services/'
   },
 
   // 4. Web Development (Canonical under /services/web-development/)
@@ -207,7 +207,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/web-development',
     title: 'Custom Web Development Services | Next.js, React & Laravel | Webstep Solutions',
     description: 'High-performance custom web applications built on Next.js, React, and modern full-stack architectures. Fast, accessible, and engineered for conversion.',
-    canonical: 'https://webstepdev.com/services/web-development/'
+    canonical: 'https://webstepsolutions.com/services/web-development/'
   },
   {
     filePath: 'src/app/web-development/page.js',
@@ -216,7 +216,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'web-development',
     title: 'Custom Web Development Services | Next.js, React & Laravel | Webstep Solutions',
     description: 'High-performance custom web applications built on Next.js, React, and modern full-stack architectures. Fast, accessible, and engineered for conversion.',
-    canonical: 'https://webstepdev.com/services/web-development/'
+    canonical: 'https://webstepsolutions.com/services/web-development/'
   },
 
   // 5. WordPress (Canonical under /services/wordpress/)
@@ -227,7 +227,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/wordpress',
     title: 'Custom WordPress Development Company | Themes & Plugins | Webstep Solutions',
     description: 'Custom WordPress development by Webstep Solutions: hand-coded themes, bespoke plugins, WooCommerce, and headless WordPress with Next.js. No page builders.',
-    canonical: 'https://webstepdev.com/services/wordpress/'
+    canonical: 'https://webstepsolutions.com/services/wordpress/'
   },
   {
     filePath: 'src/app/wordpress/page.js',
@@ -236,7 +236,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'wordpress',
     title: 'Custom WordPress Development Company | Themes & Plugins | Webstep Solutions',
     description: 'Custom WordPress development by Webstep Solutions: hand-coded themes, bespoke plugins, WooCommerce, and headless WordPress with Next.js. No page builders.',
-    canonical: 'https://webstepdev.com/services/wordpress/'
+    canonical: 'https://webstepsolutions.com/services/wordpress/'
   },
 
   // 6. Shopify (Canonical under /services/shopify/)
@@ -247,7 +247,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/shopify',
     title: 'Shopify Development Services | Themes, Apps & Shopify Plus | Webstep Solutions',
     description: 'Custom Shopify themes, Liquid development, private apps, and Shopify Plus setups engineered to increase conversions and average order value.',
-    canonical: 'https://webstepdev.com/services/shopify/'
+    canonical: 'https://webstepsolutions.com/services/shopify/'
   },
   {
     filePath: 'src/app/shopify/page.js',
@@ -256,7 +256,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'shopify',
     title: 'Shopify Development Services | Themes, Apps & Shopify Plus | Webstep Solutions',
     description: 'Custom Shopify themes, Liquid development, private apps, and Shopify Plus setups engineered to increase conversions and average order value.',
-    canonical: 'https://webstepdev.com/services/shopify/'
+    canonical: 'https://webstepsolutions.com/services/shopify/'
   },
 
   // 7. WooCommerce (Canonical under /services/woocommerce/)
@@ -267,7 +267,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/woocommerce',
     title: 'WooCommerce Development Services | Custom Online Stores | Webstep Solutions',
     description: 'Tailored WooCommerce development for high-volume stores: custom themes, payment gateway integration, subscription architecture, and speed optimization.',
-    canonical: 'https://webstepdev.com/services/woocommerce/'
+    canonical: 'https://webstepsolutions.com/services/woocommerce/'
   },
   {
     filePath: 'src/app/woocommerce/page.js',
@@ -276,7 +276,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'woocommerce',
     title: 'WooCommerce Development Services | Custom Online Stores | Webstep Solutions',
     description: 'Tailored WooCommerce development for high-volume stores: custom themes, payment gateway integration, subscription architecture, and speed optimization.',
-    canonical: 'https://webstepdev.com/services/woocommerce/'
+    canonical: 'https://webstepsolutions.com/services/woocommerce/'
   },
 
   // 8. Laravel (Canonical under /services/laravel/)
@@ -287,7 +287,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/laravel',
     title: 'Laravel Development Company | Custom PHP Web Applications | Webstep Solutions',
     description: 'Secure, scalable Laravel web applications and REST APIs built with clean MVC architecture, database optimization, and enterprise-grade security.',
-    canonical: 'https://webstepdev.com/services/laravel/'
+    canonical: 'https://webstepsolutions.com/services/laravel/'
   },
   {
     filePath: 'src/app/laravel/page.js',
@@ -296,7 +296,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'laravel',
     title: 'Laravel Development Company | Custom PHP Web Applications | Webstep Solutions',
     description: 'Secure, scalable Laravel web applications and REST APIs built with clean MVC architecture, database optimization, and enterprise-grade security.',
-    canonical: 'https://webstepdev.com/services/laravel/'
+    canonical: 'https://webstepsolutions.com/services/laravel/'
   },
 
   // 9. React.js & Next.js (Canonical under /services/reactjs/)
@@ -307,7 +307,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/reactjs',
     title: 'React.js & Next.js Development Services | Webstep Solutions',
     description: 'Dynamic, blazing-fast web applications built with React.js and Next.js. Server-side rendering, optimized performance, and pixel-perfect UI execution.',
-    canonical: 'https://webstepdev.com/services/reactjs/'
+    canonical: 'https://webstepsolutions.com/services/reactjs/'
   },
   {
     filePath: 'src/app/reactjs/page.js',
@@ -316,7 +316,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'reactjs',
     title: 'React.js & Next.js Development Services | Webstep Solutions',
     description: 'Dynamic, blazing-fast web applications built with React.js and Next.js. Server-side rendering, optimized performance, and pixel-perfect UI execution.',
-    canonical: 'https://webstepdev.com/services/reactjs/'
+    canonical: 'https://webstepsolutions.com/services/reactjs/'
   },
 
   // 10. PHP Development (Canonical under /services/php-development/)
@@ -327,7 +327,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/php-development',
     title: 'Custom PHP Development Services | Webstep Solutions',
     description: 'Custom PHP development, legacy code modernization, database optimization, and third-party API integrations by senior PHP engineers.',
-    canonical: 'https://webstepdev.com/services/php-development/'
+    canonical: 'https://webstepsolutions.com/services/php-development/'
   },
   {
     filePath: 'src/app/php/page.js',
@@ -336,7 +336,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'php',
     title: 'Custom PHP Development Services | Webstep Solutions',
     description: 'Custom PHP development, legacy code modernization, database optimization, and third-party API integrations by senior PHP engineers.',
-    canonical: 'https://webstepdev.com/services/php-development/'
+    canonical: 'https://webstepsolutions.com/services/php-development/'
   },
 
   // 11. eCommerce (Canonical under /services/ecommerce/)
@@ -347,7 +347,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/ecommerce',
     title: 'eCommerce Development Services | Shopify & WooCommerce | Webstep Solutions',
     description: 'End-to-end eCommerce development on Shopify, WooCommerce, and custom headless stacks. Optimized product catalogs, checkout flows, and ERP integrations.',
-    canonical: 'https://webstepdev.com/services/ecommerce/'
+    canonical: 'https://webstepsolutions.com/services/ecommerce/'
   },
   {
     filePath: 'src/app/ecommerce/page.js',
@@ -356,7 +356,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'ecommerce',
     title: 'eCommerce Development Services | Shopify & WooCommerce | Webstep Solutions',
     description: 'End-to-end eCommerce development on Shopify, WooCommerce, and custom headless stacks. Optimized product catalogs, checkout flows, and ERP integrations.',
-    canonical: 'https://webstepdev.com/services/ecommerce/'
+    canonical: 'https://webstepsolutions.com/services/ecommerce/'
   },
 
   // 12. Website Maintenance (Canonical under /services/website-maintenance/)
@@ -367,7 +367,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/website-maintenance',
     title: 'Website Maintenance & Support Plans | Webstep Solutions',
     description: 'Proactive website maintenance for WordPress, Shopify, and custom stacks: security patching, plugin updates, speed monitoring, and dedicated developer hours.',
-    canonical: 'https://webstepdev.com/services/website-maintenance/'
+    canonical: 'https://webstepsolutions.com/services/website-maintenance/'
   },
   {
     filePath: 'src/app/website-maintenance/page.js',
@@ -376,7 +376,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'website-maintenance',
     title: 'Website Maintenance & Support Plans | Webstep Solutions',
     description: 'Proactive website maintenance for WordPress, Shopify, and custom stacks: security patching, plugin updates, speed monitoring, and dedicated developer hours.',
-    canonical: 'https://webstepdev.com/services/website-maintenance/'
+    canonical: 'https://webstepsolutions.com/services/website-maintenance/'
   },
 
   // 13. AI Chatbots (Canonical under /services/ai-chatbots/)
@@ -387,7 +387,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/ai-chatbots',
     title: 'Custom AI Chatbot Development & Virtual Assistants | Webstep Solutions',
     description: 'Custom AI chatbots and virtual assistants that handle customer support, qualify leads, and automate workflows 24/7 across web and WhatsApp.',
-    canonical: 'https://webstepdev.com/services/ai-chatbots/'
+    canonical: 'https://webstepsolutions.com/services/ai-chatbots/'
   },
   {
     filePath: 'src/app/ai-chatbots/page.js',
@@ -396,7 +396,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'ai-chatbots',
     title: 'Custom AI Chatbot Development & Virtual Assistants | Webstep Solutions',
     description: 'Custom AI chatbots and virtual assistants that handle customer support, qualify leads, and automate workflows 24/7 across web and WhatsApp.',
-    canonical: 'https://webstepdev.com/services/ai-chatbots/'
+    canonical: 'https://webstepsolutions.com/services/ai-chatbots/'
   },
 
   // 14. AI Automation (Canonical under /services/ai-automation/)
@@ -407,7 +407,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/ai-automation',
     title: 'AI Automation & Workflow Integration Services | Webstep Solutions',
     description: 'Intelligent workflow automation and AI integrations connecting your CRMs, ERPs, and databases with modern LLMs and machine learning models.',
-    canonical: 'https://webstepdev.com/services/ai-automation/'
+    canonical: 'https://webstepsolutions.com/services/ai-automation/'
   },
   {
     filePath: 'src/app/ai-automation/page.js',
@@ -416,7 +416,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'ai-automation',
     title: 'AI Automation & Workflow Integration Services | Webstep Solutions',
     description: 'Intelligent workflow automation and AI integrations connecting your CRMs, ERPs, and databases with modern LLMs and machine learning models.',
-    canonical: 'https://webstepdev.com/services/ai-automation/'
+    canonical: 'https://webstepsolutions.com/services/ai-automation/'
   },
 
   // 15. AI Powered Websites (Canonical under /services/ai-powered-websites/)
@@ -427,7 +427,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/ai-powered-websites',
     title: 'AI-Powered Website Development | Webstep Solutions',
     description: 'Next-generation websites with built-in AI search, personalized recommendations, automated content pipelines, and intelligent user experiences.',
-    canonical: 'https://webstepdev.com/services/ai-powered-websites/'
+    canonical: 'https://webstepsolutions.com/services/ai-powered-websites/'
   },
   {
     filePath: 'src/app/ai-powered-websites/page.js',
@@ -436,7 +436,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'ai-powered-websites',
     title: 'AI-Powered Website Development | Webstep Solutions',
     description: 'Next-generation websites with built-in AI search, personalized recommendations, automated content pipelines, and intelligent user experiences.',
-    canonical: 'https://webstepdev.com/services/ai-powered-websites/'
+    canonical: 'https://webstepsolutions.com/services/ai-powered-websites/'
   },
 
   // 16. Brand Design (Canonical under /services/brand-design/)
@@ -447,7 +447,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/brand-design',
     title: 'Brand Design & Identity Services | Webstep Solutions',
     description: 'Complete brand identity design: logos, design systems, typography guidelines, and brand collateral that make your business instantly recognizable.',
-    canonical: 'https://webstepdev.com/services/brand-design/'
+    canonical: 'https://webstepsolutions.com/services/brand-design/'
   },
   {
     filePath: 'src/app/brand-design/page.js',
@@ -456,7 +456,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'brand-design',
     title: 'Brand Design & Identity Services | Webstep Solutions',
     description: 'Complete brand identity design: logos, design systems, typography guidelines, and brand collateral that make your business instantly recognizable.',
-    canonical: 'https://webstepdev.com/services/brand-design/'
+    canonical: 'https://webstepsolutions.com/services/brand-design/'
   },
 
   // 17. Email Marketing (Canonical under /services/email-marketing/)
@@ -467,7 +467,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/email-marketing',
     title: 'Responsive Email Template Design & Development | Webstep Solutions',
     description: 'Hand-coded, responsive HTML email templates tested across all major email clients (Gmail, Outlook, Apple Mail) and marketing automation platforms.',
-    canonical: 'https://webstepdev.com/services/email-marketing/'
+    canonical: 'https://webstepsolutions.com/services/email-marketing/'
   },
   {
     filePath: 'src/app/email-marketing/page.js',
@@ -476,7 +476,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'email-marketing',
     title: 'Responsive Email Template Design & Development | Webstep Solutions',
     description: 'Hand-coded, responsive HTML email templates tested across all major email clients (Gmail, Outlook, Apple Mail) and marketing automation platforms.',
-    canonical: 'https://webstepdev.com/services/email-marketing/'
+    canonical: 'https://webstepsolutions.com/services/email-marketing/'
   },
 
   // 18. Social Media (Canonical under /services/social-media/)
@@ -487,7 +487,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'services/social-media',
     title: 'Social Media Creative & Digital Assets | Webstep Solutions',
     description: 'High-impact visual assets and creative collateral for social media campaigns that reinforce your brand identity and drive engagement.',
-    canonical: 'https://webstepdev.com/services/social-media/'
+    canonical: 'https://webstepsolutions.com/services/social-media/'
   },
   {
     filePath: 'src/app/social-media/page.js',
@@ -496,7 +496,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'social-media',
     title: 'Social Media Creative & Digital Assets | Webstep Solutions',
     description: 'High-impact visual assets and creative collateral for social media campaigns that reinforce your brand identity and drive engagement.',
-    canonical: 'https://webstepdev.com/services/social-media/'
+    canonical: 'https://webstepsolutions.com/services/social-media/'
   },
 
   // 19. Hire Developers
@@ -507,7 +507,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'hire-full-time-developers',
     title: 'Hire Dedicated Developers for Your Web Projects | Webstep Solutions',
     description: 'Hire dedicated full-time WordPress, Shopify, React, and Laravel developers monthly. Flexible engagement models, US/CA/AU time-zone overlap, NDA protected.',
-    canonical: 'https://webstepdev.com/hire-full-time-developers/',
+    canonical: 'https://webstepsolutions.com/hire-full-time-developers/',
     jsonLd: hireFaqSchema
   },
   {
@@ -517,7 +517,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'b2b-sales',
     title: 'Hire Dedicated Developers for Your Web Projects | Webstep Solutions',
     description: 'Hire dedicated full-time WordPress, Shopify, React, and Laravel developers monthly. Flexible engagement models, US/CA/AU time-zone overlap, NDA protected.',
-    canonical: 'https://webstepdev.com/hire-full-time-developers/'
+    canonical: 'https://webstepsolutions.com/hire-full-time-developers/'
   },
 
   // 20. Case Studies
@@ -528,7 +528,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'case-study',
     title: 'Case Studies & Portfolio | Web Development Work | Webstep Solutions',
     description: 'Explore Webstep Solutions\' portfolio: 120+ delivered projects across healthcare, fintech, SaaS, eCommerce, and education with verified metrics.',
-    canonical: 'https://webstepdev.com/case-study/'
+    canonical: 'https://webstepsolutions.com/case-study/'
   },
   {
     filePath: 'src/app/works/page.js',
@@ -537,7 +537,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'works',
     title: 'Case Studies & Portfolio | Web Development Work | Webstep Solutions',
     description: 'Explore Webstep Solutions\' portfolio: 120+ delivered projects across healthcare, fintech, SaaS, eCommerce, and education with verified metrics.',
-    canonical: 'https://webstepdev.com/case-study/'
+    canonical: 'https://webstepsolutions.com/case-study/'
   },
   {
     filePath: 'src/app/projects/page.js',
@@ -546,7 +546,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'projects',
     title: 'Case Studies & Portfolio | Web Development Work | Webstep Solutions',
     description: 'Explore Webstep Solutions\' portfolio: 120+ delivered projects across healthcare, fintech, SaaS, eCommerce, and education with verified metrics.',
-    canonical: 'https://webstepdev.com/case-study/'
+    canonical: 'https://webstepsolutions.com/case-study/'
   },
 
   // 21. Packages
@@ -557,7 +557,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'packages',
     title: 'Web Development Packages & Transparent Pricing | Webstep Solutions',
     description: 'Transparent web development packages for websites, eCommerce stores, and dedicated developer hiring. Compare plans and request a custom quote.',
-    canonical: 'https://webstepdev.com/packages/'
+    canonical: 'https://webstepsolutions.com/packages/'
   },
 
   // 22. Customize Package
@@ -570,7 +570,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'customize-package',
     title: 'Customize Your Web Development Package | Webstep Solutions',
     description: 'Build a custom web development package tailored to your exact project scope, technology requirements, and timeline. Instant quote estimate.',
-    canonical: 'https://webstepdev.com/customize-package/'
+    canonical: 'https://webstepsolutions.com/customize-package/'
   },
 
   // 23. Contact
@@ -581,7 +581,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'contact',
     title: 'Contact Webstep Solutions | Start Your Web Project Today',
     description: 'Get in touch with Webstep Solutions for a detailed project consultation. We respond within one business day. Call +91 7973938927 or send your requirements.',
-    canonical: 'https://webstepdev.com/contact/'
+    canonical: 'https://webstepsolutions.com/contact/'
   },
   {
     filePath: 'src/app/contactus/page.js',
@@ -590,7 +590,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'contactus',
     title: 'Contact Webstep Solutions | Start Your Web Project Today',
     description: 'Get in touch with Webstep Solutions for a detailed project consultation. We respond within one business day. Call +91 7973938927 or send your requirements.',
-    canonical: 'https://webstepdev.com/contact/'
+    canonical: 'https://webstepsolutions.com/contact/'
   },
 
   // 24. Blog
@@ -601,7 +601,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'blog',
     title: 'Web Development Insights, Guides & Trends | Webstep Solutions Blog',
     description: 'Practical guides, architecture deep-dives, and performance tips on WordPress, Shopify, React, Next.js, and Laravel from the Webstep Solutions team.',
-    canonical: 'https://webstepdev.com/blog/'
+    canonical: 'https://webstepsolutions.com/blog/'
   },
 
   // 25. Privacy Policy
@@ -612,7 +612,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'privacy-policy',
     title: 'Privacy Policy | Webstep Solutions',
     description: 'Read Webstep Solutions\' Privacy Policy to learn how we collect, use, and protect your personal information when visiting our website.',
-    canonical: 'https://webstepdev.com/privacy-policy/'
+    canonical: 'https://webstepsolutions.com/privacy-policy/'
   },
   {
     filePath: 'src/app/privacy/page.js',
@@ -621,7 +621,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'privacy',
     title: 'Privacy Policy | Webstep Solutions',
     description: 'Read Webstep Solutions\' Privacy Policy to learn how we collect, use, and protect your personal information when visiting our website.',
-    canonical: 'https://webstepdev.com/privacy-policy/',
+    canonical: 'https://webstepsolutions.com/privacy-policy/',
     noIndex: true
   },
 
@@ -633,7 +633,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'terms-and-conditions',
     title: 'Terms and Conditions | Webstep Solutions',
     description: 'Review the Terms and Conditions governing your use of Webstep Solutions\' website and web development services.',
-    canonical: 'https://webstepdev.com/terms-and-conditions/'
+    canonical: 'https://webstepsolutions.com/terms-and-conditions/'
   },
   {
     filePath: 'src/app/terms/page.js',
@@ -642,7 +642,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'terms',
     title: 'Terms and Conditions | Webstep Solutions',
     description: 'Review the Terms and Conditions governing your use of Webstep Solutions\' website and web development services.',
-    canonical: 'https://webstepdev.com/terms-and-conditions/',
+    canonical: 'https://webstepsolutions.com/terms-and-conditions/',
     noIndex: true
   },
 
@@ -654,7 +654,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'uiux',
     title: 'UI/UX Design Services | Web & App Design | Webstep Solutions',
     description: 'User-first interface design for websites and apps, from wireframes to approved Figma designs, ready for development. Request a design quote.',
-    canonical: 'https://webstepdev.com/services/ui-ux/'
+    canonical: 'https://webstepsolutions.com/services/ui-ux/'
   },
   {
     filePath: 'src/app/mobileApp/page.js',
@@ -663,7 +663,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'mobileApp',
     title: 'Mobile App Development Company | iOS & Android | Webstep Solutions',
     description: 'Native iOS apps in Swift and Android apps in Kotlin, from idea to App Store and Play Store launch. Share your app idea and get a quote.',
-    canonical: 'https://webstepdev.com/services/app-development/'
+    canonical: 'https://webstepsolutions.com/services/app-development/'
   },
   {
     filePath: 'src/app/fullstack/page.js',
@@ -672,7 +672,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'fullstack',
     title: 'Full Stack Development Services | Node.js, Vue & APIs | Webstep Solutions',
     description: 'Full stack developers for Vue, Node.js and PHP projects, API integrations and AI chatbot builds. Get a clear scope and quote for your project.',
-    canonical: 'https://webstepdev.com/services/web-development/'
+    canonical: 'https://webstepsolutions.com/services/web-development/'
   },
   {
     filePath: 'src/app/seo/page.js',
@@ -681,7 +681,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'seo',
     title: 'SEO Services | Technical SEO & Core Web Vitals | Webstep Solutions',
     description: 'Technical SEO audits, Core Web Vitals fixes and conversion improvements for business websites. Request an SEO audit.',
-    canonical: 'https://webstepdev.com/services/seo/'
+    canonical: 'https://webstepsolutions.com/services/seo/'
   },
   {
     filePath: 'src/app/our-team/page.js',
@@ -690,7 +690,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'our-team',
     title: 'Our Team | Developers Behind Webstep Solutions',
     description: 'Meet the developers, designers and project managers who build and support your projects at Webstep Solutions.',
-    canonical: 'https://webstepdev.com/about/'
+    canonical: 'https://webstepsolutions.com/about/'
   },
   {
     filePath: 'src/app/team/page.js',
@@ -699,7 +699,7 @@ import FormSection from '@/components/FormSection';`,
     slug: 'team',
     title: 'Our Team | Developers Behind Webstep Solutions',
     description: 'Meet the developers, designers and project managers who build and support your projects at Webstep Solutions.',
-    canonical: 'https://webstepdev.com/about/'
+    canonical: 'https://webstepsolutions.com/about/'
   },
 
   // Private / Internal routes (noindex)

@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Review the Terms and Conditions governing your use of Webstep Solutions' website and web development services.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/terms-and-conditions/",
+      canonical: "https://webstepsolutions.com/terms-and-conditions/",
     }
   };
 }

@@ -113,7 +113,7 @@ const Features = [
         id: 8,
         btn: 'Feature #9',
         maintitle: "1-Click Automatically Customized Traffic Toolkit",
-        des1: 'Each unlocked funnel comes packed with a customised affiliate toolkit that’s as easy as copy paste or in some cases, click and share.',
+        des1: 'Each unlocked funnel comes packed with a customized affiliate toolkit that’s as easy as copy paste or in some cases, click and share.',
         des2: "Content varies between funnels, but can include:",
         img: img9,
     },

@@ -344,7 +344,7 @@ const TermsConditions = () => {
                 📅 Last updated: May 2025
               </div>
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 border border-purple-200 text-purple-600 text-sm font-semibold shadow-sm hover:bg-purple-50 transition-colors"
               >
                 🔒 Privacy Policy →
@@ -394,7 +394,7 @@ const TermsConditions = () => {
                     Quick Links
                   </p>
                   <div className="space-y-2">
-                    <Link href="/privacy" className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-purple-600 transition-colors">
+                    <Link href="/privacy-policy" className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-purple-600 transition-colors">
                       🔒 Privacy Policy
                     </Link>
                     <Link href="/contactus" className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-purple-600 transition-colors">
@@ -470,7 +470,7 @@ const TermsConditions = () => {
                       Questions? Contact Us →
                     </Link>
                     <Link
-                      href="/privacy"
+                      href="/privacy-policy"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-purple-600 text-sm border border-purple-200 bg-white hover:bg-purple-50 transition-all duration-300"
                     >
                       View Privacy Policy

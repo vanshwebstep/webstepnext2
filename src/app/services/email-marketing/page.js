@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Hand-coded, responsive HTML email templates tested across all major email clients (Gmail, Outlook, Apple Mail) and marketing automation platforms.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/email-marketing/",
+      canonical: "https://webstepsolutions.com/services/email-marketing/",
     }
   };
 }

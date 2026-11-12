@@ -2,27 +2,26 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
-const BASE_PATH = "/demo/webstepnext";
+import { SITE_CONFIG } from '@/config/siteConfig';
 
 const SMART_REDIRECTS = [
-  { match: ["laravel"], target: "/demo/webstepnext/services/laravel/" },
-  { match: ["wordpress", "wp-", "wp"], target: "/demo/webstepnext/services/wordpress/" },
-  { match: ["shopify"], target: "/demo/webstepnext/services/shopify/" },
-  { match: ["woocommerce", "woo"], target: "/demo/webstepnext/services/woocommerce/" },
-  { match: ["react", "nextjs", "next"], target: "/demo/webstepnext/services/reactjs/" },
-  { match: ["php"], target: "/demo/webstepnext/services/php-development/" },
-  { match: ["hire", "developer"], target: "/demo/webstepnext/hire-dedicated-developers/" },
-  { match: ["contact"], target: "/demo/webstepnext/contactus/" },
-  { match: ["about"], target: "/demo/webstepnext/about/" },
-  { match: ["privacy"], target: "/demo/webstepnext/privacy-policy/" },
-  { match: ["terms"], target: "/demo/webstepnext/terms-and-conditions/" },
-  { match: ["fullstack", "full-stack"], target: "/demo/webstepnext/fullstack/" },
-  { match: ["brand", "design"], target: "/demo/webstepnext/services/brand-design/" },
-  { match: ["maintenance"], target: "/demo/webstepnext/services/website-maintenance/" },
-  { match: ["ai-chatbot", "chatbot"], target: "/demo/webstepnext/services/ai-chatbots/" },
-  { match: ["ai-automation", "automation"], target: "/demo/webstepnext/services/ai-automation/" },
-  { match: ["ai-website", "ai-powered"], target: "/demo/webstepnext/services/ai-powered-websites/" },
+  { match: ["laravel"], target: "/services/laravel/" },
+  { match: ["wordpress", "wp-", "wp"], target: "/services/wordpress/" },
+  { match: ["shopify"], target: "/services/shopify/" },
+  { match: ["woocommerce", "woo"], target: "/services/woocommerce/" },
+  { match: ["react", "nextjs", "next"], target: "/services/reactjs/" },
+  { match: ["php"], target: "/services/php-development/" },
+  { match: ["hire", "developer"], target: "/hire-dedicated-developers/" },
+  { match: ["contact"], target: "/contactus/" },
+  { match: ["about"], target: "/about/" },
+  { match: ["privacy"], target: "/privacy-policy/" },
+  { match: ["terms"], target: "/terms-and-conditions/" },
+  { match: ["fullstack", "full-stack"], target: "/fullstack/" },
+  { match: ["brand", "design"], target: "/services/brand-design/" },
+  { match: ["maintenance"], target: "/services/website-maintenance/" },
+  { match: ["ai-chatbot", "chatbot"], target: "/services/ai-chatbots/" },
+  { match: ["ai-automation", "automation"], target: "/services/ai-automation/" },
+  { match: ["ai-website", "ai-powered"], target: "/services/ai-powered-websites/" },
 ];
 
 export default function NotFound() {
@@ -31,21 +30,17 @@ export default function NotFound() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const pathname = window.location.pathname.toLowerCase();
-    const search = window.location.search || "";
+    let pathname = window.location.pathname.toLowerCase();
 
-    // 1. If user landed on root domain without /demo/webstepnext (e.g. http://localhost:3000/services/laravel/)
-    if (!window.location.pathname.startsWith(BASE_PATH)) {
-      setRedirecting(true);
-      window.location.replace(`${BASE_PATH}${window.location.pathname}${search}`);
-      return;
+    if (SITE_CONFIG.basePath && pathname.startsWith(SITE_CONFIG.basePath)) {
+      pathname = pathname.slice(SITE_CONFIG.basePath.length) || "/";
     }
 
-    // 2. If user is in /demo/webstepnext/ but reached an unknown route, match smart keyword redirects
     for (const rule of SMART_REDIRECTS) {
       if (rule.match.some((keyword) => pathname.includes(keyword))) {
         setRedirecting(true);
-        window.location.replace(rule.target);
+        const finalTarget = SITE_CONFIG.basePath ? `${SITE_CONFIG.basePath}${rule.target}` : rule.target;
+        window.location.replace(finalTarget);
         return;
       }
     }

@@ -1,19 +1,18 @@
 "use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
-
-const BASE_PATH = "/demo/webstepnext";
+import { SITE_CONFIG } from "@/config/siteConfig";
 
 export function normalizeRedirectUrl(target) {
-  if (!target) return `${BASE_PATH}/`;
+  if (!target) return SITE_CONFIG.basePath ? `${SITE_CONFIG.basePath}/` : "/";
   if (target.startsWith("http://") || target.startsWith("https://")) {
     return target;
   }
   const clean = target.startsWith("/") ? target : `/${target}`;
-  if (clean.startsWith(BASE_PATH)) {
+  if (SITE_CONFIG.basePath && clean.startsWith(SITE_CONFIG.basePath)) {
     return clean;
   }
-  return `${BASE_PATH}${clean}`;
+  return SITE_CONFIG.basePath ? `${SITE_CONFIG.basePath}${clean}` : clean;
 }
 
 export default function RedirectClient({ target }) {

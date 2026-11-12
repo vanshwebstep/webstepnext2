@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Packages from "./Packages";
+import WistiaPlayer from "./WistiaPlayer";
 
 const painPoints = [
   {
@@ -128,39 +129,71 @@ export default function B2BSalesPage() {
         <div className="absolute right-[-160px] top-[-220px] h-[620px] w-[620px] rounded-full bg-pink-50" />
         <div className="absolute bottom-[-130px] left-[-120px] h-80 w-80 rounded-full bg-pink-50" />
 
-        <div className="relative z-10 mx-auto max-w-6xl">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#FF1F8E]">
-            <span className="h-2 w-2 rounded-full bg-[#FF1F8E]" />
-            For IT Agencies and SaaS Companies
-          </div>
+        <div className="relative z-10 mx-auto max-w-6xl xl:max-w-7xl">
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#FF1F8E]">
+                <span className="h-2 w-2 rounded-full bg-[#FF1F8E]" />
+                For IT Agencies and SaaS Companies
+              </div>
 
-          <h1 className="max-w-5xl text-[38px] font-black leading-[1.05] tracking-tight text-slate-950 sm:text-6xl lg:text-[72px]">
-            A Development Partner for{" "}
-            <span className="block text-[#FF1F8E]">Digital and Marketing Agencies</span>
-          </h1>
+              <h1 className="text-[34px] font-black leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-[52px] xl:text-[58px]">
+                A Development Partner for{" "}
+                <span className="block text-[#FF1F8E]">Digital and Marketing Agencies</span>
+              </h1>
 
-          <p className="mt-4 text-lg sm:text-2xl font-bold text-slate-800">
-            Your next dedicated developer — onboarded in 2 to 5 business days, not 3 months.
-          </p>
+              <p className="mt-4 text-lg sm:text-xl font-bold text-slate-800">
+                Your next dedicated developer — onboarded in 2 to 5 business days, not 3 months.
+              </p>
 
-          <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            Stop losing clients to delayed projects. Get a dedicated, pre-vetted developer who joins your tools,
-            attends your standups, and ships from day one under strict NDA with 100% IP ownership.
-          </p>
+              <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+                Stop losing clients to delayed projects. Get a dedicated, pre-vetted developer who joins your tools,
+                attends your standups, and ships from day one under strict NDA with 100% IP ownership.
+              </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#book"
-              className="rounded-full bg-[#FF1F8E] px-8 py-4 text-sm font-bold text-white shadow-[0_14px_34px_rgba(255,31,142,0.24)] transition hover:bg-[#D91676]"
-            >
-              Book a free 30-min call
-            </a>
-            <a
-              href="#how"
-              className="border-b border-pink-200 pb-1 text-sm font-semibold text-slate-600 transition hover:border-[#FF1F8E] hover:text-[#FF1F8E]"
-            >
-              See how it works
-            </a>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href="#book"
+                  className="rounded-full bg-[#FF1F8E] px-8 py-4 text-sm font-bold text-white shadow-[0_14px_34px_rgba(255,31,142,0.24)] transition hover:bg-[#D91676]"
+                >
+                  Book a free 30-min call
+                </a>
+                <a
+                  href="#how"
+                  className="border-b border-pink-200 pb-1 text-sm font-semibold text-slate-600 transition hover:border-[#FF1F8E] hover:text-[#FF1F8E]"
+                >
+                  See how it works
+                </a>
+              </div>
+            </div>
+
+            {/* Right Video Showcase Column */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative w-[280px] sm:w-[320px] max-w-full">
+                {/* Subtle Ambient Glow */}
+                <div className="absolute -inset-3 rounded-[38px] bg-gradient-to-tr from-[#FF1F8E]/25 via-pink-400/20 to-purple-500/20 blur-xl opacity-80 -z-10" />
+
+                {/* Floating Top Badge */}
+                <div className="absolute -top-3.5 -right-2.5 rounded-full bg-white/95 backdrop-blur-md px-3.5 py-1.5 shadow-md border border-pink-100 flex items-center gap-1.5 z-20 text-[11px] font-bold text-slate-800 pointer-events-none select-none">
+                  <span>🎬</span>
+                  <span>1-Min Overview</span>
+                </div>
+
+                {/* Device Frame */}
+                <div className="relative rounded-[32px] p-2.5 sm:p-3 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 shadow-[0_20px_50px_rgba(255,31,142,0.25),0_10px_25px_rgba(15,23,42,0.18)] border border-slate-800/80">
+                  {/* Speaker Notch */}
+                  <div className="w-16 h-1 rounded-full bg-slate-700/80 mx-auto mb-2 pointer-events-none" />
+
+                  {/* Wistia Video Player */}
+                  <div className="rounded-[22px] overflow-hidden bg-slate-950">
+                    <WistiaPlayer mediaId="zq1batjfoj" aspect="0.5625" />
+                  </div>
+                </div>
+
+                
+              </div>
+            </div>
           </div>
 
           <div className="mt-14 grid max-w-4xl overflow-hidden rounded-2xl border border-pink-100 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-4">

@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Explore Webstep Solutions' portfolio: 120+ delivered projects across healthcare, fintech, SaaS, eCommerce, and education with verified metrics.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/case-study/",
+      canonical: "https://webstepsolutions.com/case-study/",
     }
   };
 }

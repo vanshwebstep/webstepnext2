@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Tailored WooCommerce development for high-volume stores: custom themes, payment gateway integration, subscription architecture, and speed optimization.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/woocommerce/",
+      canonical: "https://webstepsolutions.com/services/woocommerce/",
     }
   };
 }

@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Custom Shopify themes, Liquid development, private apps, and Shopify Plus setups engineered to increase conversions and average order value.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/shopify/",
+      canonical: "https://webstepsolutions.com/services/shopify/",
     }
   };
 }

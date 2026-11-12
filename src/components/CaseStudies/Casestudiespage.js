@@ -10,11 +10,11 @@ import {
 import { HiOutlineArrowUpRight, HiOutlineChevronDown, HiXMark } from "react-icons/hi2";
 import Link from "next/link";
 import { fetchContent } from "@/lib/contentApi";
-import { assetImage } from "@/lib/assets";
+import { assetImage, resolveDynamicImage } from "@/lib/assets";
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -----------------------------------------------------------------------------
 // DATA
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -----------------------------------------------------------------------------
 const STATS = [
   { num: "120+", label: "Projects Delivered", sub: "Across 15+ industries" },
   { num: "50+", label: "Happy Clients", sub: "From startups to enterprises" },
@@ -23,7 +23,7 @@ const STATS = [
 ];
 const CATEGORIES = ["All", "Healthcare", "E-Commerce", "SaaS", "Education", "Fintech", "Non-Profit", "Enterprise"];
 const DEFAULTADTYES =
-  process.env.NEXT_PUBLIC_MAIN_BASE_URL || "https://webstepdev.com";
+  process.env.NEXT_PUBLIC_MAIN_BASE_URL || "https://webstepsolutions.com";
 const CASE_STUDIES = [
   {
     id: "dr-treat",
@@ -66,7 +66,7 @@ const CASE_STUDIES = [
     tagline: "High-throughput e-commerce architecture engineered for peak traffic",
     category: "E-Commerce",
     tags: ["E-Commerce", "Enterprise"],
-    img: "/demo/webstepnext/assets/case-studies/shopvault.jpg",
+    img: "/assets/case-studies/shopvault.jpg",
     logo: FaShoppingCart,
     client: "Retail Enterprise (Anonymized)",
     duration: "8 months",
@@ -171,7 +171,7 @@ const CASE_STUDIES = [
     tagline: "Scalable learning management infrastructure",
     category: "Education",
     tags: ["Education", "SaaS"],
-    img: "/demo/webstepnext/assets/case-studies/eduforge.jpg",
+    img: "/assets/case-studies/eduforge.jpg",
     logo: FaGraduationCap,
     client: "Education Group (Anonymized)",
     duration: "10 months",
@@ -297,7 +297,7 @@ const normalizeCaseStudy = (study, index) => {
     tagline: study.tagline || base.tagline,
     category: study.category || base.category,
     tags: normalizeList(study.tags, base.tags),
-    img: study.img || study.image || base.img,
+    img: resolveDynamicImage(study.img || study.image, base.img),
     logo: study.logo || base.logo,
     client: study.client || base.client,
     duration: study.duration || base.duration,
@@ -779,7 +779,7 @@ const AllStudies = ({ caseStudies, categories, onOpen }) => {
                       style={{ background: `${cs.color}cc` }}>{cs.category}</span>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <p className="text-white/60 text-[10px] uppercase tracking-wider">{cs.year} • {cs.duration}</p>
+                    <p className="text-white/60 text-[10px] uppercase tracking-wider">{cs.year} &bull; {cs.duration}</p>
                   </div>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500
                     flex flex-col justify-end p-5"
@@ -1135,8 +1135,6 @@ export default function CaseStudiesPage() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
-        * { font-family: 'Plus Jakarta Sans', sans-serif; }
         html, body { overflow-x: hidden; }
       `}</style>
 

@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Recent projects built with React, Next.js, Laravel and WordPress for healthcare, SaaS, infrastructure and non-profit clients. See the results.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/demo/webstepnext/works/",
+      canonical: "https://webstepsolutions.com/works/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

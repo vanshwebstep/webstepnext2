@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Custom AI chatbots and virtual assistants that handle customer support, qualify leads, and automate workflows 24/7 across web and WhatsApp.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/ai-chatbots/",
+      canonical: "https://webstepsolutions.com/services/ai-chatbots/",
     }
   };
 }

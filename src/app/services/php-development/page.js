@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Custom PHP development, legacy code modernization, database optimization, and third-party API integrations by senior PHP engineers.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/php-development/",
+      canonical: "https://webstepsolutions.com/services/php-development/",
     }
   };
 }

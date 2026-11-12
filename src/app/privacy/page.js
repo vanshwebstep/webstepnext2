@@ -8,7 +8,7 @@ export async function generateMetadata() {
     title: dynamicSeo.title || "Redirecting to Privacy Policy | Webstep Solutions",
     description: dynamicSeo.description || "Redirecting to Webstep Solutions Privacy Policy.",
     alternates: {
-      canonical: "https://webstepdev.com/privacy-policy/",
+      canonical: "https://webstepsolutions.com/privacy-policy/",
     },
     robots: { index: false, follow: false }
   };

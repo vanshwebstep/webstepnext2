@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Proactive website maintenance for WordPress, Shopify, and custom stacks: security patching, plugin updates, speed monitoring, and dedicated developer hours.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/website-maintenance/",
+      canonical: "https://webstepsolutions.com/services/website-maintenance/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

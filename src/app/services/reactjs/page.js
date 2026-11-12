@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Dynamic, blazing-fast web applications built with React.js and Next.js. Server-side rendering, optimized performance, and pixel-perfect UI execution.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/reactjs/",
+      canonical: "https://webstepsolutions.com/services/reactjs/",
     }
   };
 }

@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "See how we planned, built and delivered web projects for real clients, with the problem, the tech used and the results.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/case-study/",
+      canonical: "https://webstepsolutions.com/case-study/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

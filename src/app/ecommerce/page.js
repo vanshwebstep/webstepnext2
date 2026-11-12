@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "End-to-end eCommerce development on Shopify, WooCommerce, and custom headless stacks. Optimized product catalogs, checkout flows, and ERP integrations.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/ecommerce/",
+      canonical: "https://webstepsolutions.com/services/ecommerce/",
     }
   };
 }

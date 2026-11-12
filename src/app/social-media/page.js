@@ -9,7 +9,7 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "High-impact visual assets and creative collateral for social media campaigns that reinforce your brand identity and drive engagement.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/social-media/",
+      canonical: "https://webstepsolutions.com/services/social-media/",
     }
   };
 }

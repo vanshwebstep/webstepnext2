@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Native iOS apps in Swift and Android apps in Kotlin, from idea to App Store and Play Store launch. Share your app idea and get a quote.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/app-development/",
+      canonical: "https://webstepsolutions.com/services/app-development/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Web development services covering WordPress, Shopify, WooCommerce, Next.js and Laravel, plus API integrations. See what we build and request a quote.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/",
+      canonical: "https://webstepsolutions.com/services/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }

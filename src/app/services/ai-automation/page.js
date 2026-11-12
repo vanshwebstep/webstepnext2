@@ -9,11 +9,11 @@ export async function generateMetadata() {
     description: dynamicSeo.description || "Intelligent workflow automation and AI integrations connecting your CRMs, ERPs, and databases with modern LLMs and machine learning models.",
     ...(dynamicSeo.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepdev.com/services/ai-automation/",
+      canonical: "https://webstepsolutions.com/services/ai-automation/",
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   };
 }
