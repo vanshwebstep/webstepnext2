@@ -31,54 +31,61 @@ const painPoints = [
 const steps = [
   {
     title: "30-min discovery call",
-    desc: "Tell us your stack, team size, and what you are building. We match you with the right developer the same day.",
+    desc: "Tell us your tech stack, project requirements, and team size. We match you with pre-vetted developer profiles within 24 hours.",
     tag: "Day 0",
   },
   {
     title: "Meet your developer",
-    desc: "Review their profile, tech stack, past projects, and working style before anything begins.",
-    tag: "Day 0-1",
-  },
-  {
-    title: "Integrated in 24 hours",
-    desc: "They join your Slack, Jira, GitHub, Trello, or existing workflow. No new process for your team to learn.",
+    desc: "Review candidate profiles, technical portfolios, and conduct an intro interview with your selected developer.",
     tag: "Day 1",
   },
   {
+    title: "Integrated in 24-48 hours",
+    desc: "They join your agency Slack, Jira, GitHub, or ClickUp under your brand. Zero disruption to your current process.",
+    tag: "Day 2",
+  },
+  {
     title: "Shipping from day one",
-    desc: "First standup, first tasks, and first commits start immediately after onboarding.",
-    tag: "Day 2 onwards",
+    desc: "First standup, sprint tasks, and initial code commits begin immediately after environment setup.",
+    tag: "Day 2–3",
   },
 ];
 
-
-
 const comparisonRows = [
-  ["Time to first commit", "Days-weeks", "2-3 days", "60-90 days"],
-  ["Monthly cost", "Unpredictable", "From $1,500", "$8,000-15,000"],
-  ["Works in your tools", "Rarely", "Always", "Yes"],
-  ["Dedicated to your project", "No", "Yes", "Yes"],
-  ["No long-term contract", "Yes", "Yes", "No"],
-  ["Managed and accountable", "No", "Yes", "Yes"],
-  ["Scales monthly", "No", "Yes", "No"],
+  ["Time to first commit", "Days to weeks", "2–3 business days", "60–90 days"],
+  ["100% White-label (Your brand)", "Never", "Always", "N/A"],
+  ["Monthly cost", "Unpredictable / Hourly", "From $1,500 / fixed", "$8,000–$15,000"],
+  ["Works in your tools (Slack/Jira)", "Rarely", "Always", "Yes"],
+  ["Dedicated exclusively to your team", "No", "Yes", "Yes"],
+  ["No lock-in contract (Month-to-month)", "Yes", "Yes", "No"],
+  ["Strict NDA & 100% IP ownership", "Risky", "100% Guaranteed", "Yes"],
+  ["Quick developer replacement", "No", "Within 48 hours", "Months"],
 ];
 
 const faqs = [
   {
-    q: "What timezone do your developers work in?",
-    a: "Our developers work with meaningful overlap for US Eastern and Australian Eastern time. For teams that need tighter alignment, we can adjust working hours based on the engagement.",
+    q: "Can your developers work 100% white-label under our agency brand?",
+    a: "Yes, absolutely. 100% of our agency partnerships are white-label. Our developers use your company email domain, join your internal Slack/Teams, and follow your communication protocols. Your clients never know we exist unless you want them to.",
+  },
+  {
+    q: "How does the 2 to 3 business day onboarding timeline work?",
+    a: "Day 0 is our 30-min discovery call to align on your tech stack. On Day 1, you review and interview vetted candidates. On Day 2, we integrate them into your Slack, GitHub, or Jira. By Day 2–3, your developer participates in your standup and pushes their first commit.",
+  },
+  {
+    q: "What timezone overlap do your developers provide?",
+    a: "Our developers provide 4 to 6 hours of guaranteed daily overlap with US Eastern/Pacific, UK, and Australian business hours so your team can collaborate in real-time.",
   },
   {
     q: "What if the developer is not the right fit?",
-    a: "We replace them quickly and keep the transition clean. The discovery call is designed to reduce mismatches before the engagement starts.",
+    a: "We replace them within 48 hours at zero disruption or additional cost. Our technical vetting process ensures high first-match retention.",
   },
   {
-    q: "Do I have to change how my team works?",
-    a: "No. Your developer joins your existing Slack, Jira, GitHub, Trello, or whatever system your team already uses.",
+    q: "Who owns the code and intellectual property (IP)?",
+    a: "You and your agency retain 100% ownership of all source code, design assets, and deliverables from day one under a strict mutual NDA.",
   },
   {
-    q: "Is there a minimum contract length?",
-    a: "Plans are month-to-month. You can scale up, scale down, or pause with reasonable notice.",
+    q: "Is there a minimum contract length or lock-in?",
+    a: "No long-term lock-in. All engagements run on a flexible month-to-month retainer. You can scale your developer headcount up, down, or pause with standard notice.",
   },
   {
     q: "What tech stacks do your developers cover?",
@@ -135,21 +142,20 @@ export default function B2BSalesPage() {
             <div className="lg:col-span-7">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#FF1F8E]">
                 <span className="h-2 w-2 rounded-full bg-[#FF1F8E]" />
-                For IT Agencies and SaaS Companies
+                100% White-Label Partner for Digital & Marketing Agencies
               </div>
 
               <h1 className="text-[34px] font-black leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-[52px] xl:text-[58px]">
-                A Development Partner for{" "}
+                A Dedicated Development Partner for{" "}
                 <span className="block text-[#FF1F8E]">Digital and Marketing Agencies</span>
               </h1>
 
               <p className="mt-4 text-lg sm:text-xl font-bold text-slate-800">
-                Your next dedicated developer — onboarded in 2 to 5 business days, not 3 months.
+                Your next dedicated developer — onboarded in 2 to 3 business days, not 3 months.
               </p>
 
               <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-                Stop losing clients to delayed projects. Get a dedicated, pre-vetted developer who joins your tools,
-                attends your standups, and ships from day one under strict NDA with 100% IP ownership.
+                Stop losing clients to delayed sprints. Get dedicated, pre-vetted developers who work 100% white-label under your agency's brand, join your tools, and ship from day one under strict NDA with complete IP ownership.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -157,7 +163,7 @@ export default function B2BSalesPage() {
                   href="#book"
                   className="rounded-full bg-[#FF1F8E] px-8 py-4 text-sm font-bold text-white shadow-[0_14px_34px_rgba(255,31,142,0.24)] transition hover:bg-[#D91676]"
                 >
-                  Book a free 30-min call
+                  Discuss Your Agency Partnership
                 </a>
                 <a
                   href="#how"
@@ -198,10 +204,10 @@ export default function B2BSalesPage() {
 
           <div className="mt-14 grid max-w-4xl overflow-hidden rounded-2xl border border-pink-100 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["72hrs", "Average onboarding"],
-              ["70%", "Less than local hiring"],
-              ["12+", "Years building products"],
-              ["0", "Long-term contracts"],
+              ["48–72 hrs", "Fast Developer Onboarding"],
+              ["70%", "Cost savings vs local hiring"],
+              ["12+", "Years agency experience"],
+              ["0", "Long-term lock-in contracts"],
             ].map(([num, label]) => (
               <div key={label} className="border-b border-pink-100 p-6 sm:border-r lg:border-b-0">
                 <div className="text-3xl font-black text-[#FF1F8E]">{num}</div>
@@ -241,10 +247,10 @@ export default function B2BSalesPage() {
           <SectionLabel>Handoff & Communication</SectionLabel>
           <div className="max-w-3xl">
             <h2 className="text-3xl font-black leading-tight text-slate-950 sm:text-5xl">
-              Handoff & Communication: From First Call to First Commit in 2 to 5 Days
+              Handoff & Communication: From First Call to First Commit in 2 to 3 Days
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
-              No lengthy RFPs, no endless interviews, and no waiting. Just a developer inside your team, shipping.
+              No lengthy RFPs, no endless interviews, and no waiting. Just dedicated developers inside your team, shipping.
             </p>
           </div>
 
@@ -331,13 +337,13 @@ export default function B2BSalesPage() {
             Your competitor already has a dedicated dev team. Do you?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/80">
-            Book a free 30-minute call. We will match you with the right developer and prepare onboarding within 2 to 5 business days.
+            Book a free 30-minute call. We will match you with the right developer and prepare onboarding within 2 to 3 business days.
           </p>
           <Link
             href="/contactus"
             className="mt-10 inline-flex rounded-full bg-white px-9 py-4 text-base font-black text-[#FF1F8E] shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition hover:-translate-y-1"
           >
-            Book your free call
+            Discuss Your Agency Partnership
           </Link>
           <div className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-white/75">
             <span>No commitment required</span>

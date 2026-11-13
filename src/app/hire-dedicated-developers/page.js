@@ -4,16 +4,43 @@ import { fetchSeoMetadata } from '@/lib/contentApi';
 
 export async function generateMetadata() {
   const dynamicSeo = (await fetchSeoMetadata("hire-dedicated-developers")) || (await fetchSeoMetadata("b2b-sales"));
+  const title = dynamicSeo?.title || "Hire Dedicated Developers & Agency Development Partner | Webstep Solutions";
+  const description = dynamicSeo?.description || "Dedicated developers and white-label engineering teams for agencies and growing businesses. Onboarded in 2 to 3 business days, US/CA/AU overlap, and strict NDA protection.";
+  const canonicalUrl = "https://webstepsolutions.com/hire-dedicated-developers/";
+  const imageUrl = "https://webstepsolutions.com/webstepassets/img/logo.png";
+
   return {
-    title: dynamicSeo?.title || "Hire Dedicated Developers & Agency Development Partner | Webstep Solutions",
-    description: dynamicSeo?.description || "Dedicated developers and white-label engineering teams for agencies and growing businesses. Onboarded in 2 to 5 business days, US/CA/AU overlap, and strict NDA protection.",
+    title,
+    description,
     ...(dynamicSeo?.keywords ? { keywords: dynamicSeo.keywords } : {}),
     alternates: {
-      canonical: "https://webstepsolutions.com/hire-dedicated-developers/",
+      canonical: canonicalUrl,
     },
     robots: {
       index: true,
       follow: true,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: "Webstep Solutions",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: "Webstep Solutions - Hire Dedicated Developers",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
     },
   };
 }

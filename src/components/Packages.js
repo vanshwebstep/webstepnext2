@@ -207,13 +207,6 @@ const Packages = ({ pageType = "packages" }) => {
       .catch(() => {});
   }, [pageType]);
 
-  // page load hote hi is section pr auto-scroll, taaki sbhi packages first shot mai dikhein
-  useEffect(() => {
-    if (!loading && packagesData.length > 0 && sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [loading, packagesData]);
-
   const openHourlyBooking = (pkg) => {
     storeSelectedPlan(pkg);
     setHourlyModalPkg(pkg);
@@ -365,7 +358,7 @@ const Packages = ({ pageType = "packages" }) => {
   return (
     <section
       id="packages-section"
-      ref={sectionRef}
+      // ref={sectionRef}
       className="pt-[140px] md:pt-[190px] pb-12 sm:pb-24 px-3 sm:px-8 bg-gradient-to-b from-slate-50 via-white to-slate-50 min-h-screen"
     >
       <div className="max-w-7xl mx-auto">
